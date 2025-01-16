@@ -12,6 +12,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 ## Your Group
 
 Add a group photo here!
+![WechatIMG132](https://github.com/user-attachments/assets/ecd68e41-eb59-4c1d-936f-2567729f0919)
 
 - Group member 1, name, email, role
 - Group member 2, name, email, role
