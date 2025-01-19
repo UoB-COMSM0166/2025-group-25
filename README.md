@@ -12,6 +12,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 ## Table of Contents
 
 - [1. Development Team](#1-development-team)
+- [2. Introduction](#2-introduction)
 
 
 ## 1. Development Team
@@ -36,7 +37,14 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | TEST |
 | 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
 
+## 2. Introduction
 
+- 5% ~250 words 
+- Describe your game, what is based on, what makes it novel? 
+
+----
+The above part is our result （上面部分是我们完成的成果）
+The following is the template（以下是老师提供的模版）
 
 ## Project Report
 
