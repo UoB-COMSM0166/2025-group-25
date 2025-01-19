@@ -10,7 +10,7 @@ Your game lives in the [/docs](/docs) folder, and is published using Github page
 Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
 
 ## Table of Contents
-- [Development Team](#Development Team)
+- [1. Development Team](#1. Development Team)
 - [Project Report](#Project Report)
 - [Introduction](#Introduction)
 
