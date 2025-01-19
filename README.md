@@ -20,8 +20,8 @@ SHUAO ZHANG, qk24065@bristol.ac.uk , SHUAOCT
 KEXIN ZHANG, hy24895@bristol.ac.uk, XR017ZKX
 RUI XIONG, yy24937@bristol.ac.uk, qianyanbaixu
 
-| GROUP MEMBER | NAME | EMAIL |
-| :----- | :----: | -----: |
+| GROUP MEMBER | NAME | EMAIL | 
+| :----: | :----: | -----: |
 | 01 | CAILING YANG   | rl24638@bristol.ac.uk |
 | 02 | JUNJIE YAN   | am24166@bristol.ac.uk |
 | 03 | SHUAO ZHAN   | qk24065@bristol.ac.uk |
