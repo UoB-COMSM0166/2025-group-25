@@ -17,6 +17,14 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 ## 1. Development Team
 
 Our group photos !
+**Figure 1**
+Team Photp Week 1 .
+
+<p align="center">
+Figure 1<br>
+Team Photp Week 1.
+</p>
+
 ![WechatIMG132](https://github.com/user-attachments/assets/7a03e49f-e205-4ce8-8696-c0b8c6c7ca3f)
 
 
