@@ -43,8 +43,27 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 - Describe your game, what is based on, what makes it novel? 
 
 ----
-The above part is our result （上面部分是我们完成的成果）
+The above part is our result （上面部分是我们完成的成果）  
 The following is the template（以下是老师提供的模版）
+
+## Your Game
+
+Link to your game [PLAY HERE](https://peteinfo.github.io/COMSM0166-project-template/)
+
+Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
+
+Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
+
+## Your Group
+
+Add a group photo here!
+
+- Group member 1, name, email, role
+- Group member 2, name, email, role
+- Group member 3, name, email, role
+- Group member 4, name, email, role
+- Group member 5, name, email, role
+- Group member 5, name, email, role
 
 ## Project Report
 
