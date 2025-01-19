@@ -15,13 +15,13 @@ Our group photos !
 ![WechatIMG132](https://github.com/user-attachments/assets/7a03e49f-e205-4ce8-8696-c0b8c6c7ca3f)
 
 
-| GROUP MEMBER | NAME | EMAIL | ROLE |
-| :----: | :----: | :----: | :----: |
-| 01 | CAILING YANG   | rl24638@bristol.ac.uk | test |
-| 02 | JUNJIE YAN   | am24166@bristol.ac.uk | test |
-| 03 | SHUAO ZHAN   | qk24065@bristol.ac.uk | test |
-| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | test |
-| 05 | RUI XION   | yy24937@bristol.ac.uk | test |
+| GROUP MEMBER | NAME | EMAIL | ROLE | CONTRIBUTIONS |
+| :----: | :----: | :----: | :----: | :----: |
+| 01 | CAILING YANG   | rl24638@bristol.ac.uk | TEST | TEST |
+| 02 | JUNJIE YAN   | am24166@bristol.ac.uk | TEST | TEST |
+| 03 | SHUAO ZHAN   | qk24065@bristol.ac.uk | TEST | TEST |
+| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | TEST |
+| 05 | RUI XION   | yy24937@bristol.ac.uk | TEST | TEST |
 
 
 
