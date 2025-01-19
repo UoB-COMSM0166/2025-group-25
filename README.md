@@ -19,15 +19,16 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 <p align="center">
   <strong>Figure 1</strong><br>
-  Team Photp Week 1.
+  <em>Team Photp Week 1.</em>
 </p>
 
 ![WechatIMG132](https://github.com/user-attachments/assets/d879bcba-7786-4663-b4f9-a772e5265e90)
 
 <p align="center">
   <strong>Table 1</strong><br>
-  Team members, roles and contributions.
+  <em>Team members, roles and contributions.</em>
 </p>
+
 
 | GROUP MEMBER | NAME | EMAIL | ROLE | CONTRIBUTIONS |
 | :----: | :----: | :----: | :----: | :----: |
