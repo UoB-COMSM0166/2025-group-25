@@ -24,9 +24,9 @@ Our group photos !
 | :----: | :----: | :----: | :----: | :----: |
 | 01 | CAILING YANG   | rl24638@bristol.ac.uk | TEST | TEST |
 | 02 | JUNJIE YAN   | am24166@bristol.ac.uk | TEST | TEST |
-| 03 | SHUAO ZHAN   | qk24065@bristol.ac.uk | TEST | TEST |
+| 03 | SHUAO ZHANG   | qk24065@bristol.ac.uk | TEST | TEST |
 | 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | TEST |
-| 05 | RUI XION   | yy24937@bristol.ac.uk | TEST | TEST |
+| 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
 
 
 
