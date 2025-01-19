@@ -16,14 +16,17 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## 1. Development Team
 
-
-
-![WechatIMG132](https://github.com/user-attachments/assets/d879bcba-7786-4663-b4f9-a772e5265e90)
 <p align="center">
   <strong>Figure 1</strong><br>
   Team Photp Week 1.
 </p>
 
+![WechatIMG132](https://github.com/user-attachments/assets/d879bcba-7786-4663-b4f9-a772e5265e90)
+
+<p align="center">
+  <strong>Table 1</strong><br>
+  Team members, roles and contributions.
+</p>
 
 | GROUP MEMBER | NAME | EMAIL | ROLE | CONTRIBUTIONS |
 | :----: | :----: | :----: | :----: | :----: |
@@ -32,10 +35,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | 03 | SHUAO ZHANG   | qk24065@bristol.ac.uk | TEST | TEST |
 | 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | TEST |
 | 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
-<p align="center">
-  <strong>Table 1</strong><br>
-  Team members, roles and contributions.
-</p>
+
 
 
 ## Project Report
