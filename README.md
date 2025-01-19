@@ -16,18 +16,17 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## 1. Development Team
 
-Our group photos !
-**Figure 1**
-Team Photp Week 1 .
-
 <p align="center">
-Figure 1<br>
+**Figure 1**<br>
 Team Photp Week 1.
 </p>
 
 ![WechatIMG132](https://github.com/user-attachments/assets/7a03e49f-e205-4ce8-8696-c0b8c6c7ca3f)
 
-
+<p align="center">
+**Table 1**<br>
+Team members, roles and contributions.
+</p>
 | GROUP MEMBER | NAME | EMAIL | ROLE | CONTRIBUTIONS |
 | :----: | :----: | :----: | :----: | :----: |
 | 01 | CAILING YANG   | rl24638@bristol.ac.uk | TEST | TEST |
