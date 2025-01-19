@@ -11,14 +11,9 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## Your Group
 
-Add a group photo here!
+Our group photos !
 ![WechatIMG132](https://github.com/user-attachments/assets/7a03e49f-e205-4ce8-8696-c0b8c6c7ca3f)
 
-CAILING YANG, rl24638@bristol.ac.uk, Charlynlynlyn
-JUNJIE YAN, am24166@bristol.ac.uk, Junjie818
-SHUAO ZHANG, qk24065@bristol.ac.uk , SHUAOCT
-KEXIN ZHANG, hy24895@bristol.ac.uk, XR017ZKX
-RUI XIONG, yy24937@bristol.ac.uk, qianyanbaixu
 
 | GROUP MEMBER | NAME | EMAIL | ROLE |
 | :----: | :----: | :----: | :----: |
@@ -28,11 +23,7 @@ RUI XIONG, yy24937@bristol.ac.uk, qianyanbaixu
 | 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | test |
 | 05 | RUI XION   | yy24937@bristol.ac.uk | test |
 
-- Group member 1, CAILING YANG, rl24638@bristol.ac.uk, role
-- Group member 2, JUNJIE YAN, am24166@bristol.ac.uk, role
-- Group member 3, SHUAO ZHANG, qk24065@bristol.ac.uk, role
-- Group member 4, KEXIN ZHANG, hy24895@bristol.ac.uk, role
-- Group member 5, RUI XIONG, yy24937@bristol.ac.uk, role
+
 
 ## Project Report
 
