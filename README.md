@@ -20,13 +20,13 @@ SHUAO ZHANG, qk24065@bristol.ac.uk , SHUAOCT
 KEXIN ZHANG, hy24895@bristol.ac.uk, XR017ZKX
 RUI XIONG, yy24937@bristol.ac.uk, qianyanbaixu
 
-| GROUP MEMBER | NAME | EMAIL | 
-| :----: | :----: | -----: |
-| 01 | CAILING YANG   | rl24638@bristol.ac.uk |
-| 02 | JUNJIE YAN   | am24166@bristol.ac.uk |
-| 03 | SHUAO ZHAN   | qk24065@bristol.ac.uk |
-| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk |
-| 05 | RUI XION   | yy24937@bristol.ac.uk |
+| GROUP MEMBER | NAME | EMAIL | ROLE |
+| :----: | :----: | :----: | :----: |
+| 01 | CAILING YANG   | rl24638@bristol.ac.uk | test |
+| 02 | JUNJIE YAN   | am24166@bristol.ac.uk | test |
+| 03 | SHUAO ZHAN   | qk24065@bristol.ac.uk | test |
+| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | test |
+| 05 | RUI XION   | yy24937@bristol.ac.uk | test |
 
 - Group member 1, CAILING YANG, rl24638@bristol.ac.uk, role
 - Group member 2, JUNJIE YAN, am24166@bristol.ac.uk, role
