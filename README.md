@@ -39,17 +39,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
 
 ## 2. Game Research
-| Game Name | Game Genre | Game Introduction | Game Mechanics | Inspiration |
-| :----: | :----: | :----: | :----: | :----: |
-| **Only Real Men Can Reach 100 Floors** | Vertical Action Platformer   | Players control a character descending an endless tower. The goal is to reach the 100th floor as quickly as possible while avoiding obstacles and collecting items through quick reflexes and strategic decision-making. Each floor presents a unique challenge | Normal Floor: Safe landing. 
-Fragile Floor: Breaks after a short duration. 
-Moving Floor: Moves horizontally, requiring precise timing to jump. 
-Spiked Floor: Instant death upon contact. 
-Bouncy Floor: Launches the character to lower floors.  | 1. Quick reactions are essential as the tower background continuously scrolls upward. The screen's upper edge features deadly spikes, which will kill the character if touched, introducing a time constraint.2. This dynamic creates tension and inspires high-difficulty level designs for later stages of our game, enhancing the game's challenge and excitement. |
-| 02 | JUNJIE YAN   | am24166@bristol.ac.uk | TEST | TEST |
-| 03 | SHUAO ZHANG   | qk24065@bristol.ac.uk | TEST | TEST |
-| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | TEST |
-| 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
+
 
 
 
