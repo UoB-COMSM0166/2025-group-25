@@ -21,7 +21,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>Team Photp Week 1.</em>
 </p>
 
-![WechatIMG132](https://github.com/user-attachments/assets/d879bcba-7786-4663-b4f9-a772e5265e90)
+![49551738338761_ pic](https://github.com/user-attachments/assets/6ee35206-fb7d-4797-8013-e8de37b1bf66)
+
 
 <p align="center">
   <strong>Table 1</strong><br>
