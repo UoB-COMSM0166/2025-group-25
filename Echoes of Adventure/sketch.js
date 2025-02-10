@@ -13,7 +13,6 @@ Echoes of Adventure
 // =========================
 // 全局变量
 // =========================
-
 let currentScene = "menu";    // "menu", "instructions", "levelSelect", "level", "gameover", "win", "credits"
 let currentLevelIndex = 0;
 let levels = [];             // 在 setupLevels() 中赋值
@@ -65,6 +64,7 @@ function setup() {
   setupLevels();        // 初始化关卡数据
   switchScene("menu");  // 默认进入主菜单
 }
+
 
 function draw() {
   // 1. 更新天气 & 粒子
