@@ -1,0 +1,104 @@
+// =========================
+// 道具类
+// =========================
+
+class Item {
+  constructor(x, y, type) {
+    this.position = createVector(x, y);
+    this.width = 30;
+    this.height = 30;
+    this.type = type;
+    this.collected = false;
+  }
+
+  update() {
+    // 可做一些漂浮动画等
+  }
+
+  draw() {
+    if (!this.collected) {
+      push();
+      translate(this.position.x, this.position.y);
+      textSize(12);
+      textAlign(CENTER, CENTER);
+
+      if (this.type === "Flame Element") {
+        fill(255, 100, 0);
+        rect(0, 0, this.width, this.height, 5);
+        fill(0);
+        text("FG", this.width / 2, this.height / 2);
+      } else if (this.type === "Freeze Element") {
+        fill(0, 150, 255);
+        rect(0, 0, this.width, this.height, 5);
+        fill(255);
+        text("FrG", this.width / 2, this.height / 2);
+      } else if (this.type === "Strengthen") {
+        fill(150);
+        rect(0, 0, this.width, this.height, 5);
+        fill(0);
+        text("GS", this.width / 2, this.height / 2);
+      } else if (this.type === "Invincibility") {
+        fill(255, 215, 0);
+        rect(0, 0, this.width, this.height, 5);
+        fill(0);
+        text("INV", this.width / 2, this.height / 2);
+      } else if (this.type === "Heart") {
+        fill(255, 0, 0);
+        ellipse(this.width / 2, this.height / 2, this.width, this.height);
+      } 
+     else if (this.type === "Double Jump") {
+        fill(0, 255, 0);
+        rect(0, 0, this.width, this.height, 5);
+        fill(0);
+        text("2J", this.width / 2, this.height / 2);
+      }else if (this.type === "Dash") { // ✅ 新增 Dash 道具
+        fill(0, 255, 255);
+        rect(0, 0, this.width, this.height, 5);
+        fill(0);
+        text("Dash", this.width / 2, this.height / 2);
+      }else if (this.type === "Teleport Scroll") {
+        fill(0, 150, 255); // 蓝色
+        rect(0, 0, this.width, this.height, 5);
+        fill(255);
+        text("TP", this.width / 2, this.height / 2);
+    }   else if (this.type === "Thunder Element") {
+        fill(255, 255, 0);
+        rect(0, 0, this.width, this.height, 5);
+        fill(0);
+        text("TH", this.width / 2, this.height / 2);
+    }
+     /*else if (this.type === "Mystery Box") {
+        fill(100, 0, 200);
+        rect(0, 0, this.width, this.height, 5);
+        fill(255);
+        text("Box", this.width / 2, this.height / 2);
+      } */
+      pop();
+    }
+  }
+
+  collect() {
+    this.collected = true;
+    // 如果是Mystery Box，会在Level类里额外逻辑处理
+    if (this.type === "Flame Element") {
+      player.currentItem = "Flame Element";
+    } else if (this.type === "Freeze Element") {
+      player.currentItem = "Freeze Element";
+    } else if (this.type === "Strengthen") {
+      player.currentItem = "Greatsword";
+    } else if (this.type === "Invincibility") {
+      player.invincibleTimer = 5; // 5秒无敌
+    } else if (this.type === "Heart") {
+      player.lives = min(player.lives + 1, 5); // 生命值+1，最多5个
+    } else if (this.type === "Dash") { // ✅ 启用冲刺
+      player.canDash = true;
+    }
+    
+      if (this.type === "Teleport Scroll") {
+        player.hasTeleport = true;
+        player.currentItem = "Teleport Scroll";
+        console.log("📜 玩家获得瞬移卷轴!");
+      }
+    
+  }
+}
