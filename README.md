@@ -54,15 +54,23 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 ### Ideation
 ### Paper Prototype
 <div align="center">
-  Figure
+  <b>Figure</b>
 </div>
-<p align="center">
-  <img src="your-image-url.png" alt="示例图片">
-</p>
+<div align="center">
+  Paper Prototype of Echoes of adventure
+</div>
+<table>
+  <tr>
+    <td><img src="docs/idea1-start.gif" width="200"></td>
+    <td><img src="docs/idea1.gif" width="200"></td>
+  </tr>
+</table>
+
+
 
 ### Digital Paper Prototype
 <div align="center">
-  Figure
+  <b>Figure</b>
 </div>
 <p align="center">
   <img src="" alt="">
@@ -70,7 +78,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ### Stakeholders
 <div align="center">
-  Figure
+  <b>Figure</b>
 </div>
 <p align="center">
   <img src="" alt="">
