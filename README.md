@@ -55,13 +55,14 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 <div align="center">
   <b>Figure 1</b>
 </div>
-<div style="text-align: center;">
-  <table>
-    <tr>
-      <td><img src="docs/idea2-start.gif" width="200"></td>
-      <td><img src="docs/idea2.gif" width="200"></td>
-    </tr>
-  </table>
+<div align="center">
+  <em>ideation game</em>
+</div>
+<div align="center">
+  <img src="docs/idea2-start.gif" width="300">
+</div>
+<div align="center">
+  <img src="docs/idea2.gif" width="300">
 </div>
 
 ### Paper Prototype
@@ -72,12 +73,11 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>Paper Prototype</em>
 </div>
 <div style="text-align: center;">
-  <table>
-    <tr>
-      <td><img src="docs/idea1-start.gif" width="200"></td>
-      <td><img src="docs/idea1.gif" width="200"></td>
-    </tr>
-  </table>
+<div align="center">
+  <img src="docs/idea1-start.gif" width="300">
+</div>
+<div align="center">
+  <img src="docs/idea1.gif" width="300">
 </div>
 
 ### Digital Paper Prototype
@@ -88,7 +88,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>Digital Paper Prototype</em>
 </div>
 <div align="center">
-  <img src="docs/digital.gif" width="300">
+  <img src="docs/Digital.gif" width="300">
 </div>
 
 ### Stakeholders
