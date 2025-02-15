@@ -52,36 +52,51 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 ## 3. Requirements
 
 ### Ideation
+<div align="center">
+  <b>Figure 1</b>
+</div>
+<div style="text-align: center;">
+  <table>
+    <tr>
+      <td><img src="docs/idea2-start.gif" width="200"></td>
+      <td><img src="docs/idea2.gif" width="200"></td>
+    </tr>
+  </table>
+</div>
+
 ### Paper Prototype
 <div align="center">
-  <b>Figure</b>
+  <b>Figure 2</b>
 </div>
 <div align="center">
-  Paper Prototype of Echoes of adventure
+  <em>Paper Prototype</em>
 </div>
-<table>
-  <tr>
-    <td><img src="docs/idea1-start.gif" width="200"></td>
-    <td><img src="docs/idea1.gif" width="200"></td>
-  </tr>
-</table>
-
-
+<div style="text-align: center;">
+  <table>
+    <tr>
+      <td><img src="docs/idea1-start.gif" width="200"></td>
+      <td><img src="docs/idea1.gif" width="200"></td>
+    </tr>
+  </table>
+</div>
 
 ### Digital Paper Prototype
 <div align="center">
-  <b>Figure</b>
+  <b>Figure 3</b>
 </div>
-<p align="center">
-  <img src="" alt="">
-</p>
+<div align="center">
+  <em>Digital Paper Prototype</em>
+</div>
+<div align="center">
+  <img src="docs/digital.gif" width="300">
+</div>
 
 ### Stakeholders
 <div align="center">
-  <b>Figure</b>
+  <b>Figure 4</b>
 </div>
 <p align="center">
-  <img src="" alt="">
+  <img src="" alt="示例图片">
 </p>
 
 ### User Stories and Use Case Diagram
@@ -101,7 +116,7 @@ Acceptance Criteria：We have added a gameplay instructions and item display int
   - As a game designer, I want to implement a dynamic weather system that allows the background of a level to change automatically based on game progress. This will enhance player immersion and create deeper interactions between the environment and gameplay.
 Acceptance Criteria：The game should feature dynamic weather conditions such as sunny, rainy, snowy, thunderstorms, and foggy, changing with level progression. Each weather type should impact the environment and gameplay, such as slippery surfaces in rain, ice formation in snow, lightning effects in storms, and reduced visibility in fog. Weather effects should include matching visuals and sounds to enhance immersion.
 <div align="center">
-  Figure
+  <b>Figure 5</b>
 </div>
 
 ## 3. Introduction
