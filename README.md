@@ -95,8 +95,11 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 <div align="center">
   <b>Figure 4</b>
 </div>
+<div align="center">
+  <em>Stakeholder</em>
+</div>
 <p align="center">
-  <img src="" alt="示例图片">
+  <img src="docs/stakeholder.png" alt="Stakeholder">
 </p>
 
 ### User Stories and Use Case Diagram
