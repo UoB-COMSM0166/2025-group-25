@@ -3,7 +3,8 @@
 // =========================
 
 class Level {
-  constructor(config, spiderSpritesheet) {
+  // constructor(config, spiderSpritesheet) {
+  constructor(config, platformImage){//ycl
     this.levelName = config.levelName;
     this.levelNumber = config.levelNumber;//cai
     this.element = config.element; // 元素属性，用于武器转换
@@ -13,6 +14,12 @@ class Level {
     this.portalPosition = config.portalPosition;
     this.totalCoins = config.coins.length;
     this.spiderSpritesheet = spiderSpritesheet; // 传入蜘蛛Spritesheet
+    this.platformImage = platformImage;  // ycl：存储平台图片
+
+    // 道具，新增
+    if (player) {
+      player.firstItemPickup = true;
+    }
 
     // 创建 Coin 实例
     this.coins = config.coins.map(pos => new Coin(pos.x, pos.y));
@@ -24,26 +31,77 @@ class Level {
     for (let enemyConfig of config.enemies) {
       if (enemyConfig.type === "Spider") {
         this.enemies.push(new Spider(enemyConfig.position.x, enemyConfig.position.y, this.spiderSpritesheet));
-      } else if (enemyConfig.type === "Bird") {
+      } //else if (enemyConfig.type === "Bird") {
+        else if (enemyConfig.type === "Bat") {  // ✅ 替换 `Bird` 为 `Bat`
         //this.enemies.push(new Bird(enemyConfig.position.x, enemyConfig.position.y));
-        this.enemies.push(new Bird(enemyConfig.position.x, enemyConfig.position.y, birdSpritesheet));
+        //this.enemies.push(new Bird(enemyConfig.position.x, enemyConfig.position.y, birdSpritesheet));
+        this.enemies.push(new Bat(enemyConfig.position.x, enemyConfig.position.y));
       } else if (enemyConfig.type === "Fish") {
         this.enemies.push(new Fish(enemyConfig.position.x, enemyConfig.position.y));
       }
     }
 
+    // 为每个水面区域创建 Water 实例kx~~~~
+    this.water = [];
+    if (config.waterRegions) {
+      for (let waterConfig of config.waterRegions) {
+        let waterType = config.levelName === "Lava Castle" ? "lava" : "water";
+        this.water.push(new Water(waterConfig.x, waterConfig.y, waterConfig.width, waterConfig.height, waterType));
+      }
+    }
 
-    // **地面**
-    this.ground = null;
+
+    // 创建多个地面实例kx~~~~~~~
+    // **确保 ground 是数组**
+    this.ground = [];
+
     if (config.ground) {
-      this.ground = new Ground(config.ground.x, config.ground.y, config.ground.w, config.ground.h);
+      if (Array.isArray(config.ground)) {
+        // 如果 ground 已经是数组，则映射创建 Ground 实例
+        this.ground = config.ground.map(g => new Ground(g.x, g.y, g.w, g.h));
+      } else {
+        // 如果 ground 只是单个对象，则转换为数组
+        this.ground.push(new Ground(config.ground.x, config.ground.y, config.ground.w, config.ground.h));
+      }
     }
 
     // 平台
+    //ycl
+    // this.platforms = [];
+    // if (config.platforms) {
+    //   for (let p of config.platforms) {
+    //     this.platforms.push(new Platform(p.x, p.y, p.w, p.h, this.platformImage));//ycl:加入第五个参数
+    //   }
+    // }
+    // this.platforms = [];
+    // if (config.platforms) {
+    //   for (let p of config.platforms) {
+    //     let imageType = p.type || '1'; // 如果没有指定type，默认使用'#'
+    //     this.platforms.push(new Platform(p.x, p.y, p.w, p.h, imageType));
+    //   }
+    // }
     this.platforms = [];
     if (config.platforms) {
       for (let p of config.platforms) {
-        this.platforms.push(new Platform(p.x, p.y, p.w, p.h));
+        if (p.type) {
+          // 如果定义了type，则使用它
+          let types = p.type.split('');
+          let segmentWidth = p.w / types.length;
+          for (let i = 0; i < types.length; i++) {
+            this.platforms.push(
+              new Platform(
+                p.x + i * segmentWidth,
+                p.y,
+                segmentWidth,
+                p.h,
+                types[i]
+              )
+            );
+          }
+        } else {
+          // 如果没有定义type，使用默认的'#'
+          this.platforms.push(new Platform(p.x, p.y, p.w, p.h, '#'));
+        }
       }
     }
 
@@ -97,8 +155,18 @@ class Level {
       this.advancedBirds = null;
     }
 
+    this.ghosts = [];
+    if (config.ghosts) {
+      for (let ghostConfig of config.ghosts) {
+        this.ghosts.push(new Ghost(ghostConfig.position, ghostConfig.range));
+      }
+    }
+
+
     // 传送门
     this.portal = new Portal(this.portalPosition.x, this.portalPosition.y);
+
+
   }
 
   update() {
@@ -166,6 +234,12 @@ class Level {
           player.takeDamage(1);
         }
       }
+    }
+
+    // 更新水面动画kx~~~~
+    for (let waterInstance of this.water) {
+      console.log(`Updating water at x: ${waterInstance.position.x}, y: ${waterInstance.position.y}`); // 打印水波的更新信息
+      waterInstance.update();
     }
 
     // 更新敌人
@@ -257,6 +331,22 @@ class Level {
       }
     }
 
+    for (let ghost of this.ghosts) {
+      ghost.update();
+      if (
+        player.position.x < ghost.position.x + 30 &&
+        player.position.x + player.width > ghost.position.x &&
+        player.position.y < ghost.position.y + 30 &&
+        player.position.y + player.height > ghost.position.y
+      ) {
+        if (!player.invincible) {
+          player.takeDamage(1);
+        }
+      }
+    }
+    
+    
+
     // 传送门
     if (this.portal) {
       this.portal.update();
@@ -264,12 +354,20 @@ class Level {
   }
 
   draw() {
-    // **绘制地面**
-    if (this.ground) this.ground.draw();
+    // 绘制地面kx~~~~~
+    for (let groundInstance of this.ground) {
+      groundInstance.draw(); 
+    }
 
     // 绘制平台
     for (let p of this.platforms) {
       p.draw();
+    }
+
+    // 绘制水面kx~~~~~~
+    for (let waterInstance of this.water) {
+      console.log(`Drawing water at x: ${waterInstance.position.x}, y: ${waterInstance.position.y}`); // 打印水波的绘制信息
+      waterInstance.draw();
     }
 
     // 绘制金币
@@ -291,6 +389,11 @@ class Level {
     for (let enemy of this.enemies) {
       enemy.draw();
     }
+
+    for (let ghost of this.ghosts) {
+      ghost.draw();
+    }
+    
 
     // 绘制斧子(axes)
     if (this.axes) {
@@ -325,6 +428,8 @@ class Level {
     if (this.advancedBirds) {
       this.advancedBirds.draw();
     }
+
+    
 
     // 如果全部金币收集完毕，则显示传送门
     if (this.allCoinsCollected()) {

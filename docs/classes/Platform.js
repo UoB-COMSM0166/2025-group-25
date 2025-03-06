@@ -3,24 +3,43 @@
 // =========================
 
 class Platform {
-  constructor(x, y, w, h) {
+  // ycl:constructor(x, y, w, h, image) {
+  //   this.position = createVector(x, y);
+  //   this.width = w;
+  //   this.height = h;
+  //   this.image = image;
+  // }
+  constructor(x, y, w, h, imageType = '#') {
     this.position = createVector(x, y);
     this.width = w;
     this.height = h;
+    this.imageType = imageType;
   }
+
 /*
   draw() {
     fill(120, 80, 40);
     rect(this.position.x, this.position.y, this.width, this.height, 5);
   }*/
+
+    //ycl，修改平台的绘制方法，使用传入的图片对象进行绘制
+    // draw() {
+    //   if (this.image) {
+    //     image(this.image, this.position.x, this.position.y, this.width, this.height);
+    //   } else {
+    //     fill(120, 80, 40);
+    //     rect(this.position.x, this.position.y, this.width, this.height, 5);
+    //   }
+    // }
     draw() {
-      if (platformImage) {
-        image(platformImage, this.position.x, this.position.y, this.width, this.height);
+      if (platformImage[this.imageType]) {
+        image(platformImage[this.imageType], this.position.x, this.position.y, this.width, this.height);
       } else {
         fill(120, 80, 40);
         rect(this.position.x, this.position.y, this.width, this.height, 5);
       }
     }
+
 
     // draw() {
     //   if (platformImage) {

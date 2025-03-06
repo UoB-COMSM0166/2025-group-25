@@ -363,3 +363,78 @@ class AdvancedBird {
   }
 
 }
+
+class Ghost {
+  constructor(position, range) {
+    this.position = position.copy();
+    this.range = range;
+    this.speed = 2; 
+    this.direction = 1; // 1 = 右, -1 = 左
+    this.timer = 0;
+    
+    // 动画参数
+    this.state = "appear"; // 初始状态
+    this.frameIndex = 0;
+    this.frameDelay = 8;
+    this.frameCounter = 0;
+    this.frameWidth = 44; // 每帧的宽度
+    this.frameHeight = 30; // 每帧的高度
+  }
+
+  update() {
+
+    // 计时器控制来回移动，每 2 秒换方向
+    this.timer += deltaTime / 1000;
+    if (this.timer > 2) { // 每 2 秒反转方向
+      this.timer = 0;
+      this.direction *= -1;
+    }
+    // 移动逻辑
+    this.position.x += this.speed * this.direction;
+
+    // 触碰范围边界时反向
+    //if (this.position.x > this.range + this.position.x || this.position.x < this.position.x - this.range) {
+      //this.direction *= -1;
+    //}
+
+    // 切换状态（每 2 秒切换一次）
+    if (frameCount % 120 === 0) {
+      this.state = this.state === "appear" ? "disappear" : "appear";
+    }
+
+    // 更新动画帧
+    this.frameCounter++;
+    if (this.frameCounter >= this.frameDelay) {
+      this.frameIndex = (this.frameIndex + 1) % 4; // 4 帧循环
+      this.frameCounter = 0;
+    }
+  }
+
+  draw() {
+    push();
+    translate(this.position.x, this.position.y);
+
+    let frames = this.state === "appear" ? ghostAppearFrames : ghostDisappearFrames;
+    let img = frames[this.frameIndex];
+
+    let sx = this.frameIndex * this.frameWidth; // 获取当前帧的起始 x 坐标
+
+    if (this.direction === 1) {
+      // **向右移动，翻转**
+      push();
+      scale(-1, 1); // 水平翻转
+      image(img, -this.frameWidth / 2, -this.frameHeight / 2, 
+            this.frameWidth, this.frameHeight, sx, 0, this.frameWidth, this.frameHeight);
+      pop();
+    } else {
+      // **向左移动，不翻转**
+      push();
+      image(img, -this.frameWidth / 2, -this.frameHeight / 2, 
+            this.frameWidth, this.frameHeight, sx, 0, this.frameWidth, this.frameHeight);
+      pop();
+    }
+
+    pop();
+  }
+}
+
