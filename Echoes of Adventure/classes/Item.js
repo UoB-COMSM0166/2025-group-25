@@ -92,6 +92,13 @@ class Item {
 
   collect() {
     this.collected = true;
+    
+    if (player.firstItemPickup) {       // 新增
+      player.itemPickupMessage = "Press Z to use item";
+      player.messageTimer = 120; // 显示提示 2 秒
+      player.firstItemPickup = false; // 之后不再显示提示
+    }
+
     // 如果是Mystery Box，会在Level类里额外逻辑处理
     if (this.type === "Flame Element") {
       player.currentItem = "Flame Element";
@@ -112,6 +119,7 @@ class Item {
         player.currentItem = "Teleport Scroll";
         console.log("📜 玩家获得瞬移卷轴!");
       }
+    
     
   }
 }

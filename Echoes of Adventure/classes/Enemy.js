@@ -32,7 +32,9 @@ class Spider extends Enemy {
     this.width = 120;
     this.height = 80;
 
+    
     this.frames = [];
+
     this.frameIndex = 0;
     this.frameDelay = 6;
     this.frameCounter = 0;
@@ -90,6 +92,7 @@ class Spider extends Enemy {
 
     let currentFrame = this.frames[this.frameIndex];
 
+    //冰冻上色
     if (this.frozen) {
       tint(0, 200, 255);
     }
@@ -112,7 +115,7 @@ class Spider extends Enemy {
 // Bird
 // =========================
 
-class Bird extends Enemy {
+/*class Bird extends Enemy {
   constructor(x, y, spritesheet) {
     super(x, y);
     this.spritesheet = spritesheet;
@@ -120,8 +123,9 @@ class Bird extends Enemy {
     this.amplitude = 20; // **上下移动的振幅**
     this.offset = random(0, TWO_PI); // **随机偏移**
     
-    this.width = 48;  // **单帧宽度**
     this.height = 48; // **单帧高度**
+    this.width = 48;
+
 
     this.frames = [];  // **存储所有帧**
     this.frameIndex = 0;
@@ -179,7 +183,9 @@ class Bird extends Enemy {
     translate(this.position.x, this.position.y);
 
     let currentFrame = this.frames[this.frameIndex];
-
+    if (this.frozen) {
+      tint(0, 200, 255);
+    }
     // **修正朝向**
     if (this.direction === 1) {
       scale(-1, 1); // **向右飞时，翻转**
@@ -191,8 +197,68 @@ class Bird extends Enemy {
 
     pop();
   }
-}
+}*/
 
+
+//Rui
+class Bat extends Enemy {
+  constructor(x, y) {
+    super(x, y);
+    this.speed = 3;
+    this.amplitude = 20;
+    this.offset = random(0, TWO_PI);
+    
+    this.width = 63;  
+    this.height = 93;
+
+    this.frames = batFrames; 
+    this.frameIndex = 0;
+    this.frameDelay = 6;
+    this.frameCounter = 0;
+    
+    this.direction = 1; 
+  }
+
+  update() {
+    if (!this.frozen) {
+      this.position.x += this.speed * this.direction;
+      this.position.y += sin(frameCount * 0.1 + this.offset) * 2;
+
+      if (this.position.x > width) {
+        this.position.x = -this.width;
+      }
+
+      this.frameCounter++;
+      if (this.frameCounter >= this.frameDelay) {
+        this.frameIndex = (this.frameIndex + 1) % this.frames.length;
+        this.frameCounter = 0;
+      }
+    }
+  }
+
+  draw() {
+    if (this.frames.length === 0) return;
+
+    push();
+    translate(this.position.x, this.position.y);
+
+    let currentFrame = this.frames[this.frameIndex];
+    //冰冻上色
+    if (this.frozen) {
+      tint(0, 200, 255);
+    }
+
+    if (this.direction === 1) {
+      scale(1, 1); // **向右飞时，翻转**
+      image(currentFrame, 0, 0, this.width, this.height);
+    } else {
+      scale(-1, 1); // **向左飞时，不翻转**
+      image(currentFrame, -this.width, 0, this.width, this.height);
+    }
+
+    pop();
+  }
+}
 
 
 // =========================
