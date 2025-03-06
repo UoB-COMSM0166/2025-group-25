@@ -3,7 +3,7 @@
 
 ## Your Game
 
-Link to your game [PLAY HERE](https://peteinfo.github.io/COMSM0166-project-template/)
+Link to your game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
 
 Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
 
@@ -52,28 +52,54 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 ## 3. Requirements
 
 ### Ideation
+<div align="center">
+  <b>Figure 1</b>
+</div>
+<div align="center">
+  <em>ideation game</em>
+</div>
+<div align="center">
+  <img src="docs/idea2-start.gif" width="300">
+</div>
+<div align="center">
+  <img src="docs/idea2.gif" width="300">
+</div>
+
 ### Paper Prototype
 <div align="center">
-  Figure
+  <b>Figure 2</b>
 </div>
-<p align="center">
-  <img src="your-image-url.png" alt="示例图片">
-</p>
+<div align="center">
+  <em>Paper Prototype</em>
+</div>
+<div style="text-align: center;">
+<div align="center">
+  <img src="docs/idea1-start.gif" width="300">
+</div>
+<div align="center">
+  <img src="docs/idea1.gif" width="300">
+</div>
 
 ### Digital Paper Prototype
 <div align="center">
-  Figure
+  <b>Figure 3</b>
 </div>
-<p align="center">
-  <img src="" alt="">
-</p>
+<div align="center">
+  <em>Digital Paper Prototype</em>
+</div>
+<div align="center">
+  <img src="docs/Digital.gif" width="300">
+</div>
 
 ### Stakeholders
 <div align="center">
-  Figure
+  <b>Figure 4</b>
+</div>
+<div align="center">
+  <em>Stakeholder</em>
 </div>
 <p align="center">
-  <img src="" alt="">
+  <img src="docs/stakeholder.png" alt="Stakeholder">
 </p>
 
 ### User Stories and Use Case Diagram
@@ -84,9 +110,17 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | Player | Accessibility & Customization | As a player, I want the option to turn off the background music freely so that I can focus on the gameplay without distractions. |
 | Player | Core Gameplay Mechanics | As a player, I want to be able to use multiple attack types (melee and ranged) to adapt to different enemy types and enhance combat strategy. |
 | New Player | Accessibility & Customization | As a new player, I want the game to provide a comprehensive tutorial and guidance so that I can quickly understand the rules and controls, improving my first-time experience and overall accessibility. |
+| Game Developer | Social & Multiplayer Features | As a game developer, I want to implement interactive features such as online leaderboards and multiplayer co-op mode to enhance player engagement and gameplay experience. |
+| Game Designer | Game World & Immersion | As a game designer, I want to implement a dynamic weather system that allows the background of a level to change automatically based on game progress. This will enhance player immersion and create deeper interactions between the environment and gameplay. |
 
+#### **Acceptance Criteria：**
+As a new player, I want the game to provide a comprehensive tutorial and guidance so that I can quickly understand the rules and controls, improving my first-time experience and overall accessibility.  
+Acceptance Criteria：We have added a gameplay instructions and item display interface before the game starts to ensure that players understand the basic rules and controls before entering a level. During gameplay, players can access the tutorial and item descriptions at any time via the settings button to review key information.
+
+As a game designer, I want to implement a dynamic weather system that allows the background of a level to change automatically based on game progress. This will enhance player immersion and create deeper interactions between the environment and gameplay.
+Acceptance Criteria：The game should feature dynamic weather conditions such as sunny, rainy, snowy, thunderstorms, and foggy, changing with level progression. Each weather type should impact the environment and gameplay, such as slippery surfaces in rain, ice formation in snow, lightning effects in storms, and reduced visibility in fog. Weather effects should include matching visuals and sounds to enhance immersion.
 <div align="center">
-  Figure
+  <b>Figure 5</b>
 </div>
 
 ## 3. Introduction

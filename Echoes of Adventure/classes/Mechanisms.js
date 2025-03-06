@@ -103,6 +103,7 @@ class Obstacle {
     );
 
     if (this.type === "Gear") {
+      
       rotate(this.angle);
       fill(150);
       rect(-10, -10, 20, 20);
@@ -111,29 +112,25 @@ class Obstacle {
       rect(12, -4, 8, 8);
       rect(-4, -20, 8, 8);
       rect(-4, 12, 8, 8);
+      
     } else if (this.type === "Blade") {
       rotate(this.angle);
       fill(100);
       rect(-this.width / 2, -this.height / 2, this.width, this.height, 2);
-    } else if (this.type === "Flame") {
+    } else if (this.type === "Flame") {//火焰
       fill(255, 100, 0);
       rect(-this.width / 2, -this.height / 2, this.width, this.height, 2);
       stroke(255, 150, 0);
       for (let i = -this.width / 2; i < this.width / 2; i += 5) {
         line(i, -this.height / 2, i + 2.5, -this.height / 2 - 5);
       }
-    } else if (this.type === "Spiked Wall") {
-      fill(80);
-      rect(-this.width / 2, -this.height / 2, this.width, this.height);
-      fill(200, 0, 0);
-      for (let i = -this.width / 2; i < this.width / 2; i += 10) {
-        triangle(i, -this.height / 2, i + 5, -this.height / 2 - 10, i + 10, -this.height / 2);
-      }
+    } else if (this.type === "Spiked Wall") {//尖刺
+      imageMode(CENTER);
+      image(spikedWallImg, 0, 0, this.width, this.height); 
     }
     pop();
   }
 }
-
 // Axes
 class Axes {
   constructor(positions, swingTimes) {
@@ -164,6 +161,8 @@ class Axe {
     this.swingTime = swingTime;
     this.angle = 0;
     this.swingDirection = 1;
+    this.width = 48;
+    this.height = 64;
   }
 
   update() {
@@ -172,7 +171,7 @@ class Axe {
       this.swingDirection *= -1;
     }
   }
-
+  /*
   draw() {
     push();
     translate(this.position.x, this.position.y);
@@ -180,7 +179,18 @@ class Axe {
     fill(150);
     rect(-8, -24, 16, 48);
     pop();
-  }
+  }*/
+    draw() {
+      push();
+      translate(this.position.x, this.position.y);
+      rotate(this.angle); // **让斧头摆动**
+      
+      // **绘制图片**
+      imageMode(CENTER);
+      image(axeSprite, 0, 0, this.width, this.height);
+  
+      pop();
+    }
 }
 
 // Saws
@@ -252,7 +262,7 @@ class AdvancedBirds {
     }
   }
 }
-
+/*
 class AdvancedBird {
   constructor(position, range, type) {
     this.position = position.copy();
@@ -290,4 +300,66 @@ class AdvancedBird {
     triangle(5, 0, 15, -5, 5, -10);
     pop();
   }
+}*/
+class AdvancedBird {
+  constructor(position, range, type) {
+    this.position = position.copy();
+    this.range = range;
+    this.type = type;
+    this.state = "fly-left";
+    this.timer = 0;
+    this.speed = 3;
+    this.direction = 1;
+    
+    // **动画相关**
+    this.frameIndex = 0;
+    this.frameDelay = 8; // 每6帧切换一次
+    this.frameCounter = 0;
+    this.frameWidth = 48; // 设定每帧的宽度
+    this.frameHeight = 48; // 设定每帧的高度
+  }
+
+  update() {
+    this.timer += deltaTime / 1000;
+    if (this.timer > 2) {
+      this.timer = 0;
+      this.direction *= -1;
+      this.state = this.state === "fly-left" ? "fly-right" : "fly-left";
+    }
+    this.position.x += this.speed * this.direction;
+
+    // **动画帧更新**
+    this.frameCounter++;
+    if (this.frameCounter >= this.frameDelay) {
+      this.frameIndex = (this.frameIndex + 1) % 3; // 3帧循环
+      this.frameCounter = 0;
+    }
+  }
+
+  draw() {
+    push();
+    translate(this.position.x, this.position.y);
+    
+    // **方向翻转**
+    let sx = this.frameIndex * this.frameWidth;
+    
+    if (this.direction === 1) {
+      // **朝右飞 (翻转)**
+      push();
+      scale(-1, 1); // **向右飞时，翻转**
+      image(advancedBirdSpritesheet, -this.frameWidth / 2, -this.frameHeight / 2, 
+            this.frameWidth, this.frameHeight, sx, 0, this.frameWidth, this.frameHeight);
+      pop();
+    } else {
+      // **朝左飞 (不翻转)**
+      push();
+      scale(1, 1); // 只翻转图片，不翻转坐标系统
+      image(advancedBirdSpritesheet, -this.frameWidth / 2, -this.frameHeight / 2, 
+            -this.frameWidth, this.frameHeight,sx, 0, this.frameWidth, this.frameHeight);
+      pop();
+    }
+
+    pop();
+  }
+
 }
