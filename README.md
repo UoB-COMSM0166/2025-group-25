@@ -3,7 +3,7 @@
 
 ## Your Game
 
-Link to your game [PLAY HERE](https://peteinfo.github.io/COMSM0166-project-template/)
+Link to your game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
 
 Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
 
@@ -13,6 +13,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 - [1. Development Team](#1-development-team)
 - [2. Game Research](#2-game-research)
+- [3. Requirements](#3-requirements)
 
 ## 1. Development Team
 
@@ -48,7 +49,79 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | **The Legend of Zelda: Link's Awakening** | Action-Adventure Platformer    | This game is a unique chapter in the Zelda series where the protagonist, Link, finds himself on a mysterious island after a shipwreck during a storm. Combining exploration, puzzle-solving, collection, and combat, each area is filled with puzzles, secret paths, and formidable enemies.                                                    | **Diverse Environments**: <br>Players traverse a variety of environments such as beaches, forests, mountains, swamps, and underground caves, each with its unique visual style and mechanical challenges. <br><br>**Item System**: <br>Items are crucial for exploration. For example, acquiring a feather allows Link to jump over obstacles; obtaining heavy boots enables him to walk through deep sand and swamps. <br><br>**Intelligent Enemies and Boss Fights**: <br>In addition to regular enemies, each area features ingeniously designed boss battles. Each boss has unique weaknesses that players need to discover and exploit to prevail. <br><br>**Puzzle Elements**: <br>From simple lever-pulling to complex environmental puzzles, the game's puzzle design requires players to observe, think, and utilize their surroundings and items to solve challenges. | 1. Environmental Interaction and Platform Elements: <br>&nbsp;&nbsp;Each game environment is not just a backdrop but interactive, encouraging Mario-like games to also emphasize the multifunctionality and interactivity of environments. <br><br>2. Rich Layered Exploration: <br>&nbsp;&nbsp;Zelda games emphasize in-depth exploration, which can inspire Mario-like games to design more intricate, cleverly designed levels that encourage players to explore every corner. <br><br>3. Enemy and Combat Mechanics: <br>&nbsp;&nbsp;With a wide variety of enemies, each possessing different attack modes and weaknesses, this design can provide inspiration to make enemies in Mario-like games more diverse and challenging. <br><br>4. Integration of Puzzles and Items: <br>&nbsp;&nbsp;By integrating puzzles and specific items to solve problems, the game creates an engaging experience that requires players to think and physically interact, enhancing the interactivity and engagement of platform games. |
 
 
+## 3. Requirements
 
+### Ideation
+<div align="center">
+  <b>Figure 1</b>
+</div>
+<div align="center">
+  <em>ideation game</em>
+</div>
+<div align="center">
+  <img src="docs/idea2-start.gif" width="300">
+</div>
+<div align="center">
+  <img src="docs/idea2.gif" width="300">
+</div>
+
+### Paper Prototype
+<div align="center">
+  <b>Figure 2</b>
+</div>
+<div align="center">
+  <em>Paper Prototype</em>
+</div>
+<div style="text-align: center;">
+<div align="center">
+  <img src="docs/idea1-start.gif" width="300">
+</div>
+<div align="center">
+  <img src="docs/idea1.gif" width="300">
+</div>
+
+### Digital Paper Prototype
+<div align="center">
+  <b>Figure 3</b>
+</div>
+<div align="center">
+  <em>Digital Paper Prototype</em>
+</div>
+<div align="center">
+  <img src="docs/Digital.gif" width="300">
+</div>
+
+### Stakeholders
+<div align="center">
+  <b>Figure 4</b>
+</div>
+<div align="center">
+  <em>Stakeholder</em>
+</div>
+<p align="center">
+  <img src="docs/stakeholder.png" alt="Stakeholder">
+</p>
+
+### User Stories and Use Case Diagram
+| User | Epic | User Stories |
+|------|------|-------------|
+| Player | Core Gameplay Mechanics | As a player, I want the game to feature random events (mystery boxes) and hidden levels to enhance unpredictability and replayability. |
+| Player | Core Gameplay Mechanics | As a player, I want to hear sound effects for jumping, attacking, and collecting items to make the game feel more immersive. I also hope the background music changes dynamically with different levels. |
+| Player | Accessibility & Customization | As a player, I want the option to turn off the background music freely so that I can focus on the gameplay without distractions. |
+| Player | Core Gameplay Mechanics | As a player, I want to be able to use multiple attack types (melee and ranged) to adapt to different enemy types and enhance combat strategy. |
+| New Player | Accessibility & Customization | As a new player, I want the game to provide a comprehensive tutorial and guidance so that I can quickly understand the rules and controls, improving my first-time experience and overall accessibility. |
+| Game Developer | Social & Multiplayer Features | As a game developer, I want to implement interactive features such as online leaderboards and multiplayer co-op mode to enhance player engagement and gameplay experience. |
+| Game Designer | Game World & Immersion | As a game designer, I want to implement a dynamic weather system that allows the background of a level to change automatically based on game progress. This will enhance player immersion and create deeper interactions between the environment and gameplay. |
+
+#### **Acceptance Criteria：**
+As a new player, I want the game to provide a comprehensive tutorial and guidance so that I can quickly understand the rules and controls, improving my first-time experience and overall accessibility.  
+Acceptance Criteria：We have added a gameplay instructions and item display interface before the game starts to ensure that players understand the basic rules and controls before entering a level. During gameplay, players can access the tutorial and item descriptions at any time via the settings button to review key information.
+
+As a game designer, I want to implement a dynamic weather system that allows the background of a level to change automatically based on game progress. This will enhance player immersion and create deeper interactions between the environment and gameplay.
+Acceptance Criteria：The game should feature dynamic weather conditions such as sunny, rainy, snowy, thunderstorms, and foggy, changing with level progression. Each weather type should impact the environment and gameplay, such as slippery surfaces in rain, ice formation in snow, lightning effects in storms, and reduced visibility in fog. Weather effects should include matching visuals and sounds to enhance immersion.
+<div align="center">
+  <b>Figure 5</b>
+</div>
 
 ## 3. Introduction
 
