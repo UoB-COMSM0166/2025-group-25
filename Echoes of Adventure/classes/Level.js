@@ -1,33 +1,42 @@
 // =========================
-// Level 类
+// Level 类 (优化版本)
 // =========================
 
 class Level {
-  constructor(config) {
+  constructor(config, spiderSpritesheet) {
     this.levelName = config.levelName;
+    this.levelNumber = config.levelNumber;//cai
     this.element = config.element; // 元素属性，用于武器转换
     this.playerStart = config.playerStart;
     this.coinPositions = config.coins;
     this.enemyConfigs = config.enemies;
     this.portalPosition = config.portalPosition;
     this.totalCoins = config.coins.length;
+    this.spiderSpritesheet = spiderSpritesheet; // 传入蜘蛛Spritesheet
 
     // 创建 Coin 实例
-    this.coins = [];
-    for (let pos of this.coinPositions) {
-      this.coins.push(new Coin(pos.x, pos.y));
-    }
+    this.coins = config.coins.map(pos => new Coin(pos.x, pos.y));
 
-    // 创建敌人
+    // 清空旧的敌人，确保不会叠加
     this.enemies = [];
-    for (let enemyConfig of this.enemyConfigs) {
+
+    // **初始化敌人**
+    for (let enemyConfig of config.enemies) {
       if (enemyConfig.type === "Spider") {
-        this.enemies.push(new Spider(enemyConfig.position.x, enemyConfig.position.y));
+        this.enemies.push(new Spider(enemyConfig.position.x, enemyConfig.position.y, this.spiderSpritesheet));
       } else if (enemyConfig.type === "Bird") {
-        this.enemies.push(new Bird(enemyConfig.position.x, enemyConfig.position.y));
+        //this.enemies.push(new Bird(enemyConfig.position.x, enemyConfig.position.y));
+        this.enemies.push(new Bird(enemyConfig.position.x, enemyConfig.position.y, birdSpritesheet));
       } else if (enemyConfig.type === "Fish") {
         this.enemies.push(new Fish(enemyConfig.position.x, enemyConfig.position.y));
       }
+    }
+
+
+    // **地面**
+    this.ground = null;
+    if (config.ground) {
+      this.ground = new Ground(config.ground.x, config.ground.y, config.ground.w, config.ground.h);
     }
 
     // 平台
@@ -64,8 +73,17 @@ class Level {
     } else {
       this.axes = null;
     }
-    if (config.saws) {
+    
+    /*if (config.saws) {
       this.saws = new Saws(config.saws.positions, config.saws.ranges);
+    }*/
+   if (config.saws) {//锯子
+      this.saws = config.saws ? config.saws.positions.map((pos, index) => ({
+        position: pos,
+        width: config.saws.ranges[index], // 假设 ranges 定义了每个锯子的宽度
+        height: config.saws.ranges[index]  // 假设锯子的宽高相等
+      })) : [];
+      
     } else {
       this.saws = null;
     }
@@ -99,35 +117,46 @@ class Level {
       item.update();
       if (!item.collected && player.collidesWith(item)) {
         item.collect();
+    
         if (item.type === "Double Jump") {
           player.hasDoubleJump = true;
           player.currentItem = "Double Jump";
+        } else if (item.type === "Dash") {  // ✅ 处理 Dash 道具
+          player.hasDash = true;  // 让 Dash 可用
+          player.currentItem = "Dash";
+          console.log("Dash Unlocked!"); // ✅ 调试输出，看看是否生效
+        } else if (item.type === "Teleport Scroll") {
+          //player.currentItem = "Teleport Scroll";  // **存储瞬移道具**
+          player.hasTeleport = true;
+          player.currentItem = "Teleport Scroll";
+          console.log("✅ 玩家获得瞬移卷轴！");
         } else if (item.type === "Heart") {
           player.lives += 1;
           player.currentItem = null;
         } else if (item.type === "Mystery Box") {
-          // 随机生成道具
           let possibleItems = [
-            "Flame Gun",
-            "Freeze Gun",
-            "Greatsword",
+            "Flame Element",
+            "Freeze Element",
+            "Strengthen",
             "Timed Bomb",
             "Invincibility",
-            "Double Jump"
+            "Double Jump",
+            "Dash" // ✅ 确保 Mystery Box 也能开出 Dash
           ];
           let randomItem = random(possibleItems);
           player.currentItem = randomItem;
           console.log("Mystery Box revealed: " + randomItem);
         } else {
-          // 其它道具
           player.currentItem = item.type;
           if (item.type === "Invincibility") {
             player.invincibleTimer = 5;
           }
         }
+    
         this.items.splice(i, 1);
       }
     }
+    
 
     // 更新障碍物 (如激光、尖刺等)
     for (let obs of this.obstacles) {
@@ -171,7 +200,7 @@ class Level {
         }
       }
     }
-
+/*
     // Saws
     if (this.saws) {
       this.saws.update();
@@ -194,7 +223,17 @@ class Level {
         }
       }
     }
-
+*/
+    // Saws
+    if (this.saws) {
+      for (let saw of this.saws) { // 遍历数组
+        if (collides(player.position.x, player.position.y, player.width, player.height, saw.position.x - 20, saw.position.y - 20, 40, 40)) {
+          if (!player.invincible) {
+            player.takeDamage(1);
+          }
+        }
+      }
+    }
     // AdvancedBirds
     if (this.advancedBirds) {
       this.advancedBirds.update();
@@ -225,6 +264,9 @@ class Level {
   }
 
   draw() {
+    // **绘制地面**
+    if (this.ground) this.ground.draw();
+
     // 绘制平台
     for (let p of this.platforms) {
       p.draw();
@@ -256,9 +298,28 @@ class Level {
     }
 
     // 绘制锯子(saws)
+    /*
     if (this.saws) {
       this.saws.draw();
+    }*/
+   // 绘制锯子 (Saws)
+   if (this.saws && sawsImg) {
+    for (let saw of this.saws) {
+      push();
+      
+      // 将锯子移动到它的位置
+      translate(saw.position.x, saw.position.y);
+      
+      // 旋转锯子 (根据 frameCount 来旋转，speed 控制旋转速度)
+      let angle = frameCount * 0.05;  // 旋转速度可以调整
+      rotate(angle);  // 根据 angle 进行旋转
+  
+      // 使用锯子图片，锯子的宽度和高度
+      image(sawsImg, -saw.width / 2, -saw.height / 2, saw.width, saw.height);
+      
+      pop();
     }
+  }
 
     // 绘制高级鸟群(advancedBirds)
     if (this.advancedBirds) {
