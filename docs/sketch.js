@@ -13,6 +13,7 @@ Echoes of Adventure
 // =========================
 // 全局变量
 // =========================
+
 let currentScene = "menu";    // "menu", "instructions", "levelSelect", "level", "gameover", "win", "credits"
 let currentLevelIndex = 0;
 let levels = [];             // 在 setupLevels() 中赋值
@@ -22,6 +23,13 @@ let projectiles = [];        // 投射物数组
 let gameTimer = 0;           // 关卡计时
 let levelTimes = [];         // 记录每关耗时
 let cameraX = 0;             // 摄像机偏移
+let spiderSpritesheet;
+let birdSpritesheet;
+let advancedBirdSpritesheet;
+let heartImg;
+let spikedWallImg;
+let sawsImg;
+let portalImage;
 
 // 受伤闪屏
 let damageFlashAlpha = 0;
@@ -38,7 +46,7 @@ let weatherState = "clear";  // "clear", "rain", "thunderstorm"
 let weatherTimer = 0;
 let rainParticles = [];      // 存储雨滴粒子
 let thunderFlash = false;
-
+let groundImage;
 // 全局粒子（爆炸等）
 let globalParticles = [];
 
@@ -48,6 +56,8 @@ let starPositions = [];
 // 自定义字体
 let myFont;
 
+let settings; // 新增：Settings 实例
+
 // =========================
 // p5.js 核心
 // =========================
@@ -56,20 +66,39 @@ function preload() {
   // 如果需要自定义字体，可在此处加载
   //textFont("Press Start 2P");
   myFont = loadFont('Round9x13.ttf');
+  coinImage = loadImage("assets/Coin.png"); 
+  platformImage = loadImage("assets/Grass_Tileset.png");
+  groundImage = loadImage("assets/Grass_Tileset.png");
+  spiderSpritesheet = loadImage("assets/Spider_1.png"); 
+  birdSpritesheet = loadImage("assets/Bird_1.png");
+  advancedBirdSpritesheet = loadImage("assets/Bird_2.png");
+  axeSprite = loadImage("assets/Axe_Trap.png");
+  heartImg = loadImage("assets/heart.png");
+  spikedWallImg = loadImage('assets/spikedwall.png');
+  sawsImg = loadImage("assets/saws.png");
+  
 }
 
 function setup() {
   createCanvas(1280, 720);
   textFont(myFont);
-  setupLevels();        // 初始化关卡数据
-  switchScene("menu");  // 默认进入主菜单
-}
 
+  settings = new Settings();  // ✅ 初始化设置界面
+  setupLevels(settings);      // ✅ 传入 settings 实例
+
+  switchScene("menu");
+}
 
 function draw() {
   // 1. 更新天气 & 粒子
   updateWeather();
   updateParticles();
+
+  // 如果设置界面打开，直接绘制设置界面
+  if (settings.isOpen) {
+    settings.draw();
+    return;
+  }
 
   // 2. 根据场景绘制
   if (currentScene === "menu") {
@@ -165,25 +194,35 @@ function draw() {
             break;
           }
         }
-      } else if (proj instanceof BombProjectile) {
+      } else if (proj instanceof ThunderProjectile) {
+        /*
         if (proj.exploded) {
           let explosionRadius = proj.explosionRadius;
           for (let j = level.enemies.length - 1; j >= 0; j--) {
             let enemy = level.enemies[j];
-            let d = dist(
-              proj.position.x,
-              proj.position.y,
-              enemy.position.x + enemy.width / 2,
-              enemy.position.y + enemy.height / 2
-            );
+            let d = dist(proj.position.x, proj.position.y, enemy.position.x, enemy.position.y);
+
             if (d < explosionRadius) {
               spawnExplosion(proj.position.x, proj.position.y);
               level.enemies.splice(j, 1);
             }
           }
           projectiles.splice(i, 1);
-        }
-      }
+        }*/
+          if (proj.exploded) {
+            let explosionRadius = proj.explosionRadius;
+            for (let j = level.enemies.length - 1; j >= 0; j--) {
+              let enemy = level.enemies[j];
+              let d = dist(proj.position.x, proj.position.y, enemy.position.x, enemy.position.y);
+        
+              if (d < explosionRadius) {
+                spawnExplosion(proj.position.x, proj.position.y);
+                level.enemies.splice(j, 1);
+              }
+            }
+            projectiles.splice(i, 1);
+          }
+    }
     }
 
     pop();
@@ -235,6 +274,8 @@ function draw() {
 
   // 5. 最后绘制全局粒子（如爆炸等）
   drawParticles();
+
+  settings.drawGlobalSettingsButton(); // ✅ 所有界面右上角添加“SET”按钮
 }
 
 // =========================
@@ -261,16 +302,63 @@ function switchScene(sceneName) {
 
   if (sceneName === "level") {
     let config = levels[currentLevelIndex];
-    level = new Level(config);
+
+    // **清空旧关卡敌人**
+    if (level) {
+      level.enemies = [];
+    }
+
+    // **创建新关卡，确保 `spiderSpritesheet` 传入**
+    level = new Level(config, spiderSpritesheet);
     player = new Player(config.playerStart);
+
+    // **调试信息**
+    //console.log(` 进入关卡 "${config.levelName}"`);
+    //console.log(" 生成的敌人:", level.enemies);
   }
 }
+
+
 
 // =========================
 // 键盘事件
 // =========================
 
 function keyPressed() {
+  
+  if (settings.isOpen) {
+    switch (key) {
+      case "R": case "r":
+        switchScene("level"); // 重新开始本关卡
+        settings.toggle();
+        break;
+      case "M": case "m":
+        switchScene("menu"); // 返回主菜单
+        settings.toggle();
+        break;
+      case "I": case "i":
+        switchScene("instructions"); // 查看游戏说明
+        settings.toggle();
+        break;
+      case "S": case "s":
+        settings.toggleSound(); // 切换声音
+        break;
+      // 🆕 新增全屏切换
+      case "F": case "f":
+        settings.toggleFullscreen();
+        break;
+      case "P": case "p":
+        settings.toggle(); // 关闭设置界面
+        break;
+    }
+    return;
+  }
+
+  // 游戏内按 P 打开设置
+  if (key === "P" || key === "p") {
+    settings.toggle();
+  }
+  
   if (currentScene === "menu") {
     if (key === "1") {
       mode = "invincible";
@@ -328,4 +416,9 @@ function keyPressed() {
       switchScene("menu");
     }
   }
+}
+
+// 🖱️ 鼠标点击：全局检测 SET 按钮和设置界面按钮
+function mousePressed() {
+  settings.handleMouseClick(mouseX, mouseY);
 }
