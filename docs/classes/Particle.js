@@ -57,3 +57,18 @@ function spawnExplosion(x, y) {
     );
   }
 }
+
+function spawnThunderParticles(x, y) {
+  for (let i = 0; i < 60; i++) { // **粒子数量**
+    let angle = random(TWO_PI);
+    let speed = random(2, 8); // **速度范围**
+    let vx = cos(angle) * speed;
+    let vy = sin(angle) * speed;
+
+    let thunderColor = color(random(180, 255), random(180, 255), 255); // **蓝白色**
+    
+    globalParticles.push(
+      new Particle(x, y, createVector(vx, vy), thunderColor, random(30, 50))
+    );
+  }
+}
