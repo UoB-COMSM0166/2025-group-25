@@ -14,7 +14,10 @@ Echoes of Adventure
 // 全局变量
 // =========================
 
-let currentScene = "menu";    // "menu", "instructions", "levelSelect", "level", "gameover", "win", "credits"
+
+let storyScene; // 新增：StoryScene 实例
+let currentScene = "story"; // ✅ 让游戏默认进入背景故事界面
+// let currentScene = "menu";    // "menu", "instructions", "levelSelect", "level", "gameover", "win", "credits"
 let currentLevelIndex = 0;
 let levels = [];             // 在 setupLevels() 中赋值
 let player;                  // Player 实例
@@ -25,11 +28,15 @@ let levelTimes = [];         // 记录每关耗时
 let cameraX = 0;             // 摄像机偏移
 let spiderSpritesheet;
 let birdSpritesheet;
+let batFrames = [];
 let advancedBirdSpritesheet;
+let ghostAppearFrames = [];
+let ghostDisappearFrames = [];
 let heartImg;
 let spikedWallImg;
 let sawsImg;
-let portalImage;
+// let portalImage;
+let platformImage = {};//ycl
 
 // 受伤闪屏
 let damageFlashAlpha = 0;
@@ -67,7 +74,34 @@ function preload() {
   //textFont("Press Start 2P");
   myFont = loadFont('Round9x13.ttf');
   coinImage = loadImage("assets/Coin.png"); 
-  platformImage = loadImage("assets/Grass_Tileset.png");
+
+  //platformImage = loadImage("assets/Grass_Tileset.png");
+  //ycl-加载添加不同关卡的图片
+  // platformImage = {
+  //   1: loadImage("assets/Grass_Tileset.png"),
+  //   2: loadImage("assets/Platform.png"),
+  //   3: loadImage("assets/Platform2.png"),
+  //   4: loadImage("assets/Circular_Saw.png"),
+  //   5: loadImage("assets/tile_0000.png"),
+  // };
+  platformImage = {
+    '#': loadImage("assets/Grass_Oneway.png"),
+    'a': loadImage("assets/a.png"),
+    'b': loadImage("assets/b.png"),
+    'c': loadImage("assets/c.png"),
+    'd': loadImage("assets/d.png"),
+    'e': loadImage("assets/e.png"),
+    'h': loadImage("assets/h.png"),
+    'i': loadImage("assets/i.png"),
+    'j': loadImage("assets/j.png"),
+    'k': loadImage("assets/k.png"),
+    'l': loadImage("assets/l.png"),
+    'm': loadImage("assets/m.png"),
+    'o': loadImage("assets/o.png"),
+    'u': loadImage("assets/u.png"),
+    'v': loadImage("assets/v.png"),
+  };
+
   groundImage = loadImage("assets/Grass_Tileset.png");
   spiderSpritesheet = loadImage("assets/Spider_1.png"); 
   birdSpritesheet = loadImage("assets/Bird_1.png");
@@ -77,22 +111,46 @@ function preload() {
   spikedWallImg = loadImage('assets/spikedwall.png');
   sawsImg = loadImage("assets/saws.png");
   
+  //Rui
+  // 加载鬼魂的 "Appear" 帧动画
+  for (let i = 0; i < 4; i++) {
+    ghostAppearFrames[i] = loadImage(`assets/appear_frame_${i + 1}.png`);
+  }
+
+  // 加载鬼魂的 "Disappear" 帧动画
+  for (let i = 0; i < 4; i++) {
+    ghostDisappearFrames[i] = loadImage(`assets/disappear_frame_${i + 1}.png`);
+  }
+
+  batFrames[0] = loadImage("assets/bat-fly1.png");
+  batFrames[1] = loadImage("assets/bat-fly2.png");
+  batFrames[2] = loadImage("assets/bat-fly3.png");
+
+  //ZSA 新增：加载关卡背景
+  levelOneBg = loadImage("assets/levelone.png");
+  levelTwoBg = loadImage("assets/levetwo.png");
+  levelThreeBg = loadImage("assets/levelthree.png");
+  levelFourBg = loadImage("assets/levelfour.png");
+  levelFiveBg = loadImage("assets/levefive.png");
+  
 }
 
 function setup() {
   createCanvas(1280, 720);
+  storyScene = new StoryScene(); // ✅ 初始化背景故事界面
   textFont(myFont);
 
   settings = new Settings();  // ✅ 初始化设置界面
   setupLevels(settings);      // ✅ 传入 settings 实例
 
-  switchScene("menu");
+  switchScene("story"); //这个地方一定是story，不是meun，因为我们要先看故事！！！很关键
 }
 
 function draw() {
   // 1. 更新天气 & 粒子
   updateWeather();
   updateParticles();
+  background(0);
 
   // 如果设置界面打开，直接绘制设置界面
   if (settings.isOpen) {
@@ -100,8 +158,12 @@ function draw() {
     return;
   }
 
-  // 2. 根据场景绘制
-  if (currentScene === "menu") {
+  // 2. 根据场景绘制  //修改
+  if (currentScene === "story") {
+    storyScene.update();
+    storyScene.draw();
+  
+  } else if (currentScene === "menu") {
     drawMenu();
 
   } else if (currentScene === "instructions") {
@@ -175,21 +237,17 @@ function draw() {
           }
         }
       } else if (proj instanceof FreezeProjectile) {
+       //Rui
         for (let j = level.enemies.length - 1; j >= 0; j--) {
           let enemy = level.enemies[j];
           if (
             collides(
-              proj.position.x,
-              proj.position.y,
-              20,
-              10,
-              enemy.position.x,
-              enemy.position.y,
-              enemy.width,
-              enemy.height
+              proj.position.x, proj.position.y, 20, 10,
+              enemy.position.x, enemy.position.y, enemy.width, enemy.height
             )
           ) {
             enemy.frozen = true;
+            enemy.isSolidWhenFrozen = true;  // 敌人冻结后变硬
             projectiles.splice(i, 1);
             break;
           }
@@ -291,6 +349,7 @@ function updateGameTimer() {
 // =========================
 
 function switchScene(sceneName) {
+  console.log(`🔄 切换场景: ${sceneName}`); // ✅ Debug log
   currentScene = sceneName;
   gameTimer = 0;
   projectiles = [];
@@ -315,9 +374,12 @@ function switchScene(sceneName) {
     // **调试信息**
     //console.log(` 进入关卡 "${config.levelName}"`);
     //console.log(" 生成的敌人:", level.enemies);
+
+    if (!level.levelName) {
+        console.error("Level name is undefined! Check level config.");
+    }
   }
 }
-
 
 
 // =========================
@@ -421,4 +483,8 @@ function keyPressed() {
 // 🖱️ 鼠标点击：全局检测 SET 按钮和设置界面按钮
 function mousePressed() {
   settings.handleMouseClick(mouseX, mouseY);
+
+  if (currentScene === "story") {
+    storyScene.mousePressed(); // 🎮 允许鼠标点击跳过故事
+  }
 }

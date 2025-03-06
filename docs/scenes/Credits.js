@@ -41,7 +41,7 @@ function drawHUD() {
   text("Lives: " + player.lives, 20, 80);
   text("Coins: " + player.coins + " / " + level.totalCoins, 20, 110);
   text("Item: " + (player.currentItem ? player.currentItem : "None"), 20, 140);
-  // text("Weather: " + weatherState, 20, 170);
+  text("Weather: " + weatherState, 20, 170);
   // text("TimeOfDay: " + nf(timeOfDay, 1, 1) + "h", 20, 200);
   // text("Mode: " + mode, 20, 230);
 }

@@ -8,8 +8,8 @@ class Player {
     this.velocity = createVector(0, 0);
     this.width = 60;
     this.height = 60;
-    this.baseSpeed = 5;   
-    this.speed = 5;
+    this.baseSpeed = 3;//Rui
+    this.speed = 3;//Rui
     this.jumpForce = 12;//cailing
     this.lives = 3;
     this.coins = 0;
@@ -39,6 +39,11 @@ class Player {
     this.frameDelay = 6;
     this.frameCounter = 0;
     this.loadAnimationFrames();
+
+    // **物品相关**
+    this.itemPickupMessage = "";  // 存储提示信息
+    this.messageTimer = 0;        // 计时器，控制提示显示时间
+    this.firstItemPickup = true;  // 记录是否是当前关卡第一次拾取道具
   }
 
   /** 🔄 统一加载动画帧 */
@@ -89,6 +94,14 @@ class Player {
       this.jumps = 0;
       this.isJumpKeyReleased = true;
     }
+  }
+
+  //掉进water后回到本关起始位置kx~~~~
+
+  respawn() {
+    //console.log("玩家重生到关卡起始位置！");
+    this.position = level.playerStart.copy(); // 传送回关卡的初始位置
+    this.velocity.set(0, 0); // 重置速度，防止继续下落
   }
 
   /** 🎮 处理跳跃 (在 `keyPressed()` 里调用) */
@@ -193,12 +206,24 @@ class Player {
       this.attackCooldown = 10;
       this.state = "idle";
     }, 400);
-  
+  /*
     let attackX = this.facingDirection === "right"
       ? this.position.x + this.width
       : this.position.x - 20;
     let attackY = this.position.y + this.height / 2;
-  
+    //let attackY = this.position.y + this.height;
+  */
+    let attackX = this.facingDirection === "right"
+    ? this.position.x + this.width
+    : this.position.x - 20;
+    let attackY = this.position.y + this.height;
+    
+    //Rui
+    let attackRadius = 150; 
+
+    let playerCenterX = this.position.x + this.width;
+    let playerCenterY = this.position.y + this.height;
+
     // **远程攻击逻辑**
     if (this.currentItem === "Flame Element") {
       let fireProj = new FlameProjectile(attackX, attackY, this.facingDirection);
@@ -211,6 +236,7 @@ class Player {
       projectiles.push(thunderProj);
     } else {
       // **默认近战攻击**
+      /*
       let attackRange = 35;
       for (let i = level.enemies.length - 1; i >= 0; i--) {
         let enemy = level.enemies[i];
@@ -222,7 +248,21 @@ class Player {
           level.enemies.splice(i, 1);
           console.log("Hit enemy!");
         }
+      }*/
+     //(Rui)
+     for (let i = level.enemies.length - 1; i >= 0; i--) {
+      let enemy = level.enemies[i];
+      let enemyCenterX = enemy.position.x + enemy.width;
+      let enemyCenterY = enemy.position.y + enemy.height;
+  
+      // 计算玩家与敌人的距离
+      let distance = dist(playerCenterX, playerCenterY, enemyCenterX, enemyCenterY);
+  
+      // 如果距离小于攻击半径，则命中敌人
+      if (distance < attackRadius) {
+        level.enemies.splice(i, 1);
       }
+    }
     }
   }
 
@@ -260,37 +300,160 @@ class Player {
   handleCollisions() {
     if (!level) return;
     let { ground, platforms, enemies } = level;
-
+  
     for (let plat of platforms) {
-      if (this.velocity.y >= 0 && collides(this.position.x, this.position.y, this.width, this.height,
-                                           plat.position.x, plat.position.y, plat.width, plat.height)) {
-        if (this.position.y + this.height - this.velocity.y <= plat.position.y + 5) {
-          this.position.y = plat.position.y - this.height;
-          this.velocity.y = 0;
-          this.jumps = 0;
-          this.isJumpKeyReleased = true;
+        if (collides(this.position.x, this.position.y, this.width, this.height,
+                     plat.position.x, plat.position.y, plat.width, plat.height)) {
+  
+            let playerBottom = this.position.y + this.height;
+            let playerTop = this.position.y;
+            let playerLeft = this.position.x;
+            let playerRight = this.position.x + this.width;
+  
+            let platformBottom = plat.position.y + plat.height;
+            let platformTop = plat.position.y;
+            let platformLeft = plat.position.x;
+            let platformRight = plat.position.x + plat.width;
+  
+            let overlapX = Math.min(playerRight - platformLeft, platformRight - playerLeft);
+            let overlapY = Math.min(playerBottom - platformTop, platformBottom - playerTop);
+  
+            if (overlapX < overlapY) {
+                // **左侧碰撞**
+                if (playerRight > platformLeft && playerLeft < platformLeft) {
+                    this.position.x = platformLeft - this.width;
+                    this.velocity.x = 0;
+                }
+                // **右侧碰撞**
+                else if (playerLeft < platformRight && playerRight > platformRight) {
+                    this.position.x = platformRight;
+                    this.velocity.x = 0;
+                }
+            } else {
+                // **顶部碰撞（站在平台上）**
+                if (playerBottom > platformTop && playerTop < platformTop) {
+                    this.position.y = platformTop - this.height;
+                    this.velocity.y = 0;
+                    this.jumps = 0;
+                    this.isJumpKeyReleased = true;
+                    this.isOnGround = true;
+                }
+                // **底部碰撞（撞到平台下方，防止人物穿过去）**
+                else if (playerTop < platformBottom && playerBottom > platformBottom) {
+                    this.position.y = platformBottom;
+                    this.velocity.y = Math.max(this.velocity.y, 0); // 避免人物上移
+                }
+            }
+        }
+    }
+
+    // 检查与水面的碰撞kx~~~~~
+    if (level.water) {
+      for (let waterInstance of level.water) {
+        if (collides(this.position.x, this.position.y, this.width, this.height,
+                    waterInstance.position.x, waterInstance.position.y, waterInstance.width, waterInstance.height)) {
+          //console.log("玩家掉入水中！");
+          this.takeDamage(1); // 玩家损失一条命
+          this.respawn(); // 复活到初始位置
         }
       }
     }
-
+  
+    // 检查地面碰撞kx~~~~~~~~(改了ground为数组)
     // **处理地面碰撞**
-    if (ground) {
-      if (this.velocity.y >= 0 && collides(this.position.x, this.position.y, this.width, this.height,
-                                          ground.position.x, ground.position.y, ground.width, ground.height)) {
-          if (this.position.y + this.height - this.velocity.y <= ground.position.y + 5) {
-              this.position.y = ground.position.y - this.height;
-              this.velocity.y = 0;
-              this.jumps = 0;
-              this.isJumpKeyReleased = true;
-              this.isOnGround = true;
+    if (Array.isArray(ground)) {
+      for (let groundInstance of ground) {
+          if (groundInstance && groundInstance.position) {
+              if (collides(this.position.x, this.position.y, this.width, this.height,
+                          groundInstance.position.x, groundInstance.position.y, 
+                          groundInstance.width, groundInstance.height)) {
+
+                  let playerBottom = this.position.y + this.height;
+                  let playerTop = this.position.y;
+                  let playerLeft = this.position.x;
+                  let playerRight = this.position.x + this.width;
+
+                  let groundBottom = groundInstance.position.y + groundInstance.height;
+                  let groundTop = groundInstance.position.y;
+                  let groundLeft = groundInstance.position.x;
+                  let groundRight = groundInstance.position.x + groundInstance.width;
+
+                  let overlapX = Math.min(playerRight - groundLeft, groundRight - playerLeft);
+                  let overlapY = Math.min(playerBottom - groundTop, groundBottom - playerTop);
+
+                  if (overlapX < overlapY) {
+                      // **左侧碰撞**
+                      if (playerRight > groundLeft && playerLeft < groundLeft) {
+                          this.position.x = groundLeft - this.width;
+                          this.velocity.x = 0;
+                      }
+                      // **右侧碰撞**
+                      else if (playerLeft < groundRight && playerRight > groundRight) {
+                          this.position.x = groundRight;
+                          this.velocity.x = 0;
+                      }
+                  } else {
+                      // **顶部碰撞（站在地面上）**
+                      if (playerBottom > groundTop && playerTop < groundTop) {
+                          this.position.y = groundTop - this.height;
+                          this.velocity.y = 0;
+                          this.jumps = 0;
+                          this.isJumpKeyReleased = true;
+                          this.isOnGround = true;
+                      }
+                      // **底部碰撞（防止人物穿透地面）**
+                      else if (playerTop < groundBottom && playerBottom > groundBottom) {
+                          this.position.y = groundBottom;
+                          this.velocity.y = Math.max(this.velocity.y, 0); // 避免人物上移
+                      }
+                  }
+              }
           }
       }
     }
 
-
+  
+    // **处理敌人碰撞**
+    //(只能站在头上：)(Rui)
     for (let enemy of enemies) {
-      if (!this.invincible && collides(this.position.x, this.position.y, this.width, this.height,
-                                       enemy.position.x, enemy.position.y, enemy.width, enemy.height)) {
+      if (enemy.frozen && enemy.isSolidWhenFrozen) {
+        if (
+          this.velocity.y >= 0 &&
+          collides(this.position.x, this.position.y, this.width, this.height,
+                   enemy.position.x+ enemy.width * 0.2,  // ✅ 让碰撞范围更靠近中心 
+                   //enemy.position.y,
+                   enemy.position.y + enemy.height * 0.4,  // ✅ Y 轴：只让 `enemy` 顶部 20% 可踩
+                   enemy.width * 0.3,  // ✅ 只让中间30%的区域可站立
+                   //enemy.height
+                   enemy.height * 0.2   // ✅ 只让 `enemy` 顶部的 20% 高度范围可站立
+                  )
+        ) {
+          //let standingHeight = enemy.position.y + enemy.height + 12; // 适当降低站立位置
+          let standingHeight = enemy.position.y + enemy.height; // ✅ 调整可站立的高度范围
+
+          if (!this.isOnFrozenEnemy) {  // ✅ 避免短时间内重复进入站立状态
+            this.isOnFrozenEnemy = true;  // ✅ 标记站立状态
+            setTimeout(() => { this.isOnFrozenEnemy = false; }, 50);  // ✅ 50ms 后允许重新判断
+          }
+
+          if (this.position.y + this.height - this.velocity.y <= standingHeight +2) {//允许一点缓冲
+            //this.position.y = enemy.position.y - this.height;
+            //this.position.y = enemy.position.y - this.height + 52;
+            this.position.y = enemy.position.y - this.height + 50;
+            //this.position.y = standingHeight;- this.height + 1;  // 站立更稳定
+            //this.velocity.y = 0;
+            if (this.velocity.y > 0) {  // ✅ 只有下落时才清零，避免上浮导致抖动
+              this.velocity.y = 0;
+            }
+            this.jumps = 0;
+            this.isJumpKeyReleased = true;
+          }
+        }else {
+          this.isOnFrozenEnemy = false;  // ✅ 确保在 `Player` 离开 `enemy` 头部时，允许再次检测
+        }
+        
+      } else if (!this.invincible && collides(this.position.x, this.position.y, this.width, this.height,
+                                              enemy.position.x, enemy.position.y, enemy.width, enemy.height)) {
         this.takeDamage(1);
       }
     }
@@ -366,6 +529,15 @@ class Player {
         this.invincible = true;
     }
 
+
+    // **显示道具提示信息** 新增
+    if (this.messageTimer > 0) { 
+      this.messageTimer--;
+    } else {
+        this.itemPickupMessage = "";
+    }
+  
+
     // --------------------------------
     // 2) 根据天气决定移动方式
     // --------------------------------
@@ -393,7 +565,7 @@ class Player {
     } else {
       // 非雪天，先判断是否为雨天 / 雷暴，再给固定移动
       if (weatherState === "rain" || weatherState === "thunderstorm") {
-        this.speed = 3;  // 下雨 / 雷暴时速度变慢
+        this.speed = 2;  // 下雨 / 雷暴时速度变慢
       } else {
         // 晴天 / 大雾 / 其它 => 恢复正常速度
         this.speed = this.baseSpeed;
@@ -454,6 +626,17 @@ class Player {
 
   draw() {
     push();
+
+    // 道具，新增
+    if (this.messageTimer > 0) {
+      push();
+      fill(255, 255, 255);
+      textSize(14);
+      textAlign(CENTER, CENTER);
+      text(this.itemPickupMessage, this.position.x + this.width / 2, this.position.y - 20);
+      pop();
+    }
+  
     translate(this.position.x + this.width / 2, this.position.y + this.height / 2);
 
     // **如果面朝左，翻转图像**
