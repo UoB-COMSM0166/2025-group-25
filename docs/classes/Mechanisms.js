@@ -161,8 +161,8 @@ class Axe {
     this.swingTime = swingTime;
     this.angle = 0;
     this.swingDirection = 1;
-    this.width = 48;
-    this.height = 64;
+    this.width = 96;
+    this.height = 128;
   }
 
   update() {

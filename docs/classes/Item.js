@@ -98,6 +98,14 @@ class Item {
       player.messageTimer = 120; // 显示提示 2 秒
       player.firstItemPickup = false; // 之后不再显示提示
     }
+     // ✅ **播放拾取音效**
+    if (pickItemSound) {
+      console.log("🎵 拾取道具，播放音效！");
+      pickItemSound.play();
+    } else {
+      console.error("❌ `pickItemSound` 未定义，无法播放拾取音效！");
+    }
+
 
     // 如果是Mystery Box，会在Level类里额外逻辑处理
     if (this.type === "Flame Element") {

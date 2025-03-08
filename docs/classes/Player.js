@@ -94,6 +94,19 @@ class Player {
       this.jumps = 0;
       this.isJumpKeyReleased = true;
     }
+    // ✅ **播放或停止行进音效**zkx~~~~~~~~~~~
+    if (horiz !== 0) { // **玩家正在移动**
+      if (runSound && !runSound.isPlaying()) {
+        console.log("🎵 播放行进音效...");
+        runSound.setVolume(0.5);
+        runSound.loop();
+      }
+    } else { // **玩家停止移动**
+      if (runSound && runSound.isPlaying()) {
+        console.log("⏹️ 停止行进音效...");
+        runSound.stop();
+      }
+    }
   }
 
   //掉进water后回到本关起始位置kx~~~~
@@ -110,6 +123,12 @@ class Player {
       this.velocity.y = -this.jumpForce;
       this.jumps++;
       this.isJumpKeyReleased = true; // **允许重复跳跃**
+
+      // ✅ 播放跳跃音效
+      if (jumpSound) {
+        jumpSound.play();
+        console.log("🦘 播放跳跃音效！");
+      }
     }
   }
 
@@ -206,6 +225,12 @@ class Player {
       this.attackCooldown = 10;
       this.state = "idle";
     }, 400);
+
+    // ✅ 播放攻击音效
+    if (attackSound) {
+      attackSound.play();
+      console.log("🔫 播放攻击音效！Biu~");
+    }
   /*
     let attackX = this.facingDirection === "right"
       ? this.position.x + this.width
@@ -499,6 +524,12 @@ class Player {
     damageFlashAlpha = 150;
     console.log(`Player took damage! Lives left: ${this.lives}`);
 
+    // ✅ **播放受伤音效**zkx~~~~~~~~~
+    if (aaaSound) {
+      aaaSound.play();
+      //console.log("🎵 播放‘Oh No’音效！");
+    }
+
     if (this.lives <= 0) {
       this.die();
     }
@@ -512,6 +543,12 @@ class Player {
     } else {
       console.error("No resetGame() function found!");
     }
+    // ✅ 播放 Game Over 音效zkx~~~~~~~~~
+    if (gameOverSound) {
+      gameOverSound.play();
+      //console.log("🎵 播放‘Game Over’音效！");
+    }
+
   }
 
   update() {

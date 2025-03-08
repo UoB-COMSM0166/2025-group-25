@@ -5,6 +5,9 @@
 // [新增] 可选的5种天气状态
 // "clear", "rain", "snow", "thunderstorm", "fog"
 
+let previousWeather = "clear"; // 记录上一次的天气状态，默认为"clear"
+
+
 let fogParticles = []; // 雾气粒子
 let fogLayer;         // 只创建一次的雾图层
 
@@ -15,6 +18,8 @@ let groundLevel;
 let fogNoiseOffset = 0;
 
 function updateWeather() {
+  // ✅ **存储当前天气为 previousWeather**
+  previousWeather = weatherState;//zkx~~~~~~~~~
   // 1. 昼夜循环
   timeOfDay += 0.01;
   if (timeOfDay >= 24) {
@@ -41,6 +46,50 @@ function updateWeather() {
     snowParticles = [];
     fogParticles = [];
     weatherTimer = 0;
+  }
+  // ✅ **如果当前场景不是 "level"，直接停止天气音效**zkx~~~~~~~
+  if (currentScene !== "level") {
+    if (rainSound && rainSound.isPlaying()) {
+      console.log("⏹️ 退出关卡，停止雨天背景音乐...");
+      rainSound.stop();
+    }
+    if (snowSound && snowSound.isPlaying()) {
+      console.log("⏹️ 退出关卡，停止下雪音效...");
+      snowSound.stop();
+    }
+    return; // ❗ 退出函数，避免继续执行天气更新逻辑
+  }
+
+  // ✅ **下雪时播放音效**zkx~~~~~~~
+  if (weatherState === "snow") {
+    if (snowSound && !snowSound.isPlaying()) {
+      console.log("❄️ 开始播放下雪音效...");
+      snowSound.setVolume(0.4); // 设置适当音量
+      snowSound.loop(); // 让雪声循环播放
+    }
+  } 
+  // ✅ **如果天气变了，且不再是雪天，停止音效**zkx~~~~~~~~
+  else if (previousWeather === "snow") {
+    if (snowSound && snowSound.isPlaying()) {
+      console.log("⏹️ 停止下雪音效...");
+      snowSound.stop();
+    }
+  }
+
+  // ✅ **当天气变为雨天时，播放背景音乐**zkx~~~~~~
+  if (weatherState === "rain" || weatherState === "thunderstorm") {
+    if (rainSound && !rainSound.isPlaying()) {
+      console.log("🌧️ 开始播放雨天背景音乐...");
+      rainSound.setVolume(0.5); // 设置适当音量
+      rainSound.loop(); // 让雨声循环播放
+    }
+  } 
+  // ✅ **如果天气变化，且不再是雨天，停止音乐**zkx~~~~~~~~~~~
+  else if (previousWeather === "rain" || previousWeather === "thunderstorm") {
+    if (rainSound && rainSound.isPlaying()) {
+      console.log("⏹️ 停止雨天背景音乐...");
+      rainSound.stop();
+    }
   }
 
   // 3. 根据当前天气，生成对应粒子

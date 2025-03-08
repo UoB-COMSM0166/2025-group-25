@@ -1,3 +1,6 @@
+// **加载音效**zkx~~~~~~~~~~
+
+
 class Coin {
   constructor(x, y) {
     this.position = createVector(x, y);
@@ -34,6 +37,24 @@ class Coin {
   }
 
   collect() {
-    this.collected = true;
+    if (!this.collected) {
+      this.collected = true;
+      
+      console.log("💰 金币被拾取！");
+      console.log("🎵 尝试播放音效...");
+  
+      if (coinSound) {
+        console.log("🔊 coinSound 对象存在");
+        if (!coinSound.isPlaying()) {
+          coinSound.play();
+          console.log("▶️ 音效已播放！");//zkx~~~~~
+        } else {
+          console.warn("⚠️ 音效已经在播放！");
+        }
+      } else {
+        console.error("❌ coinSound 未定义，无法播放！");
+      }
+    }
   }
+  
 }

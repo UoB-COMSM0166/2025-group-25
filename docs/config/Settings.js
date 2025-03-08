@@ -24,12 +24,17 @@ class Settings {
     // 🎛️ 切换设置界面
     toggle() {
       this.isOpen = !this.isOpen;
-      if (this.isOpen) {
-        noLoop(); // 暂停游戏
+      console.log(`🔧 设置界面 ${this.isOpen ? "打开" : "关闭"}`);
+    
+      // ✅ 确保播放点击音效
+      if (clickSound) {
+        console.log("🎵 按 P 关闭设置界面，播放点击音效");
+        clickSound.play();
       } else {
-        loop(); // 恢复游戏
+        console.error("❌ clickSound 未定义，无法播放点击音效！");
       }
     }
+    
   
     // 🎛️ 绘制右上角 SET 按钮
     drawGlobalSettingsButton() {
@@ -82,6 +87,12 @@ class Settings {
   
     // 🔍 鼠标点击事件：检测是否点击了按钮
     handleMouseClick(mx, my) {
+      // 播放点击音效zkx~~~~~~~~~~~~~
+      if (clickSound) {
+        clickSound.play();
+        console.log("🔧 点击设置按钮音效！");
+      }
+
       // 检测右上角 SET 按钮
       if (
         mx > this.buttonX &&
