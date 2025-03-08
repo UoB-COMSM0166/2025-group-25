@@ -26,6 +26,13 @@ class StoryScene {
       this.lineSpacing = 40;
   
       this.loadBackground(); // ✅ 加载背景图片
+
+      // ✅ **播放背景音乐**zkx~~~~~~~~
+      if (storyMusic) {
+        console.log("🎵 播放背景故事音乐...");
+        storyMusic.setVolume(0.6); // 设置音量
+        storyMusic.loop(); // 让音乐循环播放
+      }
     }
   
     loadBackground() {
@@ -38,6 +45,11 @@ class StoryScene {
     update() {
       if (millis() - this.startTime > this.storyDuration) {
         console.log("⏳ 背景故事播放完毕，切换到主菜单...");
+        // ✅ **确保音乐在切换场景时停止**zkx~~~~~~~~~~~~~
+      if (storyMusic && storyMusic.isPlaying()) {
+        console.log("⏹️ 背景故事结束，停止背景音乐...");
+        storyMusic.stop();
+      }
         switchScene("menu"); // ✅ 5秒后进入菜单
       }
     }
@@ -49,6 +61,12 @@ class StoryScene {
         tint(255, 180); // ✅ 70% 透明度
         image(this.backgroundImg, 0, 0, width, height);
         noTint(); // ✅ 取消透明度影响
+
+        if(storyMusic && !storyMusic.isPlaying()){ //zkx~~~~~~~~~~
+          console.log("🎵 背景图片已加载，播放背景故事音乐...");
+          storyMusic.setVolume(0.6);
+          storyMusic.loop();
+        }
       } else {
         fill(50);
         rect(0, 0, width, height); // ⚠️ 图片加载失败时用灰色背景代替
@@ -90,7 +108,17 @@ class StoryScene {
   
     mousePressed() {
       console.log("🎮 背景故事被跳过");
-      switchScene("menu"); // ✅ 鼠标点击跳过背景故事
+      // ✅ 播放点击音效
+      if (clickSound) clickSound.play();
+    
+      // ✅ **停止背景音乐**zkx~~~~~~~~~~
+      if (storyMusic && storyMusic.isPlaying()) {
+        console.log("⏹️ 停止背景故事音乐...");
+        storyMusic.stop();
+      }
+    
+      switchScene("menu"); 
     }
+    
   }
   

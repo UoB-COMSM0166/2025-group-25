@@ -29,6 +29,9 @@ class Level {
 
     // **初始化敌人**
     for (let enemyConfig of config.enemies) {
+      if (enemyConfig.type === "Frog") {
+        this.enemies.push(new Frog(enemyConfig.position.x, enemyConfig.position.y, frogIdle, frogJump, frogFall));
+      }      
       if (enemyConfig.type === "Spider") {
         this.enemies.push(new Spider(enemyConfig.position.x, enemyConfig.position.y, this.spiderSpritesheet));
       } //else if (enemyConfig.type === "Bird") {
@@ -170,6 +173,17 @@ class Level {
   }
 
   update() {
+    if (millis() - this.startTime > this.storyDuration) {
+      console.log("⏳ 背景故事播放完毕，切换到主菜单...");
+      
+      // ✅ **停止音乐**
+      if (storyMusic && storyMusic.isPlaying()) {
+        console.log("⏹️ 停止背景故事音乐...");
+        storyMusic.stop();
+      }
+  
+      switchScene("menu"); 
+    }
     // 更新并检测金币收集
     for (let coin of this.coins) {
       coin.update();
@@ -238,7 +252,7 @@ class Level {
 
     // 更新水面动画kx~~~~
     for (let waterInstance of this.water) {
-      console.log(`Updating water at x: ${waterInstance.position.x}, y: ${waterInstance.position.y}`); // 打印水波的更新信息
+      //console.log(`Updating water at x: ${waterInstance.position.x}, y: ${waterInstance.position.y}`); // 打印水波的更新信息
       waterInstance.update();
     }
 
@@ -274,6 +288,9 @@ class Level {
         }
       }
     }
+    console.log("🛠️ 碰撞检测: ", player.collidesWith(this.portal));
+
+  
 /*
     // Saws
     if (this.saws) {
@@ -366,7 +383,7 @@ class Level {
 
     // 绘制水面kx~~~~~~
     for (let waterInstance of this.water) {
-      console.log(`Drawing water at x: ${waterInstance.position.x}, y: ${waterInstance.position.y}`); // 打印水波的绘制信息
+      //console.log(`Drawing water at x: ${waterInstance.position.x}, y: ${waterInstance.position.y}`); // 打印水波的绘制信息
       waterInstance.draw();
     }
 

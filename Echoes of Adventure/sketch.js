@@ -35,8 +35,23 @@ let ghostDisappearFrames = [];
 let heartImg;
 let spikedWallImg;
 let sawsImg;
+let frogIdle, frogJump, frogFall;
 // let portalImage;
 let platformImage = {};//ycl
+
+let heart3, heart2, heart1; // 存储不同生命状态的图标zkx~~~~~
+//添加音效zkx
+let coinSound;//zkx~~~~~~~
+let storyMusic; //zkx~~~~~~
+let rainSound; 
+let jumpSound; 
+let gameOverSound; // 存储 Game Over 音效
+let attackSound;
+let clickSound;
+let pickItemSound; // 存储拾取道具音效
+let runSound; // 存储行进音效
+let levelWinSound;
+let winSound; // 存储胜利音效
 
 // 受伤闪屏
 let damageFlashAlpha = 0;
@@ -75,6 +90,33 @@ function preload() {
   myFont = loadFont('Round9x13.ttf');
   coinImage = loadImage("assets/Coin.png"); 
 
+
+  
+  frogIdle = loadImage("assets/frog-idle-1.png");
+  frogJump = loadImage("assets/frog-jump-1.png");
+  frogFall = loadImage("assets/frog-fall.png");
+  
+  
+  
+  coinSound = loadSound("sound/coins.mp3");//zkx~~~~~~~
+  storyMusic = loadSound("sound/storyscene.mp3");//背景介绍
+  clickSound = loadSound("sound/click.mp3");//鼠标点击
+  rainSound = loadSound("sound/rain.mp3");//雨天
+  snowSound = loadSound("sound/snow.wav");//雪天
+  jumpSound = loadSound("sound/jump.wav");//跳
+  attackSound = loadSound("sound/biu.mp3");//攻击敌人
+  pickItemSound = loadSound("sound/pickitem.mp3")//拾取item
+  aaaSound = loadSound("sound/aaa.mp3");//live-1
+  gameOverSound = loadSound("sound/gameover.mp3");//gameover
+  levelWinSound = loadSound("sound/level-win.mp3", 
+    () => console.log("✅ 关卡胜利音效加载成功！"),
+    () => console.error("❌ level-win.mp3 加载失败，请检查路径！")
+  );
+  winSound = loadSound("sound/win.mp3");
+  runSound = loadSound("sound/run.mp3");
+  
+
+
   //platformImage = loadImage("assets/Grass_Tileset.png");
   //ycl-加载添加不同关卡的图片
   // platformImage = {
@@ -110,6 +152,9 @@ function preload() {
   heartImg = loadImage("assets/heart.png");
   spikedWallImg = loadImage('assets/spikedwall.png');
   sawsImg = loadImage("assets/saws.png");
+  heart3 = loadImage("assets/heart.png");
+  heart2 = loadImage("assets/heart2.png");
+  heart1 = loadImage("assets/heart1.png");//zkx~~~~
   
   //Rui
   // 加载鬼魂的 "Appear" 帧动画
@@ -132,10 +177,23 @@ function preload() {
   levelThreeBg = loadImage("assets/levelthree.png");
   levelFourBg = loadImage("assets/levelfour.png");
   levelFiveBg = loadImage("assets/levefive.png");
+  levelBg = loadImage("assets/levelbg.png");
+  menuBg = loadImage("assets/menubg.png");
+
+  img1 = loadImage("assets/C1.png");
+  img2 = loadImage("assets/C2.png");
+  img3 = loadImage("assets/C3.png");
+  img4 = loadImage("assets/C4.png");
+  img5 = loadImage("assets/C5.png");
+
+  creditImage = loadImage("assets/C1.png");
   
 }
 
 function setup() {
+  if (typeof userStartAudio === "function") {
+    userStartAudio();
+  } // 允许播放音频kx~~~~~~~~~~
   createCanvas(1280, 720);
   storyScene = new StoryScene(); // ✅ 初始化背景故事界面
   textFont(myFont);
@@ -353,10 +411,73 @@ function switchScene(sceneName) {
   currentScene = sceneName;
   gameTimer = 0;
   projectiles = [];
+  // ✅ **如果离开 "level" 场景，停止行进音效**
+  if (sceneName !== "level") {
+
+    if (runSound && runSound.isPlaying()) {
+      console.log("⏹️ 退出关卡，停止行进音效...");
+      runSound.stop();
+    }
+    if (rainSound && rainSound.isPlaying()) {
+      console.log("⏹️ 切换到非游戏场景，停止雨天音效...");
+      rainSound.stop();
+    }
+    if (snowSound && snowSound.isPlaying()) {
+      console.log("⏹️ 切换到非游戏场景，停止雪天音效...");
+      snowSound.stop();
+    }
+    /*if (levelWinSound && levelWinSound.isPlaying()) {
+      console.log("⏹️ 停止关卡胜利音效...");
+      levelWinSound.stop();
+    }*/
+  }
+
+  // ✅ **离开 "win" 场景时，停止胜利音效**
+  if (sceneName !== "win" && winSound && winSound.isPlaying()) {
+    console.log("⏹️ 退出胜利界面，停止胜利音效...");
+    winSound.stop();
+  }
+  // ✅ **确保 `clickSound` 不在通关时覆盖 `levelWinSound`**
+  if (!["level", "win"].includes(sceneName)) {
+    if (clickSound) {
+        console.log("🎵 在切换场景时播放点击音效");
+        clickSound.play();
+    }
+  }
 
   if (sceneName === "menu") {
     currentLevelIndex = 0;
     levelTimes = []; // 清空统计
+  }
+  // ✅ 确保切换场景时播放音效zkx~~~~~~
+  if (clickSound) {
+    console.log("🎵 在切换场景时播放点击音效");
+    clickSound.play();
+  } else {
+    console.error("❌ clickSound 未定义，无法播放点击音效！");
+  }
+  // ✅ **如果离开 "level" 场景，立即停止 `level-win.mp3`**
+  if (!["level","win"].includes(sceneName)) {
+    if (levelWinSound && levelWinSound.isPlaying()) {
+        console.log("⏹️ 退出 `level` 场景，停止 `level-win.mp3`...");
+        levelWinSound.stop();
+    }
+  }
+
+  // ✅ **如果进入 `story` 场景，确保背景音乐播放**
+  if (sceneName === "story") {
+    if (storyMusic && !storyMusic.isPlaying()) {
+      console.log("🎵 进入 StoryScene，播放背景音乐...");
+      userStartAudio(); // 解锁音频
+      storyMusic.setVolume(0.6);
+      storyMusic.loop();
+    }
+  } else {
+    // ✅ **如果离开 `story` 场景，停止背景音乐**
+    if (storyMusic && storyMusic.isPlaying()) {
+      console.log("⏹️ 退出 StoryScene，停止背景音乐...");
+      storyMusic.stop();
+    }
   }
 
   if (sceneName === "level") {
@@ -370,6 +491,18 @@ function switchScene(sceneName) {
     // **创建新关卡，确保 `spiderSpritesheet` 传入**
     level = new Level(config, spiderSpritesheet);
     player = new Player(config.playerStart);
+    // ✅ **检查是否是通过传送门进入，并且当前关卡不是 `level 1`**
+    // ✅ **检查是否是通过传送门进入，并且 `level > 1`**
+    if (currentLevelIndex > 1) {
+        console.log("✅ 通过通关门进入 `level " + currentLevelIndex + "`，播放 `level-win.mp3`...");
+        if (levelWinSound) {
+            levelWinSound.play();
+        }
+        sessionStorage.removeItem("enteredFromPortal"); // **清除标志**
+    } else {
+        console.log("❌ 直接进入关卡（非通关门），不播放 `level-win.mp3`");
+        levelWinSound.play();
+    }
 
     // **调试信息**
     //console.log(` 进入关卡 "${config.levelName}"`);
@@ -412,6 +545,7 @@ function keyPressed() {
       case "P": case "p":
         settings.toggle(); // 关闭设置界面
         break;
+
     }
     return;
   }
@@ -482,7 +616,12 @@ function keyPressed() {
 
 // 🖱️ 鼠标点击：全局检测 SET 按钮和设置界面按钮
 function mousePressed() {
+  if (clickSound) {
+    clickSound.play();
+    console.log("🖱️ 播放点击音效！");//zkx~~~~~~~~~
+  }
   settings.handleMouseClick(mouseX, mouseY);
+  
 
   if (currentScene === "story") {
     storyScene.mousePressed(); // 🎮 允许鼠标点击跳过故事

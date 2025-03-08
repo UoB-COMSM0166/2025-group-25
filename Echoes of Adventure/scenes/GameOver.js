@@ -1,6 +1,16 @@
 // =========================
 // Game Over
 // =========================
+function keyPressed() {
+  if (currentScene === "gameOver") {
+    if (key === "M" || key === "m") {
+      switchScene("menu");
+
+      // ✅ 播放点击音效zkx~~~~~~~
+      if (clickSound) clickSound.play();
+    }
+  }
+}
 
 function drawGameOver() {
   background(0);

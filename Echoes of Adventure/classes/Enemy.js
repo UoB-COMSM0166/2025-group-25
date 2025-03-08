@@ -18,6 +18,139 @@ class Enemy {
   }
 }
 
+
+class Frog extends Enemy {
+  constructor(x, y, idleImg, jumpImg, fallImg) {
+    super(x, y);
+    this.width = 40;
+    this.height = 30;
+    this.speed = 2; 
+    this.jumpForce = -8;  // 跳跃的力度
+    this.gravity = 0.5;   // 重力
+    this.velocity = createVector(0, 0);
+    this.state = "idle";  // 初始状态：idle, jump, fall
+    this.idleImg = idleImg;
+    this.jumpImg = jumpImg;
+    this.fallImg = fallImg;
+    this.jumpTimer = 60;  // 控制跳跃间隔
+
+    // **新增：Frog 的活动范围**
+    this.startX = x;  // 初始位置
+    this.movementRange = 100;  // 允许移动的范围（以初始位置为中心）
+    this.facingDirection = "right"; // **默认朝右**
+  }
+
+  update() {
+    super.update();
+
+    if (!this.frozen) {
+      this.jumpTimer--;
+
+      // **如果 jumpTimer 归零，触发跳跃**
+      if (this.jumpTimer <= 0) {
+        let direction = random() > 0.5 ? 1 : -1; // 50% 概率向左或向右跳
+
+        // **确保跳跃方向不会变成原地跳跃**
+        if (direction !== (this.facingDirection === "right" ? 1 : -1)) {
+          this.facingDirection = direction === 1 ? "right" : "left"; // **更新朝向**
+        }
+
+        let newVelocityX = this.speed * direction;
+
+        let targetX = this.position.x + newVelocityX * 10; // 计算目标 X 位置
+
+        // **确保 Frog 只能在指定范围内跳跃**
+        if (targetX >= this.startX - this.movementRange && targetX <= this.startX + this.movementRange) {
+          this.velocity.x = newVelocityX;
+        } else {
+          // **如果跳出范围，反向跳跃**
+          this.velocity.x = -newVelocityX;
+          this.facingDirection = this.velocity.x > 0 ? "right" : "left";
+        }
+
+        this.velocity.y = this.jumpForce; // **向上跳跃**
+        this.jumpTimer = 120;  // 重新计时
+        this.state = "jump";  // 进入跳跃状态
+      }
+
+      // **重力影响**
+      this.velocity.y += this.gravity;
+      this.position.y += this.velocity.y;
+
+      // **只有在空中时才水平移动**
+      if (this.state === "idle") {
+        this.velocity.x = 0;
+      } else {
+        this.position.x += this.velocity.x; // **只有在跳跃期间才移动**
+      }
+
+      // **地面或平台检测**
+      let onGround = false;
+      for (let platform of level.platforms) {
+        if (
+          this.position.x + this.width > platform.position.x &&
+          this.position.x < platform.position.x + platform.width &&
+          this.position.y + this.height > platform.position.y &&
+          this.position.y < platform.position.y + platform.height
+        ) {
+          this.position.y = platform.position.y - this.height;
+          this.velocity.y = 0;
+          this.state = "idle";  // 进入待机状态
+          onGround = true;
+        }
+      }
+
+      for (let ground of level.ground) {
+        if (
+          this.position.x + this.width > ground.position.x &&
+          this.position.x < ground.position.x + ground.width &&
+          this.position.y + this.height > ground.position.y &&
+          this.position.y < ground.position.y + ground.height
+        ) {
+          this.position.y = ground.position.y - this.height;
+          this.velocity.y = 0;
+          this.state = "idle";  // 进入待机状态
+          onGround = true;
+        }
+      }
+
+      if (!onGround) {
+        this.state = this.velocity.y < 0 ? "jump" : "fall";
+      }
+    }
+  }
+
+
+  draw() {
+    push();
+    translate(this.position.x, this.position.y);
+
+    let currentFrame;
+    if (this.state === "idle") {
+      currentFrame = this.idleImg;
+    } else if (this.state === "jump") {
+      currentFrame = this.jumpImg;
+    } else {
+      currentFrame = this.fallImg;
+    }
+
+    // **检查 Frog 朝向，并翻转图像**
+    if (this.facingDirection === "left") {
+      scale(1, 1);  // **水平翻转**
+      image(currentFrame, -this.width, 0, this.width, this.height);
+    } else {
+      scale(-1, 1)
+      image(currentFrame, 0, 0, this.width, this.height);
+    }
+
+    pop();
+  }
+}
+
+
+
+
+
 // =========================
 // Spider
 // =========================
@@ -25,7 +158,8 @@ class Enemy {
 class Spider extends Enemy {
   constructor(x, y, spritesheet) {
     super(x, y);
-    this.speed = 2;
+    //this.speed = 2;
+    this.speed = 0.5;
     this.direction = -1; // 默认向左走
     this.spritesheet = spritesheet;
 
@@ -39,9 +173,10 @@ class Spider extends Enemy {
     this.frameDelay = 6;
     this.frameCounter = 0;
 
-    // **设置蜘蛛的运动范围 (200 码)**
+    // **设置蜘蛛的运动范围 (50 码)**
     this.startX = x; // 记录出生位置
-    this.movementRange = 200; // 蜘蛛最多移动 200 码
+    //this.movementRange = 200;
+    this.movementRange = 45; 
 
     this.extractFrames();
   }
