@@ -250,21 +250,25 @@ class Spider extends Enemy {
 // Bird
 // =========================
 
-/*class Bird extends Enemy {
+class Bird extends Enemy {
   constructor(x, y, spritesheet) {
     super(x, y);
     this.spritesheet = spritesheet;
-    this.speed = 3;
-    this.amplitude = 20; // **上下移动的振幅**
-    this.offset = random(0, TWO_PI); // **随机偏移**
+    this.speed = 1.5;
+    this.amplitude = 60; // **上下移动的振幅**
+    //this.offset = random(0, TWO_PI); // **随机偏移**
+
+    this.startY = y;          // 保存初始的 y 坐标
+    this.vDir = 1;            // 垂直运动方向：1 为向下，-1 为向上
     
-    this.height = 48; // **单帧高度**
+    //this.height = 48; // **单帧高度**
+    this.height = 56;
     this.width = 48;
 
 
     this.frames = [];  // **存储所有帧**
     this.frameIndex = 0;
-    this.frameDelay = 6;  // **控制动画播放速度**
+    this.frameDelay = 12;  // **控制动画播放速度**
     this.frameCounter = 0;
     
     this.direction = 1; // **默认向右飞**
@@ -285,7 +289,7 @@ class Spider extends Enemy {
       this.frames.push(frame);
     }
   }
-
+/*
   update() {
     if (!this.frozen) {
       // **让鸟左右飞行**
@@ -306,7 +310,26 @@ class Spider extends Enemy {
         this.frameCounter = 0;
       }
     }
-  }
+  }*/
+    update() {
+      super.update(); 
+      if (!this.frozen) {
+        // 直线式垂直移动
+        this.position.y += this.speed * this.vDir;
+  
+        // 当偏离初始位置超过 amplitude 后反转方向
+        if (this.position.y > this.startY + this.amplitude || this.position.y < this.startY - this.amplitude) {
+          this.vDir *= -1;
+        }
+  
+        // 更新动画帧
+        this.frameCounter++;
+        if (this.frameCounter >= this.frameDelay) {
+          this.frameIndex = (this.frameIndex + 1) % this.frames.length;
+          this.frameCounter = 0;
+        }
+      }
+    }
 
   draw() {
     if (this.frames.length === 0) {
@@ -321,6 +344,7 @@ class Spider extends Enemy {
     if (this.frozen) {
       tint(0, 200, 255);
     }
+    /*
     // **修正朝向**
     if (this.direction === 1) {
       scale(-1, 1); // **向右飞时，翻转**
@@ -328,21 +352,23 @@ class Spider extends Enemy {
     } else {
       scale(1, 1); // **向左飞时，不翻转**
       image(currentFrame, -this.width, 0, this.width, this.height);
-    }
+    }*/
+      image(currentFrame, -this.width / 2, -this.height / 2, this.width, this.height);
 
     pop();
   }
-}*/
+}
 
 
-//Rui
+
 class Bat extends Enemy {
   constructor(x, y) {
     super(x, y);
+    this.startX = x;            // 记录初始 x 坐标
+    this.patrolRange = 600;    // 定义巡逻范围
     this.speed = 3;
     this.amplitude = 20;
     this.offset = random(0, TWO_PI);
-    
     this.width = 63;  
     this.height = 93;
 
@@ -351,18 +377,25 @@ class Bat extends Enemy {
     this.frameDelay = 6;
     this.frameCounter = 0;
     
-    this.direction = 1; 
+    this.direction = 1;         // 初始向右
   }
 
   update() {
     if (!this.frozen) {
+      // 更新位置
       this.position.x += this.speed * this.direction;
       this.position.y += sin(frameCount * 0.1 + this.offset) * 2;
 
-      if (this.position.x > width) {
-        this.position.x = -this.width;
+      // 边界判断：确保 Bat 在 [startX, startX + patrolRange] 范围内移动
+      if (this.position.x > this.startX + this.patrolRange) {
+        this.position.x = this.startX + this.patrolRange;
+        this.direction = -1;
+      } else if (this.position.x < this.startX) {
+        this.position.x = this.startX;
+        this.direction = 1;
       }
 
+      // 更新动画帧
       this.frameCounter++;
       if (this.frameCounter >= this.frameDelay) {
         this.frameIndex = (this.frameIndex + 1) % this.frames.length;
@@ -378,22 +411,22 @@ class Bat extends Enemy {
     translate(this.position.x, this.position.y);
 
     let currentFrame = this.frames[this.frameIndex];
-    //冰冻上色
     if (this.frozen) {
       tint(0, 200, 255);
     }
 
     if (this.direction === 1) {
-      scale(1, 1); // **向右飞时，翻转**
+      scale(1, 1);
       image(currentFrame, 0, 0, this.width, this.height);
     } else {
-      scale(-1, 1); // **向左飞时，不翻转**
+      scale(-1, 1);
       image(currentFrame, -this.width, 0, this.width, this.height);
     }
 
     pop();
   }
 }
+
 
 
 // =========================

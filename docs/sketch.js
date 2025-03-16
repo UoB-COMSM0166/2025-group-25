@@ -620,8 +620,11 @@ function mousePressed() {
     clickSound.play();
     console.log("🖱️ 播放点击音效！");//zkx~~~~~~~~~
   }
-  settings.handleMouseClick(mouseX, mouseY);
   
+  settings.handleMouseClick(mouseX, mouseY);
+  if (currentScene === "level") {
+    player.attack();
+}
 
   if (currentScene === "story") {
     storyScene.mousePressed(); // 🎮 允许鼠标点击跳过故事

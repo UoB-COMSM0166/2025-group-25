@@ -13,11 +13,10 @@ class Settings {
   
       // 🎯 设置界面按钮区域
       this.buttons = [
-        { label: "[R] Restart Level", x: width / 2 - 100, y: 200, action: () => switchScene("level") },
-        { label: "[M] Main Menu", x: width / 2 - 100, y: 260, action: () => switchScene("menu") },
-        { label: "[I] Instructions", x: width / 2 - 100, y: 320, action: () => switchScene("instructions") },
-        { label: "[S] Switching sound", x: width / 2 - 100, y: 380, action: () => this.toggleSound() },
-        { label: "[F] Fullscreen", x: width / 2 - 100, y: 440, action: () => this.toggleFullscreen() } // 🆕 新增全屏按钮
+        { label: "[R] Restart Level", x: width / 2 - 100, y: 250, action: () => switchScene("level") },
+        { label: "[M] Main Menu", x: width / 2 - 100, y: 310, action: () => switchScene("menu") },
+        { label: "[I] Instructions", x: width / 2 - 100, y: 370, action: () => switchScene("instructions") },
+        { label: "[F] Fullscreen", x: width / 2 - 100, y: 430, action: () => this.toggleFullscreen() } // 🆕 新增全屏按钮
       ];
     }
   
@@ -62,9 +61,9 @@ class Settings {
   
       // 🎯 标题
       fill(255);
-      textSize(30);
+      textSize(50);
       textAlign(CENTER, CENTER);
-      text("SETTINGS", width / 2, 130);
+      text("SETTINGS", width / 2, 160);
   
       // 🎯 绘制按钮及其快捷键提示
       this.buttons.forEach((btn) => {
@@ -116,11 +115,18 @@ class Settings {
       }
     }
   
+    
     // 🔊 切换声音状态
-    toggleSound() {
-      this.soundEnabled = !this.soundEnabled;
-      console.log(`Sound ${this.soundEnabled ? "enabled" : "disabled"}.`);
-    }
+    // toggleSound() {
+    //   this.soundEnabled = !this.soundEnabled;
+    //   // 根据当前状态开启或关闭全局声音
+    //   masterVolume(this.soundEnabled ? 1 : 0);
+    //   // 同时更新按钮图标或文字提示
+    //   console.log(`Sound ${this.soundEnabled ? "enabled" : "disabled"}.`);
+    // }
+    
+    
+    
   
     // 🖥️ 全屏切换功能
     toggleFullscreen() {

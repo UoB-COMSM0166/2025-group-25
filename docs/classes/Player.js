@@ -69,11 +69,11 @@ class Player {
     if (this.isDashing) return; // **正在冲刺时不进行普通移动**
 
     let horiz = 0;
-    if (keyIsDown(LEFT_ARROW)) {
+    if (keyIsDown(65) || keyIsDown(LEFT_ARROW)) { // A 键 或 左方向键
       horiz -= this.speed;
       this.facingDirection = "left";
     }
-    if (keyIsDown(RIGHT_ARROW)) {
+    if (keyIsDown(68) || keyIsDown(RIGHT_ARROW)) { // D 键 或 右方向键
       horiz += this.speed;
       this.facingDirection = "right";
     }
@@ -94,6 +94,11 @@ class Player {
       this.jumps = 0;
       this.isJumpKeyReleased = true;
     }
+    // ✅ **检测是否掉出画布，重生**
+    if (this.position.y > height-70) {
+      this.takeDamage(1); // 玩家损失一条命
+      this.respawn();
+    }
     // ✅ **播放或停止行进音效**zkx~~~~~~~~~~~
     if (horiz !== 0) { // **玩家正在移动**
       if (runSound && !runSound.isPlaying()) {
@@ -112,10 +117,46 @@ class Player {
   //掉进water后回到本关起始位置kx~~~~
 
   respawn() {
-    //console.log("玩家重生到关卡起始位置！");
-    this.position = level.playerStart.copy(); // 传送回关卡的初始位置
+    //if (level.levelNumber === 2) {
+    if(level){
+        let respawnX = this.position.x; // 保持 x 位置不变
+        let respawnY = 10; // 默认重生点（如果没有找到合适平台）
+
+        // 如果之前有安全平台，则优先使用
+        if (this.lastSafePlatform) {
+            respawnY = this.lastSafePlatform.position.y - this.height;
+            respawnX = this.lastSafePlatform.position.x + this.lastSafePlatform.width / 2 - this.width / 2;
+        } else {
+            // 没有记录安全平台，寻找最近的高于熔岩的平台
+            let highestValidPlatform = null;
+            let highestY = -Infinity;
+
+            for (let platform of level.platforms) {
+                if (platform.position.y < this.position.y && platform.position.y > highestY) {
+                    highestY = platform.position.y;
+                    highestValidPlatform = platform;
+                }
+            }
+
+            // 如果找到合适的平台，则设为重生点
+            if (highestValidPlatform) {
+                respawnY = highestValidPlatform.position.y - this.height;
+                respawnX = highestValidPlatform.position.x + highestValidPlatform.width / 2 - this.width / 2;
+            }
+        }
+
+        // 更新玩家位置
+        this.position = createVector(respawnX, respawnY);
+        console.log(`玩家在第二关重生，位置: x=${respawnX}, y=${respawnY}`);
+    } else {
+        // 其他关卡使用默认重生点
+        this.position = level.playerStart.copy();
+        console.log("玩家重生到关卡起始位置！");
+    }
+
     this.velocity.set(0, 0); // 重置速度，防止继续下落
-  }
+}
+
 
   /** 🎮 处理跳跃 (在 `keyPressed()` 里调用) */
   jump() {
@@ -241,10 +282,10 @@ class Player {
     let attackX = this.facingDirection === "right"
     ? this.position.x + this.width
     : this.position.x - 20;
-    let attackY = this.position.y + this.height;
+    let attackY = this.position.y + this.height-20;
     
     //Rui
-    let attackRadius = 150; 
+    let attackRadius = 100; 
 
     let playerCenterX = this.position.x + this.width;
     let playerCenterY = this.position.y + this.height;
@@ -302,17 +343,22 @@ class Player {
     if (key === "Z" || key === "z") {
       this.attack();
     }
-    if (key === "X" || key === "x") this.dash();
+    //if (key === "X" || key === "x") this.dash();
     
     /*if (key === "T" || key === "t") {
       player.teleport();
     }*/
+   /*
     if (this.hasTeleport && (key === "T" || key === "t")) {
       this.teleport();
-    }
+    }*/
     
   }
-
+  mousePressed() {
+    if (mouseButton === LEFT) {
+      this.attack();
+    }
+  }
   /** 🎮 监听键盘释放 */
   /*
   keyReleased() {
@@ -325,6 +371,16 @@ class Player {
   handleCollisions() {
     if (!level) return;
     let { ground, platforms, enemies } = level;
+    let { obstacles } = level;
+    
+    // 遍历所有障碍物
+    for (let obs of obstacles) {
+      if (obs.type === "Spiked Wall" && this.collidesWith(obs)) {
+        console.log("⚠️ 玩家碰到 Spiked Wall，触发重生！");
+        this.takeDamage(1); // 玩家损失一条命
+        this.respawn();
+      }
+    }
   
     for (let plat of platforms) {
         if (collides(this.position.x, this.position.y, this.width, this.height,
@@ -362,6 +418,9 @@ class Player {
                     this.jumps = 0;
                     this.isJumpKeyReleased = true;
                     this.isOnGround = true;
+
+                    // **记录最近的安全平台**
+                    this.lastSafePlatform = plat;
                 }
                 // **底部碰撞（撞到平台下方，防止人物穿过去）**
                 else if (playerTop < platformBottom && playerBottom > platformBottom) {
@@ -383,6 +442,7 @@ class Player {
         }
       }
     }
+    
   
     // 检查地面碰撞kx~~~~~~~~(改了ground为数组)
     // **处理地面碰撞**
@@ -493,7 +553,7 @@ class Player {
       this.state = "jump";  // **跳跃状态**
     } else if (this.isDashing) {
       this.state = "dash";  // **冲刺状态**
-    } else if (keyIsDown(LEFT_ARROW) || keyIsDown(RIGHT_ARROW)) {
+    } else if (keyIsDown(65) || keyIsDown(68) || keyIsDown(LEFT_ARROW) || keyIsDown(RIGHT_ARROW)) {
       this.state = "run";  // **跑步状态**
     }else if (this.isAttacking) {// **攻击状态**
       this.state = "attack"; 
@@ -582,10 +642,10 @@ class Player {
     if (weatherState === "snow") {
       // 雪地：有惯性
       // a) 先根据按键给 velocity.x 加速度
-      if (keyIsDown(LEFT_ARROW)) {
+      if (keyIsDown(LEFT_ARROW)||keyIsDown(65))  {
         this.velocity.x -= 0.2; // 向左加速度，可微调
       }
-      else if (keyIsDown(RIGHT_ARROW)) {
+      else if (keyIsDown(RIGHT_ARROW)||keyIsDown(68)) {
         this.velocity.x += 0.2; // 向右加速度，可微调
       }
       else {
@@ -610,10 +670,10 @@ class Player {
 
       // 按键左右移动
       let horiz = 0;
-      if (keyIsDown(LEFT_ARROW)) {
+      if (keyIsDown(LEFT_ARROW)||keyIsDown(65)) {
         horiz -= this.speed;
       }
-      if (keyIsDown(RIGHT_ARROW)) {
+      if (keyIsDown(RIGHT_ARROW)||keyIsDown(68)) {
         horiz += this.speed;
       }
       this.position.x += horiz;

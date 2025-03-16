@@ -88,10 +88,11 @@ class Obstacle {
     } else if (this.type === "Blade") {
       this.angle = sin(frameCount * 0.1) * (PI / 4);
     } else if (this.type === "Spiked Wall") {
+      /*
       this.position.x += this.direction * 1.5;
       if (this.position.x < 600 || this.position.x > 700) {
         this.direction *= -1;
-      }
+      }*/
     }
   }
 
@@ -127,6 +128,7 @@ class Obstacle {
     } else if (this.type === "Spiked Wall") {//尖刺
       imageMode(CENTER);
       image(spikedWallImg, 0, 0, this.width, this.height); 
+      
     }
     pop();
   }

@@ -41,6 +41,8 @@ class Level {
         this.enemies.push(new Bat(enemyConfig.position.x, enemyConfig.position.y));
       } else if (enemyConfig.type === "Fish") {
         this.enemies.push(new Fish(enemyConfig.position.x, enemyConfig.position.y));
+      }else if (enemyConfig.type === "Bird"){
+        this.enemies.push(new Bird(enemyConfig.position.x, enemyConfig.position.y, birdSpritesheet));
       }
     }
 
@@ -371,6 +373,13 @@ class Level {
   }
 
   draw() {
+
+    // 绘制水面kx~~~~~~
+    for (let waterInstance of this.water) {
+      //console.log(`Drawing water at x: ${waterInstance.position.x}, y: ${waterInstance.position.y}`); // 打印水波的绘制信息
+      waterInstance.draw();
+    }
+
     // 绘制地面kx~~~~~
     for (let groundInstance of this.ground) {
       groundInstance.draw(); 
@@ -379,12 +388,6 @@ class Level {
     // 绘制平台
     for (let p of this.platforms) {
       p.draw();
-    }
-
-    // 绘制水面kx~~~~~~
-    for (let waterInstance of this.water) {
-      //console.log(`Drawing water at x: ${waterInstance.position.x}, y: ${waterInstance.position.y}`); // 打印水波的绘制信息
-      waterInstance.draw();
     }
 
     // 绘制金币

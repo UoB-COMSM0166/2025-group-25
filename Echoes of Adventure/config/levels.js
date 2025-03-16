@@ -29,11 +29,11 @@ function setupLevels() {
       
         { x: 765, y: 350 },
 
-        { x: 1300, y: 290 },
+        { x: 1310, y: 290 },
  
-        { x: 1550, y: 360 },
+        { x: 1600, y: 360 },
       
-        { x: 4040, y: 100 },
+        { x: 4040, y: 87 },//Rui
  
         { x: 2600, y: 510 },
         { x: 3400, y: 510 },
@@ -45,17 +45,24 @@ function setupLevels() {
         { x: 5200, y: 380 }
       ],
       enemies: [
-        //{ type: "Spider", position: createVector(600, 500) },
-        { type: "Frog", position: { x: 1500, y: 200 } },
+        //{ type: "Spider", position: { x: 3250, y: 480 } },
+        { type: "Frog", position: { x: 1300, y: 200 } },
+        { type: "Frog", position: { x: 3000, y: 250 } },
         //{ type: "Frog", position: { x: 600, y: 500 } }
         //{ type: "Fish", position: createVector(1200, 500) }
       ],
       portalPosition: createVector(5300, 330),//cailing
       //ground: [{ x: 0, y: 600, w: 2200, h: 40 },//kx
         //{ x: 2650, y: 600, w: 1050, h: 40},{ x: 4525, y: 600, w: 850, h: 40}],//地面不再连续，kx~~~~~
+
+      waterRegions: [  // 为此关卡添加水面区域zkx~~~~~~~~
+        { x: 2205, y: 557, width: 425, height: 50 },  // 左侧水洼，y是600，height是50
+        { x: 3600, y: 557, width: 1100, height: 50 },  // 右侧水洼
+      ],
+
       platforms: [//cailing
-        //{ x: 0, y: 580, w: 2000, h: 16 },
-        { x: 0, y: 510, w: 250, h:80, type: "b" },//1.2
+        //{ x: 0, y: 580, w: 2000, h: 16, type: "daaaaae" },
+        { x: 5, y: 510, w: 250, h:80, type: "b" },//1.2
         { x: 0, y: 550, w: 450, h:50, type: "daaaaae" },//1.1 ycl
         
 
@@ -73,24 +80,24 @@ function setupLevels() {
         { x: 4950, y: 480, w: 450, h: 100, type: "b" },//1.10
         { x: 4550, y: 550, w: 850, h: 50, type: "bb" },//1.8
        
-        { x: 3750, y: 440, w: 100, h: 20, type: "c" },//1.9.1 长水洼平台1
-        { x: 3920, y: 345, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台2 (高度差90：一个巧妙地高度差，一段跳跃看似跳的上去，实则跳不上去）
-        { x: 4200, y: 260, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台3
-        { x: 4000, y: 130, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台2
+        { x: 3750, y: 420, w: 100, h: 20, type: "c" },//1.9.1 长水洼平台1
+        { x: 3920, y: 325, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台2 (高度差90：一个巧妙地高度差，一段跳跃看似跳的上去，实则跳不上去）
+        { x: 4200, y: 240, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台3
+        { x: 4000, y: 110, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台2
+        { x: 4320, y: 410, w: 100, h: 20, type: "c" },
+
+        { x: 0, y: 590, w: 5400, h: 50, type: "daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae" },
         
-      ],
-      waterRegions: [  // 为此关卡添加水面区域zkx~~~~~~~~
-        { x: 2205, y: 597, width: 425, height: 50 },  // 左侧水洼，y是600，height是50
-        { x: 3700, y: 597, width: 800, height: 50 },  // 右侧水洼
       ],
 
 
       items: [
+        { x: 4210, y: 120, type: "Heart" }
         //{ x: 500, y: 430, type: "Dash" }
         //{ x: 500, y: 430, type: "Freeze Element" }
       ],
       obstacles: [
-        { x: 1000, y: 540, type: "Flame", w: 40, h: 40 }
+        //{ x: 1000, y: 540, type: "Flame", w: 40, h: 40 }
       ],
       /*
       ghosts: [
@@ -103,7 +110,7 @@ function setupLevels() {
       levelName: "Lava Castle",
       levelNumber: 2,//cailing
       element: "fire",
-      playerStart: createVector(70, 0),
+      playerStart: createVector(70, 280),
       coins: [
         { x: 280, y: 370 },  // 柱子 (250,420)
         { x: 680, y: 380 },  // 柱子 (650,420)
@@ -112,14 +119,24 @@ function setupLevels() {
         { x: 2150, y: 200 },  // 平台 (2800, 240) 上方
         { x: 2630, y: 100 },  // 平台 (2800, 240) 上方
         { x: 3225, y: 400 },  // 平台 (3200, 440) 上方
-        { x: 4028, y: 200 },   // 平台 (4000, 240) 上方
+        { x: 4028, y: 190 },   // 平台 (4000, 240) 上方
         { x: 4828, y: 280 },
         { x: 6228, y: 290 },
       ],
       enemies: [
         { type: "Spider", position: createVector(827, 240) },
-        //{ type: "Spider", position: createVector(350, 360) }
-        { type: "Spider", position: createVector(438,  240) }
+
+        { type: "Spider", position: createVector(438,  240) },
+
+        { type: "Spider", position: createVector(1870, 220) },
+
+        // { type: "Bat", position: createVector(70, 300) },
+
+        { type: "Spider", position: createVector(6850, 265) },
+
+        { type: "Spider", position: createVector(7410, 355) },
+        { type: "Bat", position: {x:2800, y:270} },
+        { type: "Bat", position: {x:3200, y:400} },
       ],
       portalPosition: createVector(7680, 360),
       waterRegions: [  // 为此关卡添加岩浆区域kx~~~~~~~~
@@ -147,9 +164,9 @@ function setupLevels() {
         { x: 2300, y: 440, w: 50, h: 50, type: "l" },//空中平台
         { x: 2350, y: 440, w: 50, h: 50, type: "m" },//空中平台
 
-        { x: 2450, y: 290, w: 80, h: 30, type: "j" },//ZSA：3.3新增
+        { x: 2490, y: 290, w: 80, h: 30, type: "j" },//ZSA：3.3新增//Rui
 
-        { x: 2600, y: 140, w: 80, h: 30, type: "j" },//v形石块
+        { x: 2620, y: 140, w: 80, h: 30, type: "j" },//v形石块
         { x: 2800, y: 240, w: 80, h: 30, type: "j"  },
         { x: 3000, y: 340, w: 80, h: 30, type: "j"  },
         { x: 3200, y: 440, w: 80, h: 30, type: "j"   },
@@ -187,11 +204,12 @@ function setupLevels() {
       ],
       items: [
         { x: 300, y: 250, type: "Flame Element" },
-        //{ x: 900, y: 250, type: "Freeze Element" },
+        { x: 2600, y: 80, type: "Freeze Element" },
+        { x: 1350, y: 90, type: "Heart" }
         //{ x: 1700, y: 400, type: "Invincibility" }
       ],
       obstacles: [
-        { x: 1300, y: 540, type: "Gear", w: 50, h: 50 },
+        //{ x: 1300, y: 540, type: "Gear", w: 50, h: 50 },
         //{ x: 1800, y: 540, type: "Blade", w: 40, h: 40 }
       ],
       axes: {
@@ -201,11 +219,16 @@ function setupLevels() {
       },
       
       
-      //大方块(旋转)
       saws: {
-        positions: [createVector(1475, 250)],
-        ranges: [50]
+        positions: [
+          createVector(1475, 250),
+          //createVector(1600, 300),
+          //createVector(1750, 200),
+          createVector(2280, 300)
+        ],
+        ranges: [50, 80] // 可以为每个锯片分别设置不同的移动范围
       }
+      
     },
     {
       levelName: "Celestial Citadel",
@@ -242,13 +265,17 @@ function setupLevels() {
         // 16-18: 传送门区域前的平台
 
         // { x: 4500, y: 370 }, // 传送门前 (4450, 400) 上方
-        { x: 4600, y: 370 }  // 传送门前 (4450, 400) 上方
+        { x: 4600, y: 370 }
       ],
       enemies: [
-        //{ type: "Bird", position: createVector(800, 300) },
-        //{ type: "Bird", position: createVector(1500, 250) }
+        { type: "Bird", position: createVector(275, 400) },
+        { type: "Bird", position: createVector(400, 275) },
+        { type: "Bird", position: createVector(525, 300) },
+        { type: "Bird", position: createVector(650, 375) },
+        //{ type: "Bird", position: createVector(100, 200) },
         { type: "Bat", position: createVector(800, 300) },
-        { type: "Bat", position: createVector(1500, 250) }
+        { type: "Bat", position: createVector(1500, 220) },
+        //{ type: "Fish", position: createVector(1200, 500) }
       ],
       portalPosition: createVector(4700, 320),//cailing
       //ground: { x: 0, y: 620, w: 4800, h: 40 },第三关天空之城不要地面zkx~~~~~~~~
@@ -342,15 +369,15 @@ function setupLevels() {
       { x: 4450, y: 400, w: 350, h: 20, type: "o" },//传送门平台
       ],
       items: [
-        { x: 300, y: 320, type: "Freeze Element" },
-        { x: 900, y: 320, type: "Thunder Element" },
+        //{ x: 300, y: 320, type: "Freeze Element" },
+        { x: 200, y: 320, type: "Thunder Element" },
         //{ x: 1400, y: 360, type: "Strengthen" },
-        { x: 1700, y: 320, type: "Heart" },
+        { x: 1675, y: 75, type: "Heart" },
         //{ x: 1900, y: 320, type: "Mystery Box" }
         //{ x: 500, y: 460, type: "Teleport Scroll" }
       ],
       obstacles: [
-        { x: 1200, y: 540, type: "Spiked Wall", w: 40, h: 80 }
+        //{ x: 1200, y: 540, type: "Spiked Wall", w: 40, h: 80 }
       ],/*
       advancedBirds: {
         positions: [createVector(1000, 200)],
@@ -360,17 +387,17 @@ function setupLevels() {
     },
     {
       levelName: "Shadow Realm",
-      levelNumber: 4,//cailing
+      levelNumber: 4, // cailing
       element: "wind",
-      playerStart: createVector(60, 500),//cailing
+      playerStart: createVector(60, 500), // cailing
       coins: [
         // 1-3: 起始区域的跳跃平台
-        { x: 330, y: 180 },  // 最高的小方块 (300, 210)
+        { x: 410, y: 270 },  // 最高的小方块 (300, 210)
         // { x: 650, y: 230 },  // 小方块 (640, 260)
-        { x: 970, y: 230 },  // 小方块 (980, 260)
+        { x: 1050, y: 230 },  // 小方块 (980, 260)
       
         // 4-7: 第一段桥状平台的金币
-        { x: 1430, y: 150 }, // 小方块 (1660, 260)
+        { x: 1520, y: 250 }, // 小方块 (1660, 260)
         // { x: 2000, y: 360 }, // 桥的中部 (2000, 390)
         { x: 2350, y: 240 }, // 桥的末端 (2300, 270)
         // { x: 2600, y: 330 }, // 下坡开始 (2600, 360)
@@ -387,79 +414,82 @@ function setupLevels() {
         { x: 4330, y: 270 }, // 小方块 (4400, 300)
         { x: 4700, y: 170 }  // 传送门平台 (4800, 200)
       ],
+      // 增加多个敌人，分布在不同的平台上
       enemies: [
-        //{ type: "Spider", position: createVector(800, 500) },
-        //{ type: "Bird", position: createVector(1600, 300) }
+        { type: "Spider", position: createVector(2400, 195) },
+        { type: "Spider", position: createVector(3200, 195) },
       ],
-      portalPosition: createVector(5100, 120),//cailing
+      portalPosition: createVector(5100, 120), // cailing
       platforms: [
-        { x: 0, y: 580, w: 4900, h: 40, type: "u"},  // 主地面
-        { x: 300, y: 480, w: 80, h: 40, type: "u" },   // 小方块竖
-        { x: 300, y: 345, w: 80, h: 40, type: "u" },   // 小方块竖
-        { x: 300, y: 210, w: 80, h: 40, type: "u" },   // 小方块竖
-
-        { x: 640, y: 260, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 960, y: 260, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 1260, y: 260, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 1560, y: 260, w: 50, h: 50 , type: "u"},   // 小方块横
-
-        { x: 1900, y: 450, w: 50, h: 50, type: "u" },   // 小方块横 桥1
-        { x: 1950, y: 420, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2000, y: 390, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 2050, y: 360, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 2100, y: 330, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 2150, y: 300, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 2200, y: 270, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2250, y: 270, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2300, y: 270, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2350, y: 270, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2400, y: 270, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2450, y: 270, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2500, y: 300, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2550, y: 330, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2600, y: 360, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2650, y: 390, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2700, y: 420, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 2750, y: 450, w: 50, h: 50, type: "u" },   // 小方块横
-
-        { x: 2900, y: 450, w: 50, h: 50, type: "u" },   // 小方块横 桥2
-        { x: 2950, y: 420, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 3000, y: 390, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3050, y: 360, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3100, y: 330, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3150, y: 300, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 3200, y: 270, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3250, y: 270, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3300, y: 270, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3350, y: 270, w: 50, h: 50, type: "u" },   // 小方块横
-        { x: 3400, y: 270, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3450, y: 270, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3500, y: 300, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3550, y: 330, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3600, y: 360, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3650, y: 390, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3700, y: 420, w: 50, h: 50 , type: "u"},   // 小方块横
-        { x: 3750, y: 450, w: 50, h: 50 , type: "u"},   // 小方块横
-
-        { x: 4000, y: 400, w: 80, h: 50, type: "u" },   // 小方块1
-        { x: 4150, y: 350, w: 80, h: 50, type: "u" },   // 小方块2
-        { x: 4300, y: 300, w: 80, h: 50 , type: "u"},   // 小方块3
-        { x: 4450, y: 250, w: 80, h: 50, type: "u" },   // 小方块4
-        { x: 4700, y: 200, w: 500, h: 20 , type: "uuu"},  // 最终平台（传送门位置）
+        { x: 0, y: 580, w: 4900, h: 40, type: "u" },  // 主地面
+        { x: 380, y: 480, w: 80, h: 40, type: "u" },
+        { x: 380, y: 345, w: 80, h: 40, type: "u" },
+        { x: 650, y: 360, w: 50, h: 50, type: "u" },
+        { x: 900, y: 360, w: 50, h: 50, type: "u" },
+        { x: 1150, y: 360, w: 50, h: 50, type: "u" },
+        { x: 1400, y: 360, w: 50, h: 50, type: "u" },
+        { x: 1650, y: 360, w: 50, h: 50, type: "u" },
+        { x: 1900, y: 450, w: 50, h: 50, type: "u" },
+        { x: 1950, y: 420, w: 50, h: 50, type: "u" },
+        { x: 2000, y: 390, w: 50, h: 50, type: "u" },
+        { x: 2050, y: 360, w: 50, h: 50, type: "u" },
+        { x: 2100, y: 330, w: 50, h: 50, type: "u" },
+        { x: 2150, y: 300, w: 50, h: 50, type: "u" },
+        { x: 2200, y: 270, w: 50, h: 50, type: "u" },
+        { x: 2250, y: 270, w: 50, h: 50, type: "u" },
+        { x: 2300, y: 270, w: 50, h: 50, type: "u" },
+        { x: 2350, y: 270, w: 50, h: 50, type: "u" },
+        { x: 2400, y: 270, w: 50, h: 50, type: "u" },
+        { x: 2450, y: 270, w: 50, h: 50, type: "u" },
+        { x: 2500, y: 300, w: 50, h: 50, type: "u" },
+        { x: 2550, y: 330, w: 50, h: 50, type: "u" },
+        { x: 2600, y: 360, w: 50, h: 50, type: "u" },
+        { x: 2650, y: 390, w: 50, h: 50, type: "u" },
+        { x: 2700, y: 420, w: 50, h: 50, type: "u" },
+        { x: 2750, y: 450, w: 50, h: 50, type: "u" },
+        { x: 2900, y: 450, w: 50, h: 50, type: "u" },
+        { x: 2950, y: 420, w: 50, h: 50, type: "u" },
+        { x: 3000, y: 390, w: 50, h: 50, type: "u" },
+        { x: 3050, y: 360, w: 50, h: 50, type: "u" },
+        { x: 3100, y: 330, w: 50, h: 50, type: "u" },
+        { x: 3150, y: 300, w: 50, h: 50, type: "u" },
+        { x: 3200, y: 270, w: 50, h: 50, type: "u" },
+        { x: 3250, y: 270, w: 50, h: 50, type: "u" },
+        { x: 3300, y: 270, w: 50, h: 50, type: "u" },
+        { x: 3350, y: 270, w: 50, h: 50, type: "u" },
+        { x: 3400, y: 270, w: 50, h: 50, type: "u" },
+        { x: 3450, y: 270, w: 50, h: 50, type: "u" },
+        { x: 3500, y: 300, w: 50, h: 50, type: "u" },
+        { x: 3550, y: 330, w: 50, h: 50, type: "u" },
+        { x: 3600, y: 360, w: 50, h: 50, type: "u" },
+        { x: 3650, y: 390, w: 50, h: 50, type: "u" },
+        { x: 3700, y: 420, w: 50, h: 50, type: "u" },
+        { x: 3750, y: 450, w: 50, h: 50, type: "u" },
+        { x: 4000, y: 400, w: 80, h: 50, type: "u" },
+        { x: 4150, y: 350, w: 80, h: 50, type: "u" },
+        { x: 4300, y: 300, w: 80, h: 50, type: "u" },
+        { x: 4450, y: 250, w: 80, h: 50, type: "u" },
+        { x: 4700, y: 200, w: 500, h: 20, type: "uuu" }
       ],
+      
+      // 增加更多 ghost 配置，使敌人种类更丰富
       ghosts: [
-        //{ position: createVector(2750, 400), range: 150 },
-        { position: createVector(3650, 400), range: 150 },
-        { position: createVector(2700, 300), range: 250 }
+        { position: createVector(1000, 300), range: 250 },
+        //{ position: createVector(1900, 300), range: 250 },
+        { position: createVector(2100, 350), range: 200 },
+        { position: createVector(2700, 300), range: 250 },
+        //{ position: createVector(3200, 350), range: 200 },
+        { position: createVector(4000, 300), range: 150 }
       ],
       items: [
-        //{ x: 800, y: 460, type: "Strengthen" },
-        //{ x: 500, y: 460, type: "Teleport Scroll" }
+        // 可以添加道具
+        { x: 1800, y: 220, type: "Heart" },
+        { x: 2800, y: 420, type: "Heart" },
       ],
       obstacles: [
-        { x: 1300, y: 540, type: "Gear", w: 50, h: 50 },
-        { x: 1700, y: 540, type: "Flame", w: 40, h: 40 },
-        { x: 1900, y: 500, type: "Laser", w: 10, h: 100 }
+        //{ x: 1300, y: 540, type: "Gear", w: 50, h: 50 },
+        //{ x: 1700, y: 540, type: "Flame", w: 40, h: 40 },
+        { x: 2515, y: 205, type: "Laser", w: 10, h: 100 }
       ]
     },
     {
@@ -481,21 +511,31 @@ function setupLevels() {
         { x: 3540, y: 420 },
         { x: 4740, y: 470 }     
       ],
-      enemies: [
-        { type: "Fish", position: createVector(900, 550) },
-        { type: "Bird", position: createVector(1600, 280) }
-      ],
+      // 新的 enemies 配置（只使用 Spider、Frog 和 Ghost）
+  enemies: [
+    // 在“vv”系列平台上
+   // { type: "Frog",   position: createVector(2150, 270) },          // 平台 {x:2100,y:300,...}
+    { type: "Frog",   position: createVector(2750, 170) },          // 平台 {x:2700,y:200,...}
+    
+    // 在低矮长平台（vvv）上
+    { type: "Frog",   position: createVector(3100, 520) },          // 位于平台左侧
+    { type: "Spider", position: createVector(3300, 520) },          // 位于平台右侧
+    
+    // 在上层浮动平台上
+    { type: "Frog",   position: createVector(3950, 220) },          // 平台 {x:3900,y:250,...}
+  ],
       portalPosition: createVector(4800, 420),
       platforms: [
-        { x: 0, y: 600, w: 4800, h: 40 },  // 主地面
+        //{ x: 0, y: 580, w: 100, h: 8, type: "v"  },
+        { x: 0, y: 600, w: 4800, h: 40 , type: "vvvvvvvvvvvvvvvvvvvvvvvvvvvv"},  // 主地面
         { x: 300, y: 500, w: 10, h: 100 , type: "v"},  // 竖形细柱
         { x: 500, y: 400, w: 10, h: 200, type: "v" },  
         { x: 700, y: 300, w: 10, h: 300, type: "v" },  
-        { x: 900, y: 200, w: 10, h: 400 , type: "v"},   
+        { x: 900, y: 200, w: 10, h: 400 , type: "v"},//Rui   
         { x: 1100, y: 200, w: 10, h: 400 , type: "v"},  
         { x: 1300, y: 300, w: 10, h: 300 , type: "v"},  
         { x: 1500, y: 400, w: 10, h: 200 , type: "v"},
-        { x: 1700, y: 500, w: 10, h: 100 , type: "v"},
+        { x: 1715, y: 500, w: 10, h: 100 , type: "v"},
 
 
         { x: 1800, y: 400, w: 100, h: 20,type: "vv" },//易碎平台
@@ -514,14 +554,65 @@ function setupLevels() {
 
         { x: 4600, y: 500, w: 300, h: 20 , type: "vvv"},  // 最终平台（传送门位置）
       ],
-      ground: [{ x: 0, y: 600, w: 2200, h: 40 },//kx
-        { x: 2650, y: 600, w: 1050, h: 40},{ x: 4525, y: 600, w: 850, h: 40}],//地面不再连续，kx~~~~~
-      items: [
-        { x: 700, y: 480, type: "Invincibility" }
+      ghosts: [
+        { position: createVector(3350, 70), range: 250 },
+        { position: createVector(3550, 420), range: 250 },
+        { position: createVector(4150, 120), range: 200 },
+        // { position: createVector(2700, 300), range: 250 },
+        // { position: createVector(3200, 350), range: 200 },
+        // { position: createVector(4000, 300), range: 150 }
       ],
+      //ground: [{ x: 0, y: 600, w: 2200, h: 40 },//kx
+       // { x: 2650, y: 600, w: 1050, h: 40},{ x: 4525, y: 600, w: 850, h: 40}],//地面不再连续，kx~~~~~
+      items: [
+        //{ x: 700, y: 480, type: "Invincibility" }
+        { x: 1060, y: 80, type: "Heart" },
+        { x: 3708, y: 175, type: "Heart" }
+      ],
+      axes: {
+        //positions: [createVector(1200, 300)],
+        positions: [createVector(3580, 240)],
+        swingTimes: [1]
+      },
       obstacles: [
-        { x: 1200, y: 550, type: "Blade", w: 40, h: 40 },
-        { x: 1800, y: 550, type: "Spiked Wall", w: 40, h: 80 }
+        //{ x: 1200, y: 550, type: "Blade", w: 40, h: 40 },
+        //{// x: 350, y: 520, type: "Spiked Wall", w: 80, h: 80 },
+        //{ x: 520, y: 520, type: "Spiked Wall", w: 80, h: 80 },
+        { x: 310, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 350, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 390, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 430, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 470, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 510, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 550, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 590, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 630, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 670, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 710, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 750, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 790, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 830, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 870, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 910, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 950, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 990, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1030, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1070, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1110, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1150, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1190, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1230, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1270, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1310, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1350, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1390, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1430, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1470, y: 540, type: "Spiked Wall", w: 40, h: 60 },     
+        { x: 1510, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1550, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1590, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1630, y: 540, type: "Spiked Wall", w: 40, h: 60 },
+        { x: 1670, y: 540, type: "Spiked Wall", w: 40, h: 60 },   
       ]
     }
   ];

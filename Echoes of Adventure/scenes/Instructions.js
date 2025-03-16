@@ -25,43 +25,81 @@ function drawInstructions() {
   drawRoundedBox(x2, y2, boxWidth, boxHeight);
 
   // 🎮 **左上角 - 控制方式 (蓝色)**
+  // fill(180, 220, 255);
+  // textSize(28);
+  // text("Controls", x1 + boxWidth / 2, y1 + 40);
+  
+  // fill(255);
+  // textSize(20);
+  // let controlsText = "1: Move\n2: SPACE Jump\n3: Z Attack";
+  // drawCenteredText(controlsText, x1 + boxWidth / 2, y1 + boxHeight / 2 + 10);
+
+  // 🎮 **Upper Left - Controls (Blue)**
   fill(180, 220, 255);
   textSize(28);
   text("Controls", x1 + boxWidth / 2, y1 + 40);
-  
+
   fill(255);
   textSize(20);
-  let controlsText = "1: Move\n2: SPACE Jump\n3: Z Attack";
+  let controlsText = "1: Use WASD keys or arrow keys and space to move\n2: Right mouse button or Z key to attack\n3: Character can double jump";
   drawCenteredText(controlsText, x1 + boxWidth / 2, y1 + boxHeight / 2 + 10);
 
+
   // 🎯 **右上角 - 目标 (绿色)**
+  // fill(200, 255, 200);
+  // textSize(28);
+  // text("Goal", x2 + boxWidth / 2, y1 + 40);
+
+  // fill(255);
+  // textSize(20);
+  // let goalText = "1: Collect 15 coins\n2: Enter portal to win\n3: Cope with weather challenges";
+  // drawCenteredText(goalText, x2 + boxWidth / 2, y1 + boxHeight / 2 + 10);
+
   fill(200, 255, 200);
   textSize(28);
   text("Goal", x2 + boxWidth / 2, y1 + 40);
 
   fill(255);
   textSize(20);
-  let goalText = "1: Collect 15 coins\n2: Enter portal to win\n3: Cope with weather challenges";
+  let goalText = "1: Collect all coins to open the exit door\n2: Overcome various weather challenges";
   drawCenteredText(goalText, x2 + boxWidth / 2, y1 + boxHeight / 2 + 10);
 
   // 🛠 **左下角 - 道具 (紫色)**
+  // fill(220, 200, 255);
+  // textSize(28);
+  // text("Items", x1 + boxWidth / 2, y2 + 40);
+
+  // fill(255);
+  // textSize(20);
+  // let itemsText = "1: Flame Gun, Freeze Gun\n2: Greatsword, Bomb\n3: Invincibility, Heart\n4: Mystery Box, Double Jump";
+  // drawCenteredText(itemsText, x1 + boxWidth / 2, y2 + boxHeight / 2 + 10);
+
   fill(220, 200, 255);
   textSize(28);
   text("Items", x1 + boxWidth / 2, y2 + 40);
 
   fill(255);
   textSize(20);
-  let itemsText = "1: Flame Gun, Freeze Gun\n2: Greatsword, Bomb\n3: Invincibility, Heart\n4: Mystery Box, Double Jump";
+  let itemsText = "1: Ranged weapons: Flame Gun, Freeze Gun\n2: Melee weapons: Sword, Bomb\n3: Health item: Heart";
   drawCenteredText(itemsText, x1 + boxWidth / 2, y2 + boxHeight / 2 + 10);
 
   // ⚠ **右下角 - 障碍 (浅红色)**
+  // fill(255, 180, 180);
+  // textSize(28);
+  // text("Obstacles", x2 + boxWidth / 2, y2 + 40);
+
+  // fill(255);
+  // textSize(20);
+  // let obstaclesText = "1: Flames, Gears, Blades\n2: Spiked Walls, Axes, Saws\n3: Laser, Falling Spikes";
+  // drawCenteredText(obstaclesText, x2 + boxWidth / 2, y2 + boxHeight / 2 + 10);
+
   fill(255, 180, 180);
   textSize(28);
   text("Obstacles", x2 + boxWidth / 2, y2 + 40);
 
   fill(255);
   textSize(20);
-  let obstaclesText = "1: Flames, Gears, Blades\n2: Spiked Walls, Axes, Saws\n3: Laser, Falling Spikes";
+  let obstaclesText = "1: Monsters: Spider, Frog, Ghost, Bat\n2: Objects: Gears, Axe, Spikes";
   drawCenteredText(obstaclesText, x2 + boxWidth / 2, y2 + boxHeight / 2 + 10);
 
   // 退出提示
