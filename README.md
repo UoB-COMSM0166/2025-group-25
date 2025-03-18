@@ -99,7 +99,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>Stakeholder</em>
 </div>
 <p align="center">
-  <img src="docs/requirements/stakeholder.png" alt="Stakeholder">
+  <img src="docs/requirement/stakeholder.png" alt="Stakeholder">
 </p>
 
 ### User Stories and Use Case Diagram
