@@ -59,10 +59,10 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>ideation game</em>
 </div>
 <div align="center">
-  <img src="docs/idea2-start.gif" width="300">
+  <img src="docs/game idea/idea2-start.gif" width="300">
 </div>
 <div align="center">
-  <img src="docs/idea2.gif" width="300">
+  <img src="docs/game idea/idea2.gif" width="300">
 </div>
 
 ### Paper Prototype
@@ -74,10 +74,10 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 </div>
 <div style="text-align: center;">
 <div align="center">
-  <img src="docs/idea1-start.gif" width="300">
+  <img src="docs/game idea/idea1-start.gif" width="300">
 </div>
 <div align="center">
-  <img src="docs/idea1.gif" width="300">
+  <img src="docs/game idea/idea1.gif" width="300">
 </div>
 
 ### Digital Paper Prototype
@@ -88,7 +88,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>Digital Paper Prototype</em>
 </div>
 <div align="center">
-  <img src="docs/Digital.gif" width="300">
+  <img src="docs/game idea/Digital.gif" width="300">
 </div>
 
 ### Stakeholders
@@ -99,7 +99,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>Stakeholder</em>
 </div>
 <p align="center">
-  <img src="docs/stakeholder.png" alt="Stakeholder">
+  <img src="docs/requirements/stakeholder.png" alt="Stakeholder">
 </p>
 
 ### User Stories and Use Case Diagram
