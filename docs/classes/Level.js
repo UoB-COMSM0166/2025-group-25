@@ -215,8 +215,15 @@ class Level {
           player.currentItem = "Teleport Scroll";
           console.log("✅ 玩家获得瞬移卷轴！");
         } else if (item.type === "Heart") {
-          player.lives += 1;
-          player.currentItem = null;
+          if (!item.collected) {
+            item.collected = true;  // ✅ 防止重复加命
+            player.lives = min(player.lives + 1, 5);
+            player.currentItem = null;
+    
+            if (pickItemSound) {
+                pickItemSound.play();
+            }
+          }
         } else if (item.type === "Mystery Box") {
           let possibleItems = [
             "Flame Element",

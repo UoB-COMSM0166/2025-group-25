@@ -20,14 +20,11 @@ function drawHUD() {
   let heartX = 90;  // 生命图标的 X 位置
   let heartY = 65;  // 生命图标的 Y 位置
   let heartSize = 50; // 生命图标大小
+  let heartSpacing = 35; // 每个heart的水平间隔
 
-  if (player.lives === 3) {
-    image(heart3, heartX, heartY, heartSize, heartSize);
-  } else if (player.lives === 2) {
-    image(heart2, heartX, heartY, heartSize, heartSize);
-  } else if (player.lives === 1) {
-    image(heart1, heartX, heartY, heartSize, heartSize);
-  }
+  for (let i = 0; i < player.lives; i++) {
+    image(heartImg, heartX + i * heartSpacing, heartY, heartSize, heartSize);
+  }//xin~~~~
 }
 
 // Credits (游戏制作团队名单)
@@ -150,14 +147,14 @@ function drawCredits() {
   let imageY = (height - imageHeight) / 2;
 
   // 显示左侧图片
-  if (creditImage) {
+  /*if (creditImage) {
     image(creditImage, imageX, imageY, imageWidth, imageHeight);
   } else {
     fill(255, 0, 0);
     textSize(24);
     textAlign(CENTER, CENTER);
     text("Error: Image not loaded", imageX + imageWidth / 2, imageY + imageHeight / 2);
-  }
+  }*/
 
   // 右侧 Credits 信息区域
   let boxWidth = width / 2 - 100;
@@ -183,7 +180,7 @@ function drawCredits() {
     "Cailing Yang",
     "Junjie Yan",
     "Shuao Zhang",
-    "Kexing Zhang"
+    "Kexin Zhang"
   ];
   let lineSpacing = 50;
   for (let i = 0; i < teamMembers.length; i++) {

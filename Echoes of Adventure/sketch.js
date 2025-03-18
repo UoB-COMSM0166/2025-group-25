@@ -32,14 +32,17 @@ let batFrames = [];
 let advancedBirdSpritesheet;
 let ghostAppearFrames = [];
 let ghostDisappearFrames = [];
-let heartImg;
+
 let spikedWallImg;
 let sawsImg;
 let frogIdle, frogJump, frogFall;
 // let portalImage;
 let platformImage = {};//ycl
 
-let heart3, heart2, heart1; // 存储不同生命状态的图标zkx~~~~~
+let heartImg;
+let lives = 3;   
+let maxLives = 5; //xin~~~~~
+
 //添加音效zkx
 let coinSound;//zkx~~~~~~~
 let storyMusic; //zkx~~~~~~
@@ -152,9 +155,7 @@ function preload() {
   heartImg = loadImage("assets/heart.png");
   spikedWallImg = loadImage('assets/spikedwall.png');
   sawsImg = loadImage("assets/saws.png");
-  heart3 = loadImage("assets/heart.png");
-  heart2 = loadImage("assets/heart2.png");
-  heart1 = loadImage("assets/heart1.png");//zkx~~~~
+  heartImg = loadImage("assets/heart.png"); //xin~~~
   
   //Rui
   // 加载鬼魂的 "Appear" 帧动画
@@ -203,6 +204,12 @@ function setup() {
 
   switchScene("story"); //这个地方一定是story，不是meun，因为我们要先看故事！！！很关键
 }
+
+/*function drawHearts() {
+  for (let i = 0; i < player.lives; i++) {
+    image(heartImg, 20 + i * 40, 20, 30, 30);
+  }
+}*/
 
 function draw() {
   // 1. 更新天气 & 粒子
@@ -345,6 +352,8 @@ function draw() {
 
     // 3. 绘制天气效果（雨、雷），覆盖在游戏场景之上
     drawWeather();
+    //drawHearts(lives); // 这里的 lives 是当前玩家的命数（1~3）xin~~~~~~~
+
 
     // 4. 受伤闪红
     if (damageFlashAlpha > 0) {
