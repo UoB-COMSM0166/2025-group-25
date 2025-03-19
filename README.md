@@ -14,6 +14,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 - [1. Development Team](#1-development-team)
 - [2. Game Research](#2-game-research)
 - [3. Requirements](#3-requirements)
+- [7. Process](#7-process)
 
 ## 1. Development Team
 
@@ -122,6 +123,75 @@ Acceptance Criteria：The game should feature dynamic weather conditions such as
 <div align="center">
   <b>Figure 5</b>
 </div>
+
+## 7. Process
+### Collaboration
+In the early stages, our meetings were held frequently. We began by discussing the gaming history of our team members to develop a unique game that better suited our group, was creative, and aligned with the majority’s preferences. We used the classroom whiteboard for simple game concept brainstorming and model sketching.
+<div align="center">
+  <b>Figure 6</b>
+</div>
+<div align="center">
+  <em>Team Meeting Paper Prototype</em>
+</div>
+<div align="center">
+  <img src="docs/meeting/whiteboard.jpg" width="400">
+</div>
+During this period, all our decisions were made through voting. Simple tasks were decided by a show of hands in face-to-face meetings, while more complex tasks, such as determining the game type, were handled using the voting mini-program in WeChat. This allowed us to vote anonymously and express our opinions freely.
+<div align="center">
+  <b>Figure 7</b>
+</div>
+<div align="center">
+  <em>Voting results</em>
+</div>
+<div align="center">
+  <img src="docs/meeting/wechat-vote.jpg" width="200">
+</div>
+In fact, after forming the team, we created a discussion group on WeChat to communicate about development progress and any issues encountered during the process. At the beginning of the project, we scheduled face-to-face meetings every weekend to summarize the week's progress and assign tasks for the upcoming week.
+<div align="center">
+  <b>Figure 8</b>
+</div>
+<div align="center">
+  <em>Team Meeting</em>
+</div>
+<div align="center">
+  <img src="docs/meeting/mvb1.11.jpg" width="400">
+</div>
+At the same time, as the project progressed, we also held offline discussions periodically to merge code at different stages (e.g., after the lab session every Tuesday).
+<div align="center">
+  <b>Figure 9</b>
+</div>
+<div align="center">
+  <em>Merge code</em>
+</div>
+<div align="center">
+  <img src="docs/meeting/2.11meeting.jpg" width="400">
+</div>
+
+### Gantt Chart
+<div align="center">
+  <b>Figure 9</b>
+</div>
+<div align="center">
+  <em>Gantt Chart of Game Project</em>
+</div>
+<div align="center">
+  <img src="" width="400">
+</div>
+Here is the link to our complete Gantt chart:(https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh)
+
+### Tools and Techniques
+In this project, we adopted a variety of tools and techniques to ensure efficient collaboration and smooth progress throughout the development process.
+
+We used Lark as our primary online documentation tool. By setting up project discussion groups and shared documents on Lark, our team was able to communicate in real time, share meeting minutes, discuss task requirements, and flexibly add text, images, and diagrams. This method centralized all important information, greatly improving the efficiency of information retrieval and task tracking.
+
+For the development environment, we chose VS Code. Leveraging VS Code’s powerful plugin support—such as Live Share—we implemented real-time pair programming and collaborative debugging, ensuring that team members could resolve issues simultaneously and optimize code quality together. Our project code is primarily based on p5.js, which provides an intuitive, interactive graphics programming platform that is well-suited for rapid development and iterative game functionality.
+
+Additionally, we established a code repository on GitHub and extensively adopted the Pull Request mechanism for code reviews. Every code submission was reviewed by team members, ensuring adherence to coding standards and maintaining high-quality project code. Through this comprehensive use of multiple tools and techniques, we achieved efficient team collaboration and project management, laying a solid foundation for the project’s success.
+
+### Agile Dicussion
+In this project, we adopted agile discussion methods to ensure efficient team collaboration and smooth project progress. We primarily used two formats: daily stand-up meetings and backlog refinement sessions. While daily stand-ups usually require face-to-face reporting by team members, we flexibly adapted this to real-time reporting in a WeChat group based on our actual circumstances. This not only ensured timely information sharing but also enhanced communication efficiency. Meanwhile, we held a weekly offline backlog refinement meeting at MVB to focus on discussing and assigning phased tasks, ensuring that every team member was clear on current priorities and objectives. Through this flexible and diverse agile discussion approach, we successfully enhanced team collaboration efficiency and laid a solid foundation for the smooth progress of the project.
+============================以下是模板部分===============================
+
 
 ## 3. Introduction
 
