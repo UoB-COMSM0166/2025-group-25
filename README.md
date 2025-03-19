@@ -134,7 +134,7 @@ In the early stages, our meetings were held frequently. We began by discussing t
   <em>Team Meeting Paper Prototype</em>
 </div>
 <div align="center">
-  <img src="docs/meeting/whiteboard.jpg" width="400">
+  <img src="docs/meeting/whiteboard.jpg" width="500">
 </div>
 During this period, all our decisions were made through voting. Simple tasks were decided by a show of hands in face-to-face meetings, while more complex tasks, such as determining the game type, were handled using the voting mini-program in WeChat. This allowed us to vote anonymously and express our opinions freely.
 <div align="center">
@@ -144,7 +144,7 @@ During this period, all our decisions were made through voting. Simple tasks wer
   <em>Voting results</em>
 </div>
 <div align="center">
-  <img src="docs/meeting/wechat-vote.jpg" width="200">
+  <img src="docs/meeting/wechat-vote.jpg" width="220">
 </div>
 In fact, after forming the team, we created a discussion group on WeChat to communicate about development progress and any issues encountered during the process. At the beginning of the project, we scheduled face-to-face meetings every weekend to summarize the week's progress and assign tasks for the upcoming week.
 <div align="center">
@@ -154,7 +154,7 @@ In fact, after forming the team, we created a discussion group on WeChat to comm
   <em>Team Meeting</em>
 </div>
 <div align="center">
-  <img src="docs/meeting/mvb1.11.jpg" width="400">
+  <img src="docs/meeting/mvb1.11.jpg" width="500">
 </div>
 At the same time, as the project progressed, we also held offline discussions periodically to merge code at different stages (e.g., after the lab session every Tuesday).
 <div align="center">
@@ -164,7 +164,7 @@ At the same time, as the project progressed, we also held offline discussions pe
   <em>Merge code</em>
 </div>
 <div align="center">
-  <img src="docs/meeting/2.11meeting.jpg" width="400">
+  <img src="docs/meeting/2.11meeting.jpg" width="500">
 </div>
 
 ### Gantt Chart
@@ -175,7 +175,7 @@ At the same time, as the project progressed, we also held offline discussions pe
   <em>Gantt Chart of Game Project</em>
 </div>
 <div align="center">
-  <img src="" width="400">
+  <img src="" width="500">
 </div>
 Here is the link to our complete Gantt chart:(https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh)
 
