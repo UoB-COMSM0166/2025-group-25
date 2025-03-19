@@ -596,10 +596,10 @@ function keyPressed() {
     }
 
   } else if (currentScene === "level") {
-    if (key === " ") {
+    if (key === " " || key === "w" || key === "W") {
       player.jump();
     }
-    if (key === "Z" || key === "z") {
+    if (key === "Z" || key === "z" || key === "j" || key === "J") {
       player.attack();
     }
 

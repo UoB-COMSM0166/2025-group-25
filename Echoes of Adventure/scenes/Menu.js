@@ -102,6 +102,70 @@ function draw() {
   // 其它游戏状态...
 }
 
+// function drawMenu() {
+//   background(30);
+  
+//   // 背景图片
+//   image(menuBg, 0, 0, width, height);
+  
+//   // 标题动态浮动
+//   let titleOffset = sin(frameCount * 0.05) * 10;
+
+//   textAlign(CENTER, CENTER);
+
+//   // 计算标题宽度
+//   textSize(72);
+//   textStyle(BOLD);
+//   let titleText = "Echoes of Adventure";
+//   let titleWidth = textWidth(titleText) + 80;
+//   let titleHeight = 72 * 1.2; 
+
+//   // 菜单选项 —— 在这里新增 "Press C to view Credits"
+//   textSize(28);
+//   textStyle(NORMAL);
+//   let menuItems = [
+//     "                           ",
+//     "Press 1 for Invincible Mode",
+//     "Press 2 for Normal Mode",
+//     // "                           ",
+//     // "Press I to view instructions",
+//     // "Collect all the coins to complete the level",
+
+//     //"Press C to view Credits"  // <-- 新增这一行
+    
+//   ];
+//   let lineSpacing = 50;
+//   let menuHeight = menuItems.length * lineSpacing;
+
+//   // 计算毛玻璃背景大小
+//   let boxWidth = titleWidth;
+//   let boxHeight = titleHeight + menuHeight + 60;
+//   let boxX = (width - boxWidth) / 2;
+//   let boxY = height / 2 - 150 + titleOffset - titleHeight / 2 - 10;
+
+//   // 绘制半透明背景
+//   noStroke();
+//   fill(0, 0, 0, 120);
+//   rect(boxX, boxY, boxWidth, boxHeight, 20);
+
+//   // 白色半透明层（模拟毛玻璃）
+//   fill(255, 255, 255, 30);
+//   rect(boxX, boxY, boxWidth, boxHeight, 20);
+
+//   // 绘制标题（带黑色描边）
+//   drawTextWithOutline(titleText, width / 2, height / 2 - 150 + titleOffset, 72, 5);
+
+//   // 绘制菜单选项（带黑色描边）
+//   textSize(28);
+//   textStyle(NORMAL);
+//   let startY = height / 2 - 80 + titleOffset;
+//   for (let i = 0; i < menuItems.length; i++) {
+//     drawTextWithOutline(menuItems[i], width / 2, startY + i * lineSpacing, 28, 3);
+//   }
+// }
+
+// 带描边的文字绘制函数
+
 function drawMenu() {
   background(30);
   
@@ -121,14 +185,14 @@ function drawMenu() {
   let titleHeight = 72 * 1.2; 
 
   // 菜单选项 —— 在这里新增 "Press C to view Credits"
-  textSize(28);
-  textStyle(NORMAL);
   let menuItems = [
     "                           ",
-    "Press 1 for Invincible Mode",
-    "Press 2 for Normal Mode",
+    "Press 1 : Invincible Mode  /  Press 2 : Normal Mode",
+    //"Press 2 : Normal Mode",
+    "                           ",
+    "Collect all the coins to complete the level",
     "Press I to view instructions",
-    //"Press C to view Credits"  // <-- 新增这一行
+    // "Press C to view Credits"  // <-- 新增这一行（如需使用请取消注释）
   ];
   let lineSpacing = 50;
   let menuHeight = menuItems.length * lineSpacing;
@@ -152,15 +216,20 @@ function drawMenu() {
   drawTextWithOutline(titleText, width / 2, height / 2 - 150 + titleOffset, 72, 5);
 
   // 绘制菜单选项（带黑色描边）
-  textSize(28);
-  textStyle(NORMAL);
   let startY = height / 2 - 80 + titleOffset;
   for (let i = 0; i < menuItems.length; i++) {
-    drawTextWithOutline(menuItems[i], width / 2, startY + i * lineSpacing, 28, 3);
+    let fontSize = 28; // 默认字体大小
+    // 针对指令与提示行使用较小字体
+    if (
+      menuItems[i] === "Collect all the coins to complete the level" ||
+      menuItems[i] === "Press I to view instructions"
+    ) {
+      fontSize = 24;
+    }
+    drawTextWithOutline(menuItems[i], width / 2, startY + i * lineSpacing, fontSize, 3);
   }
 }
 
-// 带描边的文字绘制函数
 function drawTextWithOutline(txt, x, y, txtSize, outlineWeight) {
   textSize(txtSize);
   textStyle(BOLD);

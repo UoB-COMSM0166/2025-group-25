@@ -337,10 +337,10 @@ class Player {
 
   /** 🎮 监听键盘按下 */
   keyPressed() {
-    if (key === " ") {
+    if (key === " " || key === "w" || key === "W") {
       this.jump();
     }
-    if (key === "Z" || key === "z") {
+    if (key === "Z" || key === "z" || key === "j" || key === "J") {
       this.attack();
     }
     //if (key === "X" || key === "x") this.dash();

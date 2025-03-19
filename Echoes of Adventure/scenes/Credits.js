@@ -147,14 +147,14 @@ function drawCredits() {
   let imageY = (height - imageHeight) / 2;
 
   // 显示左侧图片
-  /*if (creditImage) {
+  if (creditImage) {
     image(creditImage, imageX, imageY, imageWidth, imageHeight);
   } else {
     fill(255, 0, 0);
     textSize(24);
     textAlign(CENTER, CENTER);
     text("Error: Image not loaded", imageX + imageWidth / 2, imageY + imageHeight / 2);
-  }*/
+  }
 
   // 右侧 Credits 信息区域
   let boxWidth = width / 2 - 100;
