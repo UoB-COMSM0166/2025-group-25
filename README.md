@@ -37,7 +37,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | 01 | CAILING YANG   | rl24638@bristol.ac.uk | TEST | TEST |
 | 02 | JUNJIE YAN   | am24166@bristol.ac.uk | TEST | TEST |
 | 03 | SHUAO ZHANG   | qk24065@bristol.ac.uk | TEST | TEST |
-| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | TEST |
+| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | Assisted in providing code modifications for in-game item functionality, such as item collection and attack effects. Also helped optimize player interactions and sound effect management. Additionally, contributed to setting up and adjusting gold-related features, including gold collection, display, and usage logic. |
 | 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
 
 ## 2. Game Research
