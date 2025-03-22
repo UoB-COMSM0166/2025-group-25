@@ -215,8 +215,8 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 
 |Name | Image | Description |
 | --------------------- | ------------- | ------------------- |
-| **Coin** | <img src="docs/assets/Coin.png" width="50">| Collect 12 coins in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
-| **Heart**| <img src="docs/assets/heart.png" width="100"> | Restores one extra life. Maximum 5 lives. <br> |
+| **Coin** |<img src="docs/assets/Coin.png" width="50">| Collect 12 coins in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
+| **Heart**|<img src="docs/assets/heart.png" width="100">| Restores one extra life. Maximum 5 lives. <br> |
 | **Flame Element** |<img src="docs/assets/fireball 1.png" width="80">| Allows the player to use fire-based attacks. <br> |
 | **Freeze Element** | test | Freezes enemies temporarily, making them vulnerable to attacks. <br> |
 | **Thunder Element**  | test| Puts a bomb that explodes after a short delay, damaging enemies in its vicinity. <br> |
@@ -225,11 +225,11 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 
 |Name | Image | Description |
 | ---------------------- | -------------------------- | ------------------- |
-| **Axe** | <img src="docs/assets/Axe_Trap.png" width="60">  | A swinging axe that deals damage to the player when touched. <br> |
-| **Water**  | <img src="docs/assets/Water.png" width="60">  | A water hazard that can drown the player if submerged. <br> |
-| **Magma** |<img src="docs/assets/magma.png" width="60"> | A pool of magma that damages the player if they come in contact. <br> |
-| **Saws** | <img src="docs/assets/saws.png" width="60"> | A rotating saw blade that causes damage to the player when it touches them. <br> |
-| **Spiked Wall** | <img src="docs/assets/spikedwall.png" width="60"> | A wall with spikes that damages the player on contact. <br> |
+| **Axe** |<img src="docs/assets/Axe_Trap.png" width="60">| A swinging axe that deals damage to the player when touched. <br> |
+| **Water**  |<img src="docs/assets/Water.png" width="60">| A water hazard that can drown the player if submerged. <br> |
+| **Magma** |<img src="docs/assets/magma.png" width="60">| A pool of magma that damages the player if they come in contact. <br> |
+| **Saws** |<img src="docs/assets/saws.png" width="60">| A rotating saw blade that causes damage to the player when it touches them. <br> |
+| **Spiked Wall** |<img src="docs/assets/spikedwall.png" width="60">| A wall with spikes that damages the player on contact. <br> |
 
 
 ----
