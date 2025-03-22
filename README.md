@@ -207,7 +207,7 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 | **Frog**      |  test | Jumps around within a specified range. If not frozen, jumps between left and right randomly. When it touches the ground, it becomes idle. <br> |
 | **Spider**    |test  | Moves within a specified patrol range. If not frozen, moves back and forth horizontally and changes direction when reaching patrol limits. <br>  |
 | **Bird**        | test  | Flies up and down with a sinusoidal motion. If not frozen, changes direction once it reaches a maximum vertical amplitude. <br>  |
-| **Bat**        | test  | Patrols within a fixed horizontal range, moving back and forth while flying up and down. <br>  |
+| **Bat**        | <img src="docs/assets/bat-fly1.png" width="100">  | Patrols within a fixed horizontal range, moving back and forth while flying up and down. <br>  |
 | **Fish**        |  test  | Swims up and down with sinusoidal motion. <br>  |
 
 ### Table 2. Items
