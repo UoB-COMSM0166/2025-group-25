@@ -204,7 +204,7 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 
 | Name | Image | Description |
 | ---------------- | ------------- | ------------------- |
-| **Frog**      | <img src="docs/assets/frog-idle-1.png" width="100"> | Jumps around within a specified range. If not frozen, jumps between left and right randomly. When it touches the ground, it becomes idle. <br> |
+| **Frog**      |<img src="docs/assets/frog-idle-1.png" width="100"> | Jumps around within a specified range. If not frozen, jumps between left and right randomly. When it touches the ground, it becomes idle. <br> |
 | **Spider**    |<img src="docs/assets/Spider_1.png" width="100"> | Moves within a specified patrol range. If not frozen, moves back and forth horizontally and changes direction when reaching patrol limits. <br>  |
 | **Bird**        | <img src="docs/assets/Bird_1.png" width="100"> | Flies up and down with a sinusoidal motion. If not frozen, changes direction once it reaches a maximum vertical amplitude. <br>  |
 | **Bat**        | <img src="docs/assets/bat-fly1.png" width="100">  | Patrols within a fixed horizontal range, moving back and forth while flying up and down. <br>  |
@@ -215,10 +215,10 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 
 |Name | Image | Description |
 | --------------------- | ------------- | ------------------- |
-| **Coin** | <img src="docs/assets/Coin.png" width="70">  | Collect 12 coins in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
-| **Heart**| <img src="docs/assets/heart.png" width="80">  | Restores one extra life. Maximum 5 lives. <br> |
-| **Flame Element** |  <img src="docs/assets/fireball 1.png" width="80"> | Allows the player to use fire-based attacks. <br> |
-| **Freeze Element** | test  | Freezes enemies temporarily, making them vulnerable to attacks. <br> |
+| **Coin** | <img src="docs/assets/Coin.png" width="50">  | Collect 12 coins in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
+| **Heart**| <img src="docs/assets/heart.png" width="100"> | Restores one extra life. Maximum 5 lives. <br> |
+| **Flame Element** |<img src="docs/assets/fireball 1.png" width="80"> | Allows the player to use fire-based attacks. <br> |
+| **Freeze Element** | test | Freezes enemies temporarily, making them vulnerable to attacks. <br> |
 | **Thunder Element**  | test| Puts a bomb that explodes after a short delay, damaging enemies in its vicinity. <br> |
 
 ### Table 3. Obstacles
