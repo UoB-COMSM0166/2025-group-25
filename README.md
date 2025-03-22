@@ -204,19 +204,33 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 
 | Name | Image | Description |
 | ---------------- | ------------- | ------------------- |
-| **Frog**      |  test | Jumps around within a specified range. If not frozen, jumps between left and right randomly. When it touches the ground, it becomes idle. <br> |
-| **Spider**    |test  | Moves within a specified patrol range. If not frozen, moves back and forth horizontally and changes direction when reaching patrol limits. <br>  |
-| **Bird**        | test  | Flies up and down with a sinusoidal motion. If not frozen, changes direction once it reaches a maximum vertical amplitude. <br>  |
+| **Frog**      | <img src="docs/assets/frog-idle-1.png" width="100"> | Jumps around within a specified range. If not frozen, jumps between left and right randomly. When it touches the ground, it becomes idle. <br> |
+| **Spider**    |<img src="docs/assets/Spider_1.png" width="100"> | Moves within a specified patrol range. If not frozen, moves back and forth horizontally and changes direction when reaching patrol limits. <br>  |
+| **Bird**        | <img src="docs/assets/Bird_1.png" width="100"> | Flies up and down with a sinusoidal motion. If not frozen, changes direction once it reaches a maximum vertical amplitude. <br>  |
 | **Bat**        | <img src="docs/assets/bat-fly1.png" width="100">  | Patrols within a fixed horizontal range, moving back and forth while flying up and down. <br>  |
-| **Fish**        |  test  | Swims up and down with sinusoidal motion. <br>  |
+| **Fish**        |  <img src="docs/assets/Fish_1.png" width="100">  | Swims up and down with sinusoidal motion. <br>  |
+| **Ghost**      |   <img src="docs/assets/disappear_frame_1.png" width="100"> |It can temporarily disappear and reappear, which is difficult to track. <br> |
 
 ### Table 2. Items
 
 |Name | Image | Description |
 | --------------------- | ------------- | ------------------- |
-| **Heart**     | test  | Restores one extra life. Maximum 5 lives. <br> |
-| **Flame Element** |  test | Allows the player to use fire-based attacks. <br> |
+| **Coin** | <img src="docs/assets/Coin.png" width="100">  | Collect 12 coins in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
+| **Heart**| <img src="docs/assets/heart.png" width="100">  | Restores one extra life. Maximum 5 lives. <br> |
+| **Flame Element** |  <img src="docs/assets/fireball 1.png" width="100"> | Allows the player to use fire-based attacks. <br> |
 | **Freeze Element** | test  | Freezes enemies temporarily, making them vulnerable to attacks. <br> |
+| **Thunder Element**  | test| Puts a bomb that explodes after a short delay, damaging enemies in its vicinity. <br> |
+
+### Table 3. Obstacles
+
+|Name | Image | Description |
+| ---------------------- | -------------------------- | ------------------- |
+| **Axe** | <img src="docs/assets/Axe_Trap.png" width="100">  | A swinging axe that deals damage to the player when touched. <br> |
+| **Water**  | <img src="docs/assets/Water.png" width="100">  | A water hazard that can drown the player if submerged. <br> |
+| **Magma** |<img src="docs/assets/magma.png" width="100"> | A pool of magma that damages the player if they come in contact. <br> |
+| **Saws** | <img src="docs/assets/saws.png" width="100"> | A rotating saw blade that causes damage to the player when it touches them. <br> |
+| **Spiked Wall** | <img src="docs/assets/spikedwall.png" width="100"> | A wall with spikes that damages the player on contact. <br> |
+
 
 ----
 The above part is our result （上面部分是我们完成的成果）  
