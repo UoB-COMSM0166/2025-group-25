@@ -215,7 +215,7 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 
 |Name | Image | Description |
 | --------------------- | ------------- | ------------------- |
-| **Coin** |  <img src="docs/assets/Coin.png" width="50"> | Collect 12 coins in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
+| **Coin** | <img src="docs/assets/Coin.png" width="50"> | Collect 12 coins in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
 | **Heart**| <img src="docs/assets/heart.png" width="100"> | Restores one extra life. Maximum 5 lives. <br> |
 | **Flame Element** |<img src="docs/assets/fireball 1.png" width="80"> | Allows the player to use fire-based attacks. <br> |
 | **Freeze Element** | test | Freezes enemies temporarily, making them vulnerable to attacks. <br> |
