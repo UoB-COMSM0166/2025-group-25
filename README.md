@@ -195,11 +195,28 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 
 ## 3. Introduction
 
-- 5% ~250 words 
 - When designing Echoes of Adventure, our goal was to create a platformer that was easy to pick up yet hard to master, while ensuring it appealed to a wide variety of players. Whether you're a beginner or someone who struggles with fast-paced keyboard and mouse controls, this game provides an experience that’s both fun and rewarding. Drawing inspiration from classic platformers, we aimed to make a game that anyone can enjoy while offering increasing challenges and a deep sense of achievement as you progress through the world.
 - In the ancient and mysterious world of Echoes of Adventure, the land nurtures five magical continents: Emerald Isles, Lava Castle, Celestial Citadel, Shadow Realm, and Crystal Caverns. However, a sudden catastrophe struck, disrupting the balance of elemental power. As a player, you control a small but courageous fox, traversing various landscapes, overcoming environmental challenges, and using elemental powers to solve puzzles and defeat enemies. Each continent offers unique elements and trials that require strategic thinking and quick reflexes. With each challenge you conquer, you’ll gain more power, uncover secrets, and progress closer to restoring the balance of the world.
 - In Echoes of Adventure, you will find a range of powers and items that will help you along your journey. From elemental hearts that boost your health to powerful elemental energy that grants you devastating abilities, these items can be used strategically to overcome obstacles, defeat dark creatures, and unlock new areas. Collecting mystic coins is crucial, as they are the key to advancing to the next continent and unlocking further adventures.
 - With dynamic platforms, time-based puzzles, and a range of enemies, Echoes of Adventure is designed to keep you on your toes, ensuring that every moment of gameplay offers something new to discover. It’s time to embark on an epic journey and restore the elemental balance. Are you ready for the adventure of a lifetime?
+  
+### Table 1. Enemies
+
+| Name | Image | Description |
+| ---------------- | ------------- | ------------------- |
+| **Frog**      |  test | Jumps around within a specified range. If not frozen, jumps between left and right randomly. When it touches the ground, it becomes idle. <br> |
+| **Spider**    |test  | Moves within a specified patrol range. If not frozen, moves back and forth horizontally and changes direction when reaching patrol limits. <br>  |
+| **Bird**        | test  | Flies up and down with a sinusoidal motion. If not frozen, changes direction once it reaches a maximum vertical amplitude. <br>  |
+| **Bat**        | test  | Patrols within a fixed horizontal range, moving back and forth while flying up and down. <br>  |
+| **Fish**        |  test  | Swims up and down with sinusoidal motion. <br>  |
+
+### Table 2. Items
+
+|Name | Image | Description |
+| --------------------- | ------------- | ------------------- |
+| **Heart**     | test  | Restores one extra life. Maximum 5 lives. <br> |
+| **Flame Element** |  test | Allows the player to use fire-based attacks. <br> |
+| **Freeze Element** | test  | Freezes enemies temporarily, making them vulnerable to attacks. <br> |
 
 ----
 The above part is our result （上面部分是我们完成的成果）  
