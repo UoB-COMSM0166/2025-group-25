@@ -93,7 +93,7 @@ class Item {
   collect() {
     this.collected = true;
     
-    if (player.firstItemPickup) {       // 新增
+    if (player.firstItemPickup && this.type !== "Heart") {       // 新增
       player.itemPickupMessage = "Press Z to use item";
       player.messageTimer = 120; // 显示提示 2 秒
       player.firstItemPickup = false; // 之后不再显示提示
