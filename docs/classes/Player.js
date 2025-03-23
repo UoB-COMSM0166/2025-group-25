@@ -268,9 +268,12 @@ class Player {
     }, 400);
 
     // ✅ 播放攻击音效
-    if (attackSound) {
-      attackSound.play();
-      console.log("🔫 播放攻击音效！Biu~");
+    if (this.currentItem && (this.currentItem === "Flame Element" || this.currentItem === "Freeze Element" || this.currentItem === "Thunder Element")) {
+    // ✅ 播放攻击音效
+      if (attackSound) {
+        attackSound.play();
+        console.log("🔫 播放攻击音效！Biu~");
+      }
     }
   /*
     let attackX = this.facingDirection === "right"
