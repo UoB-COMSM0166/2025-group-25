@@ -14,6 +14,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 - [1. Development Team](#1-development-team)
 - [2. Game Research](#2-game-research)
 - [3. Requirements](#3-requirements)
+- [4. Design](#4-design)
 - [7. Process](#7-process)
 
 ## 1. Development Team
@@ -234,6 +235,44 @@ Acceptance Criteria：The game should feature dynamic weather conditions such as
 <div align="center">
   <b>Figure 5</b>
 </div>
+## 4. Design
+
+In this section, we present the overall design of our game, including both a Class Diagram and a Sequence Diagram. These diagrams help illustrate the core architecture of the project and the flow of interactions between its components.
+
+### 4.1 Class Diagram
+
+Below is the Class Diagram, which shows the main classes in our game and their relationships. It serves as a high-level blueprint that helps us manage inheritance, dependencies, and interactions among various game objects.
+
+<p align="center">
+  <img src="docs/design/class-diagram.png" alt="Class Diagram" width="600">
+</p>
+
+**Figure 1. Class Diagram**
+
+Here’s a brief explanation of the major classes (as an example; adjust to match your actual design):
+- **Player**: Represents the player character’s logic, including movement, jumping, collision detection, and state management.
+- **Enemy**: A base class for enemies; different enemy types (e.g., spider, frog, bat) inherit from this class to implement unique behaviors.
+- **Item**: Represents collectible or interactive items (coins, health pickups, elemental powers, etc.). Derived classes handle specific item behaviors.
+- **LevelManager**: Manages loading and initialization of level data, including spawning enemies, items, and handling level transitions.
+- **UIManager**: Responsible for updating and rendering the game’s user interface elements (e.g., health bar, coin count, score, menus).
+
+---
+
+### 4.2 Sequence Diagram
+
+The diagram below illustrates the main flow when the player enters a level and progresses to completion. It highlights the sequence of interactions among the Player, Enemy, Item, and LevelManager objects.
+
+<p align="center">
+  <img src="docs/design/sequence-diagram.png" alt="Sequence Diagram" width="600">
+</p>
+
+**Figure 2. Sequence Diagram**
+
+Example flow description:
+1. **Player** enters the level, and **LevelManager** initializes the scene (loads map, spawns enemies, spawns items, etc.).
+2. When **Player** moves or attacks, it may collide or interact with **Enemy**, **Item**, or other environment objects.
+3. **UIManager** continuously updates player health, coin counts, and other HUD elements.
+4. Once all required objectives (e.g., collecting coins) are fulfilled, **LevelManager** transitions the game to the next level or displays a victory screen.
 
 ## 7. Process
 ### Collaboration
