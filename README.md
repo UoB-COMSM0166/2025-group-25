@@ -244,7 +244,7 @@ In this section, we present the overall design of our game, including both a Cla
 Below is the Class Diagram, which shows the main classes in our game and their relationships. It serves as a high-level blueprint that helps us manage inheritance, dependencies, and interactions among various game objects.
 
 <p align="center">
-  <img src="docs/design/Class Diagram.png" alt="Class Diagram" width="600">
+  <img src="docs/design/Class Diagram.png" alt="Class Diagram">
 </p>
 
 **Figure 1. Class Diagram**
@@ -263,7 +263,7 @@ Here’s a brief explanation of the major classes (as an example; adjust to matc
 The diagram below illustrates the main flow when the player enters a level and progresses to completion. It highlights the sequence of interactions among the Player, Enemy, Item, and LevelManager objects.
 
 <p align="center">
-  <img src="docs/design/Sequence Diagram.png" alt="Sequence Diagram" width="600">
+  <img src="docs/design/Sequence Diagram.png" alt="Sequence Diagram">
 </p>
 
 **Figure 2. Sequence Diagram**
