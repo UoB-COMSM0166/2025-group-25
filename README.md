@@ -51,11 +51,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 
 ## 3. Requirements
-当然可以！以下是你提供内容整理成的 Markdown 格式文档，适用于 GitHub README 或其他 Markdown 渲染环境中查看：
 
----
-
-# 3.1 Requirement Engineering
+### 3.1 Requirement Engineering
 
 Requirements Engineering (RE) is a critical process in software development that defines and manages system requirements to ensure alignment with user needs. In the game industry, RE plays an even more vital role due to the dynamic nature of game design and the complexity of stakeholder expectations.
 
@@ -70,7 +67,7 @@ The study also found that **scope management** is a prevalent challenge, with te
 
 ---
 
-# 3.2 Ideation Processing
+### 3.2 Ideation Processing
 
 In the early stages of the project, we utilized **Feishu Docs** for brainstorming and information integration. We initially proposed incorporating a **power-up system** to enhance player interaction.
 
@@ -93,7 +90,7 @@ During the third session on **January 28**, our team of five members was divided
 
 ---
 
-# 3.3 Feasibility Studies
+### 3.3 Feasibility Studies
 
 Given that none of our team members had prior game development experience, we conducted a series of feasibility tests. During these, we noticed:
 
@@ -108,11 +105,11 @@ Given that none of our team members had prior game development experience, we co
 
 ---
 
-# 3.4 Identifying Stakeholders
+### 3.4 Identifying Stakeholders
 
 > **Figure 4.** Onion Model of *Oiram* Game
 
-### Stakeholder Roles & Environmental Context
+#### Stakeholder Roles & Environmental Context
 
 Our Onion Model helped us differentiate between types of feedback:
 
@@ -132,9 +129,9 @@ This dual-layer feedback helped:
 
 ---
 
-# 3.5 Identifying Top-Level Needs with User Stories
+### 3.5 Identifying Top-Level Needs with User Stories
 
-## 3.5.1 Player Needs
+#### 3.5.1 Player Needs
 
 - *As a player*, I want the game to feature **random events** (mystery boxes) and **hidden levels** to enhance unpredictability and replayability.
 - *As a player*, I want to hear **sound effects** for actions and **dynamic background music** for immersion.
@@ -148,7 +145,7 @@ This dual-layer feedback helped:
 - *As a visually impaired or elderly player*, I want to **customize font size and color** to improve readability.
 - *As a player*, I want **realistic HCI interactions** with dynamic visuals to enhance immersion.
 
-## 3.5.2 Developer & Designer Needs
+#### 3.5.2 Developer & Designer Needs
 
 - *As a developer*, I want to implement **online leaderboards** and **multiplayer co-op** to increase engagement.
 - *As a designer*, I want to implement a **dynamic weather system** that changes based on game progress.
@@ -162,7 +159,7 @@ This dual-layer feedback helped:
 
 ---
 
-# 3.6 Use-Cases Breakdown
+### 3.6 Use-Cases Breakdown
 
 To support diverse users and resolve testing issues, we implemented:
 
@@ -179,9 +176,9 @@ To support diverse users and resolve testing issues, we implemented:
 
 ---
 
-# 3.7 Use-Case Specification
+### 3.7 Use-Case Specification
 
-### Table 1: Normal Mode Use Case Specification
+##### Table 1: Normal Mode Use Case Specification
 
 | Item | Description |
 |------|-------------|
@@ -193,7 +190,7 @@ To support diverse users and resolve testing issues, we implemented:
 
 ---
 
-### Table 2: Invincible Mode Use Case Specification
+##### Table 2: Invincible Mode Use Case Specification
 
 | Item | Description |
 |------|-------------|
@@ -205,7 +202,7 @@ To support diverse users and resolve testing issues, we implemented:
 
 ---
 
-### Table 3: Mode Differences
+##### Table 3: Mode Differences
 
 | Mode | Key Features | Target User |
 |------|--------------|-------------|
