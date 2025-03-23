@@ -51,6 +51,169 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 
 ## 3. Requirements
+当然可以！以下是你提供内容整理成的 Markdown 格式文档，适用于 GitHub README 或其他 Markdown 渲染环境中查看：
+
+---
+
+# 3.1 Requirement Engineering
+
+Requirements Engineering (RE) is a critical process in software development that defines and manages system requirements to ensure alignment with user needs. In the game industry, RE plays an even more vital role due to the dynamic nature of game design and the complexity of stakeholder expectations.
+
+A comprehensive study by **Hussain et al. (2018)** highlights that successful game development requires a structured RE approach to mitigate common pitfalls such as ambiguous requirements, scope creep, and misaligned stakeholder expectations. Without clear requirement specifications, game projects often suffer from inefficiencies, extended development timelines, and feature bloat.
+
+A survey conducted by **Borg et al. (2019)** on Global Game Jam participants identified *iterative brainstorming* as the most commonly used technique for conceptualizing initial requirements in game development. Unlike traditional software engineering projects, where requirements are often static, game development embraces flexibility, allowing creative ideation while maintaining structured requirement tracking.
+
+The study also found that **scope management** is a prevalent challenge, with teams frequently struggling to balance innovation with realistic deliverables. Poorly managed requirements often lead to *feature creep*, where excessive, unplanned functionalities are introduced, delaying project timelines and increasing development costs.
+
+> **Figure 1.** Methods used for gathering the initial set of expectations (requirements)  
+> *Source: Adapted from Borg et al. (2019).*
+
+---
+
+# 3.2 Ideation Processing
+
+In the early stages of the project, we utilized **Feishu Docs** for brainstorming and information integration. We initially proposed incorporating a **power-up system** to enhance player interaction.
+
+To accommodate players with varying skill levels, we designed two gameplay modes:
+
+- **Invincible Mode**: Players can freely select levels for a more accessible experience.
+- **Normal Mode**: Players must start from the first level, providing a structured challenge.
+
+This dual-mode design improves adaptability and enhances the overall playability.
+
+> **Figure 2.** Brainstorming via Feishu Docs
+
+During the third session on **January 28**, our team of five members was divided into two groups:
+
+- Three members: Responsible for constructing the **paper prototype**.
+- Two members: Focused on converting it into a **digital wireframe**.
+
+> **Figure 3.** Paper Prototype developed during Workshop Three  
+> *(Image placeholder: www.google.com)*
+
+---
+
+# 3.3 Feasibility Studies
+
+Given that none of our team members had prior game development experience, we conducted a series of feasibility tests. During these, we noticed:
+
+- Player movement speed varied under different **weather conditions**.
+- Transitions between weather states caused **player confusion** due to lack of visual/auditory cues.
+
+**Solutions implemented:**
+
+- Added a **Heads-Up Display (HUD)** to indicate current weather.
+- Introduced **distinct audio cues** (e.g., rain sounds, snow ambiance).
+- Enhanced **immersion and usability** through combined visual and audio feedback.
+
+---
+
+# 3.4 Identifying Stakeholders
+
+> **Figure 4.** Onion Model of *Oiram* Game
+
+### Stakeholder Roles & Environmental Context
+
+Our Onion Model helped us differentiate between types of feedback:
+
+- **Professors**: Provided strategic and academic guidance.
+- **Peers**: Offered usability feedback reflective of real user experience.
+
+This dual-layer feedback helped:
+
+- Validate design concepts against theoretical and professional benchmarks.
+- Gather informal, practical insights about **gameplay interaction** and **difficulty**.
+
+**Limitations**:
+- Surrogate stakeholders may not reflect full diversity of real players.
+
+**Future Improvement**:
+- Incorporate **external player testing** to combine real-user data with academic feedback.
+
+---
+
+# 3.5 Identifying Top-Level Needs with User Stories
+
+## 3.5.1 Player Needs
+
+- *As a player*, I want the game to feature **random events** (mystery boxes) and **hidden levels** to enhance unpredictability and replayability.
+- *As a player*, I want to hear **sound effects** for actions and **dynamic background music** for immersion.
+- *As a player*, I want to use **multiple attack types** (melee and ranged) for better combat strategy.
+- *As a new player*, I want a **comprehensive tutorial** to understand the rules and controls.
+
+  **Acceptance Criteria**:
+  - Gameplay instructions and item descriptions are shown before levels.
+  - Accessible tutorial and settings during gameplay.
+
+- *As a visually impaired or elderly player*, I want to **customize font size and color** to improve readability.
+- *As a player*, I want **realistic HCI interactions** with dynamic visuals to enhance immersion.
+
+## 3.5.2 Developer & Designer Needs
+
+- *As a developer*, I want to implement **online leaderboards** and **multiplayer co-op** to increase engagement.
+- *As a designer*, I want to implement a **dynamic weather system** that changes based on game progress.
+
+  **Acceptance Criteria**:
+  - Weather includes sunny, rainy, snowy, thunderstorms, and foggy.
+  - Each affects gameplay (e.g., slippery rain, icy snow, lightning effects).
+  - Matching visuals and sounds required.
+
+> We designed **character-driven posters** to visualize user stories, ensuring they remained top-of-mind during development and discussions.
+
+---
+
+# 3.6 Use-Cases Breakdown
+
+To support diverse users and resolve testing issues, we implemented:
+
+- A **difficulty selection system** on the start screen:
+  - **Normal Mode**: Sequential level progression.
+  - **Invincible Mode**: Free level selection with invulnerability.
+- A **tutorial screen** before gameplay.
+- An **in-game settings menu** to review instructions and items.
+- Two **control schemes**:
+  - WASD + Left Mouse Button
+  - Arrow Keys + Z Key
+
+> **Figure 5.** Use Case Diagram
+
+---
+
+# 3.7 Use-Case Specification
+
+### Table 1: Normal Mode Use Case Specification
+
+| Item | Description |
+|------|-------------|
+| **Use Case Description** | Player starts from Level 1 and collects all coins to activate the exit door and progress to Level 5. |
+| **Goal** | Collect all coins, avoid damage, complete all levels to win. |
+| **Main Flow** | 1. Enter Level 1 and collect coins. <br> 2. Exit door activates after collecting all coins. <br> 3. Repeat until Level 5 and win. |
+| **Alternative Flow** | Contact with hazards causes damage. Game over when health is zero. |
+| **Exception Flow** | On Game Over screen: <br> - Press "R" to restart level <br> - Press "P" for settings |
+
+---
+
+### Table 2: Invincible Mode Use Case Specification
+
+| Item | Description |
+|------|-------------|
+| **Use Case Description** | Player selects any level and is immune to damage. |
+| **Goal** | Freely explore and collect all coins. |
+| **Main Flow** | 1. Select level (1-5). <br> 2. Collect all coins. <br> 3. Exit activates; proceed or reselect level. |
+| **Alternative Flow** | No health impact from hazards. Player resets to safe platform if falling. |
+| **Special Operation Flow** | - "P": Open settings <br> - "R": Restart level <br> - "M": Return to main menu |
+
+---
+
+### Table 3: Mode Differences
+
+| Mode | Key Features | Target User |
+|------|--------------|-------------|
+| **Normal Mode** | Skill-based gameplay with real damage, sequential levels | Players who enjoy challenges |
+| **Invincible Mode** | No damage, free level exploration | Players seeking relaxed experience |
+
+---
+
 
 ### Ideation
 <div align="center">
