@@ -340,7 +340,7 @@ class Player {
 
   /** 🎮 监听键盘按下 */
   keyPressed() {
-    if (key === " " || key === "w" || key === "W") {
+    if (key === " " || key === "w" || key === "W" || keyIsDown(UP_ARROW)) {
       this.jump();
     }
     if (key === "Z" || key === "z" || key === "j" || key === "J") {

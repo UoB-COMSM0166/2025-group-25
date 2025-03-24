@@ -596,7 +596,7 @@ function keyPressed() {
     }
 
   } else if (currentScene === "level") {
-    if (key === " " || key === "w" || key === "W") {
+    if (key === " " || key === "w" || key === "W" || keyCode === UP_ARROW) {
       player.jump();
     }
     if (key === "Z" || key === "z" || key === "j" || key === "J") {
