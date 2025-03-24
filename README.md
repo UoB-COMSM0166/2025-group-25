@@ -254,7 +254,7 @@ Below is the Class Diagram, which shows the main classes in our game and their r
 
 ### 4.2 Sequence Diagram
 
-The diagram below illustrates the main flow when the player enters a level and progresses to completion. It shows the sequence of interactions among the Player, Enemy, Item, and LevelManager objects.
+The diagram below illustrates the main flow when the player enters a level and progresses to completion. It shows the sequence of interactions among the Player, Enemy, Item, and Obstacles objects.
 
 <p align="center">
   <img src="docs/design/Sequence Diagram.png" alt="Sequence Diagram">
