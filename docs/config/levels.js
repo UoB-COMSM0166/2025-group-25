@@ -84,7 +84,7 @@ function setupLevels() {
         { x: 3920, y: 325, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台2 (高度差90：一个巧妙地高度差，一段跳跃看似跳的上去，实则跳不上去）
         { x: 4200, y: 240, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台3
         { x: 4000, y: 110, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台2
-        { x: 4320, y: 410, w: 100, h: 20, type: "c" },
+        { x: 4420, y: 370, w: 100, h: 20, type: "c" },
 
         { x: 0, y: 590, w: 5400, h: 50, type: "daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae" },
         
