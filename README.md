@@ -274,6 +274,9 @@ We recruited 15 participants from diverse backgrounds—with varying levels of g
 
 #### 6.1.2 Main Feedback Themes
 
+![whiteboard_exported_image](https://github.com/user-attachments/assets/287c0df2-e57e-444d-996d-5ecf22df410f)
+**Figure 1. User Feedback**
+
 ##### 6.1.2.1 Player Movement and Operational Feel
 Immediate Feedback:
 “Movement feels too slow/not smooth.”
@@ -323,10 +326,6 @@ Sound Performance:
 Players generally agreed that the background music and sound effects contributed positively to the game’s atmosphere; however, in intense levels, the timing and volume of some sound effects need adjustment to better align with gameplay actions.
 Future Optimizations:
 Based on these comments, we will fine-tune the game’s pacing and further optimize sound design to ensure that music and sound effects are highly synchronized with gameplay, thereby enhancing immersion.
-
-![whiteboard_exported_image](https://github.com/user-attachments/assets/287c0df2-e57e-444d-996d-5ecf22df410f)
-**Figure 1. User Feedback**
-
 
 #### 6.1.3 Summary and Outlook
 
