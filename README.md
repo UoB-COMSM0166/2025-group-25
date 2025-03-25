@@ -262,6 +262,78 @@ The diagram below illustrates the main flow when the player enters a level and p
 
 **Figure 2. Sequence Diagram**
 
+## 6. Evaluation
+
+### 6.1 Qualitative Evaluation
+To gain an in-depth understanding of players’ genuine experiences regarding level design, game difficulty, operational feel, and the overall game concept of Echos of Adventure, we adopted the Think Aloud technique (Nielsen et al., 2002; Joe et al., 2015). This method allows us to capture players’ immediate reactions and thoughts during gameplay, helping us identify design strengths and weaknesses while providing strong evidence for subsequent iterations.
+
+#### 6.1.1 Study Design and Participant Recruitment
+
+We recruited 15 participants from diverse backgrounds—with varying levels of gaming experience—through campus promotions and social media outreach, ensuring broad and varied feedback. During the experiment, participants played through all five levels (namely: 1. Emerald Isles, 2. Lava Castle, 3. Celestial Citadel, 4. Shadow Realm, and 5. Crystal Caverns) while continuously verbalizing their operational strategies, immediate impressions, and feedback regarding level layout, enemy design, item functions, visual effects, and sound effects. All verbal content was recorded via video and transcribed. After data collection, we employed Thematic Analysis (Braun & Clarke, 2006) to organize and code the textual data and constructed a Thematic Map (see Figure 21) to visually display the relationships among core feedback themes.
+
+#### 6.1.2 Main Feedback Themes
+
+##### 6.1.2.1 Player Movement and Operational Feel
+Immediate Feedback:
+“Movement feels too slow/not smooth.”
+“Key responses are sluggish.”
+Jumping and Physical Feedback:
+“The jump has too much floatiness.”
+“Jump control is imprecise.”
+Environmental Adaptability:
+Some players noted that due to environmental effects (such as low gravity or dynamic weather), the character behaves differently across levels (e.g., Lava Castle vs. Celestial Citadel).
+Improvement Measures:
+In response, we optimized the character’s movement parameters in subsequent versions by adopting a more efficient physics calculation and rendering framework, making gameplay smoother while reinforcing the sci-fi, “space-like” theme.
+
+##### 6.1.2.2 Level Difficulty and Challenge
+Difficulty Balance:
+Some players found the level designs both challenging and rewarding, while many remarked that “the difficulty in Level 2 and Level 4 is too high,” resulting in repeated failures and frustration.
+Insufficient Visual Cues for Obstacles:
+Several participants mentioned that when facing complex platform and mechanism designs, the levels lacked adequate visual cues, making it easy to lose direction.
+Optimization Plan:
+We adjusted platform layouts and obstacle placements by adding alternative routes and subtle hints. This approach maintains the challenge while balancing difficulty to enhance players’ sense of achievement.
+
+##### 6.1.2.3 Game Guidance and Information Presentation
+Balance Between Autonomous Exploration and Direct Guidance:
+Some players enjoyed figuring things out on their own, stating, “figuring things out by myself is more fun.” In contrast, others felt that “basic operations were not clearly explained at the beginning, leading to confusion.”
+Implementation of Visual Cues:
+To address these diverse needs, we introduced concise visual hints (e.g., control icons and brief text prompts) at key moments, preserving the exploratory experience while providing essential guidance to help players quickly adapt.
+
+##### 6.1.2.4 Level Layout and Environmental Design
+Visual and Aesthetic Performance:
+Players generally praised the thematic styles of the levels; for instance, the natural beauty of “Emerald Isles” and the dream-like scenery of “Celestial Citadel” were particularly impressive, while “Shadow Realm” captivated many with its mysterious atmosphere.
+Interaction Between Environment and Challenge:
+Some participants noted that the background, sound effects, and physical environment design enhanced overall difficulty—for example, the flowing lava effects in Lava Castle increased the sense of danger.
+Future Directions:
+In future versions, we will continue refining the integration of background visuals and physical effects to ensure that environmental elements better support level design and enhance the player experience.
+
+##### 6.1.2.5 Enemy Design and Item Usage
+Enemy Behavior:
+Some players praised the enemies’ attack patterns and movement trajectories, describing them as “intelligent and challenging.” However, others noted that enemy responses were somewhat simplistic and lacked variability.
+Item Functionality:
+Regarding item usage, players generally found special abilities (such as dash, teleport, and double jump) creative, though several indicated that initial instructions for these items were unclear.
+Optimization Suggestions:
+We plan to further refine enemy AI behaviors and incorporate clear usage instructions when items are activated, making these mechanisms easier to understand and more strategically engaging.
+
+##### 6.1.2.6 Game Pacing and Sound Feedback
+Pacing Control:
+While some players found the overall game pacing appropriate, others felt that certain transitional segments within the levels were sluggish, which detracted from the momentum.
+Sound Performance:
+Players generally agreed that the background music and sound effects contributed positively to the game’s atmosphere; however, in intense levels, the timing and volume of some sound effects need adjustment to better align with gameplay actions.
+Future Optimizations:
+Based on these comments, we will fine-tune the game’s pacing and further optimize sound design to ensure that music and sound effects are highly synchronized with gameplay, thereby enhancing immersion.
+
+![whiteboard_exported_image](https://github.com/user-attachments/assets/287c0df2-e57e-444d-996d-5ecf22df410f)
+**Figure 1. User Feedback**
+
+
+#### 6.1.3 Summary and Outlook
+
+Through this Think Aloud qualitative evaluation, we have gathered invaluable insights into player movement, level difficulty, game guidance, level design, enemy and item mechanics, as well as game pacing and sound performance in Echos of Adventure. These insights clearly pinpoint areas for improvement, and moving forward, we plan to combine these qualitative findings with additional quantitative metrics (such as level completion times and failure counts) to further validate our adjustments. Our continuous iterative refinement aims to create a game that is both challenging and accessible to players of all skill levels.
+
+### 6.2 Quantitative Analysis
+Coming soon...
+
 ## 7. Process
 ### Collaboration
 In the early stages, our meetings were held frequently. We began by discussing the gaming history of our team members to develop a unique game that better suited our group, was creative, and aligned with the majority’s preferences. We used the classroom whiteboard for simple game concept brainstorming and model sketching.
