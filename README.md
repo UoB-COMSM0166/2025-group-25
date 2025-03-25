@@ -15,6 +15,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 - [2. Game Research](#2-game-research)
 - [3. Requirements](#3-requirements)
 - [4. Design](#4-design)
+- [6. Evaluation](#6-evaluation)
 - [7. Process](#7-process)
 
 ## 1. Development Team
