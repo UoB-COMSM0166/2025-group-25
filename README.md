@@ -475,7 +475,6 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 | **Spider**    |<img src="docs/assets/Spider_1.png" width="100"> | Moves within a specified patrol range. If not frozen, moves back and forth horizontally and changes direction when reaching patrol limits. <br>  |
 | **Bird**        | <img src="docs/assets/Bird_1.png" width="100"> | Flies up and down with a sinusoidal motion. If not frozen, changes direction once it reaches a maximum vertical amplitude. <br>  |
 | **Bat**        | <img src="docs/assets/bat-fly1.png" width="100">  | Patrols within a fixed horizontal range, moving back and forth while flying up and down. <br>  |
-| **Fish**        |  <img src="docs/assets/Fish_1.png" width="100">  | Swims up and down with sinusoidal motion. <br>  |
 | **Ghost**      |   <img src="docs/assets/disappear_frame_1.png" width="100"> |It can temporarily disappear and reappear, which is difficult to track. <br> |
 
 ### Table 2. Items
