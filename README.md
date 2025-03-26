@@ -120,7 +120,7 @@ The game should feature dynamic weather conditions such as sunny, rainy, snowy, 
 
 To personalize and internalize these user stories, we designed a series of character-driven posters to visually represent them. This approach ensured that the user stories remained top-of-mind throughout the development process, serving as a constant reference point. Additionally, these posters provided a quick and effective shorthand during discussions, enabling more efficient decision-making and alignment across the team.
 
-<img width="794" alt="6990887f3a7ce886bdf5e9a8936297d" src="https://github.com/user-attachments/assets/1f74fc38-d535-4e27-9da1-98d6e272def1" />
+<img width="802" alt="889c0f2aebe8620b87c1097e9763501" src="https://github.com/user-attachments/assets/b184f749-2f8e-40f4-ab6f-f3d2b0271cef" />
 <img width="806" alt="cf31049190229debeba5e64eaa4f016" src="https://github.com/user-attachments/assets/4828b45d-cb2b-4fb8-9ef8-cfc0d9ac8767" />
 <img width="806" alt="a9c1a5f4fcca2126986cbe9709527d3" src="https://github.com/user-attachments/assets/1b37a430-f2a6-49dc-9f69-11bcc78d562e" />
 
