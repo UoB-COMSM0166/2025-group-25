@@ -120,9 +120,11 @@ The game should feature dynamic weather conditions such as sunny, rainy, snowy, 
 
 To personalize and internalize these user stories, we designed a series of character-driven posters to visually represent them. This approach ensured that the user stories remained top-of-mind throughout the development process, serving as a constant reference point. Additionally, these posters provided a quick and effective shorthand during discussions, enabling more efficient decision-making and alignment across the team.
 
-To personalize and internalize these user stories, we designed a series of character-driven posters to visually represent them. This approach ensured that the user stories remained top-of-mind throughout the development process, serving as a constant reference point. Additionally, these posters provided a quick and effective shorthand during discussions, enabling more efficient decision-making and alignment across the team.
-
 <img width="923" alt="WechatIMG5176" src="https://github.com/user-attachments/assets/0b066914-a076-495f-906d-e8371cb7af99" />
+<img width="807" alt="5b24d20c0bed6fb2d6507a6807b9f92" src="https://github.com/user-attachments/assets/1d8bc24e-57ac-4f51-86cf-1f4ce450f742" />
+<img width="806" alt="cf31049190229debeba5e64eaa4f016" src="https://github.com/user-attachments/assets/4828b45d-cb2b-4fb8-9ef8-cfc0d9ac8767" />
+<img width="806" alt="a9c1a5f4fcca2126986cbe9709527d3" src="https://github.com/user-attachments/assets/1b37a430-f2a6-49dc-9f69-11bcc78d562e" />
+
 
 ### 3.6 Use-Cases Breakdown
 To accommodate a diverse player base, including newcomers, and address challenges observed during user testing—where a significant number of players struggled to progress through levels—we implemented a difficulty selection system on the game's start screen. Players can choose between Invincible Mode, which allows free level selection for a more accessible experience, and Normal Mode, which follows the standard progression structure. This ensures that beginner players can engage with the game without frustration. Additionally, we introduced a pre-game tutorial screen that provides clear instructions on gameplay mechanics and item functionalities, ensuring that players understand the core mechanics before entering a level. To further enhance accessibility, we integrated an in-game settings menu where players can review gameplay instructions and item descriptions at any time, allowing them to revisit key information as needed.
