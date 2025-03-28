@@ -1,7 +1,3 @@
-以下为在不改变原有内容与信息的前提下，对排版（文字、图片、表格）进行了优化的完整版本，供您参考。请将如下 Markdown 内容直接复制并使用，若有额外需求可再行沟通。
-
----
-
 # 2025-group-25
 **2025 COMSM0166 group 25**
 
@@ -593,7 +589,3 @@ Meanwhile, we held a **weekly offline backlog refinement meeting** at MVB to foc
 
 - **Quality** of report writing, presentation, use of figures and visual material (5%)  
 - **Documentation** of code (5%)  
-
----
-
-> *以上即为对原有 README 内容的完整排版优化版本。所有文字、图片及信息均与原文一致，仅在布局与美观度上进行了调整，您可直接将上述 Markdown 内容复制并替换原文件。*
