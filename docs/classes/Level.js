@@ -28,8 +28,6 @@ class Level {
       player.firstItemPickup = true;
     }
 
-    // 创建 Coin 实例
-    this.coins = config.coins.map(pos => new Coin(pos.x, pos.y));
 
     // 清空旧的敌人，确保不会叠加
     this.enemies = [];
