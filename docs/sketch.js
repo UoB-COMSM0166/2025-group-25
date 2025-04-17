@@ -91,8 +91,13 @@ function preload() {
   // 如果需要自定义字体，可在此处加载
   //textFont("Press Start 2P");
   myFont = loadFont('Round9x13.ttf');
-  coinImage = loadImage("assets/Coin.png"); 
-
+  coinImages = [
+    loadImage("assets/apple.png", img => console.log('apple.png loaded'), err => console.error('Failed to load apple.png', err)),
+    loadImage("assets/banana.png", img => console.log('banana.png loaded'), err => console.error('Failed to load banana.png', err)),
+    loadImage("assets/rabbish.png", img => console.log('rabbish.png loaded'), err => console.error('Failed to load rabbish.png', err)),
+    loadImage("assets/bottle.png", img => console.log('bottle.png loaded'), err => console.error('Failed to load bottle.png', err)),
+    loadImage("assets/box.png", img => console.log('box.png loaded'), err => console.error('Failed to load box.png', err))
+  ];
 
   
   frogIdle = loadImage("assets/frog-idle-1.png");
@@ -101,7 +106,7 @@ function preload() {
   
   
   
-  coinSound = loadSound("sound/coins.mp3");//zkx~~~~~~~
+  coinSound = loadSound("sound/rabbish.mp3");//zkx~~~~~~~
   storyMusic = loadSound("sound/storyscene.mp3");//背景介绍
   clickSound = loadSound("sound/click.mp3");//鼠标点击
   rainSound = loadSound("sound/rain.mp3");//雨天
@@ -621,6 +626,12 @@ function keyPressed() {
       switchScene("menu");
     }
   }
+}
+
+function handleMouseClick() {
+  // 确保这个函数被正确定义并包含鼠标点击的逻辑
+  console.log("Mouse clicked!");
+  // 其他鼠标点击事件的处理逻辑
 }
 
 // 🖱️ 鼠标点击：全局检测 SET 按钮和设置界面按钮
