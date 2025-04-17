@@ -16,6 +16,13 @@ class Level {
     this.spiderSpritesheet = spiderSpritesheet; // 传入蜘蛛Spritesheet
     this.platformImage = platformImage;  // ycl：存储平台图片
 
+    // 创建 Coin 实例
+    console.log(`Creating coins for level ${this.levelNumber}`);  // 输出关卡号
+    this.coins = config.coins.map((pos) => {
+      console.log(`Creating coin at position: (${pos.x}, ${pos.y}) for level ${this.levelNumber}`);
+      return new Coin(pos.x, pos.y, this.levelNumber);  // 确保传递 levelNumber
+    });
+
     // 道具，新增
     if (player) {
       player.firstItemPickup = true;
