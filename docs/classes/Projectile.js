@@ -6,7 +6,7 @@
 class FlameProjectile {
   constructor(x, y, direction) {
     this.position = createVector(x, y);
-    this.velocity = createVector(direction === "right" ? 10 : -10, 0); // 根据方向调整
+    this.velocity = createVector(direction === "right" ? 10 : -10, 0);
     this.lifetime = 60;
   }
 
@@ -32,9 +32,9 @@ class FlameProjectile {
 
 // FreezeProjectile
 class FreezeProjectile {
-  constructor(x, y, direction) { // ✅ 传入方向
+  constructor(x, y, direction) {
     this.position = createVector(x, y);
-    this.velocity = createVector(direction === "right" ? 10 : -10, 0); // ✅ 方向控制
+    this.velocity = createVector(direction === "right" ? 10 : -10, 0);
     this.lifetime = 60;
   }
 
@@ -53,21 +53,18 @@ class FreezeProjectile {
   }
 
   isExpired() {
-    return this.lifetime <= 0 || this.position.x > level.portalPosition.x + 500 || this.position.x < 0; // ✅ 左右都判断
+    return this.lifetime <= 0 || this.position.x > level.portalPosition.x + 500 || this.position.x < 0;
   }
 }
 
 
-// =========================
-// ThunderProjectile (雷电投射物)
-// =========================
 class ThunderProjectile {
   constructor(x, y) {
     this.position = createVector(x, y);
-    this.velocity = createVector(0, 0); // 雷电不会移动
-    this.timer = 40;  // 持续时间（影响动画）
+    this.velocity = createVector(0, 0); 
+    this.timer = 40;
     this.exploded = false;
-    this.explosionRadius = 125; // **雷电的AOE半径**
+    this.explosionRadius = 125;
   }
 /*
   update() {
@@ -86,10 +83,8 @@ class ThunderProjectile {
       if (this.timer <= 0) {
         this.exploded = true;
 
-        // **触发雷电粒子特效**
         spawnThunderParticles(this.position.x, this.position.y);
 
-        // **检测雷电范围内的敌人**
         for (let i = level.enemies.length - 1; i >= 0; i--) {
           let enemy = level.enemies[i];
           let d = dist(this.position.x, this.position.y, 
@@ -97,8 +92,8 @@ class ThunderProjectile {
                       enemy.position.y + enemy.height / 2);
 
           if (d < this.explosionRadius) {
-            console.log("⚡ Thunder hit enemy! ⚡");
-            level.enemies.splice(i, 1); // **删除被雷电打中的敌人**
+            console.log("Thunder hit enemy!");
+            level.enemies.splice(i, 1);
           }
         }
       }
@@ -109,22 +104,21 @@ class ThunderProjectile {
       this.position.add(this.velocity);
       this.timer--;
 
-      // **当计时结束时，触发爆炸**
       if (this.timer <= 0) {
         this.exploded = true;
-        spawnThunderParticles(this.position.x, this.position.y); // **粒子特效**
+        spawnThunderParticles(this.position.x, this.position.y); 
       }
     }
 
-    // **爆炸后伤害敌人**
+
     if (this.exploded) {
       for (let i = level.enemies.length - 1; i >= 0; i--) {
         let enemy = level.enemies[i];
         let d = dist(this.position.x, this.position.y, enemy.position.x, enemy.position.y);
 
         if (d < this.explosionRadius) {
-          console.log("⚡ Thunder hit enemy! ⚡");
-          level.enemies.splice(i, 1); // **移除敌人**
+          //console.log("Thunder hit enemy! ");
+          level.enemies.splice(i, 1);
         }
       }
     }
@@ -135,12 +129,12 @@ class ThunderProjectile {
     push();
     noStroke();
     if (!this.exploded) {
-      fill(255, 255, 0, 200); // 黄色闪电
-      rect(this.position.x - 5, this.position.y - 40, 10, 40); // 雷电闪烁
+      fill(255, 255, 0, 200);
+      rect(this.position.x - 5, this.position.y - 40, 10, 40);
       fill(255, 255, 255, 150);
-      ellipse(this.position.x, this.position.y, 50, 20); // 雷电中心
+      ellipse(this.position.x, this.position.y, 50, 20);
     } else {
-      fill(100, 100, 255, 150); // 蓝色电流
+      fill(100, 100, 255, 150);
       ellipse(
         this.position.x,
         this.position.y,
@@ -151,14 +145,12 @@ class ThunderProjectile {
     pop();
     */
     if (this.exploded) {
-      // **绘制爆炸效果**
       push();
       noStroke();
       fill(255, 255, 0, 180);
       ellipse(this.position.x, this.position.y, this.explosionRadius * 2);
       pop();
     } else {
-      // **绘制飞行状态**
       push();
       fill(255, 255, 0);
       ellipse(this.position.x, this.position.y, 20, 20);

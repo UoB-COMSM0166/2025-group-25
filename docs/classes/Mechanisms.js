@@ -1,8 +1,3 @@
-// =========================
-// 机关类
-// =========================
-
-// 激光障碍
 class LaserObstacle {
   constructor(x, y, w, h) {
     this.position = createVector(x, y);
@@ -10,7 +5,7 @@ class LaserObstacle {
     this.height = h;
     this.active = false;
     this.timer = 0;
-    this.interval = 100; // 每100帧切换状态
+    this.interval = 100;
   }
 
   update() {
@@ -29,7 +24,6 @@ class LaserObstacle {
   }
 }
 
-// 下落尖刺
 class FallingSpike {
   constructor(x, y, w, h) {
     this.initialY = y;
@@ -69,7 +63,6 @@ class FallingSpike {
   }
 }
 
-// 通用障碍 (Flame, Gear, Blade, Spiked Wall 等)
 class Obstacle {
   constructor(x, y, w, h, type) {
     this.position = createVector(x, y);
@@ -118,14 +111,14 @@ class Obstacle {
       rotate(this.angle);
       fill(100);
       rect(-this.width / 2, -this.height / 2, this.width, this.height, 2);
-    } else if (this.type === "Flame") {//火焰
+    } else if (this.type === "Flame") {
       fill(255, 100, 0);
       rect(-this.width / 2, -this.height / 2, this.width, this.height, 2);
       stroke(255, 150, 0);
       for (let i = -this.width / 2; i < this.width / 2; i += 5) {
         line(i, -this.height / 2, i + 2.5, -this.height / 2 - 5);
       }
-    } else if (this.type === "Spiked Wall") {//尖刺
+    } else if (this.type === "Spiked Wall") {
       imageMode(CENTER);
       image(spikedWallImg, 0, 0, this.width, this.height); 
       
@@ -133,7 +126,7 @@ class Obstacle {
     pop();
   }
 }
-// Axes
+
 class Axes {
   constructor(positions, swingTimes) {
     this.swingTimes = swingTimes;
@@ -185,9 +178,9 @@ class Axe {
     draw() {
       push();
       translate(this.position.x, this.position.y);
-      rotate(this.angle); // **让斧头摆动**
+      rotate(this.angle);
       
-      // **绘制图片**
+
       imageMode(CENTER);
       image(axeSprite, 0, 0, this.width, this.height);
   
@@ -195,7 +188,7 @@ class Axe {
     }
 }
 
-// Saws
+
 class Saws {
   constructor(positions, ranges) {
     this.positions = positions;
@@ -240,7 +233,7 @@ class Saw {
   }
 }
 
-// AdvancedBirds
+
 class AdvancedBirds {
   constructor(positions, ranges, type) {
     this.positions = positions;
@@ -313,12 +306,12 @@ class AdvancedBird {
     this.speed = 3;
     this.direction = 1;
     
-    // **动画相关**
+
     this.frameIndex = 0;
-    this.frameDelay = 8; // 每6帧切换一次
+    this.frameDelay = 8;
     this.frameCounter = 0;
-    this.frameWidth = 48; // 设定每帧的宽度
-    this.frameHeight = 48; // 设定每帧的高度
+    this.frameWidth = 48;
+    this.frameHeight = 48;
   }
 
   update() {
@@ -330,10 +323,10 @@ class AdvancedBird {
     }
     this.position.x += this.speed * this.direction;
 
-    // **动画帧更新**
+
     this.frameCounter++;
     if (this.frameCounter >= this.frameDelay) {
-      this.frameIndex = (this.frameIndex + 1) % 3; // 3帧循环
+      this.frameIndex = (this.frameIndex + 1) % 3;
       this.frameCounter = 0;
     }
   }
@@ -341,21 +334,20 @@ class AdvancedBird {
   draw() {
     push();
     translate(this.position.x, this.position.y);
-    
-    // **方向翻转**
+
     let sx = this.frameIndex * this.frameWidth;
     
     if (this.direction === 1) {
-      // **朝右飞 (翻转)**
+
       push();
-      scale(-1, 1); // **向右飞时，翻转**
+      scale(-1, 1);
       image(advancedBirdSpritesheet, -this.frameWidth / 2, -this.frameHeight / 2, 
             this.frameWidth, this.frameHeight, sx, 0, this.frameWidth, this.frameHeight);
       pop();
     } else {
-      // **朝左飞 (不翻转)**
+
       push();
-      scale(1, 1); // 只翻转图片，不翻转坐标系统
+      scale(1, 1);
       image(advancedBirdSpritesheet, -this.frameWidth / 2, -this.frameHeight / 2, 
             -this.frameWidth, this.frameHeight,sx, 0, this.frameWidth, this.frameHeight);
       pop();
@@ -371,43 +363,39 @@ class Ghost {
     this.position = position.copy();
     this.range = range;
     this.speed = 2; 
-    this.direction = 1; // 1 = 右, -1 = 左
+    this.direction = 1;
     this.timer = 0;
-    
-    // 动画参数
-    this.state = "appear"; // 初始状态
+    this.state = "appear";
     this.frameIndex = 0;
     this.frameDelay = 8;
     this.frameCounter = 0;
-    this.frameWidth = 44; // 每帧的宽度
-    this.frameHeight = 30; // 每帧的高度
+    this.frameWidth = 44;
+    this.frameHeight = 30;
   }
 
   update() {
 
-    // 计时器控制来回移动，每 2 秒换方向
     this.timer += deltaTime / 1000;
-    if (this.timer > 2) { // 每 2 秒反转方向
+    if (this.timer > 2) {
       this.timer = 0;
       this.direction *= -1;
     }
-    // 移动逻辑
+
     this.position.x += this.speed * this.direction;
 
-    // 触碰范围边界时反向
+
     //if (this.position.x > this.range + this.position.x || this.position.x < this.position.x - this.range) {
       //this.direction *= -1;
     //}
 
-    // 切换状态（每 2 秒切换一次）
     if (frameCount % 120 === 0) {
       this.state = this.state === "appear" ? "disappear" : "appear";
     }
 
-    // 更新动画帧
+
     this.frameCounter++;
     if (this.frameCounter >= this.frameDelay) {
-      this.frameIndex = (this.frameIndex + 1) % 4; // 4 帧循环
+      this.frameIndex = (this.frameIndex + 1) % 4;
       this.frameCounter = 0;
     }
   }
@@ -419,17 +407,15 @@ class Ghost {
     let frames = this.state === "appear" ? ghostAppearFrames : ghostDisappearFrames;
     let img = frames[this.frameIndex];
 
-    let sx = this.frameIndex * this.frameWidth; // 获取当前帧的起始 x 坐标
+    let sx = this.frameIndex * this.frameWidth;
 
     if (this.direction === 1) {
-      // **向右移动，翻转**
       push();
-      scale(-1, 1); // 水平翻转
+      scale(-1, 1);
       image(img, -this.frameWidth / 2, -this.frameHeight / 2, 
             this.frameWidth, this.frameHeight, sx, 0, this.frameWidth, this.frameHeight);
       pop();
     } else {
-      // **向左移动，不翻转**
       push();
       image(img, -this.frameWidth / 2, -this.frameHeight / 2, 
             this.frameWidth, this.frameHeight, sx, 0, this.frameWidth, this.frameHeight);

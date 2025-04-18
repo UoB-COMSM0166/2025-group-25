@@ -1,10 +1,3 @@
-// =========================
-// 关卡数据配置
-// =========================
-
-// 全局变量 levels 在 sketch.js 中声明
-// 这里仅实现 setupLevels() 函数
-
 function setupLevels() {
   function genCoins(startX, endX, baseY, count = 15) {
     let coins = [];
@@ -631,5 +624,5 @@ function drawHUD(level, settings) {
   text(`Lives: ${player.lives}`, 20, 80);
   pop();
 
-  settings.drawSettingsButton(); // 新增：绘制设置按钮
+  settings.drawSettingsButton();
 }

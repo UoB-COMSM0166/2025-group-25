@@ -5,13 +5,10 @@
 class Settings {
     constructor() {
       this.isOpen = false;
-      this.buttonX = width - 100; // 右上角 SET 按钮
+      this.buttonX = width - 100;
       this.buttonY = 20;
       this.buttonSize = 60;
-  
-      this.soundEnabled = true; // 默认开启声音
-  
-      // 🎯 设置界面按钮区域
+      this.soundEnabled = true;
       this.buttons = [
         { label: "[R] Restart Level", x: width / 2 - 100, y: 250, action: () => switchScene("level") },
         { label: "[M] Main Menu", x: width / 2 - 100, y: 310, action: () => switchScene("menu") },
@@ -20,22 +17,18 @@ class Settings {
       ];
     }
   
-    // 🎛️ 切换设置界面
     toggle() {
       this.isOpen = !this.isOpen;
-      console.log(`🔧 设置界面 ${this.isOpen ? "打开" : "关闭"}`);
-    
-      // ✅ 确保播放点击音效
+
       if (clickSound) {
-        console.log("🎵 按 P 关闭设置界面，播放点击音效");
         clickSound.play();
       } else {
-        console.error("❌ clickSound 未定义，无法播放点击音效！");
+
       }
     }
     
   
-    // 🎛️ 绘制右上角 SET 按钮
+    //Draw the SET button in the upper right corner
     drawGlobalSettingsButton() {
       if (currentScene !== "level") return;
   
@@ -51,21 +44,17 @@ class Settings {
       pop();
     }
   
-    // 📜 绘制设置界面
+    //Draw settings interface
     draw() {
       if (!this.isOpen) return;
   
       push();
       fill(50, 50, 50, 220);
       rect(100, 100, width - 200, height - 200, 10);
-  
-      // 🎯 标题
       fill(255);
       textSize(50);
       textAlign(CENTER, CENTER);
       text("SETTINGS", width / 2, 160);
-  
-      // 🎯 绘制按钮及其快捷键提示
       this.buttons.forEach((btn) => {
         fill(80);
         rect(btn.x-50, btn.y, 300, 50, 10);
@@ -74,8 +63,6 @@ class Settings {
         textAlign(CENTER, CENTER);
         text(btn.label, btn.x + 100, btn.y + 25);
       });
-  
-      // 🎯 底部提示：按 P 关闭设置界面
       fill(200);
       textSize(20);
       textAlign(CENTER, CENTER);
@@ -83,16 +70,12 @@ class Settings {
   
       pop();
     }
-  
-    // 🔍 鼠标点击事件：检测是否点击了按钮
     handleMouseClick(mx, my) {
-      // 播放点击音效zkx~~~~~~~~~~~~~
       if (clickSound) {
         clickSound.play();
-        console.log("🔧 点击设置按钮音效！");
       }
 
-      // 检测右上角 SET 按钮
+      //Detect the SET button in the upper right corner
       if (
         mx > this.buttonX &&
         mx < this.buttonX + this.buttonSize &&
@@ -103,36 +86,23 @@ class Settings {
         return;
       }
   
-      // 检测设置界面按钮点击
+      //Click on the detection settings interface button
       if (this.isOpen) {
         for (let btn of this.buttons) {
           if (mx > btn.x && mx < btn.x + 200 && my > btn.y && my < btn.y + 50) {
             btn.action();
-            this.toggle(); // 点击后关闭设置界面
+            this.toggle();
             return;
           }
         }
       }
     }
   
-    
-    // 🔊 切换声音状态
-    // toggleSound() {
-    //   this.soundEnabled = !this.soundEnabled;
-    //   // 根据当前状态开启或关闭全局声音
-    //   masterVolume(this.soundEnabled ? 1 : 0);
-    //   // 同时更新按钮图标或文字提示
-    //   console.log(`Sound ${this.soundEnabled ? "enabled" : "disabled"}.`);
-    // }
-    
-    
-    
-  
-    // 🖥️ 全屏切换功能
+
+    //Full screen switching function
     toggleFullscreen() {
       let fs = fullscreen();
       fullscreen(!fs);
-      console.log(`Fullscreen: ${!fs}`);
     }
   }
   

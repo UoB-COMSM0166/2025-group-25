@@ -10,7 +10,7 @@ class Portal {
   }
 
   update() {
-    // 可以做一些动画
+
   }
 
   draw() {

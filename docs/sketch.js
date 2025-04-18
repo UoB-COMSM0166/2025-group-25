@@ -1,102 +1,60 @@
-/*
-Echoes of Adventure
-修复&改进版：背景更精美、子弹发射修复、Credits文字不重叠
-
-----------------------------------
-【主要修复和改动】
-1. drawLevelDecor(level): 为每个关卡绘制了更丰富的背景场景（山峰、火山、城堡、晶体等）。
-2. 修复子弹射击：现在子弹从玩家位置发射，而不再从屏幕左侧出现。
-3. 修复 Credits 文字重叠：改为多行绘制。
-----------------------------------
-*/
-
-// =========================
-// 全局变量
-// =========================
-
-
-let storyScene; // 新增：StoryScene 实例
-let currentScene = "story"; // ✅ 让游戏默认进入背景故事界面
-// let currentScene = "menu";    // "menu", "instructions", "levelSelect", "level", "gameover", "win", "credits"
+let storyScene;
+let currentScene = "story";
 let currentLevelIndex = 0;
-let levels = [];             // 在 setupLevels() 中赋值
-let player;                  // Player 实例
-let level;                   // 当前关卡 Level 实例
-let projectiles = [];        // 投射物数组
-let gameTimer = 0;           // 关卡计时
-let levelTimes = [];         // 记录每关耗时
-let cameraX = 0;             // 摄像机偏移
+let levels = [];            
+let player;          
+let level;           
+let projectiles = [];
+let gameTimer = 0;   
+let levelTimes = []; 
+let cameraX = 0;     
 let spiderSpritesheet;
 let birdSpritesheet;
 let batFrames = [];
 let advancedBirdSpritesheet;
 let ghostAppearFrames = [];
 let ghostDisappearFrames = [];
-
 let spikedWallImg;
 let sawsImg;
 let frogIdle, frogJump, frogFall;
-// let portalImage;
 let platformImage = {};//ycl
-
 let heartImg;
 let lives = 3;   
 let maxLives = 5; //xin~~~~~
-
-//添加音效zkx
-let coinSound;//zkx~~~~~~~
+let coinSound;
 let storyMusic; //zkx~~~~~~
 let rainSound; 
 let jumpSound; 
-let gameOverSound; // 存储 Game Over 音效
+let gameOverSound;
 let attackSound;
 let clickSound;
-let pickItemSound; // 存储拾取道具音效
-let runSound; // 存储行进音效
+let pickItemSound;
+let runSound; 
 let levelWinSound;
-let winSound; // 存储胜利音效
-
-// 受伤闪屏
+let winSound;
 let damageFlashAlpha = 0;
-
-// 开始界面标题动画
 let titleOffset = 0;
-
-// 游戏模式
 let mode = "normal"; // "normal" / "invincible"
-
-// 天气 & 昼夜
 let timeOfDay = 12;          // 0~24
 let weatherState = "clear";  // "clear", "rain", "thunderstorm"
 let weatherTimer = 0;
-let rainParticles = [];      // 存储雨滴粒子
+let rainParticles = [];
 let thunderFlash = false;
 let groundImage;
-// 全局粒子（爆炸等）
 let globalParticles = [];
-
-// 夜晚星星
 let starPositions = [];
-
-// 自定义字体
 let myFont;
-
-let settings; // 新增：Settings 实例
-
-// =========================
-// p5.js 核心
-// =========================
+let settings;
 
 function preload() {
-  // 如果需要自定义字体，可在此处加载
-  //textFont("Press Start 2P");
+
   myFont = loadFont('Round9x13.ttf');
   coinImages = [
-    loadImage("assets/apple.png", img => console.log('apple.png loaded'), err => console.error('Failed to load apple.png', err)),
-    loadImage("assets/banana.png", img => console.log('banana.png loaded'), err => console.error('Failed to load banana.png', err)),
-    loadImage("assets/rabbish.png", img => console.log('rabbish.png loaded'), err => console.error('Failed to load rabbish.png', err)),
-    loadImage("assets/bottle.png", img => console.log('bottle.png loaded'), err => console.error('Failed to load bottle.png', err)),
-    loadImage("assets/box.png", img => console.log('box.png loaded'), err => console.error('Failed to load box.png', err))
+    loadImage("assets/apple.png"),
+    loadImage("assets/banana.png"),
+    loadImage("assets/rabbish.png"),
+    loadImage("assets/bottle.png"),
+    loadImage("assets/box.png")
   ];
 
   
@@ -104,29 +62,24 @@ function preload() {
   frogJump = loadImage("assets/frog-jump-1.png");
   frogFall = loadImage("assets/frog-fall.png");
   
-  
-  
   coinSound = loadSound("sound/rabbish.mp3");//zkx~~~~~~~
-  storyMusic = loadSound("sound/storyscene.mp3");//背景介绍
-  clickSound = loadSound("sound/click.mp3");//鼠标点击
-  rainSound = loadSound("sound/rain.mp3");//雨天
-  snowSound = loadSound("sound/snow.wav");//雪天
-  jumpSound = loadSound("sound/jump.wav");//跳
-  attackSound = loadSound("sound/biu.mp3");//攻击敌人
-  pickItemSound = loadSound("sound/pickitem.mp3")//拾取item
-  aaaSound = loadSound("sound/aaa.mp3");//live-1
-  gameOverSound = loadSound("sound/gameover.mp3");//gameover
-  levelWinSound = loadSound("sound/level-win.mp3", 
-    () => console.log("✅ 关卡胜利音效加载成功！"),
-    () => console.error("❌ level-win.mp3 加载失败，请检查路径！")
-  );
+  storyMusic = loadSound("sound/storyscene.mp3");
+  clickSound = loadSound("sound/click.mp3");
+  rainSound = loadSound("sound/rain.mp3");
+  snowSound = loadSound("sound/snow.wav");
+  jumpSound = loadSound("sound/jump.wav");
+  attackSound = loadSound("sound/biu.mp3");
+  pickItemSound = loadSound("sound/pickitem.mp3")
+  aaaSound = loadSound("sound/aaa.mp3");
+  gameOverSound = loadSound("sound/gameover.mp3");
+  levelWinSound = loadSound("sound/level-win.mp3");
   winSound = loadSound("sound/win.mp3");
   runSound = loadSound("sound/run.mp3");
   
 
 
   //platformImage = loadImage("assets/Grass_Tileset.png");
-  //ycl-加载添加不同关卡的图片
+  //ycl
   // platformImage = {
   //   1: loadImage("assets/Grass_Tileset.png"),
   //   2: loadImage("assets/Platform.png"),
@@ -161,14 +114,17 @@ function preload() {
   spikedWallImg = loadImage('assets/spikedwall.png');
   sawsImg = loadImage("assets/saws.png");
   heartImg = loadImage("assets/heart.png"); //xin~~~
+
+  waterImg = loadImage("assets/Water.png");
+  lavaImg  = loadImage("assets/magma.png");
   
   //Rui
-  // 加载鬼魂的 "Appear" 帧动画
+  //Load the "Appeal" frame animation of ghosts
   for (let i = 0; i < 4; i++) {
     ghostAppearFrames[i] = loadImage(`assets/appear_frame_${i + 1}.png`);
   }
 
-  // 加载鬼魂的 "Disappear" 帧动画
+  //Load the "Disappear" frame animation of ghosts
   for (let i = 0; i < 4; i++) {
     ghostDisappearFrames[i] = loadImage(`assets/disappear_frame_${i + 1}.png`);
   }
@@ -177,7 +133,7 @@ function preload() {
   batFrames[1] = loadImage("assets/bat-fly2.png");
   batFrames[2] = loadImage("assets/bat-fly3.png");
 
-  //ZSA 新增：加载关卡背景
+  //ZSA: Loading Level Background
   levelOneBg = loadImage("assets/levelone.png");
   levelTwoBg = loadImage("assets/levetwo.png");
   levelThreeBg = loadImage("assets/levelthree.png");
@@ -199,15 +155,15 @@ function preload() {
 function setup() {
   if (typeof userStartAudio === "function") {
     userStartAudio();
-  } // 允许播放音频kx~~~~~~~~~~
+  } 
   createCanvas(1280, 720);
-  storyScene = new StoryScene(); // ✅ 初始化背景故事界面
+  storyScene = new StoryScene();
   textFont(myFont);
 
-  settings = new Settings();  // ✅ 初始化设置界面
-  setupLevels(settings);      // ✅ 传入 settings 实例
+  settings = new Settings();
+  setupLevels(settings);
 
-  switchScene("story"); //这个地方一定是story，不是meun，因为我们要先看故事！！！很关键
+  switchScene("story"); //This place must be a story, not a meun, because we need to read the story first!!! It's crucial
 }
 
 /*function drawHearts() {
@@ -217,18 +173,16 @@ function setup() {
 }*/
 
 function draw() {
-  // 1. 更新天气 & 粒子
   updateWeather();
   updateParticles();
   background(0);
 
-  // 如果设置界面打开，直接绘制设置界面
   if (settings.isOpen) {
     settings.draw();
     return;
   }
 
-  // 2. 根据场景绘制  //修改
+  //Draw//modify according to the scene
   if (currentScene === "story") {
     storyScene.update();
     storyScene.draw();
@@ -243,10 +197,10 @@ function draw() {
     drawLevelSelect();
 
   } else if (currentScene === "level") {
-    // 绘制动态背景（天空、云、星空等），不受 cameraX 影响
+    //Draw dynamic backgrounds (sky, clouds, starry sky, etc.) that are not affected by cameraX
     drawDynamicBackground(level);
 
-    // 摄像机跟随
+    //Camera Follow
     if (level) {
       let levelWidth = level.portalPosition.x + 200;
       cameraX = constrain(
@@ -255,36 +209,32 @@ function draw() {
         levelWidth - width
       );
     }
-
-    // 推栈，进行平移
     push();
     translate(-cameraX, 0);
 
-    // 更新并绘制关卡
+
     if (level) {
       level.update();
       level.draw();
     }
 
-    // 更新并绘制玩家
+
     if (player) {
       player.update();
       player.draw();
     }
 
-    // 处理投射物
+
     for (let i = projectiles.length - 1; i >= 0; i--) {
       let proj = projectiles[i];
       proj.update();
       proj.draw();
 
-      // 移除过期
       if (proj.isExpired()) {
         projectiles.splice(i, 1);
         continue;
       }
 
-      // 碰撞逻辑
       if (proj instanceof FlameProjectile) {
         for (let j = level.enemies.length - 1; j >= 0; j--) {
           let enemy = level.enemies[j];
@@ -317,7 +267,7 @@ function draw() {
             )
           ) {
             enemy.frozen = true;
-            enemy.isSolidWhenFrozen = true;  // 敌人冻结后变硬
+            enemy.isSolidWhenFrozen = true;  //The enemy freezes and hardens
             projectiles.splice(i, 1);
             break;
           }
@@ -355,24 +305,22 @@ function draw() {
 
     pop();
 
-    // 3. 绘制天气效果（雨、雷），覆盖在游戏场景之上
+    //Draw weather effects (rain, thunder) and overlay them on the game scene
     drawWeather();
-    //drawHearts(lives); // 这里的 lives 是当前玩家的命数（1~3）xin~~~~~~~
+    //drawHearts(lives); //The lives here are the current player's destiny (1-3) xin~~~~~~~
 
 
-    // 4. 受伤闪红
+    //When injured, the screen flashes red light
     if (damageFlashAlpha > 0) {
       noStroke();
       fill(255, 0, 0, damageFlashAlpha);
       rect(0, 0, width, height);
       damageFlashAlpha = max(0, damageFlashAlpha - 5);
     }
-
-    // HUD
     updateGameTimer();
     drawHUD();
 
-    // 检查关卡完成
+
     if (
       level.portal &&
       level.allCoinsCollected() &&
@@ -387,7 +335,6 @@ function draw() {
       }
     }
 
-    // 检查游戏结束
     if (player.lives <= 0) {
       switchScene("gameover");
     }
@@ -401,95 +348,68 @@ function draw() {
   } else if (currentScene === "credits") {
     drawCredits();
   }
-
-  // 5. 最后绘制全局粒子（如爆炸等）
   drawParticles();
 
-  settings.drawGlobalSettingsButton(); // ✅ 所有界面右上角添加“SET”按钮
+  settings.drawGlobalSettingsButton(); //Add a "SET" button in the upper right corner of all interfaces
 }
 
-// =========================
-// 函数：更新关卡时间
-// =========================
 
 function updateGameTimer() {
   gameTimer += deltaTime / 1000;
 }
 
-// =========================
-// 函数：场景切换
-// =========================
 
 function switchScene(sceneName) {
-  console.log(`🔄 切换场景: ${sceneName}`); // ✅ Debug log
   currentScene = sceneName;
   gameTimer = 0;
   projectiles = [];
-  // ✅ **如果离开 "level" 场景，停止行进音效**
   if (sceneName !== "level") {
 
     if (runSound && runSound.isPlaying()) {
-      console.log("⏹️ 退出关卡，停止行进音效...");
       runSound.stop();
     }
     if (rainSound && rainSound.isPlaying()) {
-      console.log("⏹️ 切换到非游戏场景，停止雨天音效...");
       rainSound.stop();
     }
     if (snowSound && snowSound.isPlaying()) {
-      console.log("⏹️ 切换到非游戏场景，停止雪天音效...");
       snowSound.stop();
     }
     /*if (levelWinSound && levelWinSound.isPlaying()) {
-      console.log("⏹️ 停止关卡胜利音效...");
       levelWinSound.stop();
     }*/
   }
 
-  // ✅ **离开 "win" 场景时，停止胜利音效**
   if (sceneName !== "win" && winSound && winSound.isPlaying()) {
-    console.log("⏹️ 退出胜利界面，停止胜利音效...");
     winSound.stop();
   }
-  // ✅ **确保 `clickSound` 不在通关时覆盖 `levelWinSound`**
   if (!["level", "win"].includes(sceneName)) {
     if (clickSound) {
-        console.log("🎵 在切换场景时播放点击音效");
         clickSound.play();
     }
   }
 
   if (sceneName === "menu") {
     currentLevelIndex = 0;
-    levelTimes = []; // 清空统计
+    levelTimes = [];
   }
-  // ✅ 确保切换场景时播放音效zkx~~~~~~
   if (clickSound) {
-    console.log("🎵 在切换场景时播放点击音效");
     clickSound.play();
-  } else {
-    console.error("❌ clickSound 未定义，无法播放点击音效！");
-  }
-  // ✅ **如果离开 "level" 场景，立即停止 `level-win.mp3`**
+  } 
+
   if (!["level","win"].includes(sceneName)) {
     if (levelWinSound && levelWinSound.isPlaying()) {
-        console.log("⏹️ 退出 `level` 场景，停止 `level-win.mp3`...");
         levelWinSound.stop();
     }
   }
 
-  // ✅ **如果进入 `story` 场景，确保背景音乐播放**
   if (sceneName === "story") {
     if (storyMusic && !storyMusic.isPlaying()) {
-      console.log("🎵 进入 StoryScene，播放背景音乐...");
-      userStartAudio(); // 解锁音频
+      userStartAudio();
       storyMusic.setVolume(0.6);
       storyMusic.loop();
     }
   } else {
-    // ✅ **如果离开 `story` 场景，停止背景音乐**
     if (storyMusic && storyMusic.isPlaying()) {
-      console.log("⏹️ 退出 StoryScene，停止背景音乐...");
       storyMusic.stop();
     }
   }
@@ -497,74 +417,59 @@ function switchScene(sceneName) {
   if (sceneName === "level") {
     let config = levels[currentLevelIndex];
 
-    // **清空旧关卡敌人**
+    //Clear old level enemies(Rui)
     if (level) {
       level.enemies = [];
     }
-
-    // **创建新关卡，确保 `spiderSpritesheet` 传入**
     level = new Level(config, spiderSpritesheet);
     player = new Player(config.playerStart);
-    // ✅ **检查是否是通过传送门进入，并且当前关卡不是 `level 1`**
-    // ✅ **检查是否是通过传送门进入，并且 `level > 1`**
+    //Check if the entry is through a portal and the current level is not level 1
+    //Check if it is entered through a portal and level>1
     if (currentLevelIndex > 1) {
-        console.log("✅ 通过通关门进入 `level " + currentLevelIndex + "`，播放 `level-win.mp3`...");
         if (levelWinSound) {
             levelWinSound.play();
         }
-        sessionStorage.removeItem("enteredFromPortal"); // **清除标志**
+        sessionStorage.removeItem("enteredFromPortal");
     } else {
-        console.log("❌ 直接进入关卡（非通关门），不播放 `level-win.mp3`");
         levelWinSound.play();
     }
 
-    // **调试信息**
-    //console.log(` 进入关卡 "${config.levelName}"`);
-    //console.log(" 生成的敌人:", level.enemies);
-
-    if (!level.levelName) {
-        console.error("Level name is undefined! Check level config.");
-    }
   }
 }
 
-
-// =========================
-// 键盘事件
-// =========================
 
 function keyPressed() {
   
   if (settings.isOpen) {
     switch (key) {
       case "R": case "r":
-        switchScene("level"); // 重新开始本关卡
+        switchScene("level"); //Restart this level
         settings.toggle();
         break;
       case "M": case "m":
-        switchScene("menu"); // 返回主菜单
+        switchScene("menu"); //Return to the main menu
         settings.toggle();
         break;
       case "I": case "i":
-        switchScene("instructions"); // 查看游戏说明
+        switchScene("instructions"); //View game instructions
         settings.toggle();
         break;
       case "S": case "s":
-        settings.toggleSound(); // 切换声音
+        settings.toggleSound(); //Switch sound
         break;
-      // 🆕 新增全屏切换
+      //Add full screen switching
       case "F": case "f":
         settings.toggleFullscreen();
         break;
       case "P": case "p":
-        settings.toggle(); // 关闭设置界面
+        settings.toggle(); //Close the settings interface
         break;
 
     }
     return;
   }
 
-  // 游戏内按 P 打开设置
+  //Press P to open the settings in the game
   if (key === "P" || key === "p") {
     settings.toggle();
   }
@@ -629,24 +534,21 @@ function keyPressed() {
 }
 
 function handleMouseClick() {
-  // 确保这个函数被正确定义并包含鼠标点击的逻辑
-  console.log("Mouse clicked!");
-  // 其他鼠标点击事件的处理逻辑
+  //console.log("Mouse clicked!");
 }
 
 // 🖱️ 鼠标点击：全局检测 SET 按钮和设置界面按钮
 function mousePressed() {
   if (clickSound) {
     clickSound.play();
-    console.log("🖱️ 播放点击音效！");//zkx~~~~~~~~~
+
   }
-  
-  settings.handleMouseClick(mouseX, mouseY);
+  //settings.handleMouseClick(mouseX, mouseY);
   if (currentScene === "level") {
     player.attack();
 }
 
   if (currentScene === "story") {
-    storyScene.mousePressed(); // 🎮 允许鼠标点击跳过故事
+    storyScene.mousePressed();
   }
 }

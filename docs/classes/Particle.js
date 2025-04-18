@@ -1,7 +1,3 @@
-// =========================
-// 粒子系统相关
-// =========================
-
 class Particle {
   constructor(x, y, velocity, col, lifetime) {
     this.position = createVector(x, y);
@@ -21,7 +17,6 @@ class Particle {
     let a = map(this.lifetime, 0, this.maxLifetime, 0, 255);
     fill(red(this.col), green(this.col), blue(this.col), a);
 
-    // 对于雨滴等粒子，直接减去 cameraX，以便在屏幕坐标绘制
     ellipse(this.position.x - cameraX, this.position.y, 3, 3);
   }
 
@@ -30,8 +25,11 @@ class Particle {
   }
 }
 
-// 全局粒子数组（爆炸、火花等）
 function updateParticles() {
+  if (globalParticles.length > 600) {
+    globalParticles.length = 600;
+  }
+
   for (let i = globalParticles.length - 1; i >= 0; i--) {
     globalParticles[i].update();
     if (globalParticles[i].isDead()) {
@@ -59,13 +57,13 @@ function spawnExplosion(x, y) {
 }
 
 function spawnThunderParticles(x, y) {
-  for (let i = 0; i < 60; i++) { // **粒子数量**
+  for (let i = 0; i < 60; i++) {
     let angle = random(TWO_PI);
-    let speed = random(2, 8); // **速度范围**
+    let speed = random(2, 8);
     let vx = cos(angle) * speed;
     let vy = sin(angle) * speed;
 
-    let thunderColor = color(random(180, 255), random(180, 255), 255); // **蓝白色**
+    let thunderColor = color(random(180, 255), random(180, 255), 255); 
     
     globalParticles.push(
       new Particle(x, y, createVector(vx, vy), thunderColor, random(30, 50))
