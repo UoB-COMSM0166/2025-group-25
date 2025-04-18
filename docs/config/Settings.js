@@ -66,6 +66,7 @@ class Settings {
   
       pop();
     }
+    /*
     handleMouseClick(mx, my) {
       if (clickSound) {
         clickSound.play();
@@ -92,7 +93,30 @@ class Settings {
           }
         }
       }
-    }
+    }*/
+
+      handleMouseClick(mx, my) {
+        
+        if (
+          mx > this.buttonX && mx < this.buttonX + this.buttonSize &&
+          my > this.buttonY && my < this.buttonY + this.buttonSize
+        ) {
+          this.toggle();
+          return true;
+        }
+      
+        if (this.isOpen) {
+          for (let btn of this.buttons) {
+            if (mx > btn.x-50 && mx < btn.x+250 && my > btn.y && my < btn.y+50) {
+              btn.action();
+              this.toggle();
+              return true;
+            }
+          }
+        }
+        return false;
+      }
+      
   
 
     //Full screen switching function

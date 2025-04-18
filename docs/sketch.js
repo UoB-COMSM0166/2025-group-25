@@ -544,16 +544,19 @@ function handleMouseClick() {
   //console.log("Mouse clicked!");
 }
 
-// 🖱️ 鼠标点击：全局检测 SET 按钮和设置界面按钮
 function mousePressed() {
   if (clickSound) {
     clickSound.play();
 
   }
   //settings.handleMouseClick(mouseX, mouseY);
-  if (currentScene === "level") {
+  if (settings.handleMouseClick(mouseX, mouseY)) {
+    return;
+  }
+
+  if (currentScene === "level" && !settings.isOpen) {
     player.attack();
-}
+  }
 
   if (currentScene === "story") {
     storyScene.mousePressed();
