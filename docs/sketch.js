@@ -39,6 +39,7 @@ let timeOfDay = 12;          // 0~24
 let weatherState = "clear";  // "clear", "rain", "thunderstorm"
 let weatherTimer = 0;
 let rainParticles = [];
+let snowParticles = [];
 let thunderFlash = false;
 let groundImage;
 let globalParticles = [];
@@ -362,7 +363,13 @@ function updateGameTimer() {
 function switchScene(sceneName) {
   currentScene = sceneName;
   gameTimer = 0;
-  projectiles = [];
+  //projectiles = [];
+  
+  projectiles.length     = 0;        
+  rainParticles.length   = 0;        
+  snowParticles.length   = 0;        
+  globalParticles.length = 0;  
+
   if (sceneName !== "level") {
 
     if (runSound && runSound.isPlaying()) {

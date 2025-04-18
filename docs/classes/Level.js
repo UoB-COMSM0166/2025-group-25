@@ -162,6 +162,7 @@ class Level {
   }
 
   update() {
+    /*
     if (millis() - this.startTime > this.storyDuration) {
       //console.log("The background story has finished playing, switch to the main menu...");
       
@@ -171,7 +172,7 @@ class Level {
       }
   
       switchScene("menu"); 
-    }
+    }*/
 
     for (let coin of this.coins) {
       coin.update();

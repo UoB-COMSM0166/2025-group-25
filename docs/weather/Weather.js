@@ -75,7 +75,8 @@ function updateWeather() {
     for (let i = 0; i < 5; i++) {
       let dropCol = color(80, 80, 220, 200);
       rainParticles.push(
-        new Particle(
+        //new Particle(
+          Particle.get(
           random(cameraX, cameraX + width),
           0,
           createVector(0, random(4, 8)),
@@ -99,9 +100,10 @@ function updateWeather() {
   //snow
   else if (weatherState === "snow") {
     if (frameCount % 3 === 0) {
-      if (snowParticles.length < 200) {
+      if (snowParticles.length < 100) {
         snowParticles.push(
-          new Particle(
+          //new Particle(
+            Particle.get(
             random(cameraX, cameraX + width),
             -10,
             createVector(random(-0.5, 0.5), random(1, 2)),

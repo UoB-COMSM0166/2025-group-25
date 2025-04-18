@@ -90,7 +90,7 @@ class Item {
     this.collected = true;
     
     if (player.firstItemPickup && this.type !== "Heart") { 
-      player.itemPickupMessage = "Press Z to use item";
+      player.itemPickupMessage = "Press J / Left button to use item";
       player.messageTimer = 120;
       player.firstItemPickup = false;
     }
