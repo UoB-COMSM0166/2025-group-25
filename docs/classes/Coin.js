@@ -5,7 +5,7 @@ class Coin {
     this.width = 50;
     this.height = 50;
 
-    // 关卡对应图片的数组
+    
     const images = [
       'assets/apple.png',   
       'assets/banana.png', 
