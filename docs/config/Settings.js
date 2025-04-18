@@ -1,7 +1,3 @@
-// =========================
-// 🎛️ 游戏设置模块 (Settings.js)
-// =========================
-
 class Settings {
     constructor() {
       this.isOpen = false;
@@ -13,7 +9,7 @@ class Settings {
         { label: "[R] Restart Level", x: width / 2 - 100, y: 250, action: () => switchScene("level") },
         { label: "[M] Main Menu", x: width / 2 - 100, y: 310, action: () => switchScene("menu") },
         { label: "[I] Instructions", x: width / 2 - 100, y: 370, action: () => switchScene("instructions") },
-        { label: "[F] Fullscreen", x: width / 2 - 100, y: 430, action: () => this.toggleFullscreen() } // 🆕 新增全屏按钮
+        { label: "[F] Fullscreen", x: width / 2 - 100, y: 430, action: () => this.toggleFullscreen() }
       ];
     }
   

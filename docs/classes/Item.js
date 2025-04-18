@@ -94,7 +94,6 @@ class Item {
       player.messageTimer = 120;
       player.firstItemPickup = false;
     }
-     //  **播放拾取音效**
     if (pickItemSound) {
       //console.log("Pick up props and play sound effects");
       pickItemSound.play();

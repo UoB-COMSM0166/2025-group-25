@@ -1,7 +1,3 @@
-// =========================
-// 🎮 玩家类 (最终优化版)
-// =========================
-
 class Player {
   constructor(startPos) {
     this.position = startPos.copy();

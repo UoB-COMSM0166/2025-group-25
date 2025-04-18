@@ -21,7 +21,6 @@ function drawLevelSelect() {
   let titleWidth = textWidth(titleText) + 80; //Make the background wider and maintain consistency with 'drawMenu()'
   let titleHeight = 72 * 1.2;
 
-  // **关卡选项**
   textSize(28);
   textStyle(NORMAL);
   let levelItems = [
