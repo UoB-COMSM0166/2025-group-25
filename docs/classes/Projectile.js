@@ -1,7 +1,3 @@
-// =========================
-// 投射物类
-// =========================
-
 // FlameProjectile
 class FlameProjectile {
   constructor(x, y, direction) {
@@ -100,7 +96,7 @@ class ThunderProjectile {
     }
     */
     if (!this.exploded) {
-      // **飞行**
+      //Flying objects flying
       this.position.add(this.velocity);
       this.timer--;
 

@@ -22,54 +22,47 @@ class Player {
     this.state = "idle"; 
     this.isOnGround = false;  
     this.hasTeleport = false;
-
-    // **冲刺相关**
     this.isDashing = false;  
     this.dashCooldown = 0;   
     this.dashDuration = 15;  
     this.dashSpeed = 12;     
     this.dashTimeLeft = 0;  
-
-    // **动画相关**
     this.frameIndex = 0;
     this.frameDelay = 6;
     this.frameCounter = 0;
     this.loadAnimationFrames();
 
-    // **物品相关**
-    this.itemPickupMessage = "";  // 存储提示信息
-    this.messageTimer = 0;        // 计时器，控制提示显示时间
-    this.firstItemPickup = true;  // 记录是否是当前关卡第一次拾取道具
+    this.itemPickupMessage = "";
+    this.messageTimer = 0;
+    this.firstItemPickup = true;
   }
 
-  /** 🔄 统一加载动画帧 */
   loadAnimationFrames() {
     this.animations = {
       idle: this.loadFrames("player-idle", 4),
       run: this.loadFrames("player-run", 6),
-      jump: [loadImage("assets/player-jump-1.png")], // 只有1帧
+      jump: [loadImage("assets/player-jump-1.png")],
       attack: this.loadFrames("player-attack", 2),
       dash:[loadImage("assets/player-dash.png")]
     };
   }
 
-  /** 📜 加载动画帧的辅助函数 */
   loadFrames(baseName, count) {
     return Array.from({ length: count }, (_, i) => 
       loadImage(`assets/${baseName}-${i + 1}.png`)
     );
   }
 
-  /** 🚀 处理角色移动 */
+
   handleMovement() {
-    if (this.isDashing) return; // **正在冲刺时不进行普通移动**
+    if (this.isDashing) return;
 
     let horiz = 0;
-    if (keyIsDown(65) || keyIsDown(LEFT_ARROW)) { // A 键 或 左方向键
+    if (keyIsDown(65) || keyIsDown(LEFT_ARROW)) {
       horiz -= this.speed;
       this.facingDirection = "left";
     }
-    if (keyIsDown(68) || keyIsDown(RIGHT_ARROW)) { // D 键 或 右方向键
+    if (keyIsDown(68) || keyIsDown(RIGHT_ARROW)) {
       horiz += this.speed;
       this.facingDirection = "right";
     }

@@ -1,32 +1,19 @@
-// =========================
-// weather.js
-// =========================
+//5 weather conditions: "clear", "rain", "snow", "thunderstorm", "fog"
 
-// [新增] 可选的5种天气状态
-// "clear", "rain", "snow", "thunderstorm", "fog"
-
-let previousWeather = "clear"; // 记录上一次的天气状态，默认为"clear"
-
-
-let fogParticles = []; // 雾气粒子
-let fogLayer;         // 只创建一次的雾图层
-
-// 一个假设的地面参考高度（用于雪花落地停留的演示）
+let previousWeather = "clear";
+let fogParticles = [];
+let fogLayer;
 let groundLevel;
-
-// 噪声用到的全局offset，用于让雾形状稍作平移动画
 let fogNoiseOffset = 0;
 
 function updateWeather() {
-  // ✅ **存储当前天气为 previousWeather**
   previousWeather = weatherState;//zkx~~~~~~~~~
-  // 1. 昼夜循环
   timeOfDay += 0.01;
   if (timeOfDay >= 24) {
     timeOfDay = 0;
   }
 
-  // 2. 每 20 秒随机切换天气
+  //Randomly switch weather every 20 seconds
   weatherTimer += deltaTime / 1000;
   if (weatherTimer > 20) {
     let r = random(1);
@@ -41,65 +28,55 @@ function updateWeather() {
     } else {
       weatherState = "fog";//fog
     }
-    // 切换天气后，清空各种粒子
+    //After switching weather, clear various particles
     rainParticles = [];
     snowParticles = [];
     fogParticles = [];
     weatherTimer = 0;
   }
-  // ✅ **如果当前场景不是 "level"，直接停止天气音效**zkx~~~~~~~
   if (currentScene !== "level") {
     if (rainSound && rainSound.isPlaying()) {
-      console.log("⏹️ 退出关卡，停止雨天背景音乐...");
       rainSound.stop();
     }
     if (snowSound && snowSound.isPlaying()) {
-      console.log("⏹️ 退出关卡，停止下雪音效...");
       snowSound.stop();
     }
-    return; // ❗ 退出函数，避免继续执行天气更新逻辑
+    return;
   }
 
-  // ✅ **下雪时播放音效**zkx~~~~~~~
   if (weatherState === "snow") {
     if (snowSound && !snowSound.isPlaying()) {
-      console.log("❄️ 开始播放下雪音效...");
-      snowSound.setVolume(0.4); // 设置适当音量
-      snowSound.loop(); // 让雪声循环播放
+      snowSound.setVolume(0.4);
+      snowSound.loop();
     }
   } 
-  // ✅ **如果天气变了，且不再是雪天，停止音效**zkx~~~~~~~~
   else if (previousWeather === "snow") {
     if (snowSound && snowSound.isPlaying()) {
-      console.log("⏹️ 停止下雪音效...");
+
       snowSound.stop();
     }
   }
 
-  // ✅ **当天气变为雨天时，播放背景音乐**zkx~~~~~~
   if (weatherState === "rain" || weatherState === "thunderstorm") {
     if (rainSound && !rainSound.isPlaying()) {
-      console.log("🌧️ 开始播放雨天背景音乐...");
-      rainSound.setVolume(0.5); // 设置适当音量
-      rainSound.loop(); // 让雨声循环播放
+      rainSound.setVolume(0.5);
+      rainSound.loop();
     }
   } 
-  // ✅ **如果天气变化，且不再是雨天，停止音乐**zkx~~~~~~~~~~~
   else if (previousWeather === "rain" || previousWeather === "thunderstorm") {
     if (rainSound && rainSound.isPlaying()) {
-      console.log("⏹️ 停止雨天背景音乐...");
       rainSound.stop();
     }
   }
 
-  // 3. 根据当前天气，生成对应粒子
-  // == 雨 or 雷暴 ==
+  //Generate corresponding particles based on current weather conditions
   if (weatherState === "rain" || weatherState === "thunderstorm") {
-    // 每帧生成少量雨滴
+    if (rainParticles.length < 300) {
     for (let i = 0; i < 5; i++) {
       let dropCol = color(80, 80, 220, 200);
       rainParticles.push(
-        new Particle(
+        //new Particle(
+          Particle.get(
           random(cameraX, cameraX + width),
           0,
           createVector(0, random(4, 8)),
@@ -109,7 +86,7 @@ function updateWeather() {
       );
     }
 
-    // 如果是雷暴 & 夜晚，则有小概率产生闪电
+    //If it is a thunderstorm or night, there is a small probability of lightning occurring
     if (
       weatherState === "thunderstorm" &&
       (timeOfDay < 6 || timeOfDay >= 18) &&
@@ -117,35 +94,33 @@ function updateWeather() {
     ) {
       thunderFlash = true;
     }
+   }
   }
 
-  // == 雪天 ==
+  //snow
   else if (weatherState === "snow") {
-    // 控制生成频率：每隔 3 帧生成一次
     if (frameCount % 3 === 0) {
-      // 限制雪花粒子总数，避免数量过多（例如上限设为 200 个）
-      if (snowParticles.length < 200) {
+      if (snowParticles.length < 100) {
         snowParticles.push(
-          new Particle(
+          //new Particle(
+            Particle.get(
             random(cameraX, cameraX + width),
             -10,
-            createVector(random(-0.5, 0.5), random(1, 2)), // 缓慢下落
+            createVector(random(-0.5, 0.5), random(1, 2)),
             color(255),
-            150 // 寿命
+            150
           )
         );
       }
     }
   }
 
-  // == 大雾 ==
+  //fog
   else if (weatherState === "fog") {
-    // 若第一次使用雾图层，或画布尺寸变化后，需要重新创建
     if (!fogLayer || fogLayer.width !== width || fogLayer.height !== height) {
       fogLayer = createGraphics(width, height);
     }
 
-    // 生成雾气粒子（简单随机）
     for (let i = 0; i < 3; i++) {
       let p = {
         x: random(cameraX, cameraX + width),
@@ -161,11 +136,7 @@ function updateWeather() {
   }
 }
 
-// =========================
-// 绘制各种天气效果
-// =========================
 function drawWeather() {
-  // 1. 雨 / 雷暴
   if (weatherState === "rain" || weatherState === "thunderstorm") {
     for (let i = rainParticles.length - 1; i >= 0; i--) {
       let p = rainParticles[i];
@@ -177,13 +148,11 @@ function drawWeather() {
     }
   }
 
-  // 2. 雪
   if (weatherState === "snow") {
     for (let i = snowParticles.length - 1; i >= 0; i--) {
       let s = snowParticles[i];
       s.update();
-
-      // 绘制“精美雪花”或更简单的图案
+      //Draw snowflake
       push();
       translate(s.position.x - cameraX, s.position.y);
       rotate(frameCount * 0.01 + i);
@@ -203,9 +172,8 @@ function drawWeather() {
     }
   }
 
-  // 3. 大雾
+  //fog
   if (weatherState === "fog") {
-    // 先更新雾粒子的位置和寿命
     for (let i = fogParticles.length - 1; i >= 0; i--) {
       let f = fogParticles[i];
       f.x += f.vx;
@@ -215,26 +183,22 @@ function drawWeather() {
         fogParticles.splice(i, 1);
       }
     }
-
-    // 清空上帧的 fogLayer
     fogLayer.clear();
 
-    // 在雾图层上填充一个较浓的蒙版
+    //Fill a thicker mask on the fog layer
     fogLayer.noErase();
     fogLayer.background(200, 200, 200, 220);
 
-    // 在玩家周围抠一个可见区域（雾洞）
-    fogLayer.erase(); // 开启擦除模式
-    let holeX = width / 2; // 先给默认值
+    //Dig a visible area (fog hole) around the player
+    fogLayer.erase();
+    let holeX = width / 2;
     let holeY = height / 2;
 
-    // 如果 player 存在并且有 position，就用玩家位置
     if (player && player.position) {
-      holeX = player.position.x - cameraX+25;//Rui //向右偏移
-      holeY = player.position.y+30;//向下偏移
+      holeX = player.position.x - cameraX+25;//Rui
+      holeY = player.position.y+30;
     }
 
-    // 使用径向渐变擦除，做柔和过渡
     let maxRadius = 120;
     for (let r = maxRadius; r > 0; r -= 2) {
       let alpha = map(r, maxRadius, 0, 0, 220);
@@ -247,13 +211,10 @@ function drawWeather() {
       fogLayer.noStroke();
       fogLayer.ellipse(holeX, holeY, r * 2, r * 2);
     }
-    fogLayer.noErase(); // 关闭擦除模式
-
-    // 将雾图层叠加到主画面
+    fogLayer.noErase();
     image(fogLayer, 0, 0);
   }
 
-  // 4. 雷暴闪电
   if (thunderFlash) {
     fill(255, 255, 255, 200);
     rect(0, 0, width, height);
@@ -261,22 +222,17 @@ function drawWeather() {
   }
 }
 
-// ==========================================================
-// 绘制动态背景 (天空渐变 + 太阳 / 月亮 / 星星 / 云朵 + 关卡装饰)
-// ==========================================================
 function drawDynamicBackground(level) {
-  // 1) 绘制天空渐变
   drawSkyGradient();
 
-  // 2) 如果当前关卡不是 "Crystal Caverns"，才绘制太阳、月亮、星星和云朵
+  //If the current level is not 'Crystal Caverns', only draw the sun, moon, stars, and clouds
   if (!level || !level.levelName) {
-    return; // 如果 level 未初始化，直接跳过
+    return;
   }
 
   if (level.levelName !== "Crystal Caverns") {
     if (timeOfDay >= 6 && timeOfDay < 18) {
-      // --- 白天 ---
-      // 下列天气不显示太阳：rain, thunderstorm, snow
+      //The following weather conditions do not display the sun: rain, thunderstorm, snow
       if (
         weatherState !== "rain" &&
         weatherState !== "thunderstorm" &&
@@ -290,13 +246,13 @@ function drawDynamicBackground(level) {
         drawClouds();
       }
     } else {
-      // --- 夜晚 ---
+      //Night
       drawMoonCrescent();
       drawStars();
     }
   }
 
-  // 3) 最后绘制关卡背景装饰
+  //Finally, draw the level background decoration
   push();
   blendMode(MULTIPLY);
   drawLevelDecor(level);
@@ -304,11 +260,10 @@ function drawDynamicBackground(level) {
   pop();
 }
 
-// 下方这些函数基本保持不变，可根据需要微调
 function drawSkyGradient() {
   push();
 
-  // ① 为每个整点小时定义一个顶部(top)和底部(bottom)颜色
+  //Define a top and bottom color for each hourly hour
   let skyColorsTop = [
     color(11, 0, 51),
     color(11, 16, 51),
@@ -382,7 +337,7 @@ function drawSkyGradient() {
     line(0, y, width, y);
   }
 
-  // 如果天气是雨 or 雷暴，就让天空变灰暗一些
+  //If the weather is rain or thunderstorms, make the sky darker
   if (weatherState === "rain" || weatherState === "thunderstorm") {
     fill(50, 50, 50, 80);
     rect(0, 0, width, height);
@@ -401,14 +356,13 @@ function drawSun() {
   translate(sunX, sunY);
   noStroke();
 
-  // 平滑光晕
   for (let i = 1; i <= 10; i++) {
     let glowSize = 80 * (1 + i * 0.2);
     fill(255, 200, 0, glowAlpha * exp(-i * 0.5));
     ellipse(0, 0, glowSize, glowSize);
   }
 
-  // 太阳主体（渐变色）
+  //Sun Body
   for (let i = 0; i < 10; i++) {
     let lerpedColor = lerpColor(color(255, 255, 0), color(255, 150, 0), i / 10);
     fill(lerpedColor);
@@ -438,14 +392,13 @@ function drawMoonCrescent() {
   translate(moonX, moonY);
   noStroke();
 
-  // 平滑光晕
   for (let i = 1; i <= 10; i++) {
     let glowSize = 60 * (1 + i * 0.2);
     fill(200, 200, 255, glowAlpha * exp(-i * 0.5));
     ellipse(0, 0, glowSize, glowSize);
   }
 
-  // 月亮主体（渐变色）
+  //Main body of the moon
   for (let i = 0; i < 10; i++) {
     let lerpedColor = lerpColor(color(255, 255, 255), color(180, 180, 255), i / 10);
     fill(lerpedColor);
@@ -472,7 +425,7 @@ function drawStars() {
   }
 }
 
-//--------------------------- 云朵 -------------------------------------
+
 function drawClouds() {
   for (let i = 0; i < 5; i++) {
     let cx = ((frameCount * 0.2 + i * 200) % (width + 200)) - 100;
@@ -534,15 +487,12 @@ function drawDarkCloud(cx, cy) {
   pop();
 }
 
-//--------------------------- 云朵 -------------------------------------
 
-// 根据关卡名称，绘制更丰富的背景
+
 function drawLevelDecor(level) {
   if (!level) return;
   push();
   noStroke();
-
-  // 此处保留你原有的贴图或背景逻辑
   if (level.levelName === "Emerald Isles") {
     image(levelOneBg, 0, 0, width, height);
   } else if (level.levelName === "Lava Castle") {
@@ -558,20 +508,7 @@ function drawLevelDecor(level) {
   pop();
 }
 
-// =========================
-// 附加：画“精美雪花”与“真实雾气”相关的函数（原本已在上面体现）
-// =========================
 
-// 这里保留 drawFancySnowflake 等自定义函数的示例：
-// function drawFancySnowflake(s, index) { ... }
-
-
-
-// =========================
-// 附加：画“精美雪花”与“真实雾气”相关的函数
-// =========================
-
-// 画更精美的雪花
 function drawFancySnowflake(s, index) {
   push();
   translate(s.position.x - cameraX, s.position.y);
@@ -581,17 +518,12 @@ function drawFancySnowflake(s, index) {
   strokeWeight(2);
   noFill();
 
-  // 半径可调大一些
-  let r = 8;
-
-  // 画6个主要分支 + 每个分支再画两个小分叉
+  let r = 7;
+  //Draw snowflakes
+  //Draw 6 main branches+draw 2 small branches for each branch
   for (let angle = 0; angle < 360; angle += 60) {
     let rad = radians(angle);
-
-    // 主分支
     line(0, 0, r * cos(rad), r * sin(rad));
-
-    // 在分支的中点画2个小分叉
     let midX = (r * 0.5) * cos(rad);
     let midY = (r * 0.5) * sin(rad);
 

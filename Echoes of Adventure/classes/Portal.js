@@ -1,7 +1,3 @@
-// =========================
-// 传送门类
-// =========================
-
 class Portal {
   constructor(x, y) {
     this.position = createVector(x, y);
@@ -10,7 +6,7 @@ class Portal {
   }
 
   update() {
-    // 可以做一些动画
+
   }
 
   draw() {

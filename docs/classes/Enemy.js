@@ -393,9 +393,6 @@ class Bat extends Enemy {
 
 
 /*
-// =========================
-// Fish
-// =========================
 
 class Fish extends Enemy {
   constructor(x, y) {

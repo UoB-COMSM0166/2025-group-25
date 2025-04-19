@@ -1,7 +1,3 @@
-// =========================
-// 平台类
-// =========================
-
 class Platform {
   // ycl:constructor(x, y, w, h, image) {
   //   this.position = createVector(x, y);
@@ -22,7 +18,7 @@ class Platform {
     rect(this.position.x, this.position.y, this.width, this.height, 5);
   }*/
 
-    //ycl，修改平台的绘制方法，使用传入的图片对象进行绘制
+    //ycl:Modify the drawing method of the platform to use the input image object for drawing
     // draw() {
     //   if (this.image) {
     //     image(this.image, this.position.x, this.position.y, this.width, this.height);
@@ -43,14 +39,14 @@ class Platform {
 
     // draw() {
     //   if (platformImage) {
-    //     // 平铺地面
+    //
     //     for (let i = 0; i < this.width; i += 20) {
     //       for (let j = 0; j < this.height; j += 20) {
     //         image(platformImage, this.position.x + i, this.position.y + j, 20, 20);
     //       }
     //     }
     //   } else {
-    //     fill(50, 200, 50); // 备用颜色
+    //     fill(50, 200, 50);
     //     rect(this.position.x, this.position.y, this.width, this.height, 5);
     //   }
     // }
