@@ -37,7 +37,7 @@ function drawInstructions() {
 
   fill(255);
   textSize(20);
-  let controlsText = "1: Use WASD keys or arrow keys and space to move\n2: Right mouse button or Z key to attack\n3: Character can double jump";
+  let controlsText = "1: Use WASD keys or arrow keys and space to move\n2: Right mouse button or Z/J key to attack\n3: Character can double jump";
   drawCenteredText(controlsText, x1 + boxWidth / 2, y1 + boxHeight / 2 + 10);
 
 
@@ -57,7 +57,7 @@ function drawInstructions() {
 
   fill(255);
   textSize(20);
-  let goalText = "1: Collect all coins to open the exit door\n2: Overcome various weather challenges";
+  let goalText = "1: Collect all scattered trash to open exit door\n2: Overcome various weather challenges";
   drawCenteredText(goalText, x2 + boxWidth / 2, y1 + boxHeight / 2 + 10);
 
   // fill(220, 200, 255);
@@ -75,7 +75,12 @@ function drawInstructions() {
 
   fill(255);
   textSize(20);
-  let itemsText = "1: Ranged weapons: Flame Gun, Freeze Gun\n2: Melee weapons: Sword, Bomb\n3: Health item: Heart";
+  //let itemsText = "1: Ranged weapons: Flame Gun, Freeze Gun\n2: Melee weapons: Sword, Bomb\n3: Health item: Heart";
+  let itemsText = 
+    "1. FLAME ELEMENT: Shoot fire bullets\n" +
+    "2. FREEZE ELEMENT: Shoot ice bullets\n" +
+    "3. THUNDER ELEMENT: Place a thunder boom\n" +
+    "4. Health Item: Lives plus 1";
   drawCenteredText(itemsText, x1 + boxWidth / 2, y2 + boxHeight / 2 + 10);
 
   // fill(255, 180, 180);
