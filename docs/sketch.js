@@ -49,6 +49,13 @@ let settings;
 
 function preload() {
 
+  //ZSA ADD
+  appleImg = loadImage("assets/apple.png");
+  bananaImg = loadImage("assets/banana.png");
+  rubbishImg = loadImage("assets/rabbish.png");
+  bottleImg = loadImage("assets/bottle.png");
+  boxImg = loadImage("assets/box.png");
+
   myFont = loadFont('Round9x13.ttf');
   coinImages = [
     loadImage("assets/apple.png"),
