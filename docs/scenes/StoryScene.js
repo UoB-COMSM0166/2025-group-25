@@ -30,7 +30,7 @@ class StoryScene {
     this.loadBackground();
 
     if (storyMusic) {
-      console.log("🎵 播放背景故事音乐...");
+      console.log("music loaded successfully!");
       storyMusic.setVolume(0.6);
       storyMusic.loop();
     }
@@ -38,16 +38,14 @@ class StoryScene {
 
   loadBackground() {
     this.backgroundImg = loadImage("assets/story_background.png", 
-      () => console.log("✅ 背景图片加载成功"),
-      () => console.error("❌ 背景图片加载失败，检查路径！")
+      () => console.log("picture loaded successfully!"),
+      () => console.error("picture loading failed!")
     );
   }
 
   update() {
     if (millis() - this.startTime > this.storyDuration) {
-      console.log("⏳ 背景故事播放完毕，切换到主菜单...");
       if (storyMusic && storyMusic.isPlaying()) {
-        console.log("⏹️ 背景故事结束，停止背景音乐...");
         storyMusic.stop();
       }
       switchScene("menu");
@@ -63,7 +61,6 @@ class StoryScene {
       noTint();
 
       if (storyMusic && !storyMusic.isPlaying()) {
-        console.log("🎵 背景图片已加载，播放背景故事音乐...");
         storyMusic.setVolume(0.6);
         storyMusic.loop();
       }
@@ -103,10 +100,8 @@ class StoryScene {
   }
 
   mousePressed() {
-    console.log("🎮 背景故事被跳过");
     if (clickSound) clickSound.play();
     if (storyMusic && storyMusic.isPlaying()) {
-      console.log("⏹️ 停止背景故事音乐...");
       storyMusic.stop();
     }
     switchScene("menu");
