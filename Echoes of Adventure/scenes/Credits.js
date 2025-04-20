@@ -64,10 +64,10 @@ function drawCredits() {
   textSize(24);
   let teamMembers = [
     "        ",
+    "Shuao Zhang",
     "Rui Xiong",
     "Cailing Yang",
     "Junjie Yan",
-    "Shuao Zhang",
     "Kexin Zhang"
   ];
   let lineSpacing = 50;
