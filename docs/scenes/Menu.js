@@ -41,7 +41,7 @@ function drawMenu() {
     "Press 1 : Invincible Mode  /  Press 2 : Normal Mode",
     //"Press 2 : Normal Mode",
     "                           ",
-    "Collect all the coins to complete the level",
+    "Collect all the SCATTERED TRASH to complete the level",
     "Press I to view instructions",
   ];
   let lineSpacing = 50;
