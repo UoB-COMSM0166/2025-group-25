@@ -1,3 +1,4 @@
+//Enemy base class: Provides basic position and size properties, from which all other specific types of enemies inherit
 class Enemy {
   constructor(x, y) {
     this.position = createVector(x, y);
@@ -36,10 +37,11 @@ class Frog extends Enemy {
 
   update() {
     super.update();
-
+    //If it freezes, it won't move
     if (!this.frozen) {
       this.jumpTimer--;
       if (this.jumpTimer <= 0) {
+        //The probability of randomly jumping half and a half on each side
         let direction = random() > 0.5 ? 1 : -1; //Make the frog jump left or right with a 50% chance
 
         //Ensure that the frog does not turn into a stationary jump when turning and jumping
@@ -54,7 +56,8 @@ class Frog extends Enemy {
         //Allow frogs to only jump within a certain range
         if (targetX >= this.startX - this.movementRange && targetX <= this.startX + this.movementRange) {
           this.velocity.x = newVelocityX;
-        } else {
+        } 
+        else {//Jump in the opposite direction beyond the range
           this.velocity.x = -newVelocityX;
           this.facingDirection = this.velocity.x > 0 ? "right" : "left";
         }
@@ -103,7 +106,7 @@ class Frog extends Enemy {
           onGround = true;
         }
       }
-
+      //If not on the ground, determine whether to ascend or descend based on the vertical velocity
       if (!onGround) {
         this.state = this.velocity.y < 0 ? "jump" : "fall";
       }
@@ -123,7 +126,7 @@ class Frog extends Enemy {
     } else {
       currentFrame = this.fallImg;
     }
-
+    //Flip the texture of the frog based on its orientation
     if (this.facingDirection === "left") {
       scale(1, 1);
       image(currentFrame, -this.width, 0, this.width, this.height);
