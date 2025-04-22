@@ -48,8 +48,8 @@ let myFont;
 let settings;
 
 function preload() {
-
-  //ZSA ADD
+  //ZSA add
+  
   appleImg = loadImage("assets/apple.png");
   bananaImg = loadImage("assets/banana.png");
   rubbishImg = loadImage("assets/rabbish.png");
@@ -217,22 +217,22 @@ function draw() {
         levelWidth - width
       );
     }
+
+    //Translating the canvas to achieve camera effects
     push();
     translate(-cameraX, 0);
 
-
+    //Update and draw the level itself and the player
     if (level) {
       level.update();
       level.draw();
     }
-
-
     if (player) {
       player.update();
       player.draw();
     }
 
-
+    //Update and draw all remote projectiles, such as fireballs, freeze shells, and lightning
     for (let i = projectiles.length - 1; i >= 0; i--) {
       let proj = projectiles[i];
       proj.update();
@@ -328,7 +328,7 @@ function draw() {
     updateGameTimer();
     drawHUD();
 
-
+    //Check for portal collisions, switch to the next level or victory scene
     if (
       level.portal &&
       level.allCoinsCollected() &&
@@ -342,7 +342,7 @@ function draw() {
         switchScene("win");
       }
     }
-
+    //If the health reaches its bottom, the game ends
     if (player.lives <= 0) {
       switchScene("gameover");
     }
@@ -357,7 +357,7 @@ function draw() {
     drawCredits();
   }
   drawParticles();
-
+  
   settings.drawGlobalSettingsButton(); //Add a "SET" button in the upper right corner of all interfaces
 }
 
@@ -366,12 +366,12 @@ function updateGameTimer() {
   gameTimer += deltaTime / 1000;
 }
 
-
+//Unified logic for switching scenarios: resetting timing, stopping/playing music, initializing levels, etc
 function switchScene(sceneName) {
   currentScene = sceneName;
   gameTimer = 0;
   //projectiles = [];
-  
+  //Clear projectiles and particles
   projectiles.length     = 0;        
   rainParticles.length   = 0;        
   snowParticles.length   = 0;        
@@ -427,7 +427,7 @@ function switchScene(sceneName) {
       storyMusic.stop();
     }
   }
-
+  //Initialize new level data and player positions
   if (sceneName === "level") {
     let config = levels[currentLevelIndex];
 
@@ -453,7 +453,7 @@ function switchScene(sceneName) {
 
 
 function keyPressed() {
-  
+  //If the settings interface is open, first process the shortcut keys for the settings and then return
   if (settings.isOpen) {
     switch (key) {
       case "R": case "r":
