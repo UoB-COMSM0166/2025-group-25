@@ -251,9 +251,10 @@ Below is the Class Diagram, which shows the main classes in our game and their r
   <img src="docs/design/Class Diagram.png" alt="Class Diagram">
 </p>
 
-<p align="center">
-**Figure 1. Class Diagram**
-</p>
+<div align="center">
+  <b>Figure 1. Class Diagram</b>
+</div>
+
 ---
 
 ### 4.2 Sequence Diagram
@@ -264,9 +265,9 @@ The diagram below illustrates the main flow when the player enters a level and p
   <img src="docs/design/Sequence Diagram.png" alt="Sequence Diagram">
 </p>
 
-<p align="center">
-**Figure 2. Sequence Diagram**
-</p>
+<div align="center">
+  <b>Figure 2. Sequence Diagram</b>
+</div>
 
 ## 5. Implementation
 Our game is implemented in JavaScript and p5.js. The overall structure is modular and easy to extend. Every object in the game - including players, enemies, props, platforms, water, particles, etc. - follows the process of ‘update the logic first, then draw the screen’. We manage the states and behaviours of different objects through a unified architecture, and work with level JSON configurations so that the content of each level can be flexibly adjusted. We also implemented a dynamic weather system, day/night changes, sound feedback and a HUD interface for a better player experience. The whole project was built around sustainability, performance and scalability, and we encountered a lot of challenges during the process, among which ‘animation’ was the part we spent the most time optimising, and we will introduce the implementation process and solutions for this part.
