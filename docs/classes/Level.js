@@ -17,7 +17,7 @@ class Level {
       //console.log(`Creating coin at position: (${pos.x}, ${pos.y}) for level ${this.levelNumber}`);
       return new Coin(pos.x, pos.y, this.levelNumber);
     });
-
+    //Reset the prompt status for the player's first item pickup
     if (player) {
       player.firstItemPickup = true;
     }
@@ -42,7 +42,7 @@ class Level {
       }
     }
 
-    // 为每个水面区域创建 Water 实例kx~~~~
+    //Water (or magma) region
     this.water = [];
     if (config.waterRegions) {
       for (let waterConfig of config.waterRegions) {
@@ -61,7 +61,7 @@ class Level {
       }
     }
 
-    // 平台
+    
     //ycl
     // this.platforms = [];
     // if (config.platforms) {
@@ -76,6 +76,8 @@ class Level {
     //     this.platforms.push(new Platform(p.x, p.y, p.w, p.h, imageType));
     //   }
     // }
+
+    //Platform (can segment and stitch various types of images)
     this.platforms = [];
     if (config.platforms) {
       for (let p of config.platforms) {
@@ -156,7 +158,7 @@ class Level {
       }
     }
 
-    this.portal = new Portal(this.portalPosition.x, this.portalPosition.y);
+    this.portal = new Portal(this.portalPosition.x, this.portalPosition.y);//Portal initialization
 
 
   }
@@ -174,6 +176,7 @@ class Level {
       switchScene("menu"); 
     }*/
 
+    //Coin collision detection and collection
     for (let coin of this.coins) {
       coin.update();
       if (!coin.collected && player.collidesWith(coin)) {
@@ -236,6 +239,7 @@ class Level {
     }
     
     for (let obs of this.obstacles) {
+      //Obstacle update+collision with deduction of blood
       obs.update();
       if (player.collidesWith(obs)) {
         if (!player.invincible) {
@@ -258,6 +262,8 @@ class Level {
         }
       }
     }
+
+
 
     if (this.axes) {
       this.axes.update();
@@ -308,7 +314,9 @@ class Level {
     }
 */
 
-    if (this.saws) {
+
+
+    if (this.saws) {//Can rotate
       for (let saw of this.saws) {
         if (collides(player.position.x, player.position.y, player.width, player.height, saw.position.x - 20, saw.position.y - 20, 40, 40)) {
           if (!player.invincible) {
@@ -317,6 +325,9 @@ class Level {
         }
       }
     }
+
+
+
 
     if (this.advancedBirds) {
       this.advancedBirds.update();
@@ -360,6 +371,8 @@ class Level {
       this.portal.update();
     }
   }
+
+
 
   draw() {
 
@@ -406,6 +419,8 @@ class Level {
     if (this.saws) {
       this.saws.draw();
     }*/
+
+
    if (this.saws && sawsImg) {
     for (let saw of this.saws) {
       push();
@@ -422,6 +437,8 @@ class Level {
     }
   }
 
+
+  
     if (this.advancedBirds) {
       this.advancedBirds.draw();
     }
@@ -432,7 +449,7 @@ class Level {
     }
   }
 
-  allCoinsCollected() {
+  allCoinsCollected() {//Check if all coins have been picked up
     return this.coins.every((coin) => coin.collected);
   }
 }
