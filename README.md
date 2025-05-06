@@ -124,8 +124,10 @@ A survey conducted by Borg et al. (2019) on Global Game Jam participants identif
 </div>
 
 
-**Figure 1. Methods used for gathering the initial set of expectations (requirements)**  
-*Source: Adapted from Borg et al. (2019).*
+<p align="center">
+  <strong>Figure 1. Methods used for gathering the initial set of expectations (requirements)</strong><br>
+  <em>Source: Adapted from Borg et al. (2019).</em>
+</p>
 
 ### 4.2 Ideation Processing
 In the early stages of the project, we utilized Feishu Docs for brainstorming and information integration, and initially proposed incorporating a power-up system to enhance player interaction. Additionally, considering the varying skill levels of players, we designed two gameplay modes: Invincible Mode, which allows players to freely select levels for a more accessible experience, and Normal Mode, which requires players to start from the first level for a more structured challenge. This design aims to accommodate different player preferences and enhance the overall playability and adaptability of the game.
@@ -147,8 +149,11 @@ During the third session on January 28, our team of five members was systematica
 </div>
 
 
-**Figure 3 Paper Prototype developed during Workshop Three**  
-(Paper Prototype : www.google.com)
+<p align="center">
+  <strong>Figure 3. Paper Prototype developed during Workshop Three</strong><br>
+  <em>(Paper Prototype: <a href="https://www.google.com">www.google.com</a>)</em>
+</p>
+
 
 ### 4.3 Feasibility Studies
 As none of our team members had prior experience in game development, we conducted a series of feasibility studies. During these tests, we observed that the player's movement speed varied under different weather conditions. However, when transitioning between weather states, some users found it difficult to immediately recognize the change, leading to confusion about what had occurred in the game.
@@ -161,8 +166,10 @@ Through this iterative refinement process, we aimed to enhance player immersion 
 
 ![4d7d0403-2ebb-49fb-9b35-333beb382790](https://github.com/user-attachments/assets/8b48af30-ba11-49b3-8c70-e4143fbf3bd9)
 
-**Figure 4**  
-Onion Model of Oiram Game.
+<p align="center">
+  <strong>Figure 4.</strong><br>
+  <em>Onion Model of Oiram Game.</em>
+</p>
 
 #### Stakeholder Roles & Environmental Context
 A crucial insight from our tailored Onion Model (as shown in Figure above) was clearly distinguishing between different feedback layers within our immediate academic environment: both professors and peers provided critical but distinct types of surrogate feedback. Professors primarily acted as authoritative stakeholders, providing strategic guidance and professional insights to align the project with industry standards and overall academic expectations. Simultaneously, feedback from peer students played an equally significant yet distinctly complementary role, mirroring direct player experiences and providing authentic usability insights. These two stakeholder groups together created a dual-layer feedback mechanism, enabling a more comprehensive coverage of both high-level product strategy and detailed gameplay interaction nuances.
@@ -209,8 +216,10 @@ To optimize user experience and accommodate different player preferences, we imp
 <img width="842" alt="WechatIMG5177" src="https://github.com/user-attachments/assets/a3a42d32-6640-413e-b013-cb192f99b101" />
 
 
-**Figure 5**  
-Use Case Diagram.
+<p align="center">
+  <strong>Figure 5.</strong><br>
+  <em>Use Case Diagram.</em>
+</p>
 
 
 ### 4.7 Use-Case Specification
@@ -329,7 +338,9 @@ To gain an in-depth understanding of players’ genuine experiences regarding le
 We recruited 15 participants from diverse backgrounds—with varying levels of gaming experience—through campus promotions and social media outreach, ensuring broad and varied feedback. During the experiment, participants played through all five levels (namely: 1. Emerald Isles, 2. Lava Castle, 3. Celestial Citadel, 4. Shadow Realm, and 5. Crystal Caverns) while continuously verbalizing their operational strategies, immediate impressions, and feedback regarding level layout, enemy design, item functions, visual effects, and sound effects. All verbal content was recorded via video and transcribed. After data collection, we employed Thematic Analysis (Braun & Clarke, 2006) to organize and code the textual data and constructed a Thematic Map (see Figure 1) to visually display the relationships among core feedback themes.
 
 ![whiteboard_exported_image](https://github.com/user-attachments/assets/287c0df2-e57e-444d-996d-5ecf22df410f)
-**Figure 1. User Feedback Thematic Map**
+<p align="center">
+  <strong>Figure 1. User Feedback Thematic Map</strong>
+</p>
 
 #### 7.1.2 Main Feedback Themes
 
@@ -404,7 +415,9 @@ Interestingly, ratings for Level 3 and Level 5 were similar across both modes, a
   <img src="https://github.com/user-attachments/assets/27a8bae5-5f4f-4a39-bef0-6acd51da6f36" width="500" alt="1 figure_level_difficulty_avg_by_mode_final">
 </div>
 
-**Figure 2. Average Difficulty Ranking of Each Level in Two Modes**
+<p align="center">
+  <strong>Figure 2. Average Difficulty Ranking of Each Level in Two Modes</strong>
+</p>
 
 #### 7.2.2 Correlation between SUS and NASA TLX Scores
 We observed a slight negative correlation between SUS and NASA TLX scores. Players who rated the game as more usable tended to report lower cognitive workload. This supports our design hypothesis that intuitive interfaces and clear feedback reduce mental strain during gameplay.
@@ -414,7 +427,9 @@ Such observations are particularly important in scenarios that involve switching
   <img src="https://github.com/user-attachments/assets/9ff98b20-d063-4d5c-8759-2a8076b51ad2" width="500" alt="2 figure_sus_vs_nasa_clean-2">
 </div>
 
-**Figure 3. Correlation between SUS Score and NASA TLX Score**
+<p align="center">
+  <strong>Figure 3. Correlation between SUS Score and NASA TLX Score</strong>
+</p>
 
 #### 7.2.3 Standard Deviation of Difficulty Rankings per Level
 This chart highlights the variance in perceived difficulty rankings for each level. Level 4 and Level 2 exhibited the highest standard deviations, indicating strong disagreement among players regarding their difficulty. Some players may have understood the trap mechanics well and completed these stages quickly, while others struggled due to visual constraints or enemy patterns.
@@ -424,7 +439,9 @@ In contrast, Level 1 had the lowest standard deviation, showing broad consensus 
   <img src="https://github.com/user-attachments/assets/db8726f8-205b-4231-9ae3-2ff0a33270e6" width="500" alt="3 figure_level_variance_clean">
 </div>
 
-**Figure 4. Standard Deviation of Difficulty Rankings per Level**
+<p align="center">
+  <strong>Figure 4. Standard Deviation of Difficulty Rankings per Level</strong>
+</p>
 
 #### 7.2.4 SUS Question Scores Sorted
 From the SUS item-wise breakdown, the lowest scoring questions relate to consistency of system design and **perceived learning effort**. Qualitative feedback such as “I wasn’t sure which items could be combined” or “the combat feedback didn’t match the UI” suggest that certain areas in the game lacked clarity or cohesion, especially in complex item usage or layered interactions.
@@ -434,7 +451,9 @@ On the other hand, high scores in items like “I felt confident using the syste
   <img src="https://github.com/user-attachments/assets/37e04680-4d26-4b15-9751-a5319b59943b" width="500" alt="4 figure_sus_sorted_clean">
 </div>
 
-**Figure 5. SUS Question Scores Sorted**
+<p align="center">
+  <strong>Figure 5. SUS Question Scores Sorted</strong>
+</p>
 
 #### 7.2.5 NASA TLX Dimension Scores Sorted
 Players reported the highest workload in Mental Demand and **Effort**, especially during levels with high timing pressure (e.g., dynamic platforms) or requiring environmental recall and enemy tracking. This is consistent with levels such as Lava Castle or Shadow Realm, where success often depends on pattern recognition and multi-step coordination.
@@ -444,7 +463,9 @@ The lowest scores appeared in **Physical Demand**, which reflects well on our in
   <img src="https://github.com/user-attachments/assets/eb20cec7-d8c2-4a87-b4c3-b3e38fb25177" width="500" alt="5 figure_nasa_sorted_clean">
 </div>
 
-**Figure 6. NASA TLX Dimension Scores Sorted**
+<p align="center">
+  <strong>Figure 6. NASA TLX Dimension Scores Sorted</strong>
+</p>
 
 #### 7.2.6 SUS Total Score by Game Mode
 This boxplot shows that **Invincible Mode scores were more consistent and tightly clustered**, suggesting a smoother and more predictable user experience. In contrast, **Normal Mode scores had wider variability**, reflecting more polarized reactions—some players highly appreciated the challenge, while others found it overwhelming or lacking in system feedback.
@@ -454,7 +475,9 @@ These results emphasize that Invincible Mode fulfills its purpose as a relaxed e
   <img src="https://github.com/user-attachments/assets/fd07399d-893b-4eb9-a7d8-e4d3f399a1fe" width="500" alt="6 figure_sus_by_mode_clean">
 </div>
 
-**Figure 7. SUS Total Score by Game Mode**
+<p align="center">
+  <strong>Figure 7. SUS Total Score by Game Mode</strong>
+</p>
 
 #### 7.2.7 Summary
 These six quantitative analyses provided valuable insights into how different aspects of our game are perceived by players. Key takeaways include:
@@ -559,9 +582,13 @@ We continuously evaluate and optimise the game against SuSAF’s five pillars:
   Players are rewarded for thorough cleanup rather than combat prowess alone, embodying SuSAF’s call for transitions in production and consumption patterns.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/7f9002c4-833d-4a24-9f7d-4817ce671149" width="600" alt="IMG_3091">
+  <img src="https://github.com/user-attachments/assets/7f9002c4-833d-4a24-9f7d-4817ce671149" width="800" alt="IMG_3091">
 </div>
-**Figure 1. Sustainability Mission Completion Screen**
+
+<p align="center">
+  <strong>Figure 1. Sustainability Mission Completion Screen</strong>
+</p>
+
 
 ### 9.3 Sustainability Practices in the Development Process
 
