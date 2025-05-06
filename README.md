@@ -3,6 +3,10 @@
 
 ## Your Game
 
+<a href="https://uob-comsm0166.github.io/2025-group-25/">
+  <img src="docs/assets/C5.png" width="400" alt="Click to Play">
+</a>
+
 Link to your game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
 
 Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
