@@ -137,9 +137,9 @@ Use Case Diagram.
 
 | Item | Description |
 |------|-------------|
-| Use Case Description | Upon starting the game, the player immediately begins from Level 1, collecting all coins to activate the exit door and progresses sequentially through to Level 5 to win the game. |
-| Goal | Collect all coins, avoid taking damage and traps, complete all levels to win. |
-| Main Flow | 1. Player enters Level 1, controlling character movement and jumps to collect coins.<br>2. After collecting all coins, the level's exit door activates, allowing the player to enter and proceed to the next level.<br>3. Player repeats the above process until completing Level 5, triggering the WIN screen. |
+| Use Case Description | Upon starting the game, the player immediately begins from Level 1, collecting all rubbish to activate the exit door and progresses sequentially through to Level 5 to win the game. |
+| Goal | Collect all rubbish, avoid taking damage and traps, complete all levels to win. |
+| Main Flow | 1. Player enters Level 1, controlling character movement and jumps to collect rubbish.<br>2. After collecting all rubbish, the level's exit door activates, allowing the player to enter and proceed to the next level.<br>3. Player repeats the above process until completing Level 5, triggering the WIN screen. |
 | Alternative Flow | Player loses health upon contact with monsters, traps, rivers, or  player falls off the canvas, screen flashes red; game over when health reaches zero. |
 | Exception Flow | On Game Over screen, player can press "R" to restart current level or "P" to open settings menu. |
 
@@ -148,8 +148,8 @@ Use Case Diagram.
 | Item | Description |
 |------|-------------|
 | Use Case Description | Player can freely select any level (1-5) after entering the game. In Invincible Mode, the player character is immune to all damage and can explore levels freely. |
-| Goal | Freely explore and collect all coins to complete levels. |
-| Main Flow | 1. Player selects any level from Level 1 to 5.<br>2. Freely explores the level in invincible mode, collecting all coins.<br>3. Upon collecting all coins, the exit door activates. Player enters the door to proceed to the next level or return to level selection. |
+| Goal | Freely explore and collect all rubbish to complete levels. |
+| Main Flow | 1. Player selects any level from Level 1 to 5.<br>2. Freely explores the level in invincible mode, collecting all rubbish.<br>3. Upon collecting all rubbish, the exit door activates. Player enters the door to proceed to the next level or return to level selection. |
 | Alternative Flow | Touching monsters, traps, or rivers does not affect health, and no warnings appear. When the player falls off the canvas, player's position resets to the last safe platform. |
 | Special Operation Flow | Player can press "P" at any time to open settings, "R" to restart current level, or "M" to return to main menu and select a different level. |
 
@@ -431,14 +431,14 @@ Additionally, we established a code repository on GitHub and extensively adopted
 
 ### Agile Dicussion
 In this project, we adopted agile discussion methods to ensure efficient team collaboration and smooth project progress. We primarily used two formats: daily stand-up meetings and backlog refinement sessions. While daily stand-ups usually require face-to-face reporting by team members, we flexibly adapted this to real-time reporting in a WeChat group based on our actual circumstances. This not only ensured timely information sharing but also enhanced communication efficiency. Meanwhile, we held a weekly offline backlog refinement meeting at MVB to focus on discussing and assigning phased tasks, ensuring that every team member was clear on current priorities and objectives. Through this flexible and diverse agile discussion approach, we successfully enhanced team collaboration efficiency and laid a solid foundation for the smooth progress of the project.
-============================以下是模板部分===============================
+
 
 
 ## 3. Introduction
 
 - When designing Echoes of Adventure, our goal was to create a platformer that was easy to pick up yet hard to master, while ensuring it appealed to a wide variety of players. Whether you're a beginner or someone who struggles with fast-paced keyboard and mouse controls, this game provides an experience that’s both fun and rewarding. Drawing inspiration from classic platformers, we aimed to make a game that anyone can enjoy while offering increasing challenges and a deep sense of achievement as you progress through the world.
 - In the ancient and mysterious world of Echoes of Adventure, the land nurtures five magical continents: Emerald Isles, Lava Castle, Celestial Citadel, Shadow Realm, and Crystal Caverns. However, a sudden catastrophe struck, disrupting the balance of elemental power. As a player, you control a small but courageous fox, traversing various landscapes, overcoming environmental challenges, and using elemental powers to solve puzzles and defeat enemies. Each continent offers unique elements and trials that require strategic thinking and quick reflexes. With each challenge you conquer, you’ll gain more power, uncover secrets, and progress closer to restoring the balance of the world.
-- In Echoes of Adventure, you will find a range of powers and items that will help you along your journey. From elemental hearts that boost your health to powerful elemental energy that grants you devastating abilities, these items can be used strategically to overcome obstacles, defeat dark creatures, and unlock new areas. Collecting mystic coins is crucial, as they are the key to advancing to the next continent and unlocking further adventures.
+- In Echoes of Adventure, you will find a range of powers and items that will help you along your journey. From elemental hearts that boost your health to powerful elemental energy that grants you devastating abilities, these items can be used strategically to overcome obstacles, defeat dark creatures, and unlock new areas. Collecting mystic rubbish is crucial, as they are the key to advancing to the next continent and unlocking further adventures.
 - With dynamic platforms, time-based puzzles, and a range of enemies, Echoes of Adventure is designed to keep you on your toes, ensuring that every moment of gameplay offers something new to discover. It’s time to embark on an epic journey and restore the elemental balance. Are you ready for the adventure of a lifetime?
   
 ### Table 1. Enemies
