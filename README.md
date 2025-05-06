@@ -545,7 +545,7 @@ At the same time, as the project progressed, we also held offline discussions pe
   <em>Gantt Chart of Game Project</em>
 </div>
 <div align="center">
-  <img src="" width="500">
+  <img src="docs/requirement/Gantt.png" width="800">
 </div>
 Here is the link to our complete Gantt chart:(https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh)
 
