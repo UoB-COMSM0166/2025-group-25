@@ -100,24 +100,30 @@ Utilizing these complementary surrogate feedback sources was highly advantageous
 ### 3.5 Identifying Top-Level Needs with User Stories
 
 #### 3.5.1 Player Needs
-- As a player, I want the game to feature random events (mystery boxes) and hidden levels to enhance unpredictability and replayability.
-- As a player, I want to hear sound effects for jumping, attacking, and collecting items to make the game feel more immersive. I also hope the background music changes dynamically with different levels.
-- As a player, I want to be able to use multiple attack types (melee and ranged) to adapt to different enemy types and enhance combat strategy.
-- As a new player, I want the game to provide a comprehensive tutorial and guidance so that I can quickly understand the rules and controls, improving my first-time experience and overall accessibility.
-
+- As a player, I want the game to include random events like mystery boxes and hidden levels so that the gameplay feels less predictable and encourages replayability.
+- As a player, I want to hear sound effects for actions like jumping, attacking, and collecting items, and experience background music that changes dynamically with each level so that the game feels more immersive and engaging.
+- As a player, I want to use both melee and ranged attack types so that I can adapt my combat strategy to different types of enemies.
+- As a new player, I want a clear and interactive tutorial that explains game rules and controls so that I can quickly understand how to play and enjoy the game.
+- As a player with color vision deficiency, I want the game interface to use clear, high-contrast and high-saturation visual design, along with audio cues for key actions and feedback, so that I can easily distinguish important information and interact with the game effectively without requiring additional settings.
+  
 **Acceptance Criteria：**  
 We have added a gameplay instructions and item display interface before the game starts to ensure that players understand the basic rules and controls before entering a level. During gameplay, players can access the tutorial and item descriptions at any time via the settings button to review key information.
 
-- As a visually impaired player or an elderly player, I want to be able to customize the font size and color in the game to improve readability.  
-- As a player, I want to experience diverse visual effects on the map and interact with the environment in ways that reflect real-world interactions (HCI), enhancing immersion.  
+- Given the player starts the game for the first time,when the main menu loads,then a tutorial screen with gameplay instructions and item descriptions is displayed automatically before entering a level.
+- Given the player is in the middle of a game level,when the player clicks the settings button,then the tutorial and item information are accessible for review at any time.
+- Given the player opens the settings menu,when they access the accessibility section,then they can choose from at least three predefined font sizes.
+- Given a player with color vision deficiency is interacting with the game,when a key gameplay event occurs (e.g., picking up an item, taking damage, completing a task),then both a visually distinguishable UI change (e.g., high-contrast icon flash) and a distinct audio cue must be triggered to convey the event clearly and support effective interaction.
+
 
 #### 3.5.2 Developer & Designer Needs
 
-- As a game developer, I want to implement interactive features such as online leaderboards and multiplayer co-op mode to enhance player engagement and gameplay experience.  
-- As a game designer, I want to implement a dynamic weather system that allows the background of a level to change automatically based on game progress. This will enhance player immersion and create deeper interactions between the environment and gameplay.
+- As a game developer, I want to implement interactive features such as online leaderboards and multiplayer co-op mode so that players stay more engaged and enjoy a richer gameplay experience.
+- As a game designer, I want to implement a dynamic weather system that changes the level background based on game progress so that players feel more immersed and the environment becomes meaningfully integrated into gameplay.
 
 **Acceptance Criteria：**  
-The game should feature dynamic weather conditions such as sunny, rainy, snowy, thunderstorms, and foggy, changing with level progression. Each weather type should impact the environment and gameplay, such as slippery surfaces in rain, ice formation in snow, lightning effects in storms, and reduced visibility in fog. Weather effects should include matching visuals and sounds to enhance immersion.
+- Given the player progresses through levels,when a new stage or event is triggered,then the weather should automatically change to one of the predefined conditions: sunny, rainy, snowy, thunderstorm, or foggy.
+- Given the weather condition is active,when the player interacts with the environment,then the environment must reflect the weather's impact—e.g., slippery surfaces in rain, ice patches in snow, or reduced visibility in fog.
+- Given a dynamic weather transition occurs,when the visual and audio assets load,then they must match the current weather (e.g., rain sounds, lightning flashes, fog overlays) to support environmental immersion.
 
 To personalize and internalize these user stories, we designed a series of character-driven posters to visually represent them. This approach ensured that the user stories remained top-of-mind throughout the development process, serving as a constant reference point. Additionally, these posters provided a quick and effective shorthand during discussions, enabling more efficient decision-making and alignment across the team.
 
