@@ -34,7 +34,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 - [8. Process](#8-process)
 - [9. Sustainability](#9-sustainability)
 - [10. Conclusion](#10-conclusion)
-- [Reference](#Reference)
+- [Reference](#reference)
 
 
 
@@ -538,6 +538,8 @@ At the same time, as the project progressed, we also held offline discussions pe
   <img src="docs/meeting/2.11meeting.jpg" width="500">
 </div>
 
+
+
 ### Gantt Chart
 <div align="center">
   <b>Figure 9</b>
@@ -546,7 +548,9 @@ At the same time, as the project progressed, we also held offline discussions pe
   <em>Gantt Chart of Game Project</em>
 </div>
 <div align="center">
-  <img src="docs/requirement/Gantt.png" width="800">
+  <a [href="https://www.youtube.com/watch?v=LWV-f6dMN3Q&list=RDOEn19VUiDQo&index=3](https://a6czq5caio.feishu.cn/base/YO98b7J4YaSKLgsO6W3cpBK8n0d?from=from_copylink)">
+    <img src="docs/requirement/Gantt.png" width="800" alt="Click to our complete gantt chart">
+  </a>
 </div>
 Here is the link to our complete Gantt chart:(https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh)
 
@@ -666,29 +670,29 @@ In sum, Echoes of Adventure has grown from a conceptual prototype into a polishe
 
 
 ## Reference
-C. Pedersen, J. Togelius and G. N. Yannakakis, "Modeling player experience in Super Mario Bros," 2009 IEEE Symposium on Computational Intelligence and Games, Milan, Italy, 2009, pp. 132-139, doi: 10.1109/CIG.2009.5286482.
+1. C. Pedersen, J. Togelius and G. N. Yannakakis, "Modeling player experience in Super Mario Bros," 2009 IEEE Symposium on Computational Intelligence and Games, Milan, Italy, 2009, pp. 132-139, doi: 10.1109/CIG.2009.5286482.
 
-Adam Summerville, Julian R. H. Mariño, Sam Snodgrass, Santiago Ontañón, and Levi H. S. Lelis. 2017. Understanding mario: an evaluation of design metrics for platformers. In Proceedings of the 12th International Conference on the Foundations of Digital Games (FDG '17). Association for Computing Machinery, New York, NY, USA, Article 8, 1–10. https://doi.org/10.1145/3102071.3102080
+2. Adam Summerville, Julian R. H. Mariño, Sam Snodgrass, Santiago Ontañón, and Levi H. S. Lelis. 2017. Understanding mario: an evaluation of design metrics for platformers. In Proceedings of the 12th International Conference on the Foundations of Digital Games (FDG '17). Association for Computing Machinery, New York, NY, USA, Article 8, 1–10. https://doi.org/10.1145/3102071.3102080
 
-Gallego-Durán, F.J.; Villagrá-Arnedo, C.J.; Satorre-Cuerda, R.; Compañ-Rosique, P.; Molina-Carmona, R.; Llorens-Largo, F. A Guide for Game-Design-Based Gamification. Informatics 2019, 6, 49. https://doi.org/10.3390/informatics6040049
+3. Gallego-Durán, F.J.; Villagrá-Arnedo, C.J.; Satorre-Cuerda, R.; Compañ-Rosique, P.; Molina-Carmona, R.; Llorens-Largo, F. A Guide for Game-Design-Based Gamification. Informatics 2019, 6, 49. https://doi.org/10.3390/informatics6040049
 
-Shih, L.-H.; Jheng, Y.-C. Selecting Persuasive Strategies and Game Design Elements for Encouraging Energy Saving Behavior. Sustainability 2017, 9, 1281. https://doi.org/10.3390/su9071281
+4. Shih, L.-H.; Jheng, Y.-C. Selecting Persuasive Strategies and Game Design Elements for Encouraging Energy Saving Behavior. Sustainability 2017, 9, 1281. https://doi.org/10.3390/su9071281
 
-Sánchez, J. L. G., Vela, F. L. G., Simarro, F. M., & Padilla-Zea, N. (2012). Playability: analysing user experience in video games. Behaviour & Information Technology, 31(10), 1033–1054. https://doi.org/10.1080/0144929X.2012.710648
+5. Sánchez, J. L. G., Vela, F. L. G., Simarro, F. M., & Padilla-Zea, N. (2012). Playability: analysing user experience in video games. Behaviour & Information Technology, 31(10), 1033–1054. https://doi.org/10.1080/0144929X.2012.710648
 
-M. Borg, V. Garousi, A. Mahmoud, T. Olsson and O. Stålberg, "Video Game Development in a Rush: A Survey of the Global Game Jam Participants," in IEEE Transactions on Games, vol. 12, no. 3, pp. 246-259, Sept. 2020, doi: 10.1109/TG.2019.2910248.
+6. M. Borg, V. Garousi, A. Mahmoud, T. Olsson and O. Stålberg, "Video Game Development in a Rush: A Survey of the Global Game Jam Participants," in IEEE Transactions on Games, vol. 12, no. 3, pp. 246-259, Sept. 2020, doi: 10.1109/TG.2019.2910248.
 
-Aken, A. (2008). CHUNK: An Agile Approach to the Software Development Life Cycle. Journal of Internet Commerce, 7(3), 313–338. https://doi.org/10.1080/15332860802250385
+7. Aken, A. (2008). CHUNK: An Agile Approach to the Software Development Life Cycle. Journal of Internet Commerce, 7(3), 313–338. https://doi.org/10.1080/15332860802250385
 
-Huckabee, W.A. (2015) ‘REQUIREMENTS Engineering in an AGILE Software Development ENVIRONMENT’, Defense Acquisition Research Journal: A Publication of the Defense Acquisition University, 22(4), pp. 394–415. https://research.ebsco.com/linkprocessor/plink?id=8bf1c4f7-f6dd-3739-afdb-8f85ff36f4e7 
+8. Huckabee, W.A. (2015) ‘REQUIREMENTS Engineering in an AGILE Software Development ENVIRONMENT’, Defense Acquisition Research Journal: A Publication of the Defense Acquisition University, 22(4), pp. 394–415. https://research.ebsco.com/linkprocessor/plink?id=8bf1c4f7-f6dd-3739-afdb-8f85ff36f4e7 
 
-Natalia, E. (2025) ‘Evaluation of Scrum-based Software Development Project Management Maturity Level at Bank Z’, Journal of Economics, Technology & Business / Jurnal Ekonomi Teknologi & Bisnis (JETBIS), 4(2), pp. 1–18. https://research.ebsco.com/linkprocessor/plink?id=ce8d3fee-06de-3930-b405-bae1770855bb
+9. Natalia, E. (2025) ‘Evaluation of Scrum-based Software Development Project Management Maturity Level at Bank Z’, Journal of Economics, Technology & Business / Jurnal Ekonomi Teknologi & Bisnis (JETBIS), 4(2), pp. 1–18. https://research.ebsco.com/linkprocessor/plink?id=ce8d3fee-06de-3930-b405-bae1770855bb
 
-Rasheed, A., Zafar, B., Shehryar, T., Aslam, N. A., Sajid, M., Ali, N., Dar, S. H., & Khalid, S. (2021). Requirement Engineering Challenges in Agile Software Development. Mathematical Problems in Engineering, 2021, 1–15. https://doi.org/10.1155/2021/6696695
+10. Rasheed, A., Zafar, B., Shehryar, T., Aslam, N. A., Sajid, M., Ali, N., Dar, S. H., & Khalid, S. (2021). Requirement Engineering Challenges in Agile Software Development. Mathematical Problems in Engineering, 2021, 1–15. https://doi.org/10.1155/2021/6696695
 
-Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001
+11. Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001
 
-Joe, J., Chaudhuri, S., Le, T., Thompson, H., & Demiris, G. (2015). The use of think-aloud and Instant Data Analysis in evaluation research: Exemplar and lessons learned. Journal of Biomedical Informatics, 56, 284–291. https://doi.org/10.1016/j.jbi.2015.06.001
+12. Joe, J., Chaudhuri, S., Le, T., Thompson, H., & Demiris, G. (2015). The use of think-aloud and Instant Data Analysis in evaluation research: Exemplar and lessons learned. Journal of Biomedical Informatics, 56, 284–291. https://doi.org/10.1016/j.jbi.2015.06.001
 
 
 
