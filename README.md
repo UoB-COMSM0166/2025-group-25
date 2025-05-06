@@ -39,7 +39,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>Team Photp Week 1.</em>
 </p>
 
-![49551738338761_ pic](https://github.com/user-attachments/assets/6ee35206-fb7d-4797-8013-e8de37b1bf66)
+<img src="https://github.com/user-attachments/assets/6ee35206-fb7d-4797-8013-e8de37b1bf66" width="700" alt="49551738338761_ pic">
 
 
 <p align="center">
