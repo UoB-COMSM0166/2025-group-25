@@ -33,7 +33,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 - [7. Evaluation](#7-evaluation)
 - [8. Process](#8-process)
 - [9. Sustainability](#9-sustainability)
-- [Reference](#Reference)    
+- [10. Conclusion](#10-conclusion)
+- [Reference](#reference)
 
 
 
@@ -537,6 +538,8 @@ At the same time, as the project progressed, we also held offline discussions pe
   <img src="docs/meeting/2.11meeting.jpg" width="500">
 </div>
 
+
+
 ### Gantt Chart
 <div align="center">
   <b>Figure 9</b>
@@ -545,9 +548,12 @@ At the same time, as the project progressed, we also held offline discussions pe
   <em>Gantt Chart of Game Project</em>
 </div>
 <div align="center">
-  <img src="" width="500">
+  <a href="https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh">
+    <img src="docs/requirement/Gantt.png" width="800" title="Click to our complete gantt chart">
+  </a>
 </div>
-Here is the link to our complete Gantt chart:(https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh)
+Click the image above to view the project management Gantt chart..
+<!--Here is the link to our complete Gantt chart:(https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh)-->
 
 ### Tools and Techniques
 In this project, we adopted a variety of tools and techniques to ensure efficient collaboration and smooth progress throughout the development process.
@@ -641,30 +647,53 @@ Hosted on GitHub Pages as a static site, we apply:
 
 Through these measures, *Echoes of Adventure* not only entertains but also cultivates environmental awareness and empowers players—both in game and in real life—to become stewards of a sustainable future.
 
+
+
+## 10. Conclusion
+
+Echoes of Adventure represents the culmination of our team’s efforts to blend classic platforming mechanics with dynamic environmental storytelling and sustainability themes. From the outset, we sought to create a game that was both inviting to newcomers and engaging for seasoned players by offering dual modes—Normal and Invincible—that cater to varying skill levels. Throughout development, we remained committed to a design philosophy that balances accessibility, challenge, and narrative depth, resulting in a cohesive experience where every continent feels distinct yet unified by the overarching restoration-of-balance storyline.
+
+Technically, our greatest hurdles lay in animation performance, weather system integration, and particle management. Initially, frame-based animations and ad hoc weather logic led to inconsistent frame rates and cumbersome code maintenance. By refactoring to a state-driven animation machine, pooling particle objects, and centralizing weather updates through unified `updateWeather()` and `drawWeather()` methods, we achieved both performance gains and greater modularity. These architectural improvements not only stabilized the game under heavy load—such as during thunderstorms with dozens of raindrops and enemies—but also simplified the addition of new weather types or animated entities in future iterations.
+
+Our evaluation strategy combined **qualitative** Think Aloud sessions with **quantitative** SUS and NASA TLX surveys, providing a well-rounded view of player experience. Qualitative feedback highlighted strong thematic resonance and engaging level aesthetics, while pinpointing areas for clearer in-game guidance—especially around elemental item usage and level-specific puzzles. Quantitative metrics confirmed that Level 2 (Lava Castle) and Level 4 (Shadow Realm) warranted additional visual cues and pacing adjustments, and revealed that Invincible Mode offers a consistently high usability profile. These insights laid the groundwork for targeted refinements, such as embedding contextual hints directly into the HUD and streamlining tutorial accessibility mid-game.
+
+Collaboration underpinned our progress. We adopted agile practices—daily stand-ups via WeChat, weekly backlog refinement at MVB, and pair programming with VS Code Live Share—to maintain alignment and rapid iteration. Lark served as a central repository for documentation and design assets, while GitHub Pages enabled seamless deployment and playtesting through our static-hosted `/docs` folder. Our pull-request culture ensured code quality and collective ownership; each member regularly reviewed peers’ work, providing constructive feedback and catching edge-case bugs early. This disciplined workflow fostered a supportive environment where responsibilities were shared and challenges tackled collaboratively.
+
+Looking forward, we envision several avenues for growth:
+
+- **New Continents**: Add environments like “Sky Arches” or “Crystal Depths” to enrich exploration and narrative.
+- **Cooperative Multiplayer**: Build teamwork-focused puzzles leveraging our existing physics and platforming systems.
+- **External Playtesting**: Involve a broader player base to capture diverse perspectives and refine inclusivity.
+- **Procedural & Mod Support**: Enhance replayability by enabling user-generated content and algorithmic level design.
+
+In sum, Echoes of Adventure has grown from a conceptual prototype into a polished, modular platformer that marries performance-conscious engineering with thoughtful, sustainability-focused storytelling. The lessons learned—from unified state machines to mixed-methods evaluation—have strengthened our technical and collaborative skill sets, laying a robust foundation for future game development projects. We are proud of what we have achieved and excited to continue evolving our game into an ever more immersive and environmentally resonant experience.
+
+
+
 ## Reference
-C. Pedersen, J. Togelius and G. N. Yannakakis, "Modeling player experience in Super Mario Bros," 2009 IEEE Symposium on Computational Intelligence and Games, Milan, Italy, 2009, pp. 132-139, doi: 10.1109/CIG.2009.5286482.
+1. C. Pedersen, J. Togelius and G. N. Yannakakis, "Modeling player experience in Super Mario Bros," 2009 IEEE Symposium on Computational Intelligence and Games, Milan, Italy, 2009, pp. 132-139, doi: 10.1109/CIG.2009.5286482.
 
-Adam Summerville, Julian R. H. Mariño, Sam Snodgrass, Santiago Ontañón, and Levi H. S. Lelis. 2017. Understanding mario: an evaluation of design metrics for platformers. In Proceedings of the 12th International Conference on the Foundations of Digital Games (FDG '17). Association for Computing Machinery, New York, NY, USA, Article 8, 1–10. https://doi.org/10.1145/3102071.3102080
+2. Adam Summerville, Julian R. H. Mariño, Sam Snodgrass, Santiago Ontañón, and Levi H. S. Lelis. 2017. Understanding mario: an evaluation of design metrics for platformers. In Proceedings of the 12th International Conference on the Foundations of Digital Games (FDG '17). Association for Computing Machinery, New York, NY, USA, Article 8, 1–10. https://doi.org/10.1145/3102071.3102080
 
-Gallego-Durán, F.J.; Villagrá-Arnedo, C.J.; Satorre-Cuerda, R.; Compañ-Rosique, P.; Molina-Carmona, R.; Llorens-Largo, F. A Guide for Game-Design-Based Gamification. Informatics 2019, 6, 49. https://doi.org/10.3390/informatics6040049
+3. Gallego-Durán, F.J.; Villagrá-Arnedo, C.J.; Satorre-Cuerda, R.; Compañ-Rosique, P.; Molina-Carmona, R.; Llorens-Largo, F. A Guide for Game-Design-Based Gamification. Informatics 2019, 6, 49. https://doi.org/10.3390/informatics6040049
 
-Shih, L.-H.; Jheng, Y.-C. Selecting Persuasive Strategies and Game Design Elements for Encouraging Energy Saving Behavior. Sustainability 2017, 9, 1281. https://doi.org/10.3390/su9071281
+4. Shih, L.-H.; Jheng, Y.-C. Selecting Persuasive Strategies and Game Design Elements for Encouraging Energy Saving Behavior. Sustainability 2017, 9, 1281. https://doi.org/10.3390/su9071281
 
-Sánchez, J. L. G., Vela, F. L. G., Simarro, F. M., & Padilla-Zea, N. (2012). Playability: analysing user experience in video games. Behaviour & Information Technology, 31(10), 1033–1054. https://doi.org/10.1080/0144929X.2012.710648
+5. Sánchez, J. L. G., Vela, F. L. G., Simarro, F. M., & Padilla-Zea, N. (2012). Playability: analysing user experience in video games. Behaviour & Information Technology, 31(10), 1033–1054. https://doi.org/10.1080/0144929X.2012.710648
 
-M. Borg, V. Garousi, A. Mahmoud, T. Olsson and O. Stålberg, "Video Game Development in a Rush: A Survey of the Global Game Jam Participants," in IEEE Transactions on Games, vol. 12, no. 3, pp. 246-259, Sept. 2020, doi: 10.1109/TG.2019.2910248.
+6. M. Borg, V. Garousi, A. Mahmoud, T. Olsson and O. Stålberg, "Video Game Development in a Rush: A Survey of the Global Game Jam Participants," in IEEE Transactions on Games, vol. 12, no. 3, pp. 246-259, Sept. 2020, doi: 10.1109/TG.2019.2910248.
 
-Aken, A. (2008). CHUNK: An Agile Approach to the Software Development Life Cycle. Journal of Internet Commerce, 7(3), 313–338. https://doi.org/10.1080/15332860802250385
+7. Aken, A. (2008). CHUNK: An Agile Approach to the Software Development Life Cycle. Journal of Internet Commerce, 7(3), 313–338. https://doi.org/10.1080/15332860802250385
 
-Huckabee, W.A. (2015) ‘REQUIREMENTS Engineering in an AGILE Software Development ENVIRONMENT’, Defense Acquisition Research Journal: A Publication of the Defense Acquisition University, 22(4), pp. 394–415. https://research.ebsco.com/linkprocessor/plink?id=8bf1c4f7-f6dd-3739-afdb-8f85ff36f4e7 
+8. Huckabee, W.A. (2015) ‘REQUIREMENTS Engineering in an AGILE Software Development ENVIRONMENT’, Defense Acquisition Research Journal: A Publication of the Defense Acquisition University, 22(4), pp. 394–415. https://research.ebsco.com/linkprocessor/plink?id=8bf1c4f7-f6dd-3739-afdb-8f85ff36f4e7 
 
-Natalia, E. (2025) ‘Evaluation of Scrum-based Software Development Project Management Maturity Level at Bank Z’, Journal of Economics, Technology & Business / Jurnal Ekonomi Teknologi & Bisnis (JETBIS), 4(2), pp. 1–18. https://research.ebsco.com/linkprocessor/plink?id=ce8d3fee-06de-3930-b405-bae1770855bb
+9. Natalia, E. (2025) ‘Evaluation of Scrum-based Software Development Project Management Maturity Level at Bank Z’, Journal of Economics, Technology & Business / Jurnal Ekonomi Teknologi & Bisnis (JETBIS), 4(2), pp. 1–18. https://research.ebsco.com/linkprocessor/plink?id=ce8d3fee-06de-3930-b405-bae1770855bb
 
-Rasheed, A., Zafar, B., Shehryar, T., Aslam, N. A., Sajid, M., Ali, N., Dar, S. H., & Khalid, S. (2021). Requirement Engineering Challenges in Agile Software Development. Mathematical Problems in Engineering, 2021, 1–15. https://doi.org/10.1155/2021/6696695
+10. Rasheed, A., Zafar, B., Shehryar, T., Aslam, N. A., Sajid, M., Ali, N., Dar, S. H., & Khalid, S. (2021). Requirement Engineering Challenges in Agile Software Development. Mathematical Problems in Engineering, 2021, 1–15. https://doi.org/10.1155/2021/6696695
 
-Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001
+11. Alexander, J. T., Sear, J., & Oikonomou, A. (2013). An investigation of the effects of game difficulty on player enjoyment. Entertainment Computing, 4(1), 53–62. https://doi.org/10.1016/j.entcom.2012.09.001
 
-Joe, J., Chaudhuri, S., Le, T., Thompson, H., & Demiris, G. (2015). The use of think-aloud and Instant Data Analysis in evaluation research: Exemplar and lessons learned. Journal of Biomedical Informatics, 56, 284–291. https://doi.org/10.1016/j.jbi.2015.06.001
+12. Joe, J., Chaudhuri, S., Le, T., Thompson, H., & Demiris, G. (2015). The use of think-aloud and Instant Data Analysis in evaluation research: Exemplar and lessons learned. Journal of Biomedical Informatics, 56, 284–291. https://doi.org/10.1016/j.jbi.2015.06.001
 
 
 
