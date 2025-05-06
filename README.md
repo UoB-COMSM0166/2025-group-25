@@ -77,7 +77,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | ---------------- | ------------- | ------------------- |
 | **Frog**      |<img src="docs/assets/frog-idle-1.png" width="100"> | Jumps around within a specified range. If not frozen, jumps between left and right randomly. When it touches the ground, it becomes idle. <br> |
 | **Spider**    |<img src="docs/assets/Spider_1.png" width="100"> | Moves within a specified patrol range. If not frozen, moves back and forth horizontally and changes direction when reaching patrol limits. <br>  |
-| **Bird**        | <img src="docs/assets/Bird_1.png" width="100"> | Flies up and down with a sinusoidal motion. If not frozen, changes direction once it reaches a maximum vertical amplitude. <br>  |
+| **Bird**        | <img width="100" alt="25a5847c8361e0ce11afd43f6dcce2a" src="https://github.com/user-attachments/assets/0cd10ff0-4b23-41a9-8273-5f032c2d8f73" />| Flies up and down with a sinusoidal motion. If not frozen, changes direction once it reaches a maximum vertical amplitude. <br>  |
 | **Bat**        | <img src="docs/assets/bat-fly1.png" width="100">  | Patrols within a fixed horizontal range, moving back and forth while flying up and down. <br>  |
 | **Ghost**      |   <img src="docs/assets/disappear_frame_1.png" width="100"> |It can temporarily disappear and reappear, which is difficult to track. <br> |
 
@@ -87,8 +87,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | --------------------- | ------------- | ------------------- |
 | **Rubbish** |<img src="docs/assets/rabbish.png" width="50">| Collect 12 rubbish in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
 | **Heart**|<img src="docs/assets/heart.png" width="100">| Restores one extra life. Maximum 5 lives. <br> |
+| **Freeze Element** | <img width="24" alt="c616125567ef42ed3dd41e77d3a74e9" src="https://github.com/user-attachments/assets/a932edc2-60ba-47d8-a6fd-4736fda8550b" />| Freezes enemies temporarily, making them vulnerable to attacks. <br> |
 | **Flame Element** |<img src="docs/assets/fireball 1.png" width="80">| Allows the player to use fire-based attacks. <br> |
-| **Freeze Element** | ![ee7cb8e106c2c3ead6be3a06a27fdc3](https://github.com/user-attachments/assets/114156d5-0b83-4a4e-b7c5-54c4f2468db0)| Freezes enemies temporarily, making them vulnerable to attacks. <br> |
 | **Thunder Element**  | ![d6a7ff16e473e6b2e927af42fd6a4ac](https://github.com/user-attachments/assets/c8bc58fc-f071-4c45-a979-813105774fbb)| Puts a bomb that explodes after a short delay, damaging enemies in its vicinity. <br> |
 
 ### Table 3. Obstacles
