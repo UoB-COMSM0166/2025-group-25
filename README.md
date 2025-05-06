@@ -11,8 +11,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## Table of Contents
 
-- [1. Development Team](#2-development-team)
-- [2. Introduction](#1-introduction)
+- [1. Development Team](#1-development-team)
+- [2. Introduction](#2-introduction)
 - [3. Game Research](#3-game-research)
 - [4. Requirements](#4-requirements)
 - [5. Design](#5-design)
