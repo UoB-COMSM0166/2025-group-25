@@ -540,3 +540,76 @@ You can delete this section in your own repo, it's just here for information. in
 
   - Is your repo clearly organised? 
   - Is code well commented throughout?
+
+
+
+## 8. Sustainability
+
+*Echoes of Adventure* is more than a fantasy platformer—it embeds sustainability principles across its narrative, mechanics, architecture and development process, informed by the Karlskrona Manifesto and the Sustainability Awareness Framework (SuSAF).
+
+### 8.1 Integration Across Five Dimensions
+
+We continuously evaluate and optimise the game against SuSAF’s five pillars:
+
+| Dimension       | Practice                                                                                                              |
+| --------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Technical       | • Unified animation state machine and object pools to eliminate redundant code and improve reliability<br>• Gradient-based sky and fog effects replace real-time lighting to lower runtime load |
+| Economic        | • Modular, open-source assets and shared code reduce development and maintenance cost<br>• Reuse of common modules maximises return on investment |
+| Environmental   | • Core mechanics (“collect pollution,” “clear waste”) reinforce low-carbon thinking<br>• Avoidance of high-resolution textures and excessive particle effects |
+| Social          | • Low-end device support and offline mode bridge the digital divide<br>• High-contrast, minimal UI meets diverse accessibility needs |
+| Individual      | • Non-violent, restorative gameplay reduces cognitive load<br>• In-game “eco hints” guide players toward sustainable choices    |
+
+### 8.2 Sustainability Metaphors in Narrative and Mechanics
+
+- **Polluted Continents**  
+  Each level represents a threatened ecosystem—forest, lava, sky, darkness, crystal—directly echoing real-world environmental crises.  
+- **Guardian Role**  
+  The fox is a steward, not a conqueror: only by collecting 100% of the scattered waste can players unlock the portal, symbolising substitution and optimization effects.  
+- **Behaviour-Change Incentives**  
+  Players are rewarded for thorough cleanup rather than combat prowess alone, embodying SuSAF’s call for transitions in production and consumption patterns.
+
+### 8.3 Sustainability Practices in the Development Process
+
+We embed sustainability checks into every phase of our agile workflow:
+
+#### Product Backlog  
+- Each user story includes SuSAF prompts (e.g. “Does this feature support low-power mode?” “Is it compatible with older devices?”)  
+- Introduced explicit “green” story:  
+  > **As a guardian fox, I want to collect 100% of level waste to earn Nature’s Blessing and reinforce eco-friendly play.**
+
+#### Sprint Planning & Testing  
+- Define sustainability acceptance criteria for each feature:  
+  - Average CPU usage during scene load ≤ 12%  
+  - Low-resolution rendering option for broader device support  
+  - Local logging of collection data to minimise network requests  
+
+#### Sprint Retrospective  
+- Dedicate a “green agenda” slot to identify high-energy logic or unused resources and plan targeted optimisations.
+
+### 8.4 Static Hosting & Resource Optimization
+
+Hosted on GitHub Pages as a static site, we apply:
+
+- **Bundling & Minification**  
+  Tree-shaking, code uglification and asset compression via Rollup/Webpack; automated image optimisation at build time.  
+- **Code Splitting & Lazy Loading**  
+  Separate chunks for each continent’s scripts and assets, loaded on demand.  
+- **Long-Term Caching**  
+  Content-hashed filenames and `Cache-Control` headers set for one-year expiry.  
+- **Particle & Sprite Efficiency**  
+  Limited texture sizes and dynamically drawn canvas effects replace large sprite sheets.  
+- **Offline Support**  
+  Lightweight Service Worker pre-caches the first two levels for unstable network conditions.
+
+### 8.5 Player-Facing Sustainability Feedback
+
+- **End-of-Level Metrics**  
+  Displays quantitative “Recycling Rate,” “Purification Score,” and “Eco Impact Index” to make progress visible.  
+- **Eco-Tips System**  
+  Contextual, low-intrusion prompts encourage greener actions when pollution sources are ignored.  
+- **Accessibility & Inclusion**  
+  UI conforms to WCAG AA standards (Perceivable, Operable, Understandable, Robust) to ensure all players can enjoy the game.
+
+Through these measures, *Echoes of Adventure* not only entertains but also cultivates environmental awareness and empowers players—both in game and in real life—to become stewards of a sustainable future.```
+````
+
