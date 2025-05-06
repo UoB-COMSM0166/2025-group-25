@@ -86,9 +86,9 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 |Name | Image | Description |
 | --------------------- | ------------- | ------------------- |
 | **Rubbish** |<img src="docs/assets/rabbish.png" width="100">| Collect 12 rubbish in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
-| **Heart**|<img src="docs/assets/heart.png" width="100">| Restores one extra life. Maximum 5 lives. <br> |
+| **Heart**|<img src="docs/assets/heart.png" width="120">| Restores one extra life. Maximum 5 lives. <br> |
 | **Freeze Element** | <img width="100" alt="c616125567ef42ed3dd41e77d3a74e9" src="https://github.com/user-attachments/assets/a932edc2-60ba-47d8-a6fd-4736fda8550b" />| Freezes enemies temporarily, making them vulnerable to attacks. <br> |
-| **Flame Element** |<img src="docs/assets/fireball 1.png" width="100">| Allows the player to use fire-based attacks. <br> |
+| **Flame Element** |<img src="docs/assets/fireball 1.png" width="90">| Allows the player to use fire-based attacks. <br> |
 | **Thunder Element**  | ![d6a7ff16e473e6b2e927af42fd6a4ac](https://github.com/user-attachments/assets/c8bc58fc-f071-4c45-a979-813105774fbb)| Puts a bomb that explodes after a short delay, damaging enemies in its vicinity. <br> |
 
 ### Table 3. Obstacles
@@ -99,7 +99,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | **Water**  |<img src="docs/assets/Water.png" width="100">| A water hazard that can drown the player if submerged. <br> |
 | **Magma** |<img src="docs/assets/magma.png" width="100">| A pool of magma that damages the player if they come in contact. <br> |
 | **Saws** |<img src="docs/assets/saws.png" width="100">| A rotating saw blade that causes damage to the player when it touches them. <br> |
-| **Spiked Wall** |<img src="docs/assets/spikedwall.png" width="60">| A wall with spikes that damages the player on contact. <br> |
+| **Spiked Wall** |<img src="docs/assets/spikedwall.png" width="100">| A wall with spikes that damages the player on contact. <br> |
 
 
 
