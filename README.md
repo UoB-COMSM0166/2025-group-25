@@ -18,6 +18,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 - [5. Implementation](#5-implementation)
 - [6. Evaluation](#6-evaluation)
 - [7. Process](#7-process)
+- [8. Sustainability](#8-sustainability)  
+
 
 ## 1. Development Team
 
