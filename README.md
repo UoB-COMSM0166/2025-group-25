@@ -33,7 +33,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 - [7. Evaluation](#7-evaluation)
 - [8. Process](#8-process)
 - [9. Sustainability](#9-sustainability)
-- [Reference](#Reference)    
+- [10. Conclusion](#10-conclusion)
+- [Reference](#Reference)
 
 
 
@@ -640,6 +641,29 @@ Hosted on GitHub Pages as a static site, we apply:
   UI conforms to WCAG AA standards (Perceivable, Operable, Understandable, Robust) to ensure all players can enjoy the game.
 
 Through these measures, *Echoes of Adventure* not only entertains but also cultivates environmental awareness and empowers players—both in game and in real life—to become stewards of a sustainable future.
+
+
+
+## 10. Conclusion
+
+Echoes of Adventure represents the culmination of our team’s efforts to blend classic platforming mechanics with dynamic environmental storytelling and sustainability themes. From the outset, we sought to create a game that was both inviting to newcomers and engaging for seasoned players by offering dual modes—Normal and Invincible—that cater to varying skill levels. Throughout development, we remained committed to a design philosophy that balances accessibility, challenge, and narrative depth, resulting in a cohesive experience where every continent feels distinct yet unified by the overarching restoration-of-balance storyline.
+
+Technically, our greatest hurdles lay in animation performance, weather system integration, and particle management. Initially, frame-based animations and ad hoc weather logic led to inconsistent frame rates and cumbersome code maintenance. By refactoring to a state-driven animation machine, pooling particle objects, and centralizing weather updates through unified `updateWeather()` and `drawWeather()` methods, we achieved both performance gains and greater modularity. These architectural improvements not only stabilized the game under heavy load—such as during thunderstorms with dozens of raindrops and enemies—but also simplified the addition of new weather types or animated entities in future iterations.
+
+Our evaluation strategy combined **qualitative** Think Aloud sessions with **quantitative** SUS and NASA TLX surveys, providing a well-rounded view of player experience. Qualitative feedback highlighted strong thematic resonance and engaging level aesthetics, while pinpointing areas for clearer in-game guidance—especially around elemental item usage and level-specific puzzles. Quantitative metrics confirmed that Level 2 (Lava Castle) and Level 4 (Shadow Realm) warranted additional visual cues and pacing adjustments, and revealed that Invincible Mode offers a consistently high usability profile. These insights laid the groundwork for targeted refinements, such as embedding contextual hints directly into the HUD and streamlining tutorial accessibility mid-game.
+
+Collaboration underpinned our progress. We adopted agile practices—daily stand-ups via WeChat, weekly backlog refinement at MVB, and pair programming with VS Code Live Share—to maintain alignment and rapid iteration. Lark served as a central repository for documentation and design assets, while GitHub Pages enabled seamless deployment and playtesting through our static-hosted `/docs` folder. Our pull-request culture ensured code quality and collective ownership; each member regularly reviewed peers’ work, providing constructive feedback and catching edge-case bugs early. This disciplined workflow fostered a supportive environment where responsibilities were shared and challenges tackled collaboratively.
+
+Looking forward, we envision several avenues for growth:
+
+- **New Continents**: Add environments like “Sky Arches” or “Crystal Depths” to enrich exploration and narrative.
+- **Cooperative Multiplayer**: Build teamwork-focused puzzles leveraging our existing physics and platforming systems.
+- **External Playtesting**: Involve a broader player base to capture diverse perspectives and refine inclusivity.
+- **Procedural & Mod Support**: Enhance replayability by enabling user-generated content and algorithmic level design.
+
+In sum, Echoes of Adventure has grown from a conceptual prototype into a polished, modular platformer that marries performance-conscious engineering with thoughtful, sustainability-focused storytelling. The lessons learned—from unified state machines to mixed-methods evaluation—have strengthened our technical and collaborative skill sets, laying a robust foundation for future game development projects. We are proud of what we have achieved and excited to continue evolving our game into an ever more immersive and environmentally resonant experience.
+
+
 
 ## Reference
 C. Pedersen, J. Togelius and G. N. Yannakakis, "Modeling player experience in Super Mario Bros," 2009 IEEE Symposium on Computational Intelligence and Games, Milan, Italy, 2009, pp. 132-139, doi: 10.1109/CIG.2009.5286482.
