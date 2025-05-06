@@ -508,6 +508,9 @@ We continuously evaluate and optimise the game against SuSAF’s five pillars:
 - **Behaviour-Change Incentives**  
   Players are rewarded for thorough cleanup rather than combat prowess alone, embodying SuSAF’s call for transitions in production and consumption patterns.
 
+![IMG_3091](https://github.com/user-attachments/assets/7f9002c4-833d-4a24-9f7d-4817ce671149)
+**Figure 1. Sustainability Mission Completion Screen**
+
 ### 9.3 Sustainability Practices in the Development Process
 
 We embed sustainability checks into every phase of our agile workflow:
