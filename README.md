@@ -3,18 +3,22 @@
 
 ## Your Game
 
-<a href="https://uob-comsm0166.github.io/2025-group-25/">
-  <img src="docs/assets/C5.png" width="800" alt="Click to Play">
-</a>
+<div align="center">
+  <a href="https://uob-comsm0166.github.io/2025-group-25/">
+    <img src="docs/assets/C5.png" width="600" alt="Click to Play">
+  </a>
+</div>
 
 Link to your game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
 
 Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
 
 Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
-<a href="https://www.youtube.com/watch?v=LWV-f6dMN3Q&list=RDOEn19VUiDQo&index=3">
-  <img src="docs/assets/video.png" width="800" alt="Watch on YouTube">
-</a>
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=LWV-f6dMN3Q&list=RDOEn19VUiDQo&index=3">
+    <img src="docs/assets/video.png" width="600" alt="Watch on YouTube">
+  </a>
+</div>
 
 
 
@@ -84,10 +88,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | **Rubbish** |<img src="docs/assets/rabbish.png" width="50">| Collect 12 rubbish in each level to unlock the exit door and proceed to the next level or complete the stage. <br> |
 | **Heart**|<img src="docs/assets/heart.png" width="100">| Restores one extra life. Maximum 5 lives. <br> |
 | **Flame Element** |<img src="docs/assets/fireball 1.png" width="80">| Allows the player to use fire-based attacks. <br> |
-| **Freeze Element** | ![ee7cb8e106c2c3ead6be3a06a27fdc3](https://github.com/user-attachments/assets/114156d5-0b83-4a4e-b7c5-54c4f2468db0)
-| Freezes enemies temporarily, making them vulnerable to attacks. <br> |
-| **Thunder Element**  | ![d6a7ff16e473e6b2e927af42fd6a4ac](https://github.com/user-attachments/assets/c8bc58fc-f071-4c45-a979-813105774fbb)
-| Puts a bomb that explodes after a short delay, damaging enemies in its vicinity. <br> |
+| **Freeze Element** | ![ee7cb8e106c2c3ead6be3a06a27fdc3](https://github.com/user-attachments/assets/114156d5-0b83-4a4e-b7c5-54c4f2468db0)| Freezes enemies temporarily, making them vulnerable to attacks. <br> |
+| **Thunder Element**  | ![d6a7ff16e473e6b2e927af42fd6a4ac](https://github.com/user-attachments/assets/c8bc58fc-f071-4c45-a979-813105774fbb)| Puts a bomb that explodes after a short delay, damaging enemies in its vicinity. <br> |
 
 ### Table 3. Obstacles
 
@@ -130,8 +132,14 @@ In the early stages of the project, we utilized Feishu Docs for brainstorming an
 
 **Figure 2**
 
-![idea1-start](https://github.com/user-attachments/assets/2ffa9589-0192-4bad-a79b-5d6e40fa5798)
-![idea1](https://github.com/user-attachments/assets/4e5bf009-baf9-4ce9-b2b7-a849198934db)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2ffa9589-0192-4bad-a79b-5d6e40fa5798" width="500" alt="idea1-start">
+</div>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/4e5bf009-baf9-4ce9-b2b7-a849198934db" width="500" alt="idea1">
+</div>
+
 During the third session on January 28, our team of five members was systematically divided into two groups: one group of three members was responsible for constructing the paper prototype (Figure 2), while the other group of two members focused on converting it into a digital wireframe (Figure 3). Benefiting from a well-defined task allocation, we efficiently advanced the project and, through a structured visual design approach, transformed the initially complex game concept into a more intuitive and concrete representation, thereby enhancing its comprehensibility and precision of expression.
 
 <div align="center">
@@ -550,7 +558,9 @@ We continuously evaluate and optimise the game against SuSAF’s five pillars:
 - **Behaviour-Change Incentives**  
   Players are rewarded for thorough cleanup rather than combat prowess alone, embodying SuSAF’s call for transitions in production and consumption patterns.
 
-![IMG_3091](https://github.com/user-attachments/assets/7f9002c4-833d-4a24-9f7d-4817ce671149)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7f9002c4-833d-4a24-9f7d-4817ce671149" width="600" alt="IMG_3091">
+</div>
 **Figure 1. Sustainability Mission Completion Screen**
 
 ### 9.3 Sustainability Practices in the Development Process
