@@ -548,11 +548,12 @@ At the same time, as the project progressed, we also held offline discussions pe
   <em>Gantt Chart of Game Project</em>
 </div>
 <div align="center">
-  <a [href="https://www.youtube.com/watch?v=LWV-f6dMN3Q&list=RDOEn19VUiDQo&index=3](https://a6czq5caio.feishu.cn/base/YO98b7J4YaSKLgsO6W3cpBK8n0d?from=from_copylink)">
-    <img src="docs/requirement/Gantt.png" width="800" alt="Click to our complete gantt chart">
+  <a href="https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh">
+    <img src="docs/requirement/Gantt.png" width="800" title="Click to our complete gantt chart">
   </a>
 </div>
-Here is the link to our complete Gantt chart:(https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh)
+Click the image above to view the project management Gantt chart..
+<!--Here is the link to our complete Gantt chart:(https://a6czq5caio.feishu.cn/share/base/view/shrcnfCyBjiH5Cu0MpCVYYkOBjh)-->
 
 ### Tools and Techniques
 In this project, we adopted a variety of tools and techniques to ensure efficient collaboration and smooth progress throughout the development process.
