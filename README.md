@@ -39,7 +39,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
   <em>Team Photp Week 1.</em>
 </p>
 
-<img src="https://github.com/user-attachments/assets/6ee35206-fb7d-4797-8013-e8de37b1bf66" width="700" alt="49551738338761_ pic">
+<img src="https://github.com/user-attachments/assets/6ee35206-fb7d-4797-8013-e8de37b1bf66" width="500" alt="49551738338761_ pic">
 
 
 <p align="center">
@@ -373,42 +373,48 @@ As a 2D side-scrolling puzzle-platformer, our game strives to balance challenge 
 This chart visualizes the average perceived difficulty of each level under both Normal and Invincible modes. According to the responses, Level 2 (Lava Castle) and Level 4 (Shadow Realm) were consistently rated as the most challenging stages across both modes. This aligns with our original design intent: Lava Castle features lava hazards and tight timing jumps, while Shadow Realm emphasizes visual obscurity and unpredictable enemy spawn patterns. In contrast, Level 1 (Emerald Isles) was broadly seen as the easiest level, confirming that our progressive difficulty structure is functioning as intended.
 Interestingly, ratings for Level 3 and Level 5 were similar across both modes, and in some cases, perceived difficulty was even higher in Invincible Mode. This suggests that cognitive factors such as environmental complexity, navigation ambiguity, or puzzle mechanics can still impact perceived difficulty even in damage-free scenarios.
 
-![1 figure_level_difficulty_avg_by_mode_final](https://github.com/user-attachments/assets/27a8bae5-5f4f-4a39-bef0-6acd51da6f36)
+<img src="https://github.com/user-attachments/assets/27a8bae5-5f4f-4a39-bef0-6acd51da6f36" width="500" alt="1 figure_level_difficulty_avg_by_mode_final">
+
 **Figure 2. Average Difficulty Ranking of Each Level in Two Modes**
 
 #### 7.2.2 Correlation between SUS and NASA TLX Scores
 We observed a slight negative correlation between SUS and NASA TLX scores. Players who rated the game as more usable tended to report lower cognitive workload. This supports our design hypothesis that intuitive interfaces and clear feedback reduce mental strain during gameplay.
 Such observations are particularly important in scenarios that involve switching attack types or using elemental abilities. If players receive unclear system feedback during combat or interaction, it may unintentionally increase their cognitive load. This highlights the importance of refining our HUD visuals, skill activation indicators, and feedback animations.
 
-![2 figure_sus_vs_nasa_clean-2](https://github.com/user-attachments/assets/9ff98b20-d063-4d5c-8759-2a8076b51ad2)
+<img src="https://github.com/user-attachments/assets/9ff98b20-d063-4d5c-8759-2a8076b51ad2" width="500" alt="2 figure_sus_vs_nasa_clean-2">
+
 **Figure 3. Correlation between SUS Score and NASA TLX Score**
 
 #### 7.2.3 Standard Deviation of Difficulty Rankings per Level
 This chart highlights the variance in perceived difficulty rankings for each level. Level 4 and Level 2 exhibited the highest standard deviations, indicating strong disagreement among players regarding their difficulty. Some players may have understood the trap mechanics well and completed these stages quickly, while others struggled due to visual constraints or enemy patterns.
 In contrast, Level 1 had the lowest standard deviation, showing broad consensus that it serves effectively as an introductory level.
 
-![3 figure_level_variance_clean](https://github.com/user-attachments/assets/db8726f8-205b-4231-9ae3-2ff0a33270e6)
+<img src="https://github.com/user-attachments/assets/db8726f8-205b-4231-9ae3-2ff0a33270e6" width="500" alt="3 figure_level_variance_clean">
+
 **Figure 4. Standard Deviation of Difficulty Rankings per Level**
 
 #### 7.2.4 SUS Question Scores Sorted
 From the SUS item-wise breakdown, the lowest scoring questions relate to consistency of system design and **perceived learning effort**. Qualitative feedback such as “I wasn’t sure which items could be combined” or “the combat feedback didn’t match the UI” suggest that certain areas in the game lacked clarity or cohesion, especially in complex item usage or layered interactions.
 On the other hand, high scores in items like “I felt confident using the system” and “The system is easy to use” indicate that players responded positively to the core movement and basic interaction design.
 
-![4 figure_sus_sorted_clean](https://github.com/user-attachments/assets/37e04680-4d26-4b15-9751-a5319b59943b)
+<img src="https://github.com/user-attachments/assets/37e04680-4d26-4b15-9751-a5319b59943b" width="500" alt="4 figure_sus_sorted_clean">
+
 **Figure 5. SUS Question Scores Sorted**
 
 #### 7.2.5 NASA TLX Dimension Scores Sorted
 Players reported the highest workload in Mental Demand and **Effort**, especially during levels with high timing pressure (e.g., dynamic platforms) or requiring environmental recall and enemy tracking. This is consistent with levels such as Lava Castle or Shadow Realm, where success often depends on pattern recognition and multi-step coordination.
 The lowest scores appeared in **Physical Demand**, which reflects well on our input design—for example, the jumping mechanics and basic combat do not overburden the player’s physical control bandwidth.
 
-![5 figure_nasa_sorted_clean](https://github.com/user-attachments/assets/eb20cec7-d8c2-4a87-b4c3-b3e38fb25177)
+<img src="https://github.com/user-attachments/assets/eb20cec7-d8c2-4a87-b4c3-b3e38fb25177" width="500" alt="5 figure_nasa_sorted_clean">
+
 **Figure 6. NASA TLX Dimension Scores Sorted**
 
 #### 7.2.6 SUS Total Score by Game Mode
 This boxplot shows that **Invincible Mode scores were more consistent and tightly clustered**, suggesting a smoother and more predictable user experience. In contrast, **Normal Mode scores had wider variability**, reflecting more polarized reactions—some players highly appreciated the challenge, while others found it overwhelming or lacking in system feedback.
 These results emphasize that Invincible Mode fulfills its purpose as a relaxed exploratory option, while Normal Mode caters to experienced players who seek a higher level of difficulty.
 
-![6 figure_sus_by_mode_clean](https://github.com/user-attachments/assets/fd07399d-893b-4eb9-a7d8-e4d3f399a1fe)
+<img src="https://github.com/user-attachments/assets/fd07399d-893b-4eb9-a7d8-e4d3f399a1fe" width="500" alt="6 figure_sus_by_mode_clean">
+
 **Figure 7. SUS Total Score by Game Mode**
 
 #### 7.2.7 Summary
