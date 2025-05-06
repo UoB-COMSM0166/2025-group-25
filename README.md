@@ -11,8 +11,8 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## Table of Contents
 
-- [1. Introduction](#1-introduction)
-- [2. Development Team](#2-development-team)
+- [1. Development Team](#2-development-team)
+- [2. Introduction](#1-introduction)
 - [3. Game Research](#3-game-research)
 - [4. Requirements](#4-requirements)
 - [5. Design](#5-design)
@@ -23,7 +23,33 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 
 
-## 1. Introduction
+## 1. Development Team
+
+<p align="center">
+  <strong>Figure 1</strong><br>
+  <em>Team Photp Week 1.</em>
+</p>
+
+![49551738338761_ pic](https://github.com/user-attachments/assets/6ee35206-fb7d-4797-8013-e8de37b1bf66)
+
+
+<p align="center">
+  <strong>Table 1</strong><br>
+  <em>Team members, roles and contributions.</em>
+</p>
+
+
+| GROUP MEMBER | NAME | EMAIL | ROLE | CONTRIBUTIONS |
+| :----: | :----: | :----: | :----: | :----: |
+| 01 | CAILING YANG   | rl24638@bristol.ac.uk | TEST | TEST |
+| 02 | JUNJIE YAN   | am24166@bristol.ac.uk | TEST | TEST |
+| 03 | SHUAO ZHANG   | qk24065@bristol.ac.uk | TEST | TEST |
+| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | Assisted in providing code modifications for in-game item functionality, such as item collection and attack effects. Also helped optimize player interactions and sound effect management. Additionally, contributed to setting up and adjusting gold-related features, including gold collection, display, and usage logic. |
+| 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
+
+
+
+## 2. Introduction
 
 - When designing Echoes of Adventure, our goal was to create a platformer that was easy to pick up yet hard to master, while ensuring it appealed to a wide variety of players. Whether you're a beginner or someone who struggles with fast-paced keyboard and mouse controls, this game provides an experience that’s both fun and rewarding. Drawing inspiration from classic platformers, we aimed to make a game that anyone can enjoy while offering increasing challenges and a deep sense of achievement as you progress through the world.
 - In the ancient and mysterious world of Echoes of Adventure, the land nurtures five magical continents: Emerald Isles, Lava Castle, Celestial Citadel, Shadow Realm, and Crystal Caverns. However, a sudden catastrophe struck, disrupting the balance of elemental power. As a player, you control a small but courageous fox, traversing various landscapes, overcoming environmental challenges, and using elemental powers to solve puzzles and defeat enemies. Each continent offers unique elements and trials that require strategic thinking and quick reflexes. With each challenge you conquer, you’ll gain more power, uncover secrets, and progress closer to restoring the balance of the world.
@@ -62,32 +88,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 
 
-
-## 2. Development Team
-
-<p align="center">
-  <strong>Figure 1</strong><br>
-  <em>Team Photp Week 1.</em>
-</p>
-
-![49551738338761_ pic](https://github.com/user-attachments/assets/6ee35206-fb7d-4797-8013-e8de37b1bf66)
-
-
-<p align="center">
-  <strong>Table 1</strong><br>
-  <em>Team members, roles and contributions.</em>
-</p>
-
-
-| GROUP MEMBER | NAME | EMAIL | ROLE | CONTRIBUTIONS |
-| :----: | :----: | :----: | :----: | :----: |
-| 01 | CAILING YANG   | rl24638@bristol.ac.uk | TEST | TEST |
-| 02 | JUNJIE YAN   | am24166@bristol.ac.uk | TEST | TEST |
-| 03 | SHUAO ZHANG   | qk24065@bristol.ac.uk | TEST | TEST |
-| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | Assisted in providing code modifications for in-game item functionality, such as item collection and attack effects. Also helped optimize player interactions and sound effect management. Additionally, contributed to setting up and adjusting gold-related features, including gold collection, display, and usage logic. |
-| 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
-
-## 2. Game Research
+## 3. Game Research
 | Game Name                                 | Game Genre                    | Game Introduction                                                                                                                                                                                                                                                                                                                          | Game Mechanics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Inspiration                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |-------------------------------------------|-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Only Real Men Can Reach 100 Floors**    | Vertical Action Platformer    | Players control a character descending an endless tower. The goal is to reach the 100th floor as quickly as possible while avoiding obstacles and collecting items through quick reflexes and strategic decision-making. Each floor presents a unique challenge                                      | Normal Floor: Safe landing. <br> Fragile Floor: Breaks after a short duration. <br> Moving Floor: Moves horizontally, requiring precise timing to jump. <br> Spiked Floor: Instant death upon contact. <br> Bouncy Floor: Launches the character to lower floors. |1. Quick reactions are essential as the tower background continuously scrolls upward. The screen's upper edge features deadly spikes, which will kill the character if touched, introducing a time constraint. <br><br> 2. This dynamic creates tension and inspires high-difficulty level designs for later stages of our game, enhancing the game's challenge and excitement.                                                                                                                                                                                                                                                                                                       |
