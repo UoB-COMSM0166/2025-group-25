@@ -200,17 +200,6 @@ Use Case Diagram.
   <img src="docs/game idea/Digital.gif" width="300">
 </div>
 
-### Stakeholders
-<div align="center">
-  <b>Figure 4</b>
-</div>
-<div align="center">
-  <em>Stakeholder</em>
-</div>
-<p align="center">
-  <img src="docs/requirement/stakeholder.png" alt="Stakeholder">
-</p>
-
 
 ## 4. Design
 
