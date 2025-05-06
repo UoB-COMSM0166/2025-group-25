@@ -13,9 +13,9 @@ Your game lives in the [/docs](/docs) folder, and is published using Github page
 
 Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
 <a href="https://www.youtube.com/watch?v=LWV-f6dMN3Q&list=RDOEn19VUiDQo&index=3">
-  <img src="![6af8f1eb65380ec1b59d7b25aa3f252](https://github.com/user-attachments/assets/acd46251-8ffa-4c07-ba87-4388b9016dcc)
-" width="800" alt="Watch on YouTube">
+  <img src="docs/assets/video.png" width="800" alt="Watch on YouTube">
 </a>
+
 
 
 ## Table of Contents
