@@ -160,17 +160,15 @@ In the early stages of the project, we utilized Feishu Docs for brainstorming an
 During the third session on January 28, our team of five members was systematically divided into two groups: one group of three members was responsible for constructing the paper prototype (Figure 2), while the other group of two members focused on converting it into a digital wireframe (Figure 3). Benefiting from a well-defined task allocation, we efficiently advanced the project and, through a structured visual design approach, transformed the initially complex game concept into a more intuitive and concrete representation, thereby enhancing its comprehensibility and precision of expression.
 
 <p align="center">
-  <strong>Figure 5</strong>
+  <strong>Figure 5. Paper Prototype developed during Workshop Three</strong><br>
+  <em>(Paper Prototype: <a href="https://www.google.com">www.google.com</a>)</em>
 </p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1e99ec61-5631-4177-957c-7865e9b5e16a" width="500" alt="Digital">
 </div>
 
 
-<p align="center">
-  <strong>Figure 6. Paper Prototype developed during Workshop Three</strong><br>
-  <em>(Paper Prototype: <a href="https://www.google.com">www.google.com</a>)</em>
-</p>
+
 
 
 ### 4.3 Feasibility Studies
@@ -182,8 +180,7 @@ Through this iterative refinement process, we aimed to enhance player immersion 
 
 ### 4.4 Identifying Stakeholders
 <p align="center">
-  <strong>Figure 7.</strong><br>
-  <em>Onion Model of Oiram Game.</em>
+  <strong>Figure 6.</strong>
 </p>
 
 ![4d7d0403-2ebb-49fb-9b35-333beb382790](https://github.com/user-attachments/assets/8b48af30-ba11-49b3-8c70-e4143fbf3bd9)
@@ -212,17 +209,24 @@ Utilizing these complementary surrogate feedback sources was highly advantageous
 
 To personalize and internalize these user stories, we designed a series of character-driven posters to visually represent them. This approach ensured that the user stories remained top-of-mind throughout the development process, serving as a constant reference point. Additionally, these posters provided a quick and effective shorthand during discussions, enabling more efficient decision-making and alignment across the team.
 <p align="center">
-  <strong>Figure8</strong>
+  <strong>Figure7</strong>
 </p>
 
 <div align="center">
   <img width="716" alt="db27395f486550e270625c11b5dee6c" src="https://github.com/user-attachments/assets/a49249c2-8ce7-45e0-9606-cb7c891d3c25" />
 </div>
 
+<p align="center">
+  <strong>Figure 8</strong>
+</p>
+
 <div align="center">
   <img width="721" alt="4eadaa062a5cc6a606cf02ece0b37c5" src="https://github.com/user-attachments/assets/953fbede-8736-41cc-a811-7fbd0e5b0560" />
 </div>
 
+<p align="center">
+  <strong>Figure 9</strong>
+</p>
 <div align="center">
   <img width="720" alt="d683fe8c7a199fb6601fc0c63cdc1a8" src="https://github.com/user-attachments/assets/daf01211-46d9-45df-82b0-4d0b08ba14ee" />
 </div>
@@ -239,7 +243,7 @@ To optimize user experience and accommodate different player preferences, we imp
 
 
 <p align="center">
-  <strong>Figure 5.</strong><br>
+  <strong>Figure 10</strong><br>
   <em>Use Case Diagram.</em>
 </p>
 
@@ -274,7 +278,7 @@ To optimize user experience and accommodate different player preferences, we imp
 
 ### Ideation
 <div align="center">
-  <b>Figure 1</b>
+  <b>Figure 11</b>
 </div>
 <div align="center">
   <em>ideation game</em>
@@ -288,7 +292,7 @@ To optimize user experience and accommodate different player preferences, we imp
 
 ### Paper Prototype
 <div align="center">
-  <b>Figure 2</b>
+  <b>Figure 12</b>
 </div>
 <div align="center">
   <em>Paper Prototype</em>
