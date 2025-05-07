@@ -127,15 +127,17 @@ Click to watch the demo video of our game [**HERE**](https://youtu.be/JbI86zdtSe
 Requirements Engineering (RE) is a critical process in software development that defines and manages system requirements to ensure alignment with user needs. In the game industry, RE plays an even more vital role due to the dynamic nature of game design and the complexity of stakeholder expectations. A comprehensive study by Hussain et al. (2018) highlights that successful game development requires a structured RE approach to mitigate common pitfalls such as ambiguous requirements, scope creep, and misaligned stakeholder expectations. Without clear requirement specifications, game projects often suffer from inefficiencies, extended development timelines, and feature bloat.
 A survey conducted by Borg et al. (2019) on Global Game Jam participants identified iterative brainstorming as the most commonly used technique for conceptualizing initial requirements in game development. Unlike traditional software engineering projects, where requirements are often static, game development embraces flexibility, allowing creative ideation while maintaining structured requirement tracking. The study also found that scope management is a prevalent challenge, with teams frequently struggling to balance innovation with realistic deliverables. Poorly managed requirements often lead to feature creep, where excessive, unplanned functionalities are introduced, delaying project timelines and increasing development costs.
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/5f0bc8d8-9c8b-4b3f-8b55-1cd139cd3cf2" width="500" alt="1280X1280">
-</div>
+
 
 
 <p align="center">
-  <strong>Figure 1. Methods used for gathering the initial set of expectations (requirements)</strong><br>
+  <strong>Figure 2. Methods used for gathering the initial set of expectations (requirements)</strong><br>
   <em>Source: Adapted from Borg et al. (2019).</em>
 </p>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5f0bc8d8-9c8b-4b3f-8b55-1cd139cd3cf2" width="500" alt="1280X1280">
+</div>
 
 ### 4.2 Ideation Processing
 In the early stages of the project, we utilized Feishu Docs for brainstorming and information integration, and initially proposed incorporating a power-up system to enhance player interaction. Additionally, considering the varying skill levels of players, we designed two gameplay modes: Invincible Mode, which allows players to freely select levels for a more accessible experience, and Normal Mode, which requires players to start from the first level for a more structured challenge. This design aims to accommodate different player preferences and enhance the overall playability and adaptability of the game.
