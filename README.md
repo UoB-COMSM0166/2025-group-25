@@ -56,11 +56,11 @@ Click to watch the demo video of our game [**HERE**](https://youtu.be/JbI86zdtSe
 </div>
 
 
-<p align="center">
+<!--<p align="center">
   <strong>Table 1</strong><br>
   <em>Team members, roles and contributions.</em>
-</p>
-
+</p>-->
+### Team members, roles and contributions
 
 | GROUP MEMBER | NAME | EMAIL | ROLE | CONTRIBUTIONS |
 | :----: | :----: | :----: | :----: | :----: |
