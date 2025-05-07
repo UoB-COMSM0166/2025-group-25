@@ -707,6 +707,7 @@ In sum, Echoes of Adventure has grown from a conceptual prototype into a polishe
 |:-------------:|:------------:|
 | SHUAO ZHANG   |     1.00     |
 | JUNJIE YAN    |     1.00     |
+| KEXIN ZHANG   |     1.00     |
 | CAILING YANG  |     1.00     |
 | RUI XIONG     |     1.00     |
 
