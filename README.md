@@ -5,7 +5,7 @@
 
 <div align="center">
   <a href="https://uob-comsm0166.github.io/2025-group-25/">
-    <img = "https://github.com/user-attachments/assets/fd8b75fd-db86-433c-8cd3-133ca2b5caeb)"
+    <img = "![IMG_3101](https://github.com/user-attachments/assets/7b13fb6f-ccc3-457d-b61a-b63b03b3c7ab)"
  width="600" alt="Click to Play">
   </a>
 </div>
