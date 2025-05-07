@@ -9,11 +9,23 @@
   </a>
 </div>
 
-Link to play our game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
+//Link to play our game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
 
-Our game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
+//Our game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
 
-Click to the demo video of our game here！
+//Click to the demo video of our game here！
+
+<div align="center">
+
+Link to play our game [**PLAY HERE**](https://uob-comsm0166.github.io/2025-group-25/)
+
+Our game lives in the [/docs](/docs) folder, and is published using GitHub Pages to the link above.
+
+Click to watch the demo video of our game [**HERE**](#)！
+
+</div>
+
+
 <div align="center">
   <a href="https://youtu.be/JbI86zdtSeQ?si=LKHxTTlPPNXmVBt-">
     <img src="docs/assets/video.png" width="600" alt="Watch on YouTube">
