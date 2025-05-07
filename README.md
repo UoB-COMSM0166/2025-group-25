@@ -179,13 +179,13 @@ To address this issue, we introduced a Heads-Up Display (HUD) to clearly indicat
 Through this iterative refinement process, we aimed to enhance player immersion and usability, ensuring that weather transitions felt both natural and comprehensible. By leveraging a combination of UI elements and environmental audio cues, we improved the overall game experience, making it more accessible while preserving the intended dynamic weather effects.
 
 ### 4.4 Identifying Stakeholders
-<p align="center">
-  <strong>Figure 6.</strong>
-</p>
+
 
 ![4d7d0403-2ebb-49fb-9b35-333beb382790](https://github.com/user-attachments/assets/8b48af30-ba11-49b3-8c70-e4143fbf3bd9)
 
-
+<p align="center">
+  <strong>Figure 6</strong>
+</p>
 
 #### Stakeholder Roles & Environmental Context
 A crucial insight from our tailored Onion Model (as shown in Figure above) was clearly distinguishing between different feedback layers within our immediate academic environment: both professors and peers provided critical but distinct types of surrogate feedback. Professors primarily acted as authoritative stakeholders, providing strategic guidance and professional insights to align the project with industry standards and overall academic expectations. Simultaneously, feedback from peer students played an equally significant yet distinctly complementary role, mirroring direct player experiences and providing authentic usability insights. These two stakeholder groups together created a dual-layer feedback mechanism, enabling a more comprehensive coverage of both high-level product strategy and detailed gameplay interaction nuances.
@@ -278,7 +278,7 @@ To optimize user experience and accommodate different player preferences, we imp
 
 ### Ideation
 <div align="center">
-  <b>Figure 11</b>
+  <strong>Figure 11</strong>
 </div>
 <div align="center">
   <em>ideation game</em>
@@ -286,14 +286,17 @@ To optimize user experience and accommodate different player preferences, we imp
 <div align="center">
   <img src="docs/game idea/idea2-start.gif" width="300">
 </div>
+<p align="center">
+  <strong>Figure 12</strong>
+</p>
 <div align="center">
   <img src="docs/game idea/idea2.gif" width="300">
 </div>
 
 ### Paper Prototype
-<div align="center">
-  <b>Figure 12</b>
-</div>
+<p align="center">
+  <strong>Figure 13</strong>
+</p>
 <div align="center">
   <em>Paper Prototype</em>
 </div>
@@ -301,14 +304,17 @@ To optimize user experience and accommodate different player preferences, we imp
 <div align="center">
   <img src="docs/game idea/idea1-start.gif" width="300">
 </div>
+<p align="center">
+  <strong>Figure 14</strong>
+</p>
 <div align="center">
   <img src="docs/game idea/idea1.gif" width="300">
 </div>
 
 ### Digital Paper Prototype
-<div align="center">
-  <b>Figure 3</b>
-</div>
+<p align="center">
+  <strong>Figure 15</strong>
+</p>
 <div align="center">
   <em>Digital Paper Prototype</em>
 </div>
@@ -325,12 +331,13 @@ In this section, we present the overall design of our game, including both a Cla
 
 Below is the Class Diagram, which shows the main classes in our game and their relationships. It serves as a high-level blueprint that helps us manage inheritance, dependencies, and interactions among various game objects.
 
+
 <p align="center">
   <img src="docs/design/Class Diagram.png" alt="Class Diagram">
 </p>
 
 <div align="center">
-  <b>Figure 1. Class Diagram</b>
+  <b>Figure 16. Class Diagram</b>
 </div>
 
 ---
@@ -344,7 +351,7 @@ The diagram below illustrates the main flow when the player enters a level and p
 </p>
 
 <div align="center">
-  <b>Figure 2. Sequence Diagram</b>
+  <b>Figure 17. Sequence Diagram</b>
 </div>
 
 ## 6. Implementation
@@ -371,7 +378,7 @@ We recruited 15 participants from diverse backgrounds—with varying levels of g
 
 ![whiteboard_exported_image](https://github.com/user-attachments/assets/287c0df2-e57e-444d-996d-5ecf22df410f)
 <p align="center">
-  <strong>Figure 1. User Feedback Thematic Map</strong>
+  <strong>Figure 18. User Feedback Thematic Map</strong>
 </p>
 
 #### 7.1.2 Main Feedback Themes
@@ -448,19 +455,20 @@ Interestingly, ratings for Level 3 and Level 5 were similar across both modes, a
 </div>
 
 <p align="center">
-  <strong>Figure 2. Average Difficulty Ranking of Each Level in Two Modes</strong>
+  <strong>Figure 19. Average Difficulty Ranking of Each Level in Two Modes</strong>
 </p>
 
 #### 7.2.2 Correlation between SUS and NASA TLX Scores
 We observed a slight negative correlation between SUS and NASA TLX scores. Players who rated the game as more usable tended to report lower cognitive workload. This supports our design hypothesis that intuitive interfaces and clear feedback reduce mental strain during gameplay.
 Such observations are particularly important in scenarios that involve switching attack types or using elemental abilities. If players receive unclear system feedback during combat or interaction, it may unintentionally increase their cognitive load. This highlights the importance of refining our HUD visuals, skill activation indicators, and feedback animations.
 
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/9ff98b20-d063-4d5c-8759-2a8076b51ad2" width="500" alt="2 figure_sus_vs_nasa_clean-2">
 </div>
 
 <p align="center">
-  <strong>Figure 3. Correlation between SUS Score and NASA TLX Score</strong>
+  <strong>Figure 20. Correlation between SUS Score and NASA TLX Score</strong>
 </p>
 
 #### 7.2.3 Standard Deviation of Difficulty Rankings per Level
@@ -472,7 +480,7 @@ In contrast, Level 1 had the lowest standard deviation, showing broad consensus 
 </div>
 
 <p align="center">
-  <strong>Figure 4. Standard Deviation of Difficulty Rankings per Level</strong>
+  <strong>Figure 21. Standard Deviation of Difficulty Rankings per Level</strong>
 </p>
 
 #### 7.2.4 SUS Question Scores Sorted
@@ -484,7 +492,7 @@ On the other hand, high scores in items like “I felt confident using the syste
 </div>
 
 <p align="center">
-  <strong>Figure 5. SUS Question Scores Sorted</strong>
+  <strong>Figure 22. SUS Question Scores Sorted</strong>
 </p>
 
 #### 7.2.5 NASA TLX Dimension Scores Sorted
@@ -496,7 +504,7 @@ The lowest scores appeared in **Physical Demand**, which reflects well on our in
 </div>
 
 <p align="center">
-  <strong>Figure 6. NASA TLX Dimension Scores Sorted</strong>
+  <strong>Figure 23. NASA TLX Dimension Scores Sorted</strong>
 </p>
 
 #### 7.2.6 SUS Total Score by Game Mode
@@ -508,7 +516,7 @@ These results emphasize that Invincible Mode fulfills its purpose as a relaxed e
 </div>
 
 <p align="center">
-  <strong>Figure 7. SUS Total Score by Game Mode</strong>
+  <strong>Figure 24. SUS Total Score by Game Mode</strong>
 </p>
 
 #### 7.2.7 Summary
@@ -523,7 +531,7 @@ Based on these findings, future updates of Echoes of Adventure will focus on pol
 ### Collaboration
 In the early stages, our meetings were held frequently. We began by discussing the gaming history of our team members to develop a unique game that better suited our group, was creative, and aligned with the majority’s preferences. We used the classroom whiteboard for simple game concept brainstorming and model sketching.
 <div align="center">
-  <b>Figure 6</b>
+  <b>Figure 25</b>
 </div>
 <div align="center">
   <em>Team Meeting Paper Prototype</em>
@@ -533,7 +541,7 @@ In the early stages, our meetings were held frequently. We began by discussing t
 </div>
 During this period, all our decisions were made through voting. Simple tasks were decided by a show of hands in face-to-face meetings, while more complex tasks, such as determining the game type, were handled using the voting mini-program in WeChat. This allowed us to vote anonymously and express our opinions freely.
 <div align="center">
-  <b>Figure 7</b>
+  <b>Figure 26</b>
 </div>
 <div align="center">
   <em>Voting results</em>
@@ -543,7 +551,7 @@ During this period, all our decisions were made through voting. Simple tasks wer
 </div>
 In fact, after forming the team, we created a discussion group on WeChat to communicate about development progress and any issues encountered during the process. At the beginning of the project, we scheduled face-to-face meetings every weekend to summarize the week's progress and assign tasks for the upcoming week.
 <div align="center">
-  <b>Figure 8</b>
+  <b>Figure 27</b>
 </div>
 <div align="center">
   <em>Team Meeting</em>
@@ -553,7 +561,7 @@ In fact, after forming the team, we created a discussion group on WeChat to comm
 </div>
 At the same time, as the project progressed, we also held offline discussions periodically to merge code at different stages (e.g., after the lab session every Tuesday).
 <div align="center">
-  <b>Figure 9</b>
+  <b>Figure 28</b>
 </div>
 <div align="center">
   <em>Merge code</em>
@@ -566,7 +574,7 @@ At the same time, as the project progressed, we also held offline discussions pe
 
 ### Gantt Chart
 <div align="center">
-  <b>Figure 9</b>
+  <b>Figure 29</b>
 </div>
 <div align="center">
   <em>Gantt Chart of Game Project</em>
@@ -618,12 +626,13 @@ We continuously evaluate and optimise the game against SuSAF’s five pillars:
 - **Behaviour-Change Incentives**  
   Players are rewarded for thorough cleanup rather than combat prowess alone, embodying SuSAF’s call for transitions in production and consumption patterns.
 
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/7f9002c4-833d-4a24-9f7d-4817ce671149" width="800" alt="IMG_3091">
 </div>
 
 <p align="center">
-  <strong>Figure 1. Sustainability Mission Completion Screen</strong>
+  <strong>Figure 30. Sustainability Mission Completion Screen</strong>
 </p>
 
 
