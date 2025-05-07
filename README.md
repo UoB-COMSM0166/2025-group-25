@@ -703,7 +703,9 @@ Looking forward, we envision several avenues for growth:
 In sum, Echoes of Adventure has grown from a conceptual prototype into a polished, modular platformer that marries performance-conscious engineering with thoughtful, sustainability-focused storytelling. The lessons learned—from unified state machines to mixed-methods evaluation—have strengthened our technical and collaborative skill sets, laying a robust foundation for future game development projects. We are proud of what we have achieved and excited to continue evolving our game into an ever more immersive and environmentally resonant experience.
 
 ## 11. Contribution
+
 <div align="center">
+  
 |     Name      | Contribution |
 |:-------------:|:------------:|
 | SHUAO ZHANG   |     1.00     |
