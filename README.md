@@ -40,6 +40,7 @@ Click to watch the demo video of our game [**HERE**](https://youtu.be/JbI86zdtSe
 - [8. Process](#8-process)
 - [9. Sustainability](#9-sustainability)
 - [10. Conclusion](#10-conclusion)
+- [11. Contribution](#11-contributions)
 - [Reference](#reference)
 
 
@@ -701,6 +702,16 @@ Looking forward, we envision several avenues for growth:
 
 In sum, Echoes of Adventure has grown from a conceptual prototype into a polished, modular platformer that marries performance-conscious engineering with thoughtful, sustainability-focused storytelling. The lessons learned—from unified state machines to mixed-methods evaluation—have strengthened our technical and collaborative skill sets, laying a robust foundation for future game development projects. We are proud of what we have achieved and excited to continue evolving our game into an ever more immersive and environmentally resonant experience.
 
+## 11. Contribution
+| Name         | Contribution |  
+|--------------|--------------|  
+| SHUAO ZHANG  | 1.00         |  
+| JUNJIE YAN   | 1.00         |  
+| CAILING YANG | 1.00         |  
+| RUI XIONG    | 1.00         |
+<div align="center">
+  <b>Table showing the relative contributions to the our project</b>
+</div>
 
 
 ## Reference
