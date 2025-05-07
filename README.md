@@ -5,7 +5,7 @@
 
 <div align="center">
   <a href="https://uob-comsm0166.github.io/2025-group-25/">
-    <img src=![IMG_3101](https://github.com/user-attachments/assets/fd8b75fd-db86-433c-8cd3-133ca2b5caeb)
+    <![IMG_3101](https://github.com/user-attachments/assets/fd8b75fd-db86-433c-8cd3-133ca2b5caeb)
  width="600" alt="Click to Play">
   </a>
 </div>
