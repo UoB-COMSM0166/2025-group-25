@@ -9,11 +9,11 @@
   </a>
 </div>
 
-Link to your game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
+Link to play our game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
 
-Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
+Our game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
 
-Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
+Click to the demo video of our game here！
 <div align="center">
   <a href="https://www.youtube.com/watch?v=LWV-f6dMN3Q&list=RDOEn19VUiDQo&index=3">
     <img src="docs/assets/video.png" width="600" alt="Watch on YouTube">
