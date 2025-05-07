@@ -142,11 +142,16 @@ A survey conducted by Borg et al. (2019) on Global Game Jam participants identif
 ### 4.2 Ideation Processing
 In the early stages of the project, we utilized Feishu Docs for brainstorming and information integration, and initially proposed incorporating a power-up system to enhance player interaction. Additionally, considering the varying skill levels of players, we designed two gameplay modes: Invincible Mode, which allows players to freely select levels for a more accessible experience, and Normal Mode, which requires players to start from the first level for a more structured challenge. This design aims to accommodate different player preferences and enhance the overall playability and adaptability of the game.
 
-**Figure 2**
+<p align="center">
+  <strong>Figure 3</strong>
+</p>
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/2ffa9589-0192-4bad-a79b-5d6e40fa5798" width="500" alt="idea1-start">
 </div>
+<p align="center">
+  <strong>Figure 4</strong>
+</p>
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/4e5bf009-baf9-4ce9-b2b7-a849198934db" width="500" alt="idea1">
@@ -154,13 +159,16 @@ In the early stages of the project, we utilized Feishu Docs for brainstorming an
 
 During the third session on January 28, our team of five members was systematically divided into two groups: one group of three members was responsible for constructing the paper prototype (Figure 2), while the other group of two members focused on converting it into a digital wireframe (Figure 3). Benefiting from a well-defined task allocation, we efficiently advanced the project and, through a structured visual design approach, transformed the initially complex game concept into a more intuitive and concrete representation, thereby enhancing its comprehensibility and precision of expression.
 
+<p align="center">
+  <strong>Figure 5</strong>
+</p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1e99ec61-5631-4177-957c-7865e9b5e16a" width="500" alt="Digital">
 </div>
 
 
 <p align="center">
-  <strong>Figure 3. Paper Prototype developed during Workshop Three</strong><br>
+  <strong>Figure 6. Paper Prototype developed during Workshop Three</strong><br>
   <em>(Paper Prototype: <a href="https://www.google.com">www.google.com</a>)</em>
 </p>
 
@@ -173,13 +181,14 @@ To address this issue, we introduced a Heads-Up Display (HUD) to clearly indicat
 Through this iterative refinement process, we aimed to enhance player immersion and usability, ensuring that weather transitions felt both natural and comprehensible. By leveraging a combination of UI elements and environmental audio cues, we improved the overall game experience, making it more accessible while preserving the intended dynamic weather effects.
 
 ### 4.4 Identifying Stakeholders
+<p align="center">
+  <strong>Figure 7.</strong><br>
+  <em>Onion Model of Oiram Game.</em>
+</p>
 
 ![4d7d0403-2ebb-49fb-9b35-333beb382790](https://github.com/user-attachments/assets/8b48af30-ba11-49b3-8c70-e4143fbf3bd9)
 
-<p align="center">
-  <strong>Figure 4.</strong><br>
-  <em>Onion Model of Oiram Game.</em>
-</p>
+
 
 #### Stakeholder Roles & Environmental Context
 A crucial insight from our tailored Onion Model (as shown in Figure above) was clearly distinguishing between different feedback layers within our immediate academic environment: both professors and peers provided critical but distinct types of surrogate feedback. Professors primarily acted as authoritative stakeholders, providing strategic guidance and professional insights to align the project with industry standards and overall academic expectations. Simultaneously, feedback from peer students played an equally significant yet distinctly complementary role, mirroring direct player experiences and providing authentic usability insights. These two stakeholder groups together created a dual-layer feedback mechanism, enabling a more comprehensive coverage of both high-level product strategy and detailed gameplay interaction nuances.
@@ -202,6 +211,9 @@ Utilizing these complementary surrogate feedback sources was highly advantageous
 
 
 To personalize and internalize these user stories, we designed a series of character-driven posters to visually represent them. This approach ensured that the user stories remained top-of-mind throughout the development process, serving as a constant reference point. Additionally, these posters provided a quick and effective shorthand during discussions, enabling more efficient decision-making and alignment across the team.
+<p align="center">
+  <strong>Figure8</strong>
+</p>
 
 <div align="center">
   <img width="716" alt="db27395f486550e270625c11b5dee6c" src="https://github.com/user-attachments/assets/a49249c2-8ce7-45e0-9606-cb7c891d3c25" />
