@@ -5,7 +5,7 @@
 
 <div align="center">
   <a href="https://uob-comsm0166.github.io/2025-group-25/">
-    <img src="docs/assets/IMG_3101.jpg" width="600" >
+    <img src="docs/assets/IMG_3103.jpg" width="600" >
   </a>
 </div>
 
