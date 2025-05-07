@@ -15,7 +15,7 @@ Link to play our game [**PLAY HERE**](https://uob-comsm0166.github.io/2025-group
 
 Our game lives in the [/docs](/docs) folder, and is published using GitHub Pages to the link above.
 
-Click to watch the demo video of our game [**HERE**](#)！
+Click to watch the demo video of our game [**HERE**](https://youtu.be/JbI86zdtSeQ?si=LKHxTTlPPNXmVBt-)！
 
 </div>
 
