@@ -15,7 +15,7 @@ Our game lives in the [/docs](/docs) folder, and is published using Github pages
 
 Click to the demo video of our game here！
 <div align="center">
-  <a href="[https://www.youtube.com/watch?v=LWV-f6dMN3Q&list=RDOEn19VUiDQo&index=3](https://youtu.be/JbI86zdtSeQ?si=LKHxTTlPPNXmVBt-)">
+  <a href="https://youtu.be/JbI86zdtSeQ?si=LKHxTTlPPNXmVBt-">
     <img src="docs/assets/video.png" width="600" alt="Watch on YouTube">
   </a>
 </div>
