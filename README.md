@@ -9,12 +9,6 @@
   </a>
 </div>
 
-//Link to play our game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-25/)
-
-//Our game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
-
-//Click to the demo video of our game here！
-
 <div align="center">
 
 Link to play our game [**PLAY HERE**](https://uob-comsm0166.github.io/2025-group-25/)
@@ -70,11 +64,11 @@ Click to watch the demo video of our game [**HERE**](#)！
 
 | GROUP MEMBER | NAME | EMAIL | ROLE | CONTRIBUTIONS |
 | :----: | :----: | :----: | :----: | :----: |
-| 01 | CAILING YANG   | rl24638@bristol.ac.uk | TEST | TEST |
-| 02 | JUNJIE YAN   | am24166@bristol.ac.uk | TEST | TEST |
-| 03 | SHUAO ZHANG   | qk24065@bristol.ac.uk | TEST | TEST |
-| 04 | KEXIN ZHANG   | hy24895@bristol.ac.uk | TEST | Assisted in providing code modifications for in-game item functionality, such as item collection and attack effects. Also helped optimize player interactions and sound effect management. Additionally, contributed to setting up and adjusting gold-related features, including gold collection, display, and usage logic. |
-| 05 | RUI XIONG   | yy24937@bristol.ac.uk | TEST | TEST |
+| 01 | SHUAO ZHANG   | qk24065@bristol.ac.uk | System Architect | Designs the overall project architecture and leads the testing process |
+| 02 | JUNJIE YAN   | am24166@bristol.ac.uk | Frontend Engineer | Implemets core play control logic and builds the rendering and interaction systems |
+| 03 | KEXIN ZHANG   | hy24895@bristol.ac.uk | UI/UX Designer | Oversees the design of all game interfaces and optimizes user accessibility and sustainable experience |
+| 04 | CAILING YANG   | rl24638@bristol.ac.uk | Level Designer | Creats the overall structure of the maps and designs trap and obstacle mechanisms |
+| 05 | RUI XIONG   | yy24937@bristol.ac.uk | Gameplay Developer | Implements the item system and character skill logic |
 
 
 
