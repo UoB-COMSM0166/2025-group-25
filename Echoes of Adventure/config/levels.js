@@ -17,7 +17,7 @@ function setupLevels() {
       element: "default",
       playerStart: createVector(100, 500),
       coins: [
-        // 1. 靠近起始位置的第一个平台（x=0, y=510）
+        //The first platform near the starting position（x=0, y=510）
         { x: 50,  y: 470 },  
       
         { x: 765, y: 335 },
@@ -33,7 +33,7 @@ function setupLevels() {
         { x: 3000, y: 460 },
         { x: 4040, y: 55 },//Rui
       
-        // 14~15. 终点附近高低错落的平台 (x=4950, y=480) 及 (x=5150, y=410)
+        //14~15. Platforms of varying heights near the end (x=4950, y=480) and (x=5150, y=410)
         { x: 5000, y: 440 },
         { x: 5200, y: 370 }
       ],
@@ -46,11 +46,11 @@ function setupLevels() {
       ],
       portalPosition: createVector(5300, 330),//cailing
       //ground: [{ x: 0, y: 600, w: 2200, h: 40 },//kx
-        //{ x: 2650, y: 600, w: 1050, h: 40},{ x: 4525, y: 600, w: 850, h: 40}],//地面不再连续，kx~~~~~
+        //{ x: 2650, y: 600, w: 1050, h: 40},{ x: 4525, y: 600, w: 850, h: 40}],//The ground is no longer continuous，kx~~~~~
 
-      waterRegions: [  // 为此关卡添加水面区域zkx~~~~~~~~
-        { x: 2205, y: 557, width: 425, height: 50 },  // 左侧水洼，y是600，height是50
-        { x: 3600, y: 557, width: 1100, height: 50 },  // 右侧水洼
+      waterRegions: [  //Add a water area to this level zkx~~~~~~~~
+        { x: 2205, y: 557, width: 425, height: 50 },  //Left puddle, y is 600, height is 50
+        { x: 3600, y: 557, width: 1100, height: 50 },  //Right puddle
       ],
 
       platforms: [//cailing
@@ -59,24 +59,24 @@ function setupLevels() {
         { x: 0, y: 550, w: 450, h:50, type: "daaaaae" },//1.1 ycl
         
 
-        { x: 620, y: 460, w: 50, h:20, type: "c" },//1.3 空中短条1
-        { x: 750, y: 380, w: 50, h:20, type: "c" },//1.4 空中短条2 高度y：420是正好从地上二段跳不上去的高度
+        { x: 620, y: 460, w: 50, h:20, type: "c" },//1.3 air gaffer 1
+        { x: 750, y: 380, w: 50, h:20, type: "c" },//1.4 air gaffer 2, Height y: 420 is exactly the height from which a two-step jump from the ground cannot be made.
 
-        { x: 1000, y: 320, w: 800, h: 25, type: "daaaaaaaae" },//1.5长条平台
-        { x: 1600, y: 560, w: 50, h: 40, type: "c" },//1.6（地上小方块和金币协同，金币放左上空中y和1.4一致，最大380）
+        { x: 1000, y: 320, w: 800, h: 25, type: "daaaaaaaae" },//1.5 Long platforms
+        { x: 1600, y: 560, w: 50, h: 40, type: "c" },//1.6(small squares on the ground and gold coins synergise, gold coins are placed in the upper left air y and 1.4 in line with max 380)
 
-        { x: 1900, y: 550, w: 350, h: 50, type: "daae" },//1.7地面水洼左
-        { x: 2460, y: 550, w: 1200, h: 50, type: "daaaaaae" },//1.7地面水洼右（水洼间隔300正好极限跳过去，后面的关卡可以设置）
+        { x: 1900, y: 550, w: 350, h: 50, type: "daae" },//1.7 Puddle on the ground (left)
+        { x: 2460, y: 550, w: 1200, h: 50, type: "daaaaaae" },//1.7 Ground puddle right (puddles spaced 300 exactly limit jump over, later levels can be set)
 
 
         { x: 5150, y: 410, w: 250, h: 100, type: "b" },//1.11
         { x: 4950, y: 480, w: 450, h: 100, type: "b" },//1.10
         { x: 4550, y: 550, w: 850, h: 50, type: "bb" },//1.8
        
-        { x: 3750, y: 420, w: 100, h: 20, type: "c" },//1.9.1 长水洼平台1
-        { x: 3920, y: 325, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台2 (高度差90：一个巧妙地高度差，一段跳跃看似跳的上去，实则跳不上去）
-        { x: 4200, y: 255, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台3
-        { x: 4000, y: 110, w: 100, h: 20, type: "c" },//1.9.2 长水洼平台2
+        { x: 3750, y: 420, w: 100, h: 20, type: "c" },//1.9.1 Long Puddle Platform 1
+        { x: 3920, y: 325, w: 100, h: 20, type: "c" },//1.9.2 Long Puddle Platform 2 (Height difference 90: a skilfully placed height difference where a section of the jump looks like it's going up, but it's not)
+        { x: 4200, y: 255, w: 100, h: 20, type: "c" },//1.9.2 Long Puddle Platform 3
+        { x: 4000, y: 110, w: 100, h: 20, type: "c" },//1.9.2 Long Puddle Platform 4
         { x: 4420, y: 400, w: 100, h: 20, type: "c" },
 
         { x: 0, y: 590, w: 5400, h: 50, type: "daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae" },
@@ -105,14 +105,14 @@ function setupLevels() {
       element: "fire",
       playerStart: createVector(70, 280),
       coins: [
-        { x: 270, y: 380 },  // 柱子 (250,420)
-        { x: 670, y: 380 },  // 柱子 (650,420)
-        { x: 880, y: 280 },  // 柱子 (850,320)
-        { x: 2260, y: 400 }, // 介于 2300 和 2350 之间
-        { x: 2150, y: 200 },  // 平台 (2800, 240) 上方
-        { x: 2630, y: 100 },  // 平台 (2800, 240) 上方
-        { x: 3225, y: 400 },  // 平台 (3200, 440) 上方
-        { x: 4028, y: 190 },   // 平台 (4000, 240) 上方
+        { x: 270, y: 380 },  // pillar (250,420)
+        { x: 670, y: 380 },  // pillar (650,420)
+        { x: 880, y: 280 },  // pillar (850,320)
+        { x: 2260, y: 400 }, // Between 2300 and 2350
+        { x: 2150, y: 200 },  // Above the platform (2800, 240)
+        { x: 2630, y: 100 },  // Above the platform (2800, 240)
+        { x: 3225, y: 400 },  // Above the platform (2800, 240)
+        { x: 4028, y: 190 },   // Above the platform (4000, 240)
         { x: 4828, y: 280 },
         { x: 6228, y: 270 },
       ],
@@ -132,8 +132,8 @@ function setupLevels() {
         { type: "Bat", position: {x:3200, y:400} },
       ],
       portalPosition: createVector(7680, 360),
-      waterRegions: [  // 为此关卡添加岩浆区域kx~~~~~~~~
-        { x: 0, y: 680, width: 7800, height: 50 },  // 第二关的岩浆zkx~~~~~~~~
+      waterRegions: [  //Add a magma area to this level kx~~~~~~~~
+        { x: 0, y: 680, width: 7800, height: 50 },  //Lava in the second level zkx~~~~~~~~
         { x: 0, y: 680, width: 7800, height: 50 },  
       ],
       //ground: { x: 0, y: 620, w: 7800, h: 40 },
@@ -144,22 +144,22 @@ function setupLevels() {
         { x: 650, y: 420, w: 80, h: 400, type: "h" },
         { x: 850, y: 320, w: 80, h: 400, type: "h" },
 
-        { x: 1020, y: 200, w: 400, h: 30, type: "kllllm" },//空中平台
+        { x: 1020, y: 200, w: 400, h: 30, type: "kllllm" },//Aerial platforms
         { x: 1450, y: 300, w: 200, h: 30, type: "kllm" },
         { x: 1850, y: 300, w: 200, h: 30, type: "kllm" },
         
         
-        { x: 2150, y: 440, w: 50, h: 300, type: "h" },//回形石块
+        { x: 2150, y: 440, w: 50, h: 300, type: "h" },//boulder
         { x: 2350, y: 440, w: 50, h: 300, type: "h" },
-        { x: 2150, y: 440, w: 50, h: 50, type: "k" },//空中平台
-        { x: 2200, y: 440, w: 50, h: 50, type: "l" },//空中平台
-        { x: 2250, y: 440, w: 50, h: 50, type: "l" },//空中平台
-        { x: 2300, y: 440, w: 50, h: 50, type: "l" },//空中平台
-        { x: 2350, y: 440, w: 50, h: 50, type: "m" },//空中平台
+        { x: 2150, y: 440, w: 50, h: 50, type: "k" },//Aerial platforms
+        { x: 2200, y: 440, w: 50, h: 50, type: "l" },//Aerial platforms
+        { x: 2250, y: 440, w: 50, h: 50, type: "l" },//Aerial platforms
+        { x: 2300, y: 440, w: 50, h: 50, type: "l" },//Aerial platforms
+        { x: 2350, y: 440, w: 50, h: 50, type: "m" },//Aerial platforms
 
-        { x: 2490, y: 290, w: 80, h: 30, type: "j" },//ZSA：3.3新增//Rui
+        { x: 2490, y: 290, w: 80, h: 30, type: "j" },
 
-        { x: 2620, y: 140, w: 80, h: 30, type: "j" },//v形石块
+        { x: 2620, y: 140, w: 80, h: 30, type: "j" },//v-shaped rock
         { x: 2800, y: 240, w: 80, h: 30, type: "j"  },
         { x: 3000, y: 340, w: 80, h: 30, type: "j"  },
         { x: 3200, y: 440, w: 80, h: 30, type: "j"   },
@@ -170,28 +170,28 @@ function setupLevels() {
         { x: 4200, y: 140, w: 80, h: 30, type: "j"  },
 
     
-        { x: 4500, y: 320, w: 80, h: 400, type: "h" },//柱子
+        { x: 4500, y: 320, w: 80, h: 400, type: "h" },//pillar
         { x: 4800, y: 320, w: 80, h: 400, type: "h" },
         { x: 5100, y: 320, w: 80, h: 400, type: "h" },
         { x: 5400, y: 320, w: 80, h: 400, type: "h" },
         { x: 5700, y: 320, w: 80, h: 400, type: "h" },
         { x: 6000, y: 320, w: 80, h: 400, type: "h" },
-        { x: 6200, y: 320, w: 80, h: 40, type: "j" },//空中平台
+        { x: 6200, y: 320, w: 80, h: 40, type: "j" },//Aerial platforms
 
         // { x: 6300, y: 320, w: 80, h: 400, type: "h" },
 
         { x: 6510, y: 240, w: 60, h: 700, type: "i" },
-        { x: 6420, y: 240, w: 240, h: 40, type: "km" },//城堡
+        { x: 6420, y: 240, w: 240, h: 40, type: "km" },//castle
         
         { x: 6810, y: 350, w: 60, h: 700, type: "i" },
-        { x: 6720, y: 350, w: 240, h: 40, type: "km" },//城堡
+        { x: 6720, y: 350, w: 240, h: 40, type: "km" },//castle
 
         { x: 7110, y: 240, w: 60, h: 700, type: "i" },
-        { x: 7020, y: 240, w: 240, h: 40, type: "km" },//城堡
+        { x: 7020, y: 240, w: 240, h: 40, type: "km" },//castle
         
 
         { x: 7410, y: 440, w: 60, h: 700, type: "i" },
-        { x: 7320, y: 440, w: 440, h: 40, type: "km" },//城堡  
+        { x: 7320, y: 440, w: 440, h: 40, type: "km" },//castle  
 
     
       ],
@@ -219,7 +219,7 @@ function setupLevels() {
           //createVector(1750, 200),
           createVector(2280, 300)
         ],
-        ranges: [50, 80] // 可以为每个锯片分别设置不同的移动范围
+        ranges: [50, 80] //Different travel ranges can be set individually for each saw blade
       }
       
     },
@@ -229,35 +229,35 @@ function setupLevels() {
       element: "ice",
       playerStart: createVector(70, 0),//cailing
       coins: [
-        // 1-4: 起始区域的平台上方
-        // { x: 100, y: 370 }, // 平台 (0,400)
-        { x: 315, y: 340 }, // 平台 (350,400)
-        { x: 440, y: 340 }, // 平台 (450,400)
-        { x: 565, y: 340 }, // 平台 (550,400)
+        //1-4: Above the platform in the starting area
+        //{ x: 100, y: 370 }, // platform (0,400)
+        { x: 315, y: 340 }, // platform (350,400)
+        { x: 440, y: 340 }, // platform (450,400)
+        { x: 565, y: 340 }, // platform (550,400)
       
-        // 5-7: 大平台曲折路线上方
-        // { x: 800, y: 370 },  // 平台 (700, 400) 长平台中间
-        { x: 1070, y: 370 }, // 平台 (1125, 280) 上方
-        { x: 1290, y: 220 }, // 平台 (1393, 280) 上方
+        // 5-7: Above the large platform zigzag route
+        // { x: 800, y: 370 },  // Platform (700, 400) Middle of long platform
+        { x: 1070, y: 370 }, 
+        { x: 1290, y: 220 }, 
       
-        // 8-9: 高空小平台
-        // { x: 1700, y: 150 }, // 平台 (1690, 180) 上方
-        { x: 1850, y: 40 },  // 平台 (1840, 100) 上方
+        // 8-9: Small aerial platforms
+        // { x: 1700, y: 150 }, // platform
+        { x: 1850, y: 40 },  // platform
       
-        // 10-12: 楼梯平台区域
-        // { x: 2170, y: 510 }, // 平台 (2160, 540) 上方
-        { x: 3140, y: 390 }, // 平台 (2410, 340) 上方
-        { x: 2720, y: 160 }, // 平台 (2760, 180) 上方
+        // 10-12: Staircase landing area
+        // { x: 2170, y: 510 }, 
+        { x: 3140, y: 390 },
+        { x: 2720, y: 160 },
       
-        // 13-15: 终点区域的高柱
-        { x: 3545, y: 200 }, // 柱子 (3550, 300) 上方
-        // { x: 3755, y: 230 }, // 柱子 (3750, 300) 上方
-        { x: 3945, y: 200 }, // 柱子 (3750, 300) 上方
-        // { x: 4155, y: 230 }, // 柱子 (3950, 300) 上方
+        // 13-15: High columns in the terminal area
+        { x: 3545, y: 200 },
+        // { x: 3755, y: 230 },
+        { x: 3945, y: 200 },
+        // { x: 4155, y: 230 },
       
-        // 16-18: 传送门区域前的平台
+        // 16-18: Platform in front of the portal area
 
-        // { x: 4500, y: 370 }, // 传送门前 (4450, 400) 上方
+        // { x: 4500, y: 370 }, // In front of the portal (4450, 400) upwards
         { x: 4590, y: 340 }
       ],
       enemies: [
@@ -271,44 +271,44 @@ function setupLevels() {
         //{ type: "Fish", position: createVector(1200, 500) }
       ],
       portalPosition: createVector(4700, 320),//cailing
-      //ground: { x: 0, y: 620, w: 4800, h: 40 },第三关天空之城不要地面zkx~~~~~~~~
+      //ground: { x: 0, y: 620, w: 4800, h: 40 },The third level of the city in the sky doesn't want the ground zkx~~~~~~~~
       platforms: [//cailing
-      // //{ x: 0, y: 620, w: 4800, h: 40 },//主地面长度(第一个平台的宽度决定)
-      { x: 0, y: 400, w: 229, h: 8,type: "o" },//2.1 开头平台
+      // //{ x: 0, y: 620, w: 4800, h: 40 },//Length of main floor (determined by the width of the first platform)
+      { x: 0, y: 400, w: 229, h: 8,type: "o" },//2.1 Starting platform
       { x: 229, y: 400, w: 5, h: 150, type: "o" },//2.1.right
 
-      { x: 310, y: 400, w: 50, h: 8,type: "o" },//2.3 小平台1 【两个间隙设置飞鸟】
+      { x: 310, y: 400, w: 50, h: 8,type: "o" },//2.3 Small platform 1 [two gaps set for flying birds]
       { x: 310, y: 400, w: 5, h: 20, type: "oo" },//2.3.left
       { x: 358, y: 400, w: 5, h: 20,type: "oo" },//2.3.right
 
-      { x: 435, y: 400, w: 50, h: 8, type: "o" },//2.4 小平台2 【空中设置金币】
+      { x: 435, y: 400, w: 50, h: 8, type: "o" },//2.4 Small platform 2 [Setting gold coins in the air]
       { x: 435, y: 400, w: 5, h: 20, type: "o" },//2.4.left
       { x: 483, y: 400, w: 5, h: 20, type: "o" },//2.4.right
 
-      { x: 560, y: 400, w: 50, h: 8 ,type: "o"},//2.5 小平台3
+      { x: 560, y: 400, w: 50, h: 8 ,type: "o"},//2.5 Small platform 3
       { x: 560, y: 400, w: 5, h: 20, type: "o" },//2.5.left
       { x: 608, y: 400, w: 5, h: 20, type: "o" },//2.5.right
 
-      { x: 700, y: 400, w: 5, h: 150,type: "o" },//2.6.1 曲折大平台开始
+      { x: 700, y: 400, w: 5, h: 150,type: "o" },//2.6.1 Zigzag big platform start
       { x: 700, y: 400, w: 260, h: 8 ,type: "o"},//2.6.2
       { x: 958, y: 400, w: 5, h: 40,type: "o" },//2.6.3
-      { x: 958, y: 438, w: 170, h: 8,type: "o" },//2.6.4 【设置金币】
+      { x: 958, y: 438, w: 170, h: 8,type: "o" },//2.6.4 [Setting Gold Coins]
       { x: 1125, y: 280, w: 5, h: 160,type: "o" },//2.6.5
-      { x: 1125, y: 280, w: 270, h: 8,type: "o" },//2.6.6 【设置螃蟹1.6.6~1.6.8之间移动】
+      { x: 1125, y: 280, w: 270, h: 8,type: "o" },//2.6.6
       { x: 1393, y: 280, w: 5, h: 40,type: "o" },//2.6.7
       { x: 1393, y: 318, w: 220, h: 8,type: "o" },//2.6.8
       { x: 1613, y: 318, w: 5, h: 220, type: "o" },//2.6.9
 
-      { x: 1690, y: 180, w: 50, h: 8 ,type: "o"},//2.7 小平台1
+      { x: 1690, y: 180, w: 50, h: 8 ,type: "o"},//2.7 Small platform 1
       { x: 1690, y: 180, w: 5, h: 20 ,type: "o"},//2.7.left 
       { x: 1738, y: 180, w: 5, h: 20 , type: "o"},//2.7.right
 
-      { x: 1840, y: 100, w: 50, h: 8 , type: "o"},//2.7 小平台2
+      { x: 1840, y: 100, w: 50, h: 8 , type: "o"},//2.7 Small platform 2
       { x: 1840, y: 100, w: 5, h: 20 , type: "o"},//2.7.left 
       { x: 1888, y: 100, w: 5, h: 20 , type: "o"},//2.7.right
 
       { x: 2100, y: 580, w: 50, h: 8,type: "o" },
-      // { x: 2160, y: 540, w: 5, h: 40 },//2.8 楼梯开始
+      // { x: 2160, y: 540, w: 5, h: 40 },//2.8 Stairway to start
       { x: 2160, y: 540, w: 50, h: 8,type: "o" },//
       // //{ x: 2210, y: 500, w: 5, h: 45 },
       { x: 2210, y: 500, w: 50, h: 8 ,type: "o"},
@@ -322,44 +322,44 @@ function setupLevels() {
       { x: 2410, y: 340, w: 200, h: 8, type: "o" },
       // //{ x: 2610, y: 300, w: 5, h: 45 },
 
-      // //{ x: 2610, y: 300, w: 50, h: 8 , type: "oooooo"},//2.9 二段向上楼梯
+      // //{ x: 2610, y: 300, w: 50, h: 8 , type: "oooooo"},//2.9 Second staircase upwards
       { x: 2660, y: 260, w: 50, h: 8 , type: "o"},
       { x: 2710, y: 220, w: 50, h: 8 , type: "o"},
       { x: 2760, y: 180, w: 50, h: 8 , type: "o"},
       { x: 2810, y: 140, w: 50, h: 8 , type: "o"},
       { x: 2860, y: 100, w: 500, h: 8 , type: "o"},
 
-      { x: 2610, y: 380, w: 50, h: 8 , type: "o"},//2.10 二段向下楼梯【右上空中放置金币】
+      { x: 2610, y: 380, w: 50, h: 8 , type: "o"},//2.10 Two down the stairs [gold coins in the upper right air]
       { x: 2660, y: 420, w: 50, h: 8 , type: "o"},
       { x: 2710, y: 460, w: 50, h: 8 , type: "o"},
       { x: 2760, y: 500, w: 50, h: 8 , type: "o"},
       { x: 2810, y: 540, w: 300, h: 8 , type: "o"},
 
       { x: 3550, y: 300, w: 40, h: 380 , type: "oo"},
-      { x: 3510, y: 260, w: 120, h: 20 , type: "o"},//2.11 柱子
+      { x: 3510, y: 260, w: 120, h: 20 , type: "o"},//2.11 pillar 
       { x: 3520, y: 270, w: 100, h: 20 , type: "o"},
       { x: 3530, y: 280, w: 80, h: 20 , type: "o"},
       { x: 3540, y: 290, w: 60, h: 20 , type: "o"},
 
-      { x: 3710, y: 260, w: 120, h: 20, type: "o" },//2.11 柱子2
+      { x: 3710, y: 260, w: 120, h: 20, type: "o" },//2.11 pillar 2
       { x: 3720, y: 270, w: 100, h: 20 , type: "o"},
       { x: 3730, y: 280, w: 80, h: 20 , type: "o"},
       { x: 3740, y: 290, w: 60, h: 20 , type: "o"},
       { x: 3750, y: 300, w: 40, h: 380 , type: "o"},
 
-      { x: 3910, y: 260, w: 120, h: 20 , type: "o"},//2.11 柱子3
+      { x: 3910, y: 260, w: 120, h: 20 , type: "o"},//2.11 pillar 3
       { x: 3920, y: 270, w: 100, h: 20 , type: "o"},
       { x: 3930, y: 280, w: 80, h: 20 , type: "o"},
       { x: 3940, y: 290, w: 60, h: 20 , type: "o"},
       { x: 3950, y: 300, w: 40, h: 380 , type: "o"},
 
-      { x: 4110, y: 260, w: 120, h: 20 , type: "o"},//2.11 柱子4
+      { x: 4110, y: 260, w: 120, h: 20 , type: "o"},//2.11 pillar 4
       { x: 4120, y: 270, w: 100, h: 20 , type: "o"},
       { x: 4130, y: 280, w: 80, h: 20 , type: "o"},
       { x: 4140, y: 290, w: 60, h: 20 , type: "o"},
       { x: 4150, y: 300, w: 40, h: 380 , type: "o"},
 
-      { x: 4450, y: 400, w: 350, h: 20, type: "o" },//传送门平台
+      { x: 4450, y: 400, w: 350, h: 20, type: "o" },//Portal platform
       ],
       items: [
         //{ x: 300, y: 320, type: "Freeze Element" },
@@ -384,37 +384,37 @@ function setupLevels() {
       element: "wind",
       playerStart: createVector(60, 500), // cailing
       coins: [
-        // 1-3: 起始区域的跳跃平台
-        { x: 410, y: 270 },  // 最高的小方块 (300, 210)
-        // { x: 650, y: 230 },  // 小方块 (640, 260)
-        { x: 1050, y: 230 },  // 小方块 (980, 260)
+        //1-3: Jumping platforms in the starting area
+        { x: 410, y: 270 },  // Tallest Cube (300, 210)
+        // { x: 650, y: 230 },  // cube (640, 260)
+        { x: 1050, y: 230 },  // cube (980, 260)
       
-        // 4-7: 第一段桥状平台的金币
-        { x: 1520, y: 250 }, // 小方块 (1660, 260)
-        // { x: 2000, y: 360 }, // 桥的中部 (2000, 390)
-        { x: 2350, y: 200 }, // 桥的末端 (2300, 270)
-        // { x: 2600, y: 330 }, // 下坡开始 (2600, 360)
+        //4-7: Gold coins in the first section of the bridged platform
+        { x: 1520, y: 250 }, // cube (1660, 260)
+        // { x: 2000, y: 360 }, // Middle of the bridge (2000, 390)
+        { x: 2350, y: 200 }, // The end of the bridge (2300, 270)
+        // { x: 2600, y: 330 }, // Start of the descent (2600, 360)
       
-        // 8-11: 第二段桥状平台的金币
-        // { x: 3000, y: 360 }, // 桥的中部 (3000, 390)
-        { x: 3350, y: 180 }, // 桥的末端 (3300, 270)
-        // { x: 3650, y: 330 }, // 下坡开始 (3600, 360)
-        { x: 3840, y: 400 }, // 终点前 (3700, 420)
+        //8-11: Gold coins in the second segment of the bridged platform
+        // { x: 3000, y: 360 }, // Middle of the bridge (3000, 390)
+        { x: 3350, y: 180 }, // The end of the bridge (3300, 270)
+        // { x: 3650, y: 330 }, // Start of the descent (3600, 360)
+        { x: 3840, y: 400 },
       
-        // 12-15: 终点区域的金币
-        { x: 4030, y: 320 }, // 小方块 (4100, 400)
-        // { x: 4250, y: 320 }, // 小方块 (4250, 350)
-        { x: 4330, y: 220 }, // 小方块 (4400, 300)
-        { x: 4700, y: 120 }  // 传送门平台 (4800, 200)
+        //12-15: Gold coins in the terminal area
+        { x: 4030, y: 320 }, // cube (4100, 400)
+        // { x: 4250, y: 320 }, // cube (4250, 350)
+        { x: 4330, y: 220 }, // cube (4400, 300)
+        { x: 4700, y: 120 }  // Portal platform (4800, 200)
       ],
-      // 增加多个敌人，分布在不同的平台上
+      //Add multiple enemies, spread across different platforms
       enemies: [
         { type: "Spider", position: createVector(2400, 195) },
         { type: "Spider", position: createVector(3200, 195) },
       ],
       portalPosition: createVector(5100, 120), // cailing
       platforms: [
-        { x: 0, y: 580, w: 4900, h: 40, type: "u" },  // 主地面
+        { x: 0, y: 580, w: 4900, h: 40, type: "u" },  //main ground
         { x: 380, y: 480, w: 80, h: 40, type: "u" },
         { x: 380, y: 345, w: 80, h: 40, type: "u" },
         { x: 650, y: 360, w: 50, h: 50, type: "u" },
@@ -465,7 +465,7 @@ function setupLevels() {
         { x: 4700, y: 200, w: 500, h: 20, type: "uuu" }
       ],
       
-      // 增加更多 ghost 配置，使敌人种类更丰富
+      // Add more ghost configurations for a wider variety of enemies
       ghosts: [
         { position: createVector(1000, 300), range: 250 },
         //{ position: createVector(1900, 300), range: 250 },
@@ -475,7 +475,6 @@ function setupLevels() {
         { position: createVector(4000, 300), range: 150 }
       ],
       items: [
-        // 可以添加道具
         { x: 1800, y: 220, type: "Heart" },
         { x: 2800, y: 420, type: "Heart" },
       ],
@@ -504,24 +503,23 @@ function setupLevels() {
         { x: 3520, y: 400 },
         { x: 4720, y: 450 }     
       ],
-      // 新的 enemies 配置（只使用 Spider、Frog 和 Ghost）
   enemies: [
-    // 在“vv”系列平台上
-   // { type: "Frog",   position: createVector(2150, 270) },          // 平台 {x:2100,y:300,...}
-    { type: "Frog",   position: createVector(2750, 170) },          // 平台 {x:2700,y:200,...}
+    // On the ‘vv’ series of platforms
+   // { type: "Frog",   position: createVector(2150, 270) },          // platform {x:2100,y:300,...}
+    { type: "Frog",   position: createVector(2750, 170) },          // platform {x:2700,y:200,...}
     
-    // 在低矮长平台（vvv）上
-    { type: "Frog",   position: createVector(3100, 520) },          // 位于平台左侧
-    { type: "Spider", position: createVector(3300, 520) },          // 位于平台右侧
+    // On a low long platform (vvv)
+    { type: "Frog",   position: createVector(3100, 520) },          // Located on the left side of the platform
+    { type: "Spider", position: createVector(3300, 520) },          // Located on the right side of the platform
     
-    // 在上层浮动平台上
-    { type: "Frog",   position: createVector(3950, 220) },          // 平台 {x:3900,y:250,...}
+    // On the upper floating platform
+    { type: "Frog",   position: createVector(3950, 220) },          // platform {x:3900,y:250,...}
   ],
       portalPosition: createVector(4800, 420),
       platforms: [
         //{ x: 0, y: 580, w: 100, h: 8, type: "v"  },
-        { x: 0, y: 600, w: 4800, h: 40 , type: "vvvvvvvvvvvvvvvvvvvvvvvvvvvv"},  // 主地面
-        { x: 300, y: 500, w: 10, h: 100 , type: "v"},  // 竖形细柱
+        { x: 0, y: 600, w: 4800, h: 40 , type: "vvvvvvvvvvvvvvvvvvvvvvvvvvvv"},  // main ground
+        { x: 300, y: 500, w: 10, h: 100 , type: "v"},  // thin vertical column
         { x: 500, y: 400, w: 10, h: 200, type: "v" },  
         { x: 700, y: 300, w: 10, h: 300, type: "v" },  
         { x: 900, y: 200, w: 10, h: 400 , type: "v"},//Rui   
@@ -531,7 +529,7 @@ function setupLevels() {
         { x: 1715, y: 500, w: 10, h: 100 , type: "v"},
 
 
-        { x: 1800, y: 400, w: 100, h: 20,type: "vv" },//易碎平台
+        { x: 1800, y: 400, w: 100, h: 20,type: "vv" },//Fragile platforms
         { x: 2100, y: 300, w: 100, h: 20 , type: "vv"},  
         { x: 2400, y: 200, w: 100, h: 20 , type: "vv"}, 
         { x: 2700, y: 200, w: 100, h: 20 , type: "vv"}, 
@@ -539,13 +537,13 @@ function setupLevels() {
         { x: 3300, y: 100, w: 100, h: 20 , type: "vv"}, 
 
 
-        { x: 3000, y: 550, w: 300, h: 50, type: "vvv" },  // 低矮长平台
-        { x: 3500, y: 450, w: 100, h: 20 , type: "vv"},  // 浮动平台1
-        { x: 3700, y: 350, w: 100, h: 20, type: "vv" },  // 浮动平台2
-        { x: 3900, y: 250, w: 100, h: 20 , type: "vv"},  // 浮动平台3
-        { x: 4100, y: 150, w: 100, h: 20 , type: "vv"},  // 浮动平台4
+        { x: 3000, y: 550, w: 300, h: 50, type: "vvv" },  // low and long platform
+        { x: 3500, y: 450, w: 100, h: 20 , type: "vv"},  // Floating platform 1
+        { x: 3700, y: 350, w: 100, h: 20, type: "vv" },  // Floating platform 2
+        { x: 3900, y: 250, w: 100, h: 20 , type: "vv"},  // Floating platform 3
+        { x: 4100, y: 150, w: 100, h: 20 , type: "vv"},  // Floating platform 4
 
-        { x: 4600, y: 500, w: 300, h: 20 , type: "vvv"},  // 最终平台（传送门位置）
+        { x: 4600, y: 500, w: 300, h: 20 , type: "vvv"},  // Final platform (portal location)
       ],
       ghosts: [
         { position: createVector(3350, 70), range: 250 },
@@ -556,7 +554,7 @@ function setupLevels() {
         // { position: createVector(4000, 300), range: 150 }
       ],
       //ground: [{ x: 0, y: 600, w: 2200, h: 40 },//kx
-       // { x: 2650, y: 600, w: 1050, h: 40},{ x: 4525, y: 600, w: 850, h: 40}],//地面不再连续，kx~~~~~
+       // { x: 2650, y: 600, w: 1050, h: 40},{ x: 4525, y: 600, w: 850, h: 40}],//The ground is no longer continuous，kx~~~~~
       items: [
         //{ x: 700, y: 480, type: "Invincibility" }
         { x: 1060, y: 80, type: "Heart" },
