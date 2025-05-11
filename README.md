@@ -162,7 +162,6 @@ During the third session on January 28, our team of five members was systematica
 
 <p align="center">
   <strong>Figure 5. Paper Prototype developed during Workshop Three</strong><br>
-  <em>(Paper Prototype: <a href="https://www.google.com">www.google.com</a>)</em>
 </p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1e99ec61-5631-4177-957c-7865e9b5e16a" width="500" alt="Digital">
