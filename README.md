@@ -423,10 +423,6 @@ if (keyWentDown(TAB)) {
 
 #### 6.3.4 Seamless Integration and User Prompts
 
-- **Startup Notice**  
-  On first launch or level restart, a banner displays:  
-  > “Color-Blind Mode and Audio Cues enabled. Press TAB to switch Single-/Dual-Hand controls.”
-
 - **Persistent Preferences**  
   Player input scheme preferences are stored in `localStorage` and restored on next launch.
 
