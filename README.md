@@ -671,12 +671,10 @@ The following manual test log documents key features of Echoes of Adventure, gro
 
 | Feature Description              | Expected Behavior                                    | Actual Result  | Conclusion |
 |----------------------------------|------------------------------------------------------|----------------|------------|
-| First-time player launch         | Tutorial prompt appears automatically               | As expected    | Passed     |
-| Pressing "Z" on tutorial screen  | Game transitions to Level 1                          | As expected    | Passed     |
+| First-time player launch         | The story interface appears automatically            | As expected    | Passed     |
 | Mode selection toggle            | Player can switch between Normal and Invincible Mode | As expected    | Passed     |
-| Pressing "P" on welcome screen   | Opens settings panel                                 | As expected    | Passed     |
+| Pressing "I" on welcome screen   | Opens Instructions page                              | As expected    | Passed     |
 | Pressing "M" in settings         | Returns to main welcome screen                       | As expected    | Passed     |
-| Startup sound behavior           | No sound at startup; activates after input           | As expected    | Passed     |
 
 
 
@@ -684,9 +682,8 @@ The following manual test log documents key features of Echoes of Adventure, gro
 
 | Feature Description                     | Expected Behavior                                        | Actual Result  | Conclusion |
 |-----------------------------------------|----------------------------------------------------------|----------------|------------|
-| Movement using WASD or Arrow Keys       | Character moves left/right and jumps as expected         | As expected    | Passed     |
+| Movement using WAD or Arrow Keys       | Character moves left/right and jumps as expected         | As expected    | Passed     |
 | Attack using "Z" key                    | Character performs elemental attack                      | As expected    | Passed     |
-| Switching control scheme with Tab       | Control scheme toggles and updates prompt text           | As expected    | Passed     |
 | Input handling in both modes            | Controls respond correctly in both Normal and Invincible | As expected    | Passed     |
 
 
@@ -714,8 +711,7 @@ The following manual test log documents key features of Echoes of Adventure, gro
 | Element pickup                                 | HUD updates to reflect current power                        | As expected    | Passed     |
 | Using Heart item                               | Health increases up to a maximum of 5                       | As expected    | Passed     |
 | Taking damage (Normal Mode)                    | Health decreases, visual cue plays                          | As expected    | Passed     |
-| Pressing "R" during gameplay                   | Level restarts                                              | As expected    | Passed     |
-| Game completion screen                         | Confetti animation and fox jump trigger                     | As expected    | Passed     |
+| Press "R" on the settings screen               | Level restarts                                              | As expected    | Passed     |
 | End-of-level environmental report              | Shows eco impact and collection statistics                  | As expected    | Passed     |
 
 
