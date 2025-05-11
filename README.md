@@ -239,7 +239,8 @@ To accommodate a diverse player base, including newcomers, and address challenge
 To optimize user experience and accommodate different player preferences, we implemented dual control schemes. The first scheme utilizes WASD + left mouse button, while the second scheme supports arrow keys + Z key. This design choice accounts for variations in user device configurations and individual playstyle preferences, ensuring a more inclusive and adaptable control experience. By offering flexible input options, we aim to maximize accessibility and provide a seamless gameplay experience for all users.
 
 
-<img width="842" alt="WechatIMG5177" src="https://github.com/user-attachments/assets/a3a42d32-6640-413e-b013-cb192f99b101" />
+<img width="929" alt="Use Case Diagram" src="https://github.com/user-attachments/assets/9c0c9c27-95a7-4070-8311-eb07708a4e7e" />
+
 
 
 <p align="center">
