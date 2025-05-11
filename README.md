@@ -663,13 +663,63 @@ Additionally, we established a code repository on GitHub and extensively adopted
 ### Agile Dicussion
 In this project, we adopted agile discussion methods to ensure efficient team collaboration and smooth project progress. We primarily used two formats: daily stand-up meetings and backlog refinement sessions. While daily stand-ups usually require face-to-face reporting by team members, we flexibly adapted this to real-time reporting in a WeChat group based on our actual circumstances. This not only ensured timely information sharing but also enhanced communication efficiency. Meanwhile, we held a weekly offline backlog refinement meeting at MVB to focus on discussing and assigning phased tasks, ensuring that every team member was clear on current priorities and objectives. Through this flexible and diverse agile discussion approach, we successfully enhanced team collaboration efficiency and laid a solid foundation for the smooth progress of the project.
 
+## 9. Software Quality and Testing
+
+The following manual test log documents key features of Echoes of Adventure, grouped by gameplay stage. All actions were manually verified through keyboard/mouse interaction. Each test records the action taken, expected result, actual result, and conclusion.
+
+⸻
+
+### 9.1 Welcome Page Test
+
+Feature Description	Expected Behavior	Actual Result	Conclusion
+First-time player launch	Tutorial prompt appears automatically	As expected	Passed
+Pressing “Z” on tutorial screen	Game transitions to Level 1	As expected	Passed
+Mode selection toggle	Player can switch between Normal and Invincible Mode	As expected	Passed
+Pressing “P” on welcome screen	Opens settings panel	As expected	Passed
+Pressing “M” in settings	Returns to main welcome screen	As expected	Passed
+Startup sound behavior	No sound at startup; activates after input	As expected	Passed
 
 
-## 9. Sustainability
+### 9.2 Character Control Test
+
+Feature Description	Expected Behavior	Actual Result	Conclusion
+Movement using WASD or Arrow Keys	Character moves left/right and jumps as expected	As expected	Passed
+Attack using “Z” key	Character performs elemental attack	As expected	Passed
+Switching control scheme with Tab	Control scheme toggles and updates prompt text	As expected	Passed
+Input handling in both modes	Controls respond correctly in both game modes	As expected	Passed
+
+
+### 9.3 Map and Game Flow Test
+
+Feature Description	Expected Behavior	Actual Result	Conclusion
+Entering Level 1	Level starts with correct environment and music	As expected	Passed
+Collecting all rubbish	Exit door becomes active	As expected	Passed
+Entering exit door	Player transitions to next level	As expected	Passed
+Falling off map in Invincible Mode	Character resets to safe platform	As expected	Passed
+Weather system effects	Visual and sound match each level’s theme	As expected	Passed
+Fog visibility logic	Circular visible area tracks player location	As expected	Passed
+Trap collision in Normal Mode	Health decreases; screen flashes red	As expected	Passed
+Enemy behavior types	Bird, spider, frog, ghost act according to logic	As expected	Passed
+Using Freeze Element	Enemy freezes temporarily	As expected	Passed
+
+
+### 9.4 Scoring and Feedback Test
+
+Feature Description	Expected Behavior	Actual Result	Conclusion
+Score feedback for rubbish collection	Score counter updates with animation	As expected	Passed
+Element item pickup	HUD reflects updated elemental ability	As expected	Passed
+Using Heart item	Restores 1 life (up to 5 max)	As expected	Passed
+Taking damage (Normal Mode)	Health decreases; visual cue is shown	As expected	Passed
+Pressing “R” during gameplay	Restarts current level	As expected	Passed
+Game completion celebration	Character jumps, confetti animation plays	As expected	Passed
+End-of-level environmental feedback	Eco score and recycling stats are displayed	As expected	Passed
+
+
+## 10. Sustainability
 
 *Echoes of Adventure* is more than a fantasy platformer—it embeds sustainability principles across its narrative, mechanics, architecture and development process, informed by the Karlskrona Manifesto and the Sustainability Awareness Framework (SuSAF).
 
-### 9.1 Integration Across Five Dimensions
+### 10.1 Integration Across Five Dimensions
 
 We continuously evaluate and optimise the game against SuSAF’s five pillars:
 
@@ -681,7 +731,7 @@ We continuously evaluate and optimise the game against SuSAF’s five pillars:
 | Social          | • Low-end device support and offline mode bridge the digital divide<br>• High-contrast, minimal UI meets diverse accessibility needs |
 | Individual      | • Non-violent, restorative gameplay reduces cognitive load<br>• In-game “eco hints” guide players toward sustainable choices    |
 
-### 9.2 Sustainability Metaphors in Narrative and Mechanics
+### 10.2 Sustainability Metaphors in Narrative and Mechanics
 
 - **Polluted Continents**  
   Each level represents a threatened ecosystem—forest, lava, sky, darkness, crystal—directly echoing real-world environmental crises.  
@@ -700,7 +750,7 @@ We continuously evaluate and optimise the game against SuSAF’s five pillars:
 </p>
 
 
-### 9.3 Sustainability Practices in the Development Process
+### 10.3 Sustainability Practices in the Development Process
 
 We embed sustainability checks into every phase of our agile workflow:
 
@@ -718,7 +768,7 @@ We embed sustainability checks into every phase of our agile workflow:
 #### Sprint Retrospective  
 - Dedicate a “green agenda” slot to identify high-energy logic or unused resources and plan targeted optimisations.
 
-### 9.4 Static Hosting & Resource Optimization
+### 10.4 Static Hosting & Resource Optimization
 
 Hosted on GitHub Pages as a static site, we apply:
 
@@ -733,7 +783,7 @@ Hosted on GitHub Pages as a static site, we apply:
 - **Offline Support**  
   Lightweight Service Worker pre-caches the first two levels for unstable network conditions.
 
-### 9.5 Player-Facing Sustainability Feedback
+### 10.5 Player-Facing Sustainability Feedback
 
 - **End-of-Level Metrics**  
   Displays quantitative “Recycling Rate,” “Purification Score,” and “Eco Impact Index” to make progress visible.  
@@ -746,7 +796,7 @@ Through these measures, *Echoes of Adventure* not only entertains but also culti
 
 
 
-## 10. Conclusion
+## 11. Conclusion
 
 Echoes of Adventure represents the culmination of our team’s efforts to blend classic platforming mechanics with dynamic environmental storytelling and sustainability themes. From the outset, we sought to create a game that was both inviting to newcomers and engaging for seasoned players by offering dual modes—Normal and Invincible—that cater to varying skill levels. Throughout development, we remained committed to a design philosophy that balances accessibility, challenge, and narrative depth, resulting in a cohesive experience where every continent feels distinct yet unified by the overarching restoration-of-balance storyline.
 
@@ -765,7 +815,7 @@ Looking forward, we envision several avenues for growth:
 
 In sum, Echoes of Adventure has grown from a conceptual prototype into a polished, modular platformer that marries performance-conscious engineering with thoughtful, sustainability-focused storytelling. The lessons learned—from unified state machines to mixed-methods evaluation—have strengthened our technical and collaborative skill sets, laying a robust foundation for future game development projects. We are proud of what we have achieved and excited to continue evolving our game into an ever more immersive and environmentally resonant experience.
 
-## 11. Contribution
+## 12. Contribution
 
 <div align="center">
   
