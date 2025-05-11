@@ -38,9 +38,10 @@ Click to watch the demo video of our game [**HERE**](https://youtu.be/JbI86zdtSe
 - [6. Implementation](#6-implementation)
 - [7. Evaluation](#7-evaluation)
 - [8. Process](#8-process)
-- [9. Sustainability](#9-sustainability)
-- [10. Conclusion](#10-conclusion)
-- [11. Contribution](#11-contribution)
+- [9. Software Quality and Testing](#9-softwarequalityandtesting)
+- [10. Sustainability](#9-sustainability)
+- [11. Conclusion](#10-conclusion)
+- [12. Contribution](#11-contribution)
 - [Reference](#reference)
 
 
