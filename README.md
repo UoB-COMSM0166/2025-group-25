@@ -667,52 +667,56 @@ In this project, we adopted agile discussion methods to ensure efficient team co
 
 The following manual test log documents key features of Echoes of Adventure, grouped by gameplay stage. All actions were manually verified through keyboard/mouse interaction. Each test records the action taken, expected result, actual result, and conclusion.
 
-⸻
-
 ### 9.1 Welcome Page Test
 
-Feature Description	Expected Behavior	Actual Result	Conclusion
-First-time player launch	Tutorial prompt appears automatically	As expected	Passed
-Pressing “Z” on tutorial screen	Game transitions to Level 1	As expected	Passed
-Mode selection toggle	Player can switch between Normal and Invincible Mode	As expected	Passed
-Pressing “P” on welcome screen	Opens settings panel	As expected	Passed
-Pressing “M” in settings	Returns to main welcome screen	As expected	Passed
-Startup sound behavior	No sound at startup; activates after input	As expected	Passed
+| Feature Description              | Expected Behavior                                    | Actual Result  | Conclusion |
+|----------------------------------|------------------------------------------------------|----------------|------------|
+| First-time player launch         | Tutorial prompt appears automatically               | As expected    | Passed     |
+| Pressing "Z" on tutorial screen  | Game transitions to Level 1                          | As expected    | Passed     |
+| Mode selection toggle            | Player can switch between Normal and Invincible Mode | As expected    | Passed     |
+| Pressing "P" on welcome screen   | Opens settings panel                                 | As expected    | Passed     |
+| Pressing "M" in settings         | Returns to main welcome screen                       | As expected    | Passed     |
+| Startup sound behavior           | No sound at startup; activates after input           | As expected    | Passed     |
+
 
 
 ### 9.2 Character Control Test
 
-Feature Description	Expected Behavior	Actual Result	Conclusion
-Movement using WASD or Arrow Keys	Character moves left/right and jumps as expected	As expected	Passed
-Attack using “Z” key	Character performs elemental attack	As expected	Passed
-Switching control scheme with Tab	Control scheme toggles and updates prompt text	As expected	Passed
-Input handling in both modes	Controls respond correctly in both game modes	As expected	Passed
+| Feature Description                     | Expected Behavior                                        | Actual Result  | Conclusion |
+|-----------------------------------------|----------------------------------------------------------|----------------|------------|
+| Movement using WASD or Arrow Keys       | Character moves left/right and jumps as expected         | As expected    | Passed     |
+| Attack using "Z" key                    | Character performs elemental attack                      | As expected    | Passed     |
+| Switching control scheme with Tab       | Control scheme toggles and updates prompt text           | As expected    | Passed     |
+| Input handling in both modes            | Controls respond correctly in both Normal and Invincible | As expected    | Passed     |
 
 
 ### 9.3 Map and Game Flow Test
 
-Feature Description	Expected Behavior	Actual Result	Conclusion
-Entering Level 1	Level starts with correct environment and music	As expected	Passed
-Collecting all rubbish	Exit door becomes active	As expected	Passed
-Entering exit door	Player transitions to next level	As expected	Passed
-Falling off map in Invincible Mode	Character resets to safe platform	As expected	Passed
-Weather system effects	Visual and sound match each level’s theme	As expected	Passed
-Fog visibility logic	Circular visible area tracks player location	As expected	Passed
-Trap collision in Normal Mode	Health decreases; screen flashes red	As expected	Passed
-Enemy behavior types	Bird, spider, frog, ghost act according to logic	As expected	Passed
-Using Freeze Element	Enemy freezes temporarily	As expected	Passed
+| Feature Description                            | Expected Behavior                                         | Actual Result  | Conclusion |
+|------------------------------------------------|-----------------------------------------------------------|----------------|------------|
+| Entering Level 1                               | Level starts with correct environment and music           | As expected    | Passed     |
+| Collecting all rubbish                         | Exit door becomes active                                  | As expected    | Passed     |
+| Entering exit door                             | Player transitions to next level                          | As expected    | Passed     |
+| Falling off map in Invincible Mode             | Character resets to safe platform                         | As expected    | Passed     |
+| Environmental weather system                   | Weather visuals and sounds match level theme              | As expected    | Passed     |
+| Fog visibility                                 | Vision radius is maintained around player                 | As expected    | Passed     |
+| Trap collision in Normal Mode                  | Health decreases; screen flashes                          | As expected    | Passed     |
+| Enemy types (bird, spider, frog, ghost)        | Behave according to designed patrol or pattern logic      | As expected    | Passed     |
+| Using Freeze Element                           | Enemies stop moving temporarily                           | As expected    | Passed     |
+
 
 
 ### 9.4 Scoring and Feedback Test
 
-Feature Description	Expected Behavior	Actual Result	Conclusion
-Score feedback for rubbish collection	Score counter updates with animation	As expected	Passed
-Element item pickup	HUD reflects updated elemental ability	As expected	Passed
-Using Heart item	Restores 1 life (up to 5 max)	As expected	Passed
-Taking damage (Normal Mode)	Health decreases; visual cue is shown	As expected	Passed
-Pressing “R” during gameplay	Restarts current level	As expected	Passed
-Game completion celebration	Character jumps, confetti animation plays	As expected	Passed
-End-of-level environmental feedback	Eco score and recycling stats are displayed	As expected	Passed
+| Feature Description                            | Expected Behavior                                           | Actual Result  | Conclusion |
+|------------------------------------------------|-------------------------------------------------------------|----------------|------------|
+| Rubbish collection feedback                    | Score counter updates with animation                        | As expected    | Passed     |
+| Element pickup                                 | HUD updates to reflect current power                        | As expected    | Passed     |
+| Using Heart item                               | Health increases up to a maximum of 5                       | As expected    | Passed     |
+| Taking damage (Normal Mode)                    | Health decreases, visual cue plays                          | As expected    | Passed     |
+| Pressing "R" during gameplay                   | Level restarts                                              | As expected    | Passed     |
+| Game completion screen                         | Confetti animation and fox jump trigger                     | As expected    | Passed     |
+| End-of-level environmental report              | Shows eco impact and collection statistics                  | As expected    | Passed     |
 
 
 ## 10. Sustainability
