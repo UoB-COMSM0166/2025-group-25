@@ -370,8 +370,6 @@ The most challenging part is the design of the fog effect. To ensure the visibil
 
 In **Echoes of Adventure**, all assistive features are seamlessly embedded in the core game loop—no extra settings menu is required. These enhancements are activated automatically and apply consistently across all levels and game modes.
 
----
-
 #### 6.3.1 Color-Blind Friendly Palette (Color-Blind Mode)
 
 - **Embedded Implementation**  
@@ -424,16 +422,15 @@ if (keyWentDown(TAB)) {
 
 #### 6.3.4 Seamless Integration and User Prompts
 
-Startup Notice
-On first launch or level restart, a banner displays:
+- **Startup Notice**  
+  On first launch or level restart, a banner displays:  
+  > “Color-Blind Mode and Audio Cues enabled. Press TAB to switch Single-/Dual-Hand controls.”
 
-“Color-Blind Mode and Audio Cues enabled. Press TAB to switch Single-/Dual-Hand controls.”
+- **Persistent Preferences**  
+  Player input scheme preferences are stored in `localStorage` and restored on next launch.
 
-Persistent Preferences
-Player input scheme preferences are stored in localStorage and restored on next launch.
-
-Cross-Mode Compatibility
-All accessibility features apply in both Normal and Invincible modes, with full coverage across UI, gameplay, and tutorials.
+- **Cross-Mode Compatibility**  
+  All accessibility features apply in both **Normal** and **Invincible** modes, with full coverage across UI, gameplay, and tutorials.
 
 
 
