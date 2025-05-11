@@ -357,14 +357,87 @@ The diagram below illustrates the main flow when the player enters a level and p
 ## 6. Implementation
 Our game is implemented in JavaScript and p5.js. The overall structure is modular and easy to extend. Every object in the game - including players, enemies, props, platforms, water, particles, etc. - follows the process of ‘update the logic first, then draw the screen’. We manage the states and behaviours of different objects through a unified architecture, and work with level JSON configurations so that the content of each level can be flexibly adjusted. We also implemented a dynamic weather system, day/night changes, sound feedback and a HUD interface for a better player experience. The whole project was built around sustainability, performance and scalability, and we encountered a lot of challenges during the process, among which ‘animation’ was the part we spent the most time optimising, and we will introduce the implementation process and solutions for this part.
 
-### Animation Challenge
+### 6.1 Animation Challenge
 In earlier versions, we loaded spritesheets for different objects and cropped the drawing in each frame. However, this approach not only led to duplicate loading of resources, frame rate degradation, and a sharp increase in CPU overhead, but also led to confusion in collaboration due to the lack of a unified naming convention, which often resulted in frame mismatches and other problems. More seriously, animation frame switching relies on “frameCount” for modelling, which makes it difficult to deal with instantaneous changes in the character's state (e.g. attack interruptions or direction switches), often resulting in problems such as ‘the legs are still moving when the action stops’. In addition, inconsistencies in “spritesheet” size, frame rate, and orientation between different objects further increased the complexity of the system.
 To solve these problems, we completely refactored the animation architecture. We cache all animation resources in the preload() phase so that no I/O operations are needed at runtime, and introduce a state machine that dynamically manages the frame index of each object based on the current state and orientation information to ensure that the animation is synchronised and responds in a timely manner. In addition, in order to improve reusability, we encapsulate all entities with frame animation (such as Bird, Spider, Ghost, AdvancedBirds, etc.) into a unified interface, and each class only needs to provide the spritesheet and frame number to access the animation logic, even the Water class also reuses the framework. Even the Water class is reused in the framework. New characters can be added without modifying the logic, and can be accessed by only configuring the material. Meanwhile, the particle system builds a pool of objects through Particle.get(), which effectively saves memory and improves performance.
 
-### Weather System Challenge
+### 6.2 Weather System Challenge
 In addition, the design and optimisation of the weather system was also an important challenge for us during the development process. When designing the weather system, we wanted the different types of weather (sunny, rainy, snowy, thunderstorms, foggy) to not only have visual variations, but also realistically affect the player's movement and the game's pace. Initially, we wrote separate logic for each type of weather, but quickly realised that this approach made the code lengthy, difficult to maintain, and a pain in the neck trying to add new weather types. Even trickier, the amount of particles (raindrops, snowflakes, fog) generated in different weather is huge, and if not optimised, the game's frame rate would drop rapidly when rain and snow are combined with a large number of enemies.
 To cope with these problems, we refactored the weather system and designed unified “updateWeather()” and “drawWeather()” methods to centralise all weather logic. Particles with different weather are reused in the object pool built by “Particle.get()”, avoiding frequent creation and destruction and significantly reducing the pressure on memory and CPU. Meanwhile, different weather dynamically affects the player's attributes, such as reducing the friction of the ground in snowy days and decreasing the player's movement speed in rainy days, and these effects are realised through state detection and smooth interpolation to avoid abrupt changes.
 The most challenging part is the design of the fog effect. To ensure the visibility of the player in the fog, we created a separate fog layer using “createGraphics()” and dynamically ‘dug holes’ around the player to create a natural visible area. This balanced performance and visual effects, allowing the game to run smoothly even in complex weather and with a large number of objects on the same screen.
+
+### 6.3 Accessibility Support
+
+In **Echoes of Adventure**, all assistive features are seamlessly embedded in the core game loop—no extra settings menu is required. These enhancements are activated automatically and apply consistently across all levels and game modes.
+
+---
+
+#### 6.3.1 Color-Blind Friendly Palette (Color-Blind Mode)
+
+- **Embedded Implementation**  
+  Key elements such as enemies, hazards, and collectible items are rendered with high-contrast, texture-augmented palettes that support common color-vision deficiencies.
+
+- **Technical Highlights**  
+  - Preloaded color-blind–friendly palettes (for protanopia, deuteranopia, tritanopia) are cached during `preload()`.  
+  - Rendering functions like `drawEnemy()`, `drawItem()`, and `drawObstacle()` use `getColor(key)` to fetch adaptive color values.  
+  - Additional outline or glow effects are added to danger zones (lava, saws, etc.) to enhance visibility.
+
+---
+
+#### 6.3.2 Audio Cues
+
+- **Embedded Implementation**  
+  Game events such as taking damage, collecting items, triggering mechanisms, and enemy proximity automatically produce distinctive sound cues without the need for configuration.
+
+- **Technical Highlights**  
+  - Event handlers such as `onCollect()`, `onDamage()`, and `onEnemyNear()` invoke corresponding cues like `audioCues.collect.play()`.  
+  - All audio cue assets are pre-buffered in `setupAudio()` to ensure minimal latency.
+
+---
+
+#### 6.3.3 Multiple Control Schemes
+
+To accommodate players with different input preferences or physical limitations, two control schemes are supported. Players can toggle schemes in-game at any time by pressing the **Tab** key.
+
+| Scheme           | Jump            | Move Left        | Move Right        | Attack / Interact |
+| ---------------- | --------------- | ---------------- | ----------------- | ----------------- |
+| **Single-Hand**  | `W`             | `A`              | `D`               | `Z`               |
+| **Dual-Hand**    | `↑` (Up Arrow)  | `←` (Left Arrow) | `→` (Right Arrow) | `Z`               |
+
+**Code Snippet:**
+```js
+// Control switching logic in Input.js or Player.js
+const mode = inputMode; // 'single' or 'dual'
+if (mode === 'single') {
+  jumpKey  = keyIsDown(87);      // W
+  leftKey  = keyIsDown(65);      // A
+  rightKey = keyIsDown(68);      // D
+} else {
+  jumpKey  = keyIsDown(UP_ARROW);
+  leftKey  = keyIsDown(LEFT_ARROW);
+  rightKey = keyIsDown(RIGHT_ARROW);
+}
+attackKey = keyIsDown(90);       // Z
+
+// Tab key listener for toggling mode
+if (keyWentDown(TAB)) {
+  inputMode = (inputMode === 'single') ? 'dual' : 'single';
+  showModeOverlay(inputMode);
+}
+
+#### 6.3.4 Seamless Integration and User Prompts
+
+Startup Notice
+On first launch or level restart, a banner displays:
+
+“Color-Blind Mode and Audio Cues enabled. Press TAB to switch Single-/Dual-Hand controls.”
+
+Persistent Preferences
+Player input scheme preferences are stored in localStorage and restored on next launch.
+
+Cross-Mode Compatibility
+All accessibility features apply in both Normal and Invincible modes, with full coverage across UI, gameplay, and tutorials.
+
 
 
 ## 7. Evaluation
