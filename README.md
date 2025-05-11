@@ -382,8 +382,6 @@ In **Echoes of Adventure**, all assistive features are seamlessly embedded in th
   - Rendering functions like `drawEnemy()`, `drawItem()`, and `drawObstacle()` use `getColor(key)` to fetch adaptive color values.  
   - Additional outline or glow effects are added to danger zones (lava, saws, etc.) to enhance visibility.
 
----
-
 #### 6.3.2 Audio Cues
 
 - **Embedded Implementation**  
@@ -392,8 +390,6 @@ In **Echoes of Adventure**, all assistive features are seamlessly embedded in th
 - **Technical Highlights**  
   - Event handlers such as `onCollect()`, `onDamage()`, and `onEnemyNear()` invoke corresponding cues like `audioCues.collect.play()`.  
   - All audio cue assets are pre-buffered in `setupAudio()` to ensure minimal latency.
-
----
 
 #### 6.3.3 Multiple Control Schemes
 
@@ -424,6 +420,7 @@ if (keyWentDown(TAB)) {
   inputMode = (inputMode === 'single') ? 'dual' : 'single';
   showModeOverlay(inputMode);
 }
+```
 
 #### 6.3.4 Seamless Integration and User Prompts
 
